@@ -16,4 +16,17 @@ describe("account form", () => {
     expect(html).toContain('aria-label="Show password"');
     expect(html).toContain('href="/privacy-policy"');
   });
+  it("keeps email sign-in available without advertising unconfigured Google OAuth", () => {
+    const html = renderToStaticMarkup(<AuthCard authConfigured={false} emailAuthConfigured />);
+    expect(html).toContain('type="email"');
+    expect(html).toContain('type="submit"');
+    expect(html).not.toContain('Continue with Google');
+    expect(html).not.toContain('mi-auth-divider');
+  });
+  it("offers Google alongside email when OAuth is configured", () => {
+    const html = renderToStaticMarkup(<AuthCard authConfigured emailAuthConfigured />);
+    expect(html).toContain('Continue with Google');
+    expect(html).toContain('mi-auth-divider');
+    expect(html).toContain('type="email"');
+  });
 });

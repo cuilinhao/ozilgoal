@@ -15,14 +15,10 @@ function GoogleMark() {
 
 export function GoogleSignInButton({ authConfigured, disabled = false }: { authConfigured: boolean; disabled?: boolean }) {
   const t = useTranslations();
-  const [error, setError] = useState("");
-  return <>
-    <button className="mi-google-button" type="button" disabled={disabled} onClick={() => {
-      if (!authConfigured) { setError("Google sign-in is temporarily unavailable."); return; }
-      window.location.assign(`/api/auth/google?returnTo=${encodeURIComponent(authReturnTo(window.location))}`);
-    }}><GoogleMark /><span>{t("Continue with Google")}</span></button>
-    {error && <p className="mi-auth-error" role="alert">{t(error)}</p>}
-  </>;
+  if (!authConfigured) return null;
+  return <button className="mi-google-button" type="button" disabled={disabled} onClick={() => {
+    window.location.assign(`/api/auth/google?returnTo=${encodeURIComponent(authReturnTo(window.location))}`);
+  }}><GoogleMark /><span>{t("Continue with Google")}</span></button>;
 }
 
 export function AuthPanel({ mode, onModeChange, authConfigured, emailAuthConfigured = true, loading = false, onSuccess, dialog = false, notice = "" }: {
@@ -80,7 +76,7 @@ export function AuthPanel({ mode, onModeChange, authConfigured, emailAuthConfigu
       {dialog ? <Dialog.Description className="mi-auth-subtitle">{description}</Dialog.Description> : <p className="mi-auth-subtitle">{description}</p>}
     </div>
     <GoogleSignInButton authConfigured={authConfigured} disabled={busy || loading} />
-    <div className="mi-auth-divider"><span>{t("or continue with email")}</span></div>
+    {authConfigured && <div className="mi-auth-divider"><span>{t("or continue with email")}</span></div>}
     <form className="mi-auth-form" onSubmit={submit} aria-busy={busy}>
       <div className="mi-auth-field">
         <label htmlFor={`${id}-email`}>{t("Email address")}</label>
