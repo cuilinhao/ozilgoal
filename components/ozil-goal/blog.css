@@ -14,15 +14,19 @@
 .ozil-blog-contents ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 28px;margin:14px 0 0;padding-left:20px;list-style:decimal;font-size:14px}
 .ozil-blog-translations{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--muted);margin-top:20px}
 .ozil-blog .geo-prose{max-width:780px;font-size:17px}
-.ozil-blog-preview{padding:64px 0;background:var(--background);color:var(--foreground);font-family:var(--font-sans,Arial,sans-serif);border-top:1px solid var(--border)}
+.ozil-page .ozil-blog-preview{padding:64px 0;background:var(--background);color:var(--foreground);font-family:var(--font-sans,Arial,sans-serif);border-top:1px solid var(--border)}
+.ozil-page .ozil-blog-preview .section-container{margin-inline:auto}
 .ozil-blog-preview-heading{display:flex;justify-content:space-between;align-items:end;gap:24px}
-.ozil-blog-preview h2{font-size:clamp(26px,3vw,38px);font-weight:700;line-height:1.2;letter-spacing:-.035em;margin:14px 0 0}
+.ozil-page .ozil-blog-preview h2{font-size:clamp(26px,3vw,38px);font-weight:700;line-height:1.2;letter-spacing:-.035em;margin:14px 0 0}
 .ozil-blog-preview-heading>a{white-space:nowrap;color:var(--primary-strong);text-decoration:underline;text-underline-offset:4px;font-size:14px}
-.ozil-blog-preview-intro{max-width:720px;color:var(--muted);line-height:1.7;margin:20px 0 30px;font-size:16px}
+.ozil-page .ozil-blog-preview-intro{max-width:720px;color:var(--muted);line-height:1.7;margin:20px 0 30px;font-size:16px}
 .ozil-blog-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .ozil-blog-preview-grid>div{display:flex;flex-direction:column;min-width:0}
-.ozil-blog-preview .blog-card{flex:1}
-.ozil-blog-language-label{font-size:12px;font-weight:700;margin:0 0 12px;color:var(--primary-strong)}
+.ozil-page .ozil-blog-preview .blog-card{flex:1;display:flex;flex-direction:column;gap:12px;padding:26px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+.ozil-page .ozil-blog-language-label{font-size:12px;font-weight:700;margin:0 0 12px;color:var(--primary-strong)}
+.ozil-page .ozil-blog-preview .blog-card .blog-card-meta{color:var(--primary-strong);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4}
+.ozil-page .ozil-blog-preview .blog-card>p{font-size:14px;line-height:1.65}
+.ozil-page .ozil-blog-preview .blog-card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:8px;font-size:13px}
 .ozil-blog-preview .blog-card h3{font-size:20px}
 .ozil-blog-preview .blog-card p{color:var(--muted)}
 .ozil-blog-preview .blog-card a{color:var(--foreground);text-decoration:none}
@@ -30,4 +34,4 @@
 .ozil-blog-preview .blog-card-footer{flex-wrap:wrap}
 .ozil-blog-preview a:focus-visible{outline:2px solid var(--primary-strong);outline-offset:5px}
 @media(max-width:900px){.ozil-blog-hero{grid-template-columns:minmax(0,1fr) 180px;gap:30px}.ozil-blog-cover img{height:280px}.ozil-blog-preview-grid{grid-template-columns:1fr}.ozil-blog-preview-heading{align-items:start;flex-direction:column}}
-@media(max-width:600px){.ozil-blog-hero{grid-template-columns:1fr;gap:24px}.ozil-blog-cover{display:none}.ozil-blog-contents ol{grid-template-columns:1fr}.ozil-blog-preview{padding:40px 0}.ozil-blog .geo-prose,.ozil-blog .geo-prose p,.ozil-blog .geo-prose li,.ozil-blog .faq-item p{font-size:16px}.ozil-blog-language-nav{gap:8px}.ozil-blog .ozil-blog-language-nav a{padding:9px 13px}}
+@media(max-width:600px){.ozil-blog-hero{grid-template-columns:1fr;gap:24px}.ozil-blog-cover{display:none}.ozil-blog-contents ol{grid-template-columns:1fr}.ozil-page .ozil-blog-preview{padding:40px 0}.ozil-blog .geo-prose,.ozil-blog .geo-prose p,.ozil-blog .geo-prose li,.ozil-blog .faq-item p{font-size:16px}.ozil-blog-language-nav{gap:8px}.ozil-blog .ozil-blog-language-nav a{padding:9px 13px}}
