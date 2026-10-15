@@ -41,4 +41,24 @@ describe("policy routes and support access", () => {
     expect(footer).toContain(`href="${SUPPORT_MAILTO}"`);
     expect(footer).toContain(SUPPORT_EMAIL);
   });
+
+  it.each(locales)("discloses GA4 cookies and visitor choices on the privacy page in %s", async (locale) => {
+    request.locale = locale;
+    request.path = "/privacy-policy";
+    const messages = getMessages(locale);
+    const route = await LocalizedPage({ params: Promise.resolve({ locale, path: ["privacy-policy"] }) });
+    const Page = route.type as () => Promise<ReactElement<Parameters<typeof LegalPage>[0]>>;
+    const page = await Page();
+    const content = await LegalPage(page.props);
+    const html = renderToStaticMarkup(<LocaleProvider locale={locale} messages={messages}>{content}</LocaleProvider>);
+    const analytics = html.split('<section id="google-analytics"')[1]?.split("</section>")[0];
+    const collection = html.split('<section id="information-collection-and-use"')[1]?.split("</section>")[0];
+
+    expect(analytics).toBeDefined();
+    expect(analytics).toContain("Google Analytics 4");
+    expect(analytics).toContain('href="https://tools.google.com/dlpage/gaoptout"');
+    expect(analytics).toContain('href="https://policies.google.com/technologies/partner-sites"');
+    expect(collection).toContain("Google Analytics");
+    if (locale !== "en") expect(analytics).not.toContain("We use Google Analytics 4 on our production website");
+  });
 });

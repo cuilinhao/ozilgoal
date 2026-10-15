@@ -10,6 +10,7 @@ import "./globals.css";
 import "./interactive.css";
 import "./auth.css";
 import { AuthProvider } from "@/components/auth-provider";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteShell } from "@/components/site-shell";
 
 const baseMetadata: Metadata = {
@@ -31,6 +32,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <SiteShell>{children}</SiteShell>
         </AuthProvider>
         </LocaleProvider>
+        <GoogleAnalytics measurementId="G-SKCH8EV8M2" />
       </body>
     </html>
   );
