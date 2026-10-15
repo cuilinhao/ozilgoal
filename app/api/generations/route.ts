@@ -1,6 +1,4 @@
-import { createGeneration } from '@/lib/server/generations';
 import { api } from '@/lib/server/errors';
-export const POST=api(async(request)=>createGeneration(request,'video'));
 
 import { getEnv,database } from '@/lib/server/env';
 import { requireUser } from '@/lib/server/auth';

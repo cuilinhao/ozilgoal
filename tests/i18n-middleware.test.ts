@@ -7,23 +7,23 @@ import { publicPages } from "../content/public-pages";
 
 describe("localized requests", () => {
   it.each(["ja", "zh-TW"])("passes %s to the real localized page route", (locale) => {
-    const response = middleware(new NextRequest(`https://migosai.design/${locale}/pricing?checkout=success`));
+    const response = middleware(new NextRequest(`https://ozilgoal-aivideo.com/${locale}/pricing?checkout=success`));
     expect(response.headers.get("x-middleware-rewrite")).toBeNull();
     expect(response.headers.get("x-middleware-request-x-migos-locale")).toBe(locale);
     expect(response.headers.get("x-middleware-request-x-migos-pathname")).toBe("/pricing");
   });
   it("keeps the unprefixed URL English regardless of supplied locale headers", () => {
-    const response = middleware(new NextRequest("https://migosai.design/", { headers: { "x-migos-locale": "fr" } }));
+    const response = middleware(new NextRequest("https://ozilgoal-aivideo.com/", { headers: { "x-migos-locale": "fr" } }));
     expect(response.headers.get("x-middleware-request-x-migos-locale")).toBe("en");
     expect(response.headers.get("x-middleware-rewrite")).toBeNull();
   });
   it("canonicalizes the explicit English prefix", () => {
-    const response = middleware(new NextRequest("https://migosai.design/en/pricing?x=1"));
+    const response = middleware(new NextRequest("https://ozilgoal-aivideo.com/en/pricing?x=1"));
     expect(response.status).toBe(308);
-    expect(response.headers.get("location")).toBe("https://migosai.design/pricing?x=1");
+    expect(response.headers.get("location")).toBe("https://ozilgoal-aivideo.com/pricing?x=1");
   });
   it("does not expose an alternative API route under a language prefix", () => {
-    const response = middleware(new NextRequest("https://migosai.design/fr/api/me"));
+    const response = middleware(new NextRequest("https://ozilgoal-aivideo.com/fr/api/me"));
     expect(response.headers.get("x-middleware-rewrite")).toBeNull();
   });
 });
@@ -44,11 +44,11 @@ describe("multilingual sitemap", () => {
     for (const page of publicPages) {
       for (const prefix of ["", "/ko", "/ja", "/fr", "/es", "/zh-TW"]) {
         const path = prefix && page.path === "/" ? prefix : `${prefix}${page.path}`;
-        expect(entries.some(entry => entry.url === `https://migosai.design${path}`), path).toBe(true);
+        expect(entries.some(entry => entry.url === `https://ozilgoal-aivideo.com${path}`), path).toBe(true);
       }
     }
     expect(new Set(entries.map(entry => entry.url)).size).toBe(entries.length);
-    const french = entries.find(entry => entry.url === "https://migosai.design/fr/pricing");
-    expect(french?.alternates?.languages).toEqual({ en: "https://migosai.design/pricing", ko: "https://migosai.design/ko/pricing", ja: "https://migosai.design/ja/pricing", fr: "https://migosai.design/fr/pricing", es: "https://migosai.design/es/pricing", "zh-TW": "https://migosai.design/zh-TW/pricing", "x-default": "https://migosai.design/pricing" });
+    const french = entries.find(entry => entry.url === "https://ozilgoal-aivideo.com/fr/pricing");
+    expect(french?.alternates?.languages).toEqual({ en: "https://ozilgoal-aivideo.com/pricing", ko: "https://ozilgoal-aivideo.com/ko/pricing", ja: "https://ozilgoal-aivideo.com/ja/pricing", fr: "https://ozilgoal-aivideo.com/fr/pricing", es: "https://ozilgoal-aivideo.com/es/pricing", "zh-TW": "https://ozilgoal-aivideo.com/zh-TW/pricing", "x-default": "https://ozilgoal-aivideo.com/pricing" });
   });
 });

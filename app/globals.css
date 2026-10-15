@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./geo.css";
 @import "./video-examples.css";
-@import "./home-hero.css";
 
 :root{color-scheme:light;--background:#fbf6ee;--foreground:#1d140e;--muted:#5c5047;--primary:#e8650f;--primary-strong:#b9460a;--primary-foreground:#fffaf3;--cyan:#b9460a;--card:#fffdf9;--border:#e6d9c6;--paper-deep:#f3e9da;--input:#dccdb7;--accent:#fde6cb;--accent-foreground:#7a3208;--brand-gradient:linear-gradient(135deg,#ff9a3c,#f47a1f 45%,#d9560b);--stage-gradient:radial-gradient(60% 55% at 50% 38%,#ffb35c 0%,#ffb35c00 70%),linear-gradient(180deg,#f8892a,#ef6f18 55%,#d9560b);--surface-inverse:#170f0a;--surface-inverse-muted:#cbb9a6;--success:#1f7a4d;--destructive:#c2261d}
 *{box-sizing:border-box}
@@ -43,82 +42,14 @@ img,video{max-width:100%}
 .mobile-nav{position:absolute;top:80px;left:0;right:0;flex-direction:column;background:var(--card);border-bottom:1px solid var(--border);padding:14px 24px 20px;box-shadow:0 18px 40px rgba(49,27,12,.14)}.mobile-nav a,.mobile-nav button{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;color:var(--muted);padding:11px 4px;text-align:left;font-size:14px}.mobile-nav a:hover,.mobile-nav button:hover{color:var(--primary-strong)}
 @media(max-width:1280px){.desktop-nav{display:none}.mobile-menu-button{display:grid}.mobile-nav{display:flex}}
 
-/* Sections on the home page */
-.hero{position:relative;overflow:hidden;min-height:442px;padding:96px 0 0;text-align:center;background:var(--stage-gradient)}
-.hero-glow{pointer-events:none;position:absolute;width:560px;height:290px;left:50%;top:0;transform:translateX(-50%);background:radial-gradient(ellipse,#ffe0ade6 0%,#ffbe6e73 38%,transparent 70%)}
-.hero-inner{position:relative;display:flex;flex-direction:column;align-items:center}
-.trending-badge{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;width:355px;height:34px;border:1px solid var(--border);border-radius:100px;background:var(--foreground);padding:4px 13px 4px 14px;color:var(--primary-foreground);font-size:13px;font-weight:500;line-height:1;box-shadow:0 0 0 3px #7a320814;border-color:var(--accent-foreground)}
-.trending-label{display:grid;place-items:center;min-width:79px;height:23px;border-radius:6px;background:var(--accent);color:var(--accent-foreground);font-size:12px;font-weight:700;letter-spacing:.02em}
-.trending-copy{border-left:1px solid var(--border);padding-left:9px;white-space:nowrap;border-left-color:#cbb9a666}
-.trending-arrow{font-size:19px;color:var(--primary-foreground);margin-left:auto;line-height:1}
-.hero h1{max-width:1152px;margin:26px 0 28px;color:var(--foreground);font-size:72px;line-height:1;letter-spacing:normal;font-weight:700}
-.mobile-break{display:none}
-.hero p{max-width:768px;margin:0;color:var(--foreground);font-size:20px;line-height:28px}
-.generator-section{width:min(100% - 48px,1280px);margin:0 auto;padding:128px 16px 96px;scroll-margin-top:75px}
-.generator-section .mi-preview-media,.generator-section .mi-preview-media video{min-width:0;max-width:100%}
-.marketing-section{position:relative;padding:80px 0;background:var(--background);scroll-margin-top:65px}
-.section-heading{text-align:center;max-width:810px;margin:0 auto 52px}
-.section-heading-left{text-align:left;margin-left:0}
-.section-heading .eyebrow{margin:0 0 16px}
-.section-heading h2{color:var(--foreground);font-weight:700;font-size:48px;line-height:1.08;letter-spacing:-.045em;margin:0 0 18px;text-wrap:balance}
-.section-description{color:var(--muted);font-size:16px;line-height:1.55;margin:0 auto;max-width:690px}
-.trend-section{padding:96px 0 64px}
-.trend-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px}
-.trend-grid h2{font-size:48px;line-height:1.1;letter-spacing:-.045em;color:var(--foreground);margin:8px 0 24px}
-.trend-tags{display:flex;flex-wrap:wrap;gap:7px}
-.trend-tags span{display:block;border:1px solid var(--border);background:var(--card);border-radius:100px;color:var(--muted);font-size:12px;padding:4px 11px}
-.trend-copy{display:grid;gap:12px}
-.trend-copy p{border:1px solid var(--border);border-radius:10px;background:var(--card);padding:22px 28px;margin:0;color:var(--muted);font-size:15px;line-height:1.6}
-.home-showcase{padding:64px 0}
-.home-showcase .section-heading{margin-bottom:38px}
-.home-video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.home-video-grid>*{min-width:0;aspect-ratio:9/16;overflow:hidden;border-radius:10px;background:var(--card)}
-.home-video-grid video{width:100%;height:100%;object-fit:cover}
-.centered-action{text-align:center;margin-top:42px}
+/* Shared Ozil blog actions and FAQ layout */
 .pill-gradient-button{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--brand-gradient);color:var(--primary-foreground);font-weight:700;font-size:13px;min-height:38px;padding:8px 23px;box-shadow:0 6px 16px -6px rgba(49,27,12,.22);transition:transform .2s,background .2s}
 .pill-gradient-button:hover{background:var(--primary-strong);transform:translateY(-2px)}
-.workflow-section{padding:80px 0 96px;background:var(--paper-deep)}
-.workflow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.workflow-card{border:1px solid var(--border);border-radius:11px;background:var(--card);min-height:252px;padding:24px;display:flex;flex-direction:column;align-items:flex-start}
-.step-number{display:inline-flex;padding:5px 9px;border:1px solid var(--border);border-radius:5px;background:var(--accent);color:var(--accent-foreground);font-size:12px;font-weight:700;letter-spacing:.1em}
-.workflow-card-rule{height:1px;width:100%;background:var(--border);margin:28px 0 22px}
-.workflow-card h3{color:var(--foreground);font-size:17px;font-weight:700;margin:0 0 9px}
-.workflow-card p{color:var(--muted);font-size:14px;line-height:1.5;margin:0}
-.features-section{padding:96px 0}
-.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.feature-card{position:relative;border:1px solid var(--border);border-radius:12px;min-height:210px;padding:25px;background:var(--card)}
-.feature-icon{display:inline-grid;place-items:center;width:29px;height:29px;border:1px solid var(--border);border-radius:8px;color:var(--primary-strong);margin-bottom:17px}
-.feature-card h3{color:var(--foreground);margin:0 0 9px;font-size:17px;font-weight:700}
-.feature-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-.feature-index{position:absolute;right:22px;top:24px;color:var(--muted);font-size:11px;letter-spacing:.12em}
-.faq-section{padding:64px 0 96px}
-.faq-section .section-heading{margin-bottom:62px}
 .faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;row-gap:34px}
 .faq-item{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
 .faq-number{height:21px;width:21px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--primary-strong);font-size:11px;line-height:1;font-weight:600}
 .faq-item h3{margin:0 0 9px;color:var(--foreground);font-size:16px;line-height:1.4;font-weight:600}
 .faq-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-.home-pricing{padding:80px 0}
-.home-pricing .section-heading{margin-bottom:46px}
-.home-cta{text-align:center;padding:64px 0 96px;background:var(--stage-gradient)}
-.home-cta .section-heading{margin-bottom:25px}
-
-/* Desktop heading metrics recorded in RECON/pages/home.json. */
-@media(min-width:901px){
-  .trend-grid h2{font-size:44px;line-height:55px;letter-spacing:normal}
-  .home-showcase .section-heading{max-width:1216px}
-  .home-showcase .section-heading h2{font-size:30px;line-height:36px;font-weight:700;letter-spacing:normal;text-wrap:pretty}
-  main > .workflow-section .section-heading{max-width:768px}
-  main > .workflow-section .section-heading h2{font-size:48px;line-height:60px;letter-spacing:normal}
-  main > .features-section .section-heading{max-width:896px}
-  main > .features-section .section-heading h2{font-size:36px;line-height:40px;font-weight:600;letter-spacing:-.025em}
-  main > .faq-section .section-heading{max-width:1216px}
-  main > .faq-section .section-heading h2{font-size:36px;line-height:40px;font-weight:600;letter-spacing:normal}
-  .home-pricing .section-heading{max-width:1216px}
-  .home-pricing .section-heading h2{font-size:48px;line-height:48px;letter-spacing:-.025em}
-  .home-cta .section-heading{max-width:768px}
-  .home-cta .section-heading h2{font-size:48px;line-height:48px;font-weight:600;letter-spacing:normal}
-}
 
 /* Pricing page and reusable cards */
 .pricing-page{padding:108px 0 80px;min-height:920px}

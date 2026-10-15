@@ -47,9 +47,9 @@ describe("localized metadata", () => {
   it("gives localized routes their own canonical and reciprocal language alternates", async () => {
     const data = await localizeMetadata({ title: "Pricing", description: "Pricing", openGraph: { title: "Pricing" } });
     expect(data.title).toBe(getMessages("fr")["Pricing"]);
-    expect(data.alternates?.canonical).toBe("https://migosai.design/fr/pricing");
-    expect(data.alternates?.languages?.ja).toBe("https://migosai.design/ja/pricing");
-    expect(data.openGraph).toMatchObject({ url: "https://migosai.design/fr/pricing", locale: "fr_FR" });
+    expect(data.alternates?.canonical).toBe("https://ozilgoal-aivideo.com/fr/pricing");
+    expect(data.alternates?.languages?.ja).toBe("https://ozilgoal-aivideo.com/ja/pricing");
+    expect(data.openGraph).toMatchObject({ url: "https://ozilgoal-aivideo.com/fr/pricing", locale: "fr_FR" });
   });
   it("keeps account and authentication pages out of the index", async () => {
     request.path = "/app/my-videos";
@@ -60,8 +60,8 @@ describe("localized metadata", () => {
     const data = await localizeMetadata({ title: "Pricing", description: "Pricing", openGraph: { title: "Pricing" } });
     expect(data.title).toBe(getMessages("zh-TW")["Pricing"]);
     expect(data.title).not.toBe("Pricing");
-    expect(data.alternates?.canonical).toBe("https://migosai.design/zh-TW/pricing");
-    expect(data.alternates?.languages?.["zh-TW"]).toBe("https://migosai.design/zh-TW/pricing");
-    expect(data.openGraph).toMatchObject({ url: "https://migosai.design/zh-TW/pricing", locale: "zh_TW" });
+    expect(data.alternates?.canonical).toBe("https://ozilgoal-aivideo.com/zh-TW/pricing");
+    expect(data.alternates?.languages?.["zh-TW"]).toBe("https://ozilgoal-aivideo.com/zh-TW/pricing");
+    expect(data.openGraph).toMatchObject({ url: "https://ozilgoal-aivideo.com/zh-TW/pricing", locale: "zh_TW" });
   });
 });

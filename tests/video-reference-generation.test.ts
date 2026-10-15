@@ -4,11 +4,13 @@ import { database, jobEnv } from './helpers';
 import { sha256 } from '../lib/server/security';
 import { advanceJob, generationResponse } from '../lib/server/jobs';
 import { saveReferenceUpload } from '../lib/server/reference-uploads';
-import { POST } from '../app/api/generations/route';
+import { api } from '../lib/server/errors';
 import * as videoAvailability from '../lib/video-availability';
 const routeEnv = vi.hoisted(() => ({ value: {} as any }));
 vi.mock('../lib/server/env', async () => ({ ...await vi.importActual('../lib/server/env'), getEnv: async () => routeEnv.value }));
 import { createGeneration } from '../lib/server/generations';
+// Keep service regression coverage for historic jobs without exposing the old submission route.
+const POST = api(async request => createGeneration(request, 'video'));
 afterEach(() => vi.restoreAllMocks());
 async function setup() {
   const d = database(), token = 'r'.repeat(43);

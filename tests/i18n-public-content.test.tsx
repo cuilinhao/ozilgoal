@@ -3,15 +3,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { localizePageContent } from "../components/sections/localized-page-content";
 import { createTranslator } from "../lib/i18n/translator";
 import { pageMessages } from "../lib/i18n/messages/pages";
-import { workflowSteps, featureItems, homeFaqItems } from "../content/home";
-import { hotelLobbyTitle, hotelLobbyDescription, hotelLobbySteps, hotelLobbyFaqs } from "../content/hotel-lobby";
 
 describe("public page localization", () => {
-  it.each(["ko", "ja", "fr", "es", "zh-TW"] as const)("covers current shared public content in %s", (locale) => {
-    const strings = [hotelLobbyTitle, hotelLobbyDescription, ...[...workflowSteps, ...featureItems, ...homeFaqItems, ...hotelLobbySteps, ...hotelLobbyFaqs].flatMap((item) => Object.values(item))];
-    for (const source of strings) expect(pageMessages[locale][source], source).toBeTruthy();
-  });
-
   it("translates a complete sentence while preserving its original link", () => {
     const translate = createTranslator({ "Read <0>the guide</0> first.": "Lisez d’abord <0>le guide</0>." });
     const html = renderToStaticMarkup(localizePageContent(<p>Read <a href="/guide#steps">the guide</a> first.</p>, translate));

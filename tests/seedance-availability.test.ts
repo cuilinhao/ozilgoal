@@ -3,10 +3,13 @@ import { database, jobEnv } from './helpers';
 import { sha256 } from '../lib/server/security';
 import { reserveGeneration } from '../lib/server/billing';
 import { advanceJob } from '../lib/server/jobs';
-import { POST } from '../app/api/generations/route';
+import { api } from '../lib/server/errors';
+import { createGeneration } from '../lib/server/generations';
 import * as videoAvailability from '../lib/video-availability';
 
 const unavailableReason = videoAvailability.getVideoModelUnavailableReason;
+// Keep service regression coverage for historic jobs without exposing the old submission route.
+const POST = api(async request => createGeneration(request, 'video'));
 
 const routeEnv = vi.hoisted(() => ({ value: {} as any }));
 vi.mock('../lib/server/env', async () => ({ ...await vi.importActual('../lib/server/env'), getEnv: async () => routeEnv.value }));
