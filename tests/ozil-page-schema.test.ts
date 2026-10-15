@@ -49,10 +49,10 @@ describe('Ozil landing page structured data', () => {
     }));
     expect(visibleSteps.map(step => step.name)).toEqual(['Add one photo', 'Press Make my video', 'Download and post']);
     expect(howTo.step).toEqual(visibleSteps);
-    expect(faq.url).toBe('https://migosai.design/ozil-goal-generator');
+    expect(faq.url).toBe('https://ozilgoal-aivideo.com/');
     expect(howTo.url).toBe(faq.url);
-    expect(faq.publisher.name).toBe('LobbyDuo');
-    expect(howTo.publisher.name).toBe('LobbyDuo');
+    expect(faq.publisher.name).toBe('Ozil Goal Generator');
+    expect(howTo.publisher.name).toBe('Ozil Goal Generator');
     expect(JSON.stringify(data)).not.toContain('{{OZIL_GOAL_COST}}');
     expect(JSON.stringify(faq)).toContain('300 credits');
   });
@@ -62,8 +62,8 @@ describe('Ozil landing page structured data', () => {
     try {
       const data = schemaFrom(await render());
       for (const entry of data['@graph']) {
-        expect(entry.url).toBe('https://migosai.design/es/ozil-goal-generator');
-        expect(entry['@id']).toMatch(/^https:\/\/migosai\.design\/es\/ozil-goal-generator#/);
+        expect(entry.url).toBe('https://ozilgoal-aivideo.com/es');
+        expect(entry['@id']).toMatch(/^https:\/\/ozilgoal-aivideo\.com\/es#/);
         expect(entry.inLanguage).toBe('en');
       }
     } finally { request.locale = 'en'; }
@@ -73,8 +73,8 @@ describe('Ozil landing page structured data', () => {
     const html = await render('ozil-goal-trend');
     expect(html).not.toContain('application/ld+json');
     const footer = html.match(/<footer\b[^>]*>([\s\S]*?)<\/footer>/)![1];
-    expect(visibleText(footer)).toContain('Contact migosai support');
-    expect(visibleText(footer)).toContain('© 2026 Ozil Goal');
+    expect(visibleText(footer)).toContain('Contact Ozil Goal Generator support');
+    expect(visibleText(footer)).toContain('© 2026 Ozil Goal Generator');
   });
 
   it('keeps text containing a script end tag inside JSON-LD', async () => {

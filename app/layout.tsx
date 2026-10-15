@@ -11,12 +11,11 @@ import "./interactive.css";
 import "./auth.css";
 import { AuthProvider } from "@/components/auth-provider";
 import { SiteShell } from "@/components/site-shell";
-import { GoogleAnalytics } from "@/components/google-analytics";
 
 const baseMetadata: Metadata = {
-  metadataBase: new URL("https://migosai.design"),
-  title: { default: "Hotel Lobby AI Video Generator | LobbyDuo", template: "%s | LobbyDuo" },
-  description: "Create Hotel Lobby–style AI duo videos from two photos with LobbyDuo.",
+  metadataBase: new URL("https://ozilgoal-aivideo.com"),
+  title: { default: "Ozil Goal Generator", template: "%s | Ozil Goal Generator" },
+  description: "Create a 15-second AI football video from one photo with Ozil Goal Generator.",
 };
 
 export async function generateMetadata(): Promise<Metadata> { return localizeMetadata(baseMetadata); }
@@ -31,7 +30,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <SiteShell>{children}</SiteShell>
         </AuthProvider>
         </LocaleProvider>
-        <GoogleAnalytics measurementId="G-VYXRHN7S3D" />
       </body>
     </html>
   );

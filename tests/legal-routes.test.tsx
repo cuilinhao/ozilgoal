@@ -15,7 +15,7 @@ describe("policy routes and support access", () => {
   it.each(locales)("renders the policy and contact routes and footer links in %s", async (locale) => {
     request.locale = locale;
     const messages = getMessages(locale);
-    for (const [path, title] of [["refund-policy", "Refund Policy"], ["acceptable-use-policy", "Acceptable Use Policy"], ["contact", "Contact"]]) {
+    for (const [path, title] of [["privacy-policy", "Privacy Policy"], ["terms-of-service", "Terms of Service"], ["refund-policy", "Refund Policy"], ["acceptable-use-policy", "Acceptable Use Policy"], ["contact", "Contact"]]) {
       request.path = `/${path}`;
       const params = Promise.resolve({ locale, path: [path] });
       const route = await LocalizedPage({ params });
@@ -27,15 +27,17 @@ describe("policy routes and support access", () => {
       expect(html).toContain(`<h1>${messages[title] ?? title}</h1>`);
       expect(html).toContain(`href="${SUPPORT_MAILTO}"`);
       expect(html).toContain(SUPPORT_EMAIL);
-      expect(html).toContain(`href="${localizeHref("/terms-of-service", locale)}"`);
+      expect(html).not.toMatch(/LobbyDuo|migosai\.design|Hotel Lobby|Waffo|Wan 3\.0/i);
+      expect(html).toContain(`href="${localizeHref(path === "terms-of-service" ? "/privacy-policy" : "/terms-of-service", locale)}"`);
       const metadata = await generateMetadata({ params });
-      expect(metadata.alternates?.canonical).toBe(`https://migosai.design${localizeHref(`/${path}`, locale)}`);
+      expect(metadata.alternates?.canonical).toBe(`https://ozilgoal-aivideo.com${localizeHref(`/${path}`, locale)}`);
     }
     const footer = renderToStaticMarkup(<LocaleProvider locale={locale} messages={messages}><SiteFooter/></LocaleProvider>);
     expect(footer).toContain(`href="${localizeHref("/refund-policy", locale)}"`);
     expect(footer).toContain(`href="${localizeHref("/acceptable-use-policy", locale)}"`);
     expect(footer).toContain(`href="${localizeHref("/contact", locale)}"`);
-    expect(footer).toContain("migosai.com");
+    expect(footer).toContain("Ozil Goal Generator");
+    expect(footer).not.toMatch(/LobbyDuo|migosai\.design|hotel-lobby|ai-rap-song/i);
     expect(footer).toContain(`href="${SUPPORT_MAILTO}"`);
     expect(footer).toContain(SUPPORT_EMAIL);
   });

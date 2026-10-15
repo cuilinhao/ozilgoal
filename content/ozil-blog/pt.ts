@@ -41,7 +41,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         id: "foto-ou-template",
         title: "O que você muda na sua versão",
         blocks: [
-          { type: "p", text: "No [gerador do gol do Özil](/ozil-goal-generator#generator), sua contribuição é uma foto de você ou de outro adulto que autorizou aparecer. A cena usa um template fixo. Não existe campo de prompt, seletor de roupa ou controle de duração nesse formulário." },
+          { type: "p", text: "No [gerador do gol do Özil](/#generator), sua contribuição é uma foto de você ou de outro adulto que autorizou aparecer. A cena usa um template fixo. Não existe campo de prompt, seletor de roupa ou controle de duração nesse formulário." },
           { type: "p", text: "O formato atual usa MiniMax H3 para solicitar um vídeo de 15 segundos, vertical 9:16, em 768p, com som. O objetivo é preservar a aparência e a roupa da referência, mas rosto, mãos e tecido ainda podem variar entre os quadros." },
         ],
       },
@@ -50,7 +50,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         title: "Como participar com uma foto",
         blocks: [
           { type: "p", text: "Toque em **Add one clear photo**, que significa adicionar uma foto nítida. Confirme a autorização de uso da imagem, entre na conta e pressione **Make my video**, ou “fazer meu vídeo”. Ao terminar, **Download video** permite baixar o arquivo." },
-          { type: "p", text: "Cada nova geração custa **{ozilCredits} créditos** do saldo compartilhado da conta. Consulte os [pacotes de créditos](/pricing) antes de começar. Criar uma conta não torna a geração gratuita. O [passo a passo em português](/ozil-goal-generator/blog/como-fazer-gol-do-ozil-com-ia) explica o envio e o acompanhamento." },
+          { type: "p", text: "Cada nova geração custa **{ozilCredits} créditos** da sua conta Ozil Goal Generator. Consulte os [pacotes de créditos](/pricing) antes de começar. Criar uma conta não torna a geração gratuita. O [passo a passo em português](/ozil-goal-generator/blog/como-fazer-gol-do-ozil-com-ia) explica o envio e o acompanhamento." },
         ],
       },
       {
@@ -92,7 +92,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         title: "1. Prepare a foto e confira o custo",
         blocks: [
           { type: "p", text: "Escolha uma imagem com apenas você ou outro adulto que concordou em participar. Prefira o rosto visível, boa iluminação e o corpo inteiro, se possível. JPG, PNG e WebP são aceitos; mantenha o arquivo abaixo de 10 MB para evitar problemas no envio." },
-          { type: "p", text: "Cada nova geração utiliza **{ozilCredits} créditos** do saldo compartilhado da conta. Confira a [página de créditos](/pricing) e o valor mostrado no formulário. As estimativas de quantidade de vídeos de outros modelos ou configurações não servem para calcular o custo deste template." },
+          { type: "p", text: "Cada nova geração utiliza **{ozilCredits} créditos** da sua conta Ozil Goal Generator. Confira a [página de créditos](/pricing) e o valor mostrado no formulário. A página de preços mostra quantos vídeos Ozil cada pacote cobre." },
         ],
       },
       {
@@ -100,7 +100,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         title: "2. Adicione a imagem no formulário",
         blocks: [
           { type: "ol", items: [
-            "Abra o [gerador do gol do Özil](/ozil-goal-generator#generator) no navegador.",
+            "Abra o [gerador do gol do Özil](/#generator) no navegador.",
             "Em **Your photo** (“sua foto”), toque em **Add one clear photo** (“adicionar uma foto nítida”) e escolha o arquivo. Também é possível arrastá-lo para a área de envio.",
             "Confira a prévia. Se escolheu a imagem errada, toque nela para selecionar outra antes de iniciar.",
             "Marque a confirmação de que você tem autorização para usar a imagem e aceita os termos. Ela também informa que o resultado será gerado por IA.",
@@ -194,12 +194,12 @@ export const portuguesePosts: OzilBlogPost[] = [
         title: "Envie a foto e confirme a geração",
         blocks: [
           { type: "ol", items: [
-            "Entre no [gerador do gol do Özil](/ozil-goal-generator#generator) e localize **Your photo** (“sua foto”).",
+            "Entre no [gerador do gol do Özil](/#generator) e localize **Your photo** (“sua foto”).",
             "Toque em **Add one clear photo** (“adicionar uma foto nítida”) e escolha o arquivo preparado.",
             "Confira a prévia, marque o consentimento e entre na sua conta.",
             "Confira o custo de **{ozilCredits} créditos** e clique em **Make my video** (“fazer meu vídeo”).",
           ] },
-          { type: "p", text: "O template solicita 15 segundos em 9:16, 768p, com som, usando MiniMax H3. Seu saldo é compartilhado com os outros geradores da conta. O formulário não aceita uma segunda foto para corrigir o rosto nem um prompt para ajustar a roupa." },
+          { type: "p", text: "O template solicita 15 segundos em 9:16, 768p, com som, usando MiniMax H3. Seu saldo pertence a este site e não é transferido de outros serviços. O formulário não aceita uma segunda foto para corrigir o rosto nem um prompt para ajustar a roupa." },
         ],
       },
       {
@@ -279,7 +279,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         id: "quando-usar-template",
         title: "Quando o template pronto faz mais sentido",
         blocks: [
-          { type: "p", text: "Se você quer enviar uma foto e seguir o fluxo pronto, use o [gerador do gol do Özil](/ozil-goal-generator#generator). Ele solicita um vídeo de 15 segundos, 9:16, 768p, com som, usando MiniMax H3, por **{ozilCredits} créditos** compartilhados da conta." },
+          { type: "p", text: "Se você quer enviar uma foto e seguir o fluxo pronto, use o [gerador do gol do Özil](/#generator). Ele solicita um vídeo de 15 segundos, 9:16, 768p, com som, usando MiniMax H3, por **{ozilCredits} créditos** da sua conta Ozil Goal Generator." },
           { type: "p", text: "Nesse caminho, basta adicionar a foto, confirmar o consentimento e tocar em **Make my video**. Para acompanhar cada etapa, veja [como fazer o vídeo com IA](/ozil-goal-generator/blog/como-fazer-gol-do-ozil-com-ia)." },
         ],
       },

@@ -6,24 +6,21 @@ import { LanguageSwitcher } from "@/components/i18n/language-switcher";
 import { stripLocale } from "@/lib/i18n/routing";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { CircleHelp, Clapperboard, ListChecks, Menu, Music2, Newspaper, X, Zap } from "lucide-react";
+import { CircleHelp, Clapperboard, ListChecks, Menu, Newspaper, X, Zap } from "lucide-react";
 import { useAuth } from "./auth-provider";
-import { GeneratorMenu } from "./generator-menu";
 
 const links = [
+  { label: "Make a video", href: "/#generator", icon: Clapperboard },
   { label: "How It Works", href: "/#how-it-works", icon: ListChecks },
   { label: "FAQ", href: "/#faq", icon: CircleHelp },
   { label: "Pricing", href: "/pricing", icon: Zap },
-  { label: "Showcase", href: "/showcases", icon: Clapperboard },
-  { label: "AI Rap Song Generator", href: "/ai-rap-song-generator", icon: Music2 },
-  { label: "Blog", href: "/blog", icon: Newspaper },
+  { label: "Blog", href: "/ozil-goal-generator/blog", icon: Newspaper },
 ];
 
 const isActive = (pathname: string, href: string) => pathname === href || (href.endsWith("/blog") && pathname.startsWith(`${href}/`));
 
 export function SiteHeader() {
   const pathname = stripLocale(usePathname());
-  const isOzil = pathname === "/ozil-goal-generator" || pathname.startsWith("/ozil-goal-generator/");
   const isOzilBlog = /^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname);
   const t = useTranslations();
   const { user, credits, openSignIn, logout } = useAuth();
@@ -43,15 +40,13 @@ export function SiteHeader() {
     document.addEventListener("pointerdown", outside);
     return () => { document.removeEventListener("keydown", escape); document.removeEventListener("pointerdown", outside); };
   }, [menuOpen]);
-  const contextLinks = links.map(link => link.href === "/blog" && isOzil ? { ...link, href: "/ozil-goal-generator/blog" } : link);
-  const navigationLinks = (mobile = false) => contextLinks.map(({ label, href, icon: Icon }) => href === "/ai-rap-song-generator"
-    ? <GeneratorMenu key={href} pathname={pathname} mobile={mobile} onNavigate={close}/>
-    : <Link className={isActive(pathname, href) ? "active" : ""} aria-current={isActive(pathname, href) ? "page" : undefined} href={href} key={href} onClick={close}><Icon size={mobile ? 17 : 15} strokeWidth={1.8}/>{t(label)}</Link>);
+  const navigationLinks = (mobile = false) => links.map(({ label, href, icon: Icon }) =>
+    <Link className={isActive(pathname, href) ? "active" : ""} aria-current={isActive(pathname, href) ? "page" : undefined} href={href} key={href} onClick={close}><Icon size={mobile ? 17 : 15} strokeWidth={1.8}/>{t(label)}</Link>);
   return (
     <header className="site-header" ref={header}>
       <div className="site-header-inner">
-        <Link className="brand" href="/" onClick={close} aria-label={t("LobbyDuo home")}>
-          <span className="brand-logo" aria-hidden="true">L</span><span>LobbyDuo</span>
+        <Link className="brand" href="/" onClick={close} aria-label={t("Ozil Goal Generator home")}>
+          <span className="brand-logo" aria-hidden="true">O</span><span>Ozil Goal Generator</span>
         </Link>
         <nav className="desktop-nav" aria-label={t("Primary navigation")}>
           {navigationLinks()}

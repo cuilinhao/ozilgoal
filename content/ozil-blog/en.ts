@@ -21,7 +21,7 @@ export const englishPosts: OzilBlogPost[] = [
         title: "What you are looking at",
         blocks: [
           { type: "p", text: "The version shown in our reference sample takes place on a floodlit pitch. The main person wears everyday clothes, so the scene looks unexpected before anything happens. Then the action arrives in three clear beats: the goalkeeper's dive, the bouncing ball and chest control, and the defender's missed slide." },
-          { type: "p", text: "These details describe a recognizable format, not a rule that every clip must follow. Different tools may change the camera, timing, clothes or ending. A clip can use the same idea without reproducing the movement exactly. Watch the [Ozil Goal sample](/ozil-goal-generator) to see the specific sequence our template uses." },
+          { type: "p", text: "These details describe a recognizable format, not a rule that every clip must follow. Different tools may change the camera, timing, clothes or ending. A clip can use the same idea without reproducing the movement exactly. Watch the [Ozil Goal sample](/) to see the specific sequence our template uses." },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const englishPosts: OzilBlogPost[] = [
         title: "Is it a filter, face swap or generated video?",
         blocks: [
           { type: "p", text: "Those labels describe different processes. A camera filter changes a live or recorded image. A face swap replaces a face in existing footage. A photo-to-video generator synthesizes movement and a scene using a reference image. You cannot reliably identify the production method just from a caption saying “Ozil effect.”" },
-          { type: "p", text: "Our [Ozil Goal generator](/ozil-goal-generator#generator) uses the third route: one photo supplies the person, while a fixed motion reference guides the sequence. It currently uses MiniMax H3 for a 15-second, 9:16, 768p video. Identity, clothing and ball movement can still vary between results." },
+          { type: "p", text: "Our [Ozil Goal generator](/#generator) uses the third route: one photo supplies the person, while a fixed motion reference guides the sequence. It currently uses MiniMax H3 for a 15-second, 9:16, 768p video. Identity, clothing and ball movement can still vary between results." },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const englishPosts: OzilBlogPost[] = [
         title: "How to make a version that people recognize",
         blocks: [
           { type: "p", text: "Start with a clear photo of one adult: yourself or someone who agreed to appear. A visible face and, where possible, a head-to-toe view give the generator more useful information than a tiny face cropped from a group picture. Everyday clothing can supply the contrast without an elaborate caption." },
-          { type: "p", text: "Upload the photo, confirm consent and select **Make my video**. Sign in when prompted and check that your shared balance covers {ozilCredits} credits. The template needs no typed prompt. Our [photo walkthrough](/ozil-goal-generator/blog/how-to-make-ozil-goal-ai-video) explains the upload, waiting and download steps." },
+          { type: "p", text: "Upload the photo, confirm consent and select **Make my video**. Sign in when prompted and check that your balance covers {ozilCredits} credits. The template needs no typed prompt. Our [photo walkthrough](/ozil-goal-generator/blog/how-to-make-ozil-goal-ai-video) explains the upload, waiting and download steps." },
         ],
       },
       {
@@ -57,7 +57,7 @@ export const englishPosts: OzilBlogPost[] = [
             "Check the ball and feet at the chest touch and slide; these are useful places to spot visual errors.",
             "Describe it as an AI recreation, and get the pictured person's agreement before posting.",
           ] },
-          { type: "note", text: "Written by the migosai/LobbyDuo team. Ozil Goal is an independent tool, with no affiliation to Mesut Özil, a club, league or broadcaster. This guide explains the format; it does not claim a verified launch date or platform-wide viewing figures." },
+          { type: "note", text: "Written by the Ozil Goal Generator team. Ozil Goal is an independent tool, with no affiliation to Mesut Özil, a club, league or broadcaster. This guide explains the format; it does not claim a verified launch date or platform-wide viewing figures." },
         ],
       },
     ],
@@ -116,8 +116,8 @@ export const englishPosts: OzilBlogPost[] = [
         id: "lower-setup",
         title: "Templates reduce the work of joining in",
         blocks: [
-          { type: "p", text: "A fixed photo template removes several production decisions. You do not need to hire players, film a pitch or coordinate the keeper and defender yourself. In our [Ozil Goal generator](/ozil-goal-generator#generator), you upload one adult's authorized photo, confirm consent and press **Make my video**. There is no prompt field." },
-          { type: "p", text: "Convenience still has a cost and a quality limit. The current output is 15 seconds, vertical 9:16 and 768p through MiniMax H3; each generation uses {ozilCredits} shared credits. Results vary. Read the [free-versus-paid guide](/ozil-goal-generator/blog/can-you-make-ozil-goal-video-free) before treating a template as a free filter." },
+          { type: "p", text: "A fixed photo template removes several production decisions. You do not need to hire players, film a pitch or coordinate the keeper and defender yourself. In our [Ozil Goal generator](/#generator), you upload one adult's authorized photo, confirm consent and press **Make my video**. There is no prompt field." },
+          { type: "p", text: "Convenience still has a cost and a quality limit. The current output is 15 seconds, vertical 9:16 and 768p through MiniMax H3; each generation uses {ozilCredits} credits. Results vary. Read the [free-versus-paid guide](/ozil-goal-generator/blog/can-you-make-ozil-goal-video-free) before treating a template as a free filter." },
         ],
       },
       {
@@ -126,7 +126,7 @@ export const englishPosts: OzilBlogPost[] = [
         blocks: [
           { type: "p", text: "Seeing several similar clips is a reason to investigate the format, but it does not establish a worldwide audience total or identify the original creator. We do not have verified comparative engagement data, an authenticated first upload or evidence that one app produced every version." },
           { type: "p", text: "Use the trend as a creative starting point. Preview the result at normal phone size, keep the face recognizable, and make the caption honest about AI. For the football context and the distinction between the historical goal and generated scenes, read [what the Ozil goal trend is](/ozil-goal-generator/blog/what-is-ozil-goal-trend)." },
-          { type: "note", text: "This editorial analysis is written by migosai/LobbyDuo, which operates the linked generator. The observations explain the format's possible appeal; they are not an independent performance study or a promise of viral results." },
+          { type: "note", text: "This editorial analysis is written by Ozil Goal Generator, which operates the linked generator. The observations explain the format's possible appeal; they are not an independent performance study or a promise of viral results." },
         ],
       },
     ],
@@ -139,7 +139,7 @@ export const englishPosts: OzilBlogPost[] = [
     sources: [
       { label: "Ozil Goal reference sample and generator", url: "/ozil-goal-generator" },
       { label: "Ozil Goal AI template: fixed sequence and requirements", url: "/ozil-goal-generator/ozil-goal-ai-template" },
-      { label: "migosai credit packs", url: "/pricing" },
+      { label: "Ozil Goal Generator credit packs", url: "/pricing" },
     ],
   },
   {
@@ -155,7 +155,7 @@ export const englishPosts: OzilBlogPost[] = [
     eyebrow: "OZIL GOAL · PHOTO WALKTHROUGH",
     datePublished: "2026-10-15",
     dateModified: "2026-10-15",
-    intro: "To make an Ozil goal AI video with your photo, open the generator, add one clear adult portrait or full-body photo, confirm permission and select **Make my video**. Sign in and have {ozilCredits} shared credits available. The scene is preset, so you do not need to write a prompt or upload football footage.",
+    intro: "To make an Ozil goal AI video with your photo, open the generator, add one clear adult portrait or full-body photo, confirm permission and select **Make my video**. Sign in and have {ozilCredits} credits available. The scene is preset, so you do not need to write a prompt or upload football footage.",
     sections: [
       {
         id: "choose-photo",
@@ -173,7 +173,7 @@ export const englishPosts: OzilBlogPost[] = [
         id: "upload-and-consent",
         title: "2. Upload it and confirm permission",
         blocks: [
-          { type: "p", text: "Open the [Ozil Goal generator](/ozil-goal-generator#generator). Select **Add one clear photo**, or drag the file into the photo area. Check the preview before continuing. You can select the photo again to replace it or use **Remove photo** if you picked the wrong file." },
+          { type: "p", text: "Open the [Ozil Goal generator](/#generator). Select **Add one clear photo**, or drag the file into the photo area. Check the preview before continuing. You can select the photo again to replace it or use **Remove photo** if you picked the wrong file." },
           { type: "p", text: "Tick the consent box only when its statement is true: the photo shows you or someone who agreed to appear, you accept the terms, and you understand that the result is AI-generated. You do not need to select a stadium, model, duration or aspect ratio. Those choices are fixed for this template." },
         ],
       },
@@ -182,7 +182,7 @@ export const englishPosts: OzilBlogPost[] = [
         title: "3. Sign in and check the generation cost",
         blocks: [
           { type: "p", text: "The page supports Google or email sign-in. If you are signed out, **Make my video** opens sign-in and keeps the selected photo in place. After signing in, confirm that the displayed balance covers {ozilCredits} credits; use **Buy credits** to view the available packs if needed." },
-          { type: "p", text: "These are the shared credits in your migosai account, not a separate Ozil subscription. The current template uses MiniMax H3 and requests a 15-second, 9:16, 768p clip with sound. New account registration does not include a free Ozil render. See [credit packs](/pricing) for current purchase options." },
+          { type: "p", text: "These are credits purchased for your Ozil Goal Generator account. The current template uses MiniMax H3 and requests a 15-second, 9:16, 768p clip with sound. New account registration does not include a free Ozil render. See [credit packs](/pricing) for current purchase options." },
         ],
       },
       {
@@ -198,8 +198,8 @@ export const englishPosts: OzilBlogPost[] = [
         title: "5. Handle a blocked upload or disappointing result",
         blocks: [
           { type: "p", text: "An unsupported image message means you should export a genuine JPG, PNG or WebP; simply renaming a file extension does not convert it. For an oversized image, reduce its dimensions or compression while keeping the face clear. If consent or credits are missing, resolve the message before submitting again." },
-          { type: "p", text: "Failed generations are refunded through the existing workflow. Check the error and generation record in My Videos before retrying. A completed clip with imperfect likeness is different from a failed job: do not assume that every unwanted result receives an automatic refund. For a new attempt, improve the source photo first." },
-          { type: "note", text: "This walkthrough is maintained by migosai/LobbyDuo and follows this generator's controls. To direct your own camera or ending in another tool, use the separate [Ozil prompt guide](/ozil-goal-generator/blog/ozil-goal-ai-video-prompt)." },
+          { type: "p", text: "Failed generations return credits to your balance. Check the error and generation record in My Videos before retrying. A completed clip with imperfect likeness is different from a failed job: do not assume that every unwanted result receives an automatic refund. For a new attempt, improve the source photo first." },
+          { type: "note", text: "This walkthrough is maintained by Ozil Goal Generator and follows this generator's controls. To direct your own camera or ending in another tool, use the separate [Ozil prompt guide](/ozil-goal-generator/blog/ozil-goal-ai-video-prompt)." },
         ],
       },
     ],
@@ -211,8 +211,8 @@ export const englishPosts: OzilBlogPost[] = [
     ],
     sources: [
       { label: "Ozil Goal generator: upload, consent and download", url: "/ozil-goal-generator#generator" },
-      { label: "migosai credit packs", url: "/pricing" },
-      { label: "migosai photo privacy policy", url: "/privacy-policy" },
+      { label: "Ozil Goal Generator credit packs", url: "/pricing" },
+      { label: "Ozil Goal Generator privacy policy", url: "/privacy-policy" },
     ],
   },
   {
@@ -228,7 +228,7 @@ export const englishPosts: OzilBlogPost[] = [
     eyebrow: "OZIL GOAL · TOOL CHOICES",
     datePublished: "2026-10-15",
     dateModified: "2026-10-15",
-    intro: "The [migosai/LobbyDuo Ozil Goal generator](/ozil-goal-generator) can make this effect from one photo in your browser. Editing apps and general AI video tools offer other workflows, but an “Ozil template” label alone does not tell you what a tool actually generates. Check its inputs, sample and final export requirements before choosing.",
+    intro: "[Ozil Goal Generator](/) can make this effect from one photo in your browser. Editing apps and general AI video tools offer other workflows, but an “Ozil template” label alone does not tell you what a tool actually generates. Check its inputs, sample and final export requirements before choosing.",
     sections: [
       {
         id: "choose-workflow",
@@ -246,7 +246,7 @@ export const englishPosts: OzilBlogPost[] = [
         id: "browser-template",
         title: "The browser route: one photo and a preset scene",
         blocks: [
-          { type: "p", text: "Our generator accepts one JPG, PNG or WebP up to 10 MB. You confirm consent and choose **Make my video**, signing in if needed. It currently uses MiniMax H3 for a 15-second, 9:16, 768p video, with {ozilCredits} credits taken from your shared account balance." },
+          { type: "p", text: "Our generator accepts one JPG, PNG or WebP up to 10 MB. You confirm consent and choose **Make my video**, signing in if needed. It currently uses MiniMax H3 for a 15-second, 9:16, 768p video, with {ozilCredits} credits taken from your account balance." },
           { type: "p", text: "This route fits someone who wants the sample's general action without writing instructions. It does not expose camera, ending or prompt controls. The motion reference guides the result, but likeness and movement can vary. Follow the [photo walkthrough](/ozil-goal-generator/blog/how-to-make-ozil-goal-ai-video) if this matches your needs." },
         ],
       },
@@ -276,7 +276,7 @@ export const englishPosts: OzilBlogPost[] = [
             "Read the final cost, watermark, download and failed-generation terms before committing.",
             "Look for clear photo handling and permission requirements.",
           ] },
-          { type: "note", text: "Written by the migosai/LobbyDuo team, which operates one of the workflows discussed. This is a practical comparison of approaches, not an independent best-app ranking or a claim that we tested every competitor." },
+          { type: "note", text: "Written by the Ozil Goal Generator team, which operates one of the workflows discussed. This is a practical comparison of approaches, not an independent best-app ranking or a claim that we tested every competitor." },
         ],
       },
     ],
@@ -343,8 +343,8 @@ export const englishPosts: OzilBlogPost[] = [
         id: "fixed-template-alternative",
         title: "When a prompt is unnecessary",
         blocks: [
-          { type: "p", text: "If the sample's general action is what you want, the [fixed Ozil Goal generator](/ozil-goal-generator#generator) takes one photo and handles the sequence for you. It currently requests 15 seconds in 9:16 at 768p using MiniMax H3, for {ozilCredits} shared credits. Builder choices do not alter that generator." },
-          { type: "note", text: "Written by migosai/LobbyDuo. The example above is an editable public writing aid, not the private generation instructions or an independently verified prompt that works identically across models. See [which app makes the effect](/ozil-goal-generator/blog/which-app-makes-ozil-goal-effect) for the workflow tradeoffs." },
+          { type: "p", text: "If the sample's general action is what you want, the [fixed Ozil Goal generator](/#generator) takes one photo and handles the sequence for you. It currently requests 15 seconds in 9:16 at 768p using MiniMax H3, for {ozilCredits} credits. Builder choices do not alter that generator." },
+          { type: "note", text: "Written by Ozil Goal Generator. The example above is an editable public writing aid, not the private generation instructions or an independently verified prompt that works identically across models. See [which app makes the effect](/ozil-goal-generator/blog/which-app-makes-ozil-goal-effect) for the workflow tradeoffs." },
         ],
       },
     ],
@@ -373,7 +373,7 @@ export const englishPosts: OzilBlogPost[] = [
     eyebrow: "OZIL GOAL · COST GUIDE",
     datePublished: "2026-10-15",
     dateModified: "2026-10-15",
-    intro: "The Ozil Goal generator on migosai/LobbyDuo is paid: one video costs **{ozilCredits} shared credits**, and a new account does not include a free Ozil generation. You can view the sample and copy text from the separate prompt builder without submitting a paid render. We have not verified a third-party offer that guarantees this full effect for free.",
+    intro: "Ozil Goal Generator is paid: one video costs **{ozilCredits} credits**, and a new account does not include a free Ozil generation. You can view the sample and copy text from the separate prompt builder without submitting a paid render. We have not verified a third-party offer that guarantees this full effect for free.",
     sections: [
       {
         id: "what-free-means",
@@ -387,8 +387,8 @@ export const englishPosts: OzilBlogPost[] = [
         id: "current-cost",
         title: "What a generation here costs",
         blocks: [
-          { type: "p", text: "The [Ozil Goal generator](/ozil-goal-generator#generator) uses {ozilCredits} credits from your existing migosai balance for each new video. There is no separate Ozil credit balance. The current fixed configuration is MiniMax H3, 15 seconds, vertical 9:16 and 768p with sound." },
-          { type: "p", text: "Sign in to see your available credits and check [current packs](/pricing) if the balance is too low. Estimate the number of Ozil attempts by dividing the available credits by {ozilCredits} and rounding down. Video-count examples for other models, lengths or resolutions should not be reused as an Ozil allowance." },
+          { type: "p", text: "The [Ozil Goal generator](/#generator) uses {ozilCredits} credits from your Ozil Goal Generator balance for each new video. Balances from other services do not transfer. The current fixed configuration is MiniMax H3, 15 seconds, vertical 9:16 and 768p with sound." },
+          { type: "p", text: "Sign in to see your available credits and check [current packs](/pricing) if the balance is too low. Estimate the number of Ozil attempts by dividing the available credits by {ozilCredits} and rounding down." },
         ],
       },
       {
@@ -419,19 +419,19 @@ export const englishPosts: OzilBlogPost[] = [
         blocks: [
           { type: "p", text: "Failed generations return credits through the existing generation workflow. Check the record in My Videos and read its error before retrying. If the job is still running, wait for its status instead of assuming it failed because the preview has not appeared yet." },
           { type: "p", text: "A completed video with imperfect motion is different from a failed generation. Results can vary, and the failed-job refund statement does not promise unlimited free retries for every aesthetic preference. Plan your budget around paid attempts and review the displayed terms before submitting." },
-          { type: "note", text: "This guide is written by the migosai/LobbyDuo team. It explains our current workflow and how to inspect alternatives; it is not an independent cheapest-tool ranking." },
+          { type: "note", text: "This guide is written by the Ozil Goal Generator team. It explains our current workflow and how to inspect alternatives; it is not an independent cheapest-tool ranking." },
         ],
       },
     ],
     faqs: [
       { question: "Do I receive a free Ozil video when I sign up?", answer: "No. New accounts do not include credits for a free Ozil generation. Check your balance before submitting." },
       { question: "Is copying the Ozil prompt free?", answer: "You can use the public builder and copy its text without submitting a paid render here. The external video tool may charge to use it." },
-      { question: "Are Ozil credits separate from my existing balance?", answer: "No. The generator uses your shared migosai account credits, at {ozilCredits} credits per video." },
+      { question: "Which credits pay for an Ozil video?", answer: "Each video uses {ozilCredits} credits from your Ozil Goal Generator account. Balances from other sites do not transfer." },
       { question: "Can I download the public sample as my personalized video?", answer: "The sample is a demonstration with a different reference person. Creating a clip from your own photo requires a new generation." },
     ],
     sources: [
       { label: "Ozil Goal generation cost and workflow", url: "/ozil-goal-generator" },
-      { label: "migosai credit packs and pricing", url: "/pricing" },
+      { label: "Ozil Goal Generator credit packs and pricing", url: "/pricing" },
       { label: "Ozil Goal public prompt builder", url: "/ozil-goal-generator/ozil-goal-ai-prompt" },
     ],
   },

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>LobbyDuo</title>
+  <title>Ozil Goal Generator</title>
   <rect width="64" height="64" rx="12" fill="#000"/>
-  <path d="M18 12h10v31h20v10H18z" fill="#ec352d"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#ec352d" stroke-width="9"/>
 </svg>

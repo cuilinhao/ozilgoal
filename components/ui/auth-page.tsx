@@ -16,7 +16,7 @@ export function AuthPage({ kind }: { kind: "sign-in" | "sign-up" }) {
   }, [loading, user]);
   return <main className="mi-auth-page">
     <header className="mi-auth-header">
-      <Link href="/" className="mi-auth-brand"><span className="mi-brand-mark">L</span><span>LobbyDuo</span></Link>
+      <Link href="/" className="mi-auth-brand"><span className="mi-brand-mark">O</span><span>Ozil Goal Generator</span></Link>
       <LanguageSwitcher className="mi-language" />
     </header>
     <div className="mi-auth-page-content">

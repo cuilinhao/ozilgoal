@@ -28,7 +28,7 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'como-reconocerlo',
         title: 'Cómo reconocer una recreación con IA',
         blocks: [
-          { type: 'p', text: 'La plantilla de [Ozil Goal](/ozil-goal-generator) organiza la escena alrededor de tres acciones: evitar la salida del portero, controlar una pelota que sube y vuelve a caer, y esquivar una entrada deslizante mientras el protagonista avanza. La foto aporta su apariencia; la referencia de movimiento orienta la secuencia.' },
+          { type: 'p', text: 'La plantilla de [Ozil Goal](/) organiza la escena alrededor de tres acciones: evitar la salida del portero, controlar una pelota que sube y vuelve a caer, y esquivar una entrada deslizante mientras el protagonista avanza. La foto aporta su apariencia; la referencia de movimiento orienta la secuencia.' },
           { type: 'p', text: 'El objetivo es conservar la cara, el peinado y la ropa del protagonista. Eso no convierte el resultado en una copia exacta del partido: la IA puede variar el movimiento, el encuadre y los contactos con el balón. Tampoco garantiza que cada intento termine mostrando un gol.' },
         ],
       },
@@ -52,7 +52,7 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'crear-tu-version',
         title: 'Cómo empezar con tu versión',
         blocks: [
-          { type: 'p', text: 'En migosai puedes subir una foto de una persona adulta, confirmar su consentimiento e iniciar sesión. La generación usa un formato fijo de 15 segundos con sonido y cuesta {ozilCredits} créditos. No requiere escribir un prompt. Consulta el [tutorial paso a paso](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) y presenta el resultado como una recreación con IA.' },
+          { type: 'p', text: 'En Ozil Goal Generator puedes subir una foto de una persona adulta, confirmar su consentimiento e iniciar sesión. La generación usa un formato fijo de 15 segundos con sonido y cuesta {ozilCredits} créditos. No requiere escribir un prompt. Consulta el [tutorial paso a paso](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) y presenta el resultado como una recreación con IA.' },
         ],
       },
     ],
@@ -64,7 +64,7 @@ export const spanishPosts: OzilBlogPost[] = [
     sources: [
       { label: 'UEFA: Özil completa la remontada del Arsenal en Ludogorets', url: 'https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/' },
       { label: 'CapCut: ejemplo de plantilla «OZIL» y archivos requeridos', url: 'https://www.capcut.com/template-detail/OZIL/7620110751889493253' },
-      { label: 'Ozil Goal: generador y condiciones del formato', url: 'https://migosai.design/ozil-goal-generator' },
+      { label: 'Ozil Goal: generador y condiciones del formato', url: 'https://ozilgoal-aivideo.com/' },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const spanishPosts: OzilBlogPost[] = [
     eyebrow: 'OZIL GOAL · TUTORIAL',
     datePublished: '2026-10-15',
     dateModified: '2026-10-15',
-    intro: 'Para hacer el **video del gol de Özil con IA** en migosai, sube una foto, confirma que puedes usarla, inicia sesión y pulsa «Make my video» con saldo suficiente. La plantilla ya incluye las instrucciones y la referencia de movimiento. Cada generación cuesta {ozilCredits} créditos; no necesitas grabarte jugando ni escribir un prompt.',
+    intro: 'Para hacer el **video del gol de Özil con IA** en Ozil Goal Generator, sube una foto, confirma que puedes usarla, inicia sesión y pulsa «Make my video» con saldo suficiente. La plantilla ya incluye las instrucciones y la referencia de movimiento. Cada generación cuesta {ozilCredits} créditos; no necesitas grabarte jugando ni escribir un prompt.',
     sections: [
       {
         id: 'antes-de-empezar',
@@ -95,7 +95,7 @@ export const spanishPosts: OzilBlogPost[] = [
         title: '2. Sube la imagen y confirma el consentimiento',
         blocks: [
           { type: 'ol', items: [
-            'Abre el [generador Ozil Goal](/ozil-goal-generator#generator) y toca «Add one clear photo», o arrastra el archivo al área de carga.',
+            'Abre el [generador Ozil Goal](/#generator) y toca «Add one clear photo», o arrastra el archivo al área de carga.',
             'Comprueba la miniatura. Si elegiste otra imagen por error, toca la foto para sustituirla antes de iniciar la generación.',
             'Marca la confirmación de que usas una foto tuya o de alguien que aceptó aparecer, y acepta los términos indicados. El formulario también aclara que el video será generado con IA.',
           ] },
@@ -107,7 +107,7 @@ export const spanishPosts: OzilBlogPost[] = [
         title: '3. Inicia sesión y comprueba el saldo',
         blocks: [
           { type: 'p', text: 'Puedes acceder con Google o correo electrónico. El registro no incluye créditos gratuitos: necesitas {ozilCredits} créditos para un video nuevo. Si falta saldo, abre [Precios](/pricing) y revisa el paquete antes de comprar. Son paquetes de pago único, sin suscripción.' },
-          { type: 'p', text: 'El saldo se comparte con los otros generadores del sitio, pero sus costos pueden ser diferentes. En particular, las estimaciones de videos Wan de la página de precios no indican cuántas recreaciones Ozil incluye un paquete.' },
+          { type: 'p', text: 'Cada vídeo Ozil usa {ozilCredits} créditos de tu cuenta de Ozil Goal Generator. La página de precios muestra cuántos vídeos permite cada paquete.' },
         ],
       },
       {
@@ -134,9 +134,9 @@ export const spanishPosts: OzilBlogPost[] = [
       { question: '¿El sonido es el audio original del partido?', answer: 'El formato solicita sonido para la escena de fútbol. No promete una copia del audio de la retransmisión ni una canción concreta.' },
     ],
     sources: [
-      { label: 'Ozil Goal: formulario, formato y descarga', url: 'https://migosai.design/ozil-goal-generator' },
-      { label: 'migosai: paquetes de créditos y pago único', url: 'https://migosai.design/pricing' },
-      { label: 'Ozil Goal: constructor público de prompts', url: 'https://migosai.design/ozil-goal-generator/ozil-goal-ai-prompt' },
+      { label: 'Ozil Goal: formulario, formato y descarga', url: 'https://ozilgoal-aivideo.com/' },
+      { label: 'Ozil Goal Generator: paquetes de créditos y pago único', url: 'https://ozilgoal-aivideo.com/pricing' },
+      { label: 'Ozil Goal: constructor público de prompts', url: 'https://ozilgoal-aivideo.com/ozil-goal-generator/ozil-goal-ai-prompt' },
     ],
   },
   {
@@ -152,7 +152,7 @@ export const spanishPosts: OzilBlogPost[] = [
     eyebrow: 'OZIL GOAL · GUÍA DE FOTOS',
     datePublished: '2026-10-15',
     dateModified: '2026-10-15',
-    intro: 'Puedes hacer una recreación del **gol de Özil con tu propia foto** usando una imagen de referencia en el [generador Ozil Goal](/ozil-goal-generator). No hace falta una foto tuya en un estadio: utiliza una imagen clara donde se reconozcan tu cara y tu ropa. La plantilla aporta el movimiento; cada generación cuesta {ozilCredits} créditos.',
+    intro: 'Puedes hacer una recreación del **gol de Özil con tu propia foto** usando una imagen de referencia en el [generador Ozil Goal](/). No hace falta una foto tuya en un estadio: utiliza una imagen clara donde se reconozcan tu cara y tu ropa. La plantilla aporta el movimiento; cada generación cuesta {ozilCredits} créditos.',
     sections: [
       {
         id: 'elegir-entre-fotos',
@@ -207,8 +207,8 @@ export const spanishPosts: OzilBlogPost[] = [
       { question: '¿Una foto de cuerpo entero es obligatoria?', answer: 'La interfaz la recomienda cuando sea posible. El archivo debe respetar los formatos y el límite de tamaño; mostrar el cuerpo entero aporta referencias adicionales de ropa y calzado.' },
     ],
     sources: [
-      { label: 'Ozil Goal: requisitos de foto y consentimiento', url: 'https://migosai.design/ozil-goal-generator' },
-      { label: 'Ozil Goal: herramienta independiente de prompts', url: 'https://migosai.design/ozil-goal-generator/ozil-goal-ai-prompt' },
+      { label: 'Ozil Goal: requisitos de foto y consentimiento', url: 'https://ozilgoal-aivideo.com/' },
+      { label: 'Ozil Goal: herramienta independiente de prompts', url: 'https://ozilgoal-aivideo.com/ozil-goal-generator/ozil-goal-ai-prompt' },
     ],
   },
   {
@@ -224,14 +224,14 @@ export const spanishPosts: OzilBlogPost[] = [
     eyebrow: 'OZIL GOAL · GRATIS Y PRECIOS',
     datePublished: '2026-10-15',
     dateModified: '2026-10-15',
-    intro: '**Generar el video del gol de Özil en migosai no es gratis:** cada solicitud nueva cuesta {ozilCredits} créditos y el registro no incluye créditos gratuitos. Sí puedes consultar las muestras y preparar un prompt sin pagar. En CapCut existen opciones gratuitas de edición, pero eso no demuestra que una plantilla concreta genere esta escena desde tu foto sin costo.',
+    intro: '**Generar el video del gol de Özil en Ozil Goal Generator no es gratis:** cada solicitud nueva cuesta {ozilCredits} créditos y el registro no incluye créditos gratuitos. Sí puedes consultar las muestras y preparar un prompt sin pagar. En CapCut existen opciones gratuitas de edición, pero eso no demuestra que una plantilla concreta genere esta escena desde tu foto sin costo.',
     sections: [
       {
         id: 'que-significa-gratis',
         title: 'Primero distingue qué parte es gratuita',
         blocks: [
           { type: 'p', text: 'La palabra «gratis» puede referirse a abrir una página, utilizar un editor o descargar un resultado. Son pasos distintos. Una vista previa gratuita no necesariamente incluye la generación, y un proyecto editable puede pedir un pago al exportar si contiene recursos premium.' },
-          { type: 'table', caption: 'Qué puedes hacer sin comprar créditos de migosai', headings: ['Actividad', 'Disponibilidad'], rows: [
+          { type: 'table', caption: 'Qué puedes hacer sin comprar créditos de Ozil Goal Generator', headings: ['Actividad', 'Disponibilidad'], rows: [
             ['Ver muestras y leer las guías Ozil Goal', 'Gratis'],
             ['Configurar y copiar el prompt público', 'Gratis; no genera el video'],
             ['Crear un video nuevo en Ozil Goal', '{ozilCredits} créditos'],
@@ -251,9 +251,9 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'costo-del-generador',
         title: 'Cuánto cuesta la ruta de generación desde una foto',
         blocks: [
-          { type: 'p', text: 'En [Ozil Goal](/ozil-goal-generator) la solicitud tiene un costo fijo de {ozilCredits} créditos. El formato es de 15 segundos, vertical 9:16, 768p y con sonido. No hay una opción gratuita de menor duración dentro de ese formulario.' },
-          { type: 'p', text: 'La [página de precios](/pricing) ofrece paquetes de pago único. Comprueba el saldo de tu cuenta y el precio vigente antes de comprar. Las estimaciones de videos Wan que aparecen allí corresponden a otro modelo y formato; no son el número de videos Ozil que puedes generar.' },
-          { type: 'p', text: 'Los créditos se comparten con otros generadores del sitio. Si ya tienes saldo suficiente, puedes usarlo sin comprar otro paquete, pero la nueva generación sigue consumiendo créditos.' },
+          { type: 'p', text: 'En [Ozil Goal](/) la solicitud tiene un costo fijo de {ozilCredits} créditos. El formato es de 15 segundos, vertical 9:16, 768p y con sonido. No hay una opción gratuita de menor duración dentro de ese formulario.' },
+          { type: 'p', text: 'La [página de precios](/pricing) ofrece paquetes de pago único. Comprueba el saldo de tu cuenta y el coste vigente antes de comprar. La página muestra cuántos vídeos Ozil permite cada paquete.' },
+          { type: 'p', text: 'El saldo pertenece a tu cuenta de Ozil Goal Generator y no se transfiere desde otros servicios. Si ya tienes saldo suficiente aquí, puedes usarlo sin comprar otro paquete, pero la nueva generación sigue consumiendo créditos.' },
         ],
       },
       {
@@ -278,12 +278,12 @@ export const spanishPosts: OzilBlogPost[] = [
       },
     ],
     faqs: [
-      { question: '¿Registrarme me da un video gratis?', answer: 'No. El registro actual de migosai no incluye créditos gratuitos y la generación Ozil cuesta {ozilCredits} créditos.' },
+      { question: '¿Registrarme me da un video gratis?', answer: 'No. El registro actual de Ozil Goal Generator no incluye créditos gratuitos y la generación Ozil cuesta {ozilCredits} créditos.' },
       { question: '¿Puedo usar el prompt sin pagar?', answer: 'Sí, puedes configurarlo y copiarlo gratis. Generar un video con ese texto es un proceso separado sujeto a las condiciones de la herramienta que utilices.' },
       { question: '¿Todas las plantillas de CapCut son gratuitas?', answer: 'No. Existen recursos gratuitos y opciones Pro. Revisa la plantilla concreta y sus condiciones de exportación en tu cuenta.' },
     ],
     sources: [
-      { label: 'migosai: precios y paquetes de créditos', url: 'https://migosai.design/pricing' },
+      { label: 'Ozil Goal Generator: precios y paquetes de créditos', url: 'https://ozilgoal-aivideo.com/pricing' },
       { label: 'CapCut: por qué una plantilla puede requerir pago', url: 'https://www.capcut.com/help/why-pay-to-edit-export-template' },
       { label: 'CapCut: disponibilidad y problemas de búsqueda de plantillas', url: 'https://www.capcut.com/help/problem-of-search-template' },
     ],

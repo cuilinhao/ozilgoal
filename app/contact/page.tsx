@@ -4,13 +4,13 @@ import { getTranslations, localizeMetadata } from "@/lib/i18n/server";
 import { localizePageContent } from "@/components/sections/localized-page-content";
 import { LegalPage } from "@/components/sections/legal-page";
 
-export async function generateMetadata() { return localizeMetadata({ title: "Contact", description: "Contact LobbyDuo support for billing, refunds, privacy requests and content reports." }); }
+export async function generateMetadata() { return localizeMetadata({ title: "Contact", description: "Contact Ozil Goal Generator support for billing, refunds, privacy requests and content reports." }); }
 
 const sections = [
   { id: "email-support", title: "Email Support", body: <><p>Email us at the address below. We aim to reply within two business days.</p><p><a href={SUPPORT_MAILTO}>{SUPPORT_EMAIL}</a></p></> },
   { id: "what-to-include", title: "What to Include", body: <ul><li>Billing or refunds: your account email and the order ID or Stripe receipt.</li><li>Generation problems: the generation ID or the time you submitted it, and what went wrong.</li><li>Privacy requests: the email you sign in with and what you would like us to do.</li><li>Content reports: a link to or description of the content and why it should be removed.</li></ul> },
   { id: "payments-and-refunds", title: "Payments and Refunds", body: <><p>Payments are processed by Stripe. Refund requests follow our Refund Policy. Never send passwords or full card numbers by email.</p><p><Link href="/refund-policy">Refund Policy</Link> · <Link href="/terms-of-service">Terms of Service</Link> · <Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/acceptable-use-policy">Acceptable Use Policy</Link></p></> },
-  { id: "about-lobbyduo", title: "About LobbyDuo", body: <p>LobbyDuo is an independent online service at migosai.design for creating AI duo videos and songs. It is not affiliated with migosai.com, Migos, Quavo, Takeoff, Quality Control Music or COLORS.</p> },
+  { id: "about-ozil-goal-generator", title: "About Ozil Goal Generator", body: <p>Ozil Goal Generator is an independent online service at ozilgoal-aivideo.com for creating AI football videos from one photo. It is not affiliated with or endorsed by Mesut Özil or any player, club, league, federation, or broadcaster.</p> },
 ];
 
 export default async function ContactPage() {

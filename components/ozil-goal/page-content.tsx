@@ -31,8 +31,8 @@ function readableText(node: SourceNode): string {
   return node.children.map(readableText).join('').replace(/\s+/g, ' ').trim();
 }
 function homeSchema(content: SourceNode, locale: Locale) {
-  const url = new URL(localizeHref('/ozil-goal-generator', locale), SITE_URL).href;
-  const publisher = { '@type': 'Organization', name: 'LobbyDuo', url: SITE_URL };
+  const url = new URL(localizeHref('/', locale), SITE_URL).href;
+  const publisher = { '@type': 'Organization', name: 'Ozil Goal Generator', url: SITE_URL };
   const instructions = elements(content, 'section').find(section =>
     elements(section, 'h2').some(heading => readableText(heading) === 'How to make the Ozil AI goal video'));
   const steps = instructions ? elements(instructions, 'ol')[0] : undefined;
@@ -59,17 +59,6 @@ function homeSchema(content: SourceNode, locale: Locale) {
     ],
   };
 }
-// The source footer is shared with six guides; only this landing page is rebranded.
-function homeFooterText(value: string) {
-  const labels: Record<string, string> = {
-    'Ozil Goal home': 'LobbyDuo Ozil Goal generator',
-    'Ozil ': 'Lobby',
-    'Goal': 'Duo',
-    ' Ozil Goal': ' LobbyDuo',
-    'Contact migosai support': 'Contact LobbyDuo support',
-  };
-  return text(labels[value] ?? value);
-}
 function renderNode(node: SourceNode, locale: Locale, key: string, formatText = text): ReactNode {
   if (typeof node === 'string') return formatText(node);
   if ('slot' in node) {
@@ -91,7 +80,7 @@ export async function OzilGoalPage({ slug = 'home' }: { slug?: OzilPageSlug }) {
   const content = pages[slug].content as SourceNode;
   return <>
     {slug === 'home' && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema(content, locale)).replace(/</g, '\\u003c') }} />}
-    <OzilShell>{renderNode(content, locale, slug)}{slug === 'home' && <OzilBlogPreview />}{renderNode(pages.footer as SourceNode, locale, 'footer', slug === 'home' ? homeFooterText : text)}</OzilShell>
+    <OzilShell>{renderNode(content, locale, slug)}{slug === 'home' && <OzilBlogPreview />}{renderNode(pages.footer as SourceNode, locale, 'footer')}</OzilShell>
   </>;
 }
 export function ozilMetadata(slug: OzilPageSlug) {

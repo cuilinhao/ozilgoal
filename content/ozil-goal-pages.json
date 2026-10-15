@@ -239,7 +239,7 @@
                         "class": "mt-4 max-w-xl text-[clamp(16.5px,2vw,19px)] leading-snug text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "Make an Ozil goal AI video from one photo with LobbyDuo. Named after Mesut Özil, the trend puts you on the ball as the keeper dives past, the ball bounces off your chest and a defender slides in and misses. Keep your own clothes. No CapCut, no prompt, no editing."
+                        "Make an Ozil goal AI video from one photo with Ozil Goal Generator. Named after Mesut Özil, the trend puts you on the ball as the keeper dives past, the ball bounces off your chest and a defender slides in and misses. Keep your own clothes. No CapCut, no prompt, no editing."
                       ]
                     },
                     {
@@ -299,7 +299,7 @@
                                 }
                               ]
                             },
-                            "Uses your shared credits"
+                            "Uses your credits"
                           ]
                         },
                         {
@@ -367,7 +367,7 @@
                                 }
                               ]
                             },
-                            "Your existing account"
+                            "Your account"
                           ]
                         },
                         {
@@ -1403,7 +1403,7 @@
                         "class": "mt-3 text-[16.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "Use LobbyDuo to make the clip in your browser, or try the Ozil goal CapCut template in CapCut. Template availability and pricing depend on CapCut."
+                        "Use Ozil Goal Generator to make the clip in your browser, or try the Ozil goal CapCut template in CapCut. Template availability and pricing depend on CapCut."
                       ]
                     }
                   ]
@@ -1458,7 +1458,7 @@
                                     "scope": "col"
                                   },
                                   "children": [
-                                    "LobbyDuo"
+                                    "Ozil Goal Generator"
                                   ]
                                 }
                               ]
@@ -1684,7 +1684,7 @@
                     "class": "mt-5 max-w-[68ch] text-[15.5px] leading-relaxed text-[var(--og-muted)]"
                   },
                   "children": [
-                    "Already have CapCut and the template opens for you? Check its current price before trying it. LobbyDuo is for when you would rather not install another app, the template link will not open where you are, or you want the full 15-second clip from one photo.",
+                    "Already have CapCut and the template opens for you? Check its current price before trying it. Ozil Goal Generator is for when you would rather not install another app, the template link will not open where you are, or you want the full 15-second clip from one photo.",
                     " ",
                     {
                       "tag": "a",
@@ -2332,7 +2332,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. LobbyDuo uses your existing Migos account and shared credit balance. Each new video costs {{OZIL_GOAL_COST}} credits. CapCut may offer a free route; availability and pricing depend on CapCut."
+                            "No. Each new video uses your Ozil Goal Generator account balance and costs {{OZIL_GOAL_COST}} credits. CapCut may offer a free route; availability and pricing depend on CapCut."
                           ]
                         }
                       ]
@@ -2376,7 +2376,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. LobbyDuo runs in any browser on iPhone, Android or a computer. Sign in to your account so your videos have somewhere to live, then download the MP4 and post it wherever you like."
+                            "No. Ozil Goal Generator runs in any browser on iPhone, Android or a computer. Sign in to your account so your videos have somewhere to live, then download the MP4 and post it wherever you like."
                           ]
                         }
                       ]
@@ -2508,7 +2508,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Failed generations return credits to your shared balance. Review the error in My videos before trying again."
+                            "Failed generations return credits to your balance. Review the error in My videos before trying again."
                           ]
                         }
                       ]
@@ -2728,7 +2728,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. The trend carries a footballer’s name and that is the only link. LobbyDuo is an independent tool, not affiliated with any player, club, league, federation or broadcaster. The clip is AI-generated: label it as AI where the platform asks."
+                            "No. The trend carries a footballer’s name and that is the only link. Ozil Goal Generator is an independent tool, not affiliated with any player, club, league, federation or broadcaster. The clip is AI-generated: label it as AI where the platform asks."
                           ]
                         }
                       ]
@@ -3067,7 +3067,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -3111,11 +3111,9 @@
               {
                 "tag": "a",
                 "attrs": {
-                  "aria-label": "Ozil Goal home",
-                  "class": "inline-flex items-center gap-2.5 active",
-                  "href": "/ozil-goal-generator",
-                  "data-status": "active",
-                  "aria-current": "page"
+                  "aria-label": "Ozil Goal Generator home",
+                  "class": "inline-flex items-center gap-2.5",
+                  "href": "/"
                 },
                 "children": [
                   {
@@ -3191,7 +3189,7 @@
                       {
                         "tag": "a",
                         "attrs": {
-                          "href": "/ozil-goal-generator#generator",
+                          "href": "/#generator",
                           "class": "inline-flex min-h-9 items-center text-[14.5px] text-[var(--og-muted)] transition-colors hover:text-[var(--og-text)]"
                         },
                         "children": [
@@ -3223,7 +3221,7 @@
                       {
                         "tag": "a",
                         "attrs": {
-                          "href": "/ozil-goal-generator#faq",
+                          "href": "/#faq",
                           "class": "inline-flex min-h-9 items-center text-[14.5px] text-[var(--og-muted)] transition-colors hover:text-[var(--og-text)]"
                         },
                         "children": [
@@ -3449,7 +3447,7 @@
                   "class": "inline-flex min-h-9 items-center text-[14.5px] text-[var(--og-muted)] transition-colors hover:text-[var(--og-text)] break-all"
                 },
                 "children": [
-                  "Contact migosai support"
+                  "Contact Ozil Goal Generator support"
                 ]
               }
             ]
@@ -3468,7 +3466,7 @@
             "children": [
               "© ",
               "2026",
-              " Ozil Goal"
+              " Ozil Goal Generator"
             ]
           },
           {
@@ -3687,7 +3685,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -3750,7 +3748,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -4621,7 +4619,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     }
                   ]
@@ -4949,7 +4947,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Yes. Copy it, change it and use it wherever you like. Rendering in another tool may cost money there. A video on this site uses {{OZIL_GOAL_COST}} credits per video from your shared migosai balance."
+                            "Yes. Copy it, change it and use it wherever you like. Rendering in another tool may cost money there. A video on this site uses {{OZIL_GOAL_COST}} credits per video from your Ozil Goal Generator credit balance."
                           ]
                         }
                       ]
@@ -5272,7 +5270,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -5500,7 +5498,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -5563,7 +5561,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -6538,7 +6536,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     }
                   ]
@@ -6822,7 +6820,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Generation time varies, and you can close the page while it runs; the video waits in My videos. If a render fails, the credits return through the existing migosai generation workflow."
+                            "Generation time varies, and you can close the page while it runs; the video waits in My videos. If a render fails, the credits return through the generation workflow."
                           ]
                         }
                       ]
@@ -6866,7 +6864,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Finished videos appear in your shared migosai My videos history. Download the results you want to keep. Shared credits follow the migosai pricing terms."
+                            "Finished videos appear in My videos in your Ozil Goal Generator account. Download the results you want to keep. Credits follow the Ozil Goal Generator pricing terms."
                           ]
                         }
                       ]
@@ -7233,7 +7231,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -7461,7 +7459,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -7530,7 +7528,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -8422,7 +8420,7 @@
                                 "This site."
                               ]
                             },
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         }
                       ]
@@ -9138,7 +9136,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -9366,7 +9364,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -9435,7 +9433,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -10354,14 +10352,14 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Add one photo of one adult, press Make my video, and close the tab if you like: the clip waits in My videos. Generation time varies and comes out as a 15-second, 9:16 MP4 with generated sound guided by the reference and no watermark from us. There is no prompt to write. If a render fails, the credits return through the existing migosai generation workflow."
+                        "Add one photo of one adult, press Make my video, and close the tab if you like: the clip waits in My videos. Generation time varies and comes out as a 15-second, 9:16 MP4 with generated sound guided by the reference and no watermark from us. There is no prompt to write. If a render fails, the credits return through the generation workflow."
                       ]
                     },
                     {
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "A new video uses {{OZIL_GOAL_COST}} credits per video from your shared migosai balance. Want the background first? Read about",
+                        "A new video uses {{OZIL_GOAL_COST}} credits per video from your Ozil Goal Generator credit balance. Want the background first? Read about",
                         " ",
                         {
                           "tag": "a",
@@ -10751,7 +10749,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         }
                       ]
@@ -11074,7 +11072,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -11302,7 +11300,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -11366,7 +11364,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -11671,7 +11669,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Sign in with your migosai account"
+                                    "Sign in to your Ozil Goal Generator account"
                                   ]
                                 }
                               ]
@@ -12108,10 +12106,10 @@
                               "tag": "strong",
                               "attrs": {},
                               "children": [
-                                "Shared credits."
+                                "Your credits."
                               ]
                             },
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         },
                         {
@@ -12125,7 +12123,7 @@
                                 "Photo handling follows our Privacy Policy."
                               ]
                             },
-                            " Photo handling follows the migosai Privacy Policy."
+                            " Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         }
                       ]
@@ -12342,7 +12340,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "CapCut controls its own template availability and pricing. Ozil Goal on migosai uses {{OZIL_GOAL_COST}} credits per video from your shared balance."
+                            "CapCut controls its own template availability and pricing. Ozil Goal Generator uses {{OZIL_GOAL_COST}} credits per video from your balance."
                           ]
                         }
                       ]
@@ -12386,7 +12384,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Ozil Goal runs in any browser on a phone or a computer. You sign in with your migosai account, add one photo, and download a 15-second vertical MP4 when it is ready."
+                            "No. Ozil Goal runs in any browser on a phone or a computer. You sign in with your Ozil Goal Generator account, add one photo, and download a 15-second vertical MP4 when it is ready."
                           ]
                         }
                       ]
@@ -12430,7 +12428,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "With either route the face depends a lot on the photo. Use one clear, well-lit photo of one adult looking roughly at the camera. On Ozil Goal, if a render fails, the credits return through the existing migosai generation workflow."
+                            "With either route the face depends a lot on the photo. Use one clear, well-lit photo of one adult looking roughly at the camera. On Ozil Goal, if a render fails, the credits return through the generation workflow."
                           ]
                         }
                       ]
@@ -12797,7 +12795,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [
@@ -13025,7 +13023,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator",
+                            "href": "/",
                             "class": "hover:text-[var(--og-text)]"
                           },
                           "children": [
@@ -13094,7 +13092,7 @@
                         {
                           "tag": "a",
                           "attrs": {
-                            "href": "/ozil-goal-generator#generator",
+                            "href": "/#generator",
                             "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px]"
                           },
                           "children": [
@@ -13252,7 +13250,7 @@
                               "tag": "p",
                               "attrs": {},
                               "children": [
-                                "Rendering time varies. You can close the page; the finished video waits in My videos. Photo handling follows the migosai Privacy Policy."
+                                "Rendering time varies. You can close the page; the finished video waits in My videos. Photo handling follows the Ozil Goal Generator Privacy Policy."
                               ]
                             }
                           ]
@@ -13875,7 +13873,7 @@
                             {
                               "tag": "a",
                               "attrs": {
-                                "href": "/ozil-goal-generator#generator"
+                                "href": "/#generator"
                               },
                               "children": [
                                 "home page"
@@ -14076,7 +14074,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in with your migosai account and use your shared credits. Failed generations return credits through the existing generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the migosai Privacy Policy."
+                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     },
                     {
@@ -14257,7 +14255,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "JPG, PNG or WebP. This checker recommends a file under 8 MB, at least 300 pixels on each side, and not extremely narrow or wide. The migosai generator accepts images up to 10 MB; a normal phone photo usually meets these recommendations."
+                            "JPG, PNG or WebP. This checker recommends a file under 8 MB, at least 300 pixels on each side, and not extremely narrow or wide. The Ozil Goal Generator accepts images up to 10 MB; a normal phone photo usually meets these recommendations."
                           ]
                         }
                       ]
@@ -14433,7 +14431,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Photo handling follows the migosai Privacy Policy. The checker on this page never uploads anything; it reads the file in your browser."
+                            "Photo handling follows the Ozil Goal Generator Privacy Policy. The checker on this page never uploads anything; it reads the file in your browser."
                           ]
                         }
                       ]
@@ -14800,7 +14798,7 @@
                 {
                   "tag": "a",
                   "attrs": {
-                    "href": "/ozil-goal-generator#generator",
+                    "href": "/#generator",
                     "class": "og-cta og-display inline-flex h-[58px] items-center justify-center rounded-2xl px-9 text-[22px] mt-8"
                   },
                   "children": [

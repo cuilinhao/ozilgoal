@@ -78,7 +78,17 @@
   "Showcase video": "展示影片",
   "WORKFLOW": "製作流程",
   "Create your video with the Hotel Lobby AI Video Generator": "使用 Hotel Lobby AI 影片產生器製作你的影片",
-  "About {videos} Wan 3.0 template videos (5 seconds, 480p)": "約可製作 {videos} 部 Wan 3.0 範本影片（5 秒、480p）",
-  "Estimates use {credits} credits per Wan template video. Other models, settings, and reference durations change the cost.": "估算以每部 Wan 範本影片 {credits} 點計算。其他模型、設定與參考素材長度會改變所需點數。",
-  "Each Ozil goal video costs {credits} credits ({duration} seconds, {aspect}, {resolution}, with sound), so the {starterCredits}-credit Starter pack covers one Ozil video.": "每部 Ozil 進球影片需 {credits} 點（{duration} 秒、{aspect}、{resolution}、含聲音），{starterCredits} 點的入門方案剛好可製作一部 Ozil 影片。"
+  "Each Ozil goal video costs {credits} credits ({duration} seconds, {aspect}, {resolution}, with sound), so the {starterCredits}-credit Starter pack covers one Ozil video.": "每部 Ozil 進球影片需 {credits} 點（{duration} 秒、{aspect}、{resolution}、含聲音），{starterCredits} 點的入門方案剛好可製作一部 Ozil 影片。",
+  "Make a video": "製作影片",
+  "Ozil Goal Generator home": "Ozil Goal Generator 首頁",
+  "Guides": "指南",
+  "Ozil Goal AI Template": "Ozil 進球 AI 範本",
+  "Ozil Goal AI Prompt": "Ozil 進球 AI 提示詞",
+  "Ozil Goal Trend": "Ozil 進球趨勢",
+  "Ozil Goal Meme": "Ozil 進球迷因",
+  "Ozil Goal CapCut Guide": "Ozil 進球 CapCut 指南",
+  "AI Football Video From a Photo": "用照片製作 AI 足球影片",
+  "Ozil goal videos: {videos}": "Ozil 進球影片：{videos} 部",
+  "Make an AI football video from one photo you have permission to use. Review your result and follow each platform’s AI-labeling rules when sharing.": "使用已獲授權的照片製作 AI 足球影片。分享前請檢查結果，並遵守各平台的 AI 標示規則。",
+  "Ozil Goal Generator is an independent AI creation service. It is not affiliated with or endorsed by Mesut Özil, any player, club, league, federation or broadcaster.": "Ozil Goal Generator 是獨立的 AI 創作服務，與 Mesut Özil 或任何球員、球會、聯賽、足總或轉播商均無隸屬或背書關係。"
 }

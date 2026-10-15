@@ -36,7 +36,8 @@ describe('Ozil public content migration', () => {
     const all = JSON.stringify(pages);
     expect(all).not.toMatch(/\$\d|5 to 8 minutes|deleted when the render ends|Your photo is not kept|video kept 30 days|videos kept 1 year|never expire|Made with this generator|Made here from/i);
     expect(all).toContain('{{OZIL_GOAL_COST}}');
-    expect(all).toContain('migosai Privacy Policy');
+    expect(all).toContain('Ozil Goal Generator Privacy Policy');
+    expect(all).not.toMatch(/migosai|LobbyDuo|existing Migos account/i);
   });
   it('restores all interactive tool slots and complete caption/checklist data', () => {
     const slots = slugs.flatMap(slug => walk(pages[slug].content as Node)).filter((node): node is {slot: string} => typeof node !== 'string' && 'slot' in node).map(node => node.slot);
