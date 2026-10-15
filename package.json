@@ -1,5 +1,5 @@
 {
-  "name": "migosai",
+  "name": "ozilgoal-aivideo",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,8 +12,8 @@
     "cf:build": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && wrangler dev",
     "deploy": "opennextjs-cloudflare build && wrangler deploy",
-    "db:local": "wrangler d1 migrations apply migosai --local",
-    "db:remote": "wrangler d1 migrations apply migosai --remote"
+    "db:local": "wrangler d1 migrations apply ozilgoal-aivideo-db --local",
+    "db:remote": "wrangler d1 migrations apply ozilgoal-aivideo-db --remote"
   },
   "dependencies": {
     "@fontsource/plus-jakarta-sans": "^5.2.6",

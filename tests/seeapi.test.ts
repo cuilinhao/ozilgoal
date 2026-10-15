@@ -50,7 +50,7 @@ describe('SeeAPI idempotent submission', () => {
       const headers = new Headers(request.init?.headers);
       expect(headers.get('Authorization')).toBe('Bearer test-secret-that-must-not-leak');
       expect(headers.get('Content-Type')).toBe('application/json');
-      expect(headers.get('User-Agent')).toBe('MigosAI-Moderation/1.0 (+https://migosai.design)');
+      expect(headers.get('User-Agent')).toBe('OzilGoal-Moderation/1.0 (+https://ozilgoal-aivideo.com)');
       expect(headers.get('Idempotency-Key')).toBe('moderation-generation-1');
       expect(request.init?.signal).toBeInstanceOf(AbortSignal);
     }

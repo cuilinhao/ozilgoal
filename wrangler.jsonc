@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "migosai",
+  "name": "ozilgoal-aivideo",
   "main": "worker.ts",
   "account_id": "8021c9867ba6881cf688f0a25af0d32f",
   "compatibility_date": "2026-10-01",
@@ -15,21 +15,21 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "migosai"
+      "service": "ozilgoal-aivideo"
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "migosai",
-      "database_id": "a49494ff-54a4-40eb-a7c2-d1e8ad7f487c",
+      "database_name": "ozilgoal-aivideo-db",
+      "database_id": "cf75b0ac-65e8-4a04-829f-9ea81e047abc",
       "migrations_dir": "migrations"
     }
   ],
   "r2_buckets": [
     {
       "binding": "MEDIA",
-      "bucket_name": "migosai-media"
+      "bucket_name": "ozilgoal-aivideo-media"
     }
   ],
   "triggers": {
@@ -41,34 +41,16 @@
     "enabled": true
   },
   "vars": {
-    "APP_URL": "https://migosai.design",
+    "APP_URL": "https://ozilgoal-aivideo.com",
     "PAYMENT_PROVIDER": "stripe",
     "STRIPE_MODE": "live",
-    "STRIPE_PRICE_STARTER": "price_1UMRzp9IlL4CIeBl9E1a7Qyl",
-    "STRIPE_PRICE_CREATOR": "price_1UMS0f9IlL4CIeBlkVqz536C",
-    "STRIPE_PRICE_PRO": "price_1UMS1N9IlL4CIeBl5K9zRWEy",
-    "STRIPE_PRICE_BUSINESS": "price_1UMS3X9IlL4CIeBlFNf4NK88",
-    "WAFFO_MODE": "prod",
-    "WAFFO_MERCHANT_ID": "MER_0bgzn7efD1clpUtkReYznH",
-    "WAFFO_STORE_ID": "STO_4ZOpv7dTwwVXkBd4b2tsNr",
-    "WAFFO_PRODUCT_STARTER": "PROD_1wvkxxVnjVU2t1txQtLzBD",
-    "WAFFO_PRODUCT_CREATOR": "PROD_6PdKlCbO19s7emXrKxpiVZ",
-    "WAFFO_PRODUCT_PRO": "PROD_7IpB2s4ptadpNtlnDNmgEH",
-    "WAFFO_PRODUCT_BUSINESS": "PROD_1ZAixY4b2O5H31tNjX9Ke2",
-    "APIMART_MEDIA_HOSTS": "getapib.org",
+    "STRIPE_PRICE_STARTER": "price_1UQqJp6L8rs4JTjQ3gDIlnUA",
+    "STRIPE_PRICE_CREATOR": "price_1UQqJp6L8rs4JTjQlzvNyq5c",
+    "STRIPE_PRICE_PRO": "price_1UQqJp6L8rs4JTjQKbZMkKys",
+    "STRIPE_PRICE_BUSINESS": "price_1UQqJp6L8rs4JTjQ4NwBCYax",
     "KIE_MEDIA_HOSTS": "tempfile.aiquickdraw.com",
     "FAL_MEDIA_HOSTS": "fal.media,v3.fal.media,v3b.fal.media"
   },
-  "routes": [
-    {
-      "pattern": "migosai.design/*",
-      "zone_name": "migosai.design"
-    },
-    {
-      "pattern": "www.migosai.design/*",
-      "zone_name": "migosai.design"
-    }
-  ],
   "workers_dev": true,
   "preview_urls": false
 }

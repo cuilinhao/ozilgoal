@@ -38,8 +38,8 @@ describe('Stripe Checkout creation', () => {
     expect(sent.get('line_items[0][price]')).toBe(priceId);
     expect(sent.get('line_items[0][quantity]')).toBe('1');
     expect(sent.get('client_reference_id')).toBe(result.orderId);
-    expect(sent.get('metadata[app]')).toBe('migosai');
-    expect(sent.get('payment_intent_data[metadata][app]')).toBe('migosai');
+    expect(sent.get('metadata[app]')).toBe('ozilgoal-aivideo');
+    expect(sent.get('payment_intent_data[metadata][app]')).toBe('ozilgoal-aivideo');
     expect(sent.get('metadata[userId]')).toBe('u');
     expect(sent.get('metadata[credits]')).toBe('300');
     expect(sent.get('payment_intent_data[metadata][orderId]')).toBe(result.orderId);
@@ -73,7 +73,7 @@ import { verifyStripeWebhook as verifyWebhook } from '../lib/server/stripe';
 import { applyStripeEvent as applyEvent } from '../lib/server/stripe-payments';
 import { reserveGeneration } from '../lib/server/billing';
 // These calls exercise the public boundaries; only Stripe's external HTTP is replaced.
-const metadata = { app: 'migosai', orderId: 'local-order', userId: 'u', packId: 'starter', priceId, amount: '990', currency: 'USD', credits: '300', mode: 'test' };
+const metadata = { app: 'ozilgoal-aivideo', orderId: 'local-order', userId: 'u', packId: 'starter', priceId, amount: '990', currency: 'USD', credits: '300', mode: 'test' };
 function paidSession(overrides: Record<string, any> = {}) {
   return { id: sessionId, object: 'checkout.session', livemode: false, mode: 'payment', status: 'complete', payment_status: 'paid', client_reference_id: 'local-order', metadata: { ...metadata }, amount_total: 990, amount_subtotal: 990, currency: 'usd', payment_intent: 'pi_fixture123', ...overrides };
 }

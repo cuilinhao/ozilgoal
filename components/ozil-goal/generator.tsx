@@ -156,7 +156,7 @@ export function OzilGoalGenerator() {
       </button>
       <div className="og-generator-footnote">
         <p>{user ? <>{credits.toLocaleString()} credits available · <Link href="/pricing">Buy credits</Link></> : <>{OZIL_GOAL_COST} credits per video · <Link href="/pricing">View credit packs</Link></>}</p>
-        <p>{user ? <>Saved to your <Link href="/app/my-videos">My Videos</Link> · Failed generations are refunded</> : 'Sign in with Google or email first; your photo stays in place'}</p>
+        <p>{user ? <>Saved to your <Link href="/app/my-videos">My Videos</Link> · Failed generations are refunded</> : 'Sign in first; your photo stays in place'}</p>
       </div>
     </div>
     {(busy || activeJob) && <div className="og-generator-progress" role="status" aria-live="polite">

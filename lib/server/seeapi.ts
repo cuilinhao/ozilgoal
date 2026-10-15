@@ -84,7 +84,7 @@ async function request(env: Env, path: string, body?: string, idempotencyKey?: s
       headers: {
         Authorization: `Bearer ${env.SEEAPI_API_KEY}`,
         'Content-Type': 'application/json',
-        'User-Agent': 'MigosAI-Moderation/1.0 (+https://migosai.design)',
+        'User-Agent': 'OzilGoal-Moderation/1.0 (+https://ozilgoal-aivideo.com)',
         ...(idempotencyKey === undefined ? {} : { 'Idempotency-Key': idempotencyKey }),
       },
       ...(body === undefined ? {} : { body }),

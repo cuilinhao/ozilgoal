@@ -51,7 +51,7 @@ export async function createStripeCheckout(env: Env, user: User, packId: unknown
     (id,user_id,pack_id,product_id,amount,currency,credits,provider,provider_mode)
     VALUES (?,?,?,?,?,?,?,?,?)`)
     .bind(orderId, user.id, pack.id, priceId, pack.amountCents, 'USD', pack.credits, 'stripe', mode).run();
-  const metadata = { app: 'migosai', orderId, userId: user.id, packId: pack.id, priceId, amount: String(pack.amountCents), currency: 'USD', credits: String(pack.credits), mode };
+  const metadata = { app: 'ozilgoal-aivideo', orderId, userId: user.id, packId: pack.id, priceId, amount: String(pack.amountCents), currency: 'USD', credits: String(pack.credits), mode };
   const returnPath = `${origin}${localizeHref('/pricing', locale)}`;
   let session;
   try {
@@ -85,7 +85,7 @@ type StripeOrder = {
 };
 
 function matchesMetadata(metadata: Stripe.Metadata | null | undefined, order: StripeOrder): boolean {
-  return !!metadata && metadata.app === 'migosai' && metadata.orderId === order.id && metadata.userId === order.user_id &&
+  return !!metadata && metadata.app === 'ozilgoal-aivideo' && metadata.orderId === order.id && metadata.userId === order.user_id &&
     metadata.packId === order.pack_id && metadata.priceId === order.product_id &&
     metadata.amount === String(order.amount) && metadata.currency === order.currency &&
     metadata.credits === String(order.credits) && metadata.mode === order.provider_mode;
@@ -162,7 +162,7 @@ async function recordStripeReview(env: Env, event: Stripe.Event): Promise<void> 
     let intent: Stripe.PaymentIntent;
     try { intent = await client.paymentIntents.retrieve(paymentIntentId); }
     catch { throw new ApiError(502, 'Payment review confirmation is temporarily unavailable.'); }
-    if (intent.metadata?.app !== 'migosai') return;
+    if (intent.metadata?.app !== 'ozilgoal-aivideo') return;
     const orderId = intent.metadata.orderId;
     if (typeof orderId !== 'string' || !orderId) return;
     linked = await db.prepare('SELECT * FROM orders WHERE id=?').bind(orderId).first<StripeOrder>();
@@ -206,7 +206,7 @@ export async function applyStripeEvent(env: Env, event: Stripe.Event): Promise<v
   const bound = typeof session.id === 'string' ? await db.prepare(
     "SELECT * FROM orders WHERE checkout_id=? AND provider='stripe'")
     .bind(session.id).first<StripeOrder>() : null;
-  if (session.metadata?.app !== 'migosai' && !bound) return;
+  if (session.metadata?.app !== 'ozilgoal-aivideo' && !bound) return;
   const orderId = session.client_reference_id;
   if (typeof orderId !== 'string' || !orderId) throw new ApiError(400, 'Payment order reference is missing.');
   const order = bound ?? await db.prepare('SELECT * FROM orders WHERE id=?').bind(orderId).first<StripeOrder>();

@@ -181,7 +181,7 @@ export const englishPosts: OzilBlogPost[] = [
         id: "sign-in-and-cost",
         title: "3. Sign in and check the generation cost",
         blocks: [
-          { type: "p", text: "The page supports Google or email sign-in. If you are signed out, **Make my video** opens sign-in and keeps the selected photo in place. After signing in, confirm that the displayed balance covers {ozilCredits} credits; use **Buy credits** to view the available packs if needed." },
+          { type: "p", text: "Sign in to your account before generating a video. If you are signed out, **Make my video** opens sign-in and keeps the selected photo in place. After signing in, confirm that the displayed balance covers {ozilCredits} credits; use **Buy credits** to view the available packs if needed." },
           { type: "p", text: "These are credits purchased for your Ozil Goal Generator account. The current template uses MiniMax H3 and requests a 15-second, 9:16, 768p clip with sound. New account registration does not include a free Ozil render. See [credit packs](/pricing) for current purchase options." },
         ],
       },

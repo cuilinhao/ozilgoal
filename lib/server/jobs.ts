@@ -32,7 +32,7 @@ const REVIEW_TIMEOUT=30*60;
 const MAX_REVIEW_FAILURES=8;
 function moderationState(job:Job):ModerationState{
  const state=JSON.parse(job.moderation_state??'null');
- if(!state||state.version!==1||typeof state.requestBody!=='string'||state.idempotencyKey!==`migosai-video-moderation-${job.id}`||!Number.isSafeInteger(state.expiresAt)||!Number.isSafeInteger(state.deadline)||!Number.isInteger(state.failures)||state.failures<0||!job.moderation_key||!job.moderation_etag)throw new SeeApiError('Safety review state needs support attention.',false);
+ if(!state||state.version!==1||typeof state.requestBody!=='string'||state.idempotencyKey!==`ozilgoal-video-moderation-${job.id}`||!Number.isSafeInteger(state.expiresAt)||!Number.isSafeInteger(state.deadline)||!Number.isInteger(state.failures)||state.failures<0||!job.moderation_key||!job.moderation_etag)throw new SeeApiError('Safety review state needs support attention.',false);
  return state;
 }
 async function holdForReview(db:D1Database,job:Job,fence:JobFence){
@@ -111,7 +111,7 @@ async function quarantineVideo(env:Env,job:Job,fence:JobFence,url:string,cost:nu
   if(!object?.etag)throw new Error('Could not verify the stored video.');
   const now=Math.floor(Date.now()/1000),expiresAt=now+3600;
   const videoUrl=await createModerationMediaUrl(env,job.id,key,object.etag,expiresAt);
-  const state:ModerationState={version:1,idempotencyKey:`migosai-video-moderation-${job.id}`,expiresAt,deadline:now+REVIEW_TIMEOUT,failures:0,requestBody:JSON.stringify({model:'video-nsfw-filter',endpoint:'video-moderation',provider:'seeapi',input:{video_url:videoUrl,num_frames:32,threshold_offset:0.02,strict_special_care:true,return_frames:'none'}})};
+  const state:ModerationState={version:1,idempotencyKey:`ozilgoal-video-moderation-${job.id}`,expiresAt,deadline:now+REVIEW_TIMEOUT,failures:0,requestBody:JSON.stringify({model:'video-nsfw-filter',endpoint:'video-moderation',provider:'seeapi',input:{video_url:videoUrl,num_frames:32,threshold_offset:0.02,strict_special_care:true,return_frames:'none'}})};
   await patch(db,job.id,fence,{stage:'moderation_submitting',status:'reviewing',progress:95,result_keys:null,moderation_key:key,moderation_etag:object.etag,moderation_verdict:'pending',moderation_state:JSON.stringify(state),provider_cost:cost,error:null});
  }catch(error){
   // Unique keys prevent stale uploaders from overwriting the selected candidate.

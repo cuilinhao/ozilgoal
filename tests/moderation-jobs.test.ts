@@ -21,7 +21,7 @@ function assessment(flagged = false) {
 async function pendingModeration(stage = 'moderation_submitting') {
   const d = await generatedVideo(), now = Math.floor(Date.now() / 1000);
   const key = `users/u/results/${d.id}/candidate`;
-  const state = { version: 1, requestBody: JSON.stringify({ input: { video_url: 'https://example.test/fixed-signed-url', num_frames: 32 } }), idempotencyKey: `migosai-video-moderation-${d.id}`, expiresAt: now + 3600, deadline: now + 1800, failures: 0, ...(stage === 'moderation_polling' ? { taskId: 'task_safety' } : {}) };
+  const state = { version: 1, requestBody: JSON.stringify({ input: { video_url: 'https://example.test/fixed-signed-url', num_frames: 32 } }), idempotencyKey: `ozilgoal-video-moderation-${d.id}`, expiresAt: now + 3600, deadline: now + 1800, failures: 0, ...(stage === 'moderation_polling' ? { taskId: 'task_safety' } : {}) };
   d.sqlite.prepare("UPDATE generations SET stage=?,status='reviewing',moderation_verdict='pending',moderation_key=?,moderation_etag='video-etag',moderation_state=? WHERE id=?").run(stage, key, JSON.stringify(state), d.id);
   return { ...d, key, state };
 }
@@ -37,7 +37,7 @@ describe('video delivery moderation gate', () => {
     expect(generationResponse(d.row()).videoUrl).toBeUndefined();
     const state = JSON.parse(d.row().moderation_state);
     expect(JSON.parse(state.requestBody).input).toMatchObject({ num_frames: 32, strict_special_care: true, return_frames: 'none' });
-    expect(state.idempotencyKey).toBe(`migosai-video-moderation-${d.id}`);
+    expect(state.idempotencyKey).toBe(`ozilgoal-video-moderation-${d.id}`);
   });
 
   it('reuses the exact persisted body and key after an uncertain submission', async () => {

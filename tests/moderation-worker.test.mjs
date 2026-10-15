@@ -14,7 +14,7 @@ const otherKey = 'users/u/results/job/other-candidate';
 const bytes = new Uint8Array([0, 1, 2, 3, 127, 128, 200, 253, 254, 255]);
 const token = 'x'.repeat(43);
 const ownerHeaders = { cookie: `migos_session=${token}` };
-const idempotencyKey = 'migosai-video-moderation-job';
+const idempotencyKey = 'ozilgoal-video-moderation-job';
 let worker, db, bucket, etag;
 let upstreamStatus = 202;
 let requests = [];
@@ -139,7 +139,7 @@ describe('video moderation in real workerd', () => {
     expect(requests).toEqual([{
       url: 'https://api.seeapi.com/v1/inferences', method: 'POST',
       authorization: 'Bearer test-seeapi-key', idempotencyKey,
-      userAgent: 'MigosAI-Moderation/1.0 (+https://migosai.design)',
+      userAgent: 'OzilGoal-Moderation/1.0 (+https://ozilgoal-aivideo.com)',
       contentType: 'application/json', body: rawBody,
     }]);
   });

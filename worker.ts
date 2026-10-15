@@ -4,8 +4,8 @@ import { runDueJobs } from './lib/server/jobs';
 export default {
  async fetch(request:Request,env:CloudflareEnv,ctx:ExecutionContext){
   const url=new URL(request.url);
-  if(env.APP_URL?.startsWith('https://')&&(url.hostname==='www.migosai.design'||(url.hostname==='migosai.design'&&url.protocol==='http:'))){
-   url.protocol='https:';url.hostname='migosai.design';return Response.redirect(url.toString(),308);
+  if(env.APP_URL?.startsWith('https://')&&(url.hostname==='www.ozilgoal-aivideo.com'||(url.hostname==='ozilgoal-aivideo.com'&&url.protocol==='http:'))){
+   url.protocol='https:';url.hostname='ozilgoal-aivideo.com';return Response.redirect(url.toString(),308);
   }
   return nextWorker.fetch(request,env,ctx);
  },
