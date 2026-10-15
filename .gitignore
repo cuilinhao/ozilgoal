@@ -1,0 +1,23 @@
+node_modules/
+.next/
+.next-dev/
+.open-next/
+.wrangler/
+dist/
+coverage/
+.DS_Store
+.env*
+!.env.example
+.dev.vars*
+!.dev.vars.example
+*.log
+
+.local-evidence/
+.superpowers/
+
+*.tsbuildinfo
+
+# Generated verification reports and browser captures stay local.
+/QA/*
+!/QA/README.md
+/docs/superpowers/

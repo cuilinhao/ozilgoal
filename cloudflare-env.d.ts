@@ -1,0 +1,18 @@
+interface CloudflareEnv {
+ DB: D1Database; MEDIA: R2Bucket; ASSETS: Fetcher;
+ APP_URL?: string;
+ GOOGLE_CLIENT_ID?: string; GOOGLE_CLIENT_SECRET?: string;
+ MEDIA_SIGNING_SECRET?: string; APIMART_API_KEY?: string;
+ KIE_API_KEY?: string; KIE_MEDIA_HOSTS?: string;
+ FAL_KEY?: string; FAL_MEDIA_HOSTS?: string;
+ SEEAPI_API_KEY?: string;
+ APIMART_MEDIA_HOSTS?: string;
+ PAYMENT_PROVIDER?: string;
+ STRIPE_SECRET_KEY?: string; STRIPE_WEBHOOK_SECRET?: string; STRIPE_MODE?: string;
+ STRIPE_PRICE_STARTER?: string; STRIPE_PRICE_CREATOR?: string;
+ STRIPE_PRICE_PRO?: string; STRIPE_PRICE_BUSINESS?: string;
+ WAFFO_MERCHANT_ID?: string; WAFFO_PRIVATE_KEY?: string; WAFFO_MODE?: string;
+ WAFFO_STORE_ID?: string;
+ WAFFO_PRODUCT_STARTER?: string; WAFFO_PRODUCT_CREATOR?: string;
+ WAFFO_PRODUCT_PRO?: string; WAFFO_PRODUCT_BUSINESS?: string;
+}
