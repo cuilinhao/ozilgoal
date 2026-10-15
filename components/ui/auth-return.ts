@@ -1,15 +1,18 @@
 import { localizeHref, localeFromPath, stripLocale, type Locale } from "@/lib/i18n/routing";
 
 const ACCOUNT_HOME = "/app/video-generator";
+const SITE_ORIGIN = "https://ozilgoal-aivideo.com";
 
 export function safeAuthReturnTo(value: string | null | undefined, locale?: Locale): string {
   const fallback = localizeHref(ACCOUNT_HOME, locale ?? "en");
-  if (!value || !value.startsWith("/") || value.startsWith("//")) return fallback;
+  if (!value) return fallback;
+  const rootRelative = value.startsWith("/") && !value.startsWith("//");
+  if (!rootRelative && !value.startsWith("https://")) return fallback;
   try {
     const decoded = decodeURIComponent(value);
     if (/[\\\x00-\x20]/.test(decoded) || decoded.startsWith("//")) return fallback;
-    const url = new URL(value, "https://migosai.design");
-    if (url.origin !== "https://migosai.design" || ["/sign-in", "/sign-up"].includes(stripLocale(decodeURIComponent(url.pathname)))) return fallback;
+    const url = new URL(value, SITE_ORIGIN);
+    if (url.origin !== SITE_ORIGIN || ["/sign-in", "/sign-up"].includes(stripLocale(decodeURIComponent(url.pathname)))) return fallback;
     const destination = url.pathname + url.search + url.hash;
     return localizeHref(destination, locale ?? localeFromPath(url.pathname));
   } catch {

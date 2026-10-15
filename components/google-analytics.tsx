@@ -3,14 +3,15 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
+export function isAnalyticsHost(hostname: string): boolean {
+  return hostname === "ozilgoal-aivideo.com" || hostname === "www.ozilgoal-aivideo.com";
+}
+
 export function GoogleAnalytics({ measurementId }: { measurementId?: string }) {
   const [isProductionHost, setIsProductionHost] = useState(false);
 
   useEffect(() => {
-    setIsProductionHost(
-      window.location.hostname === "migosai.design" ||
-      window.location.hostname === "www.migosai.design",
-    );
+    setIsProductionHost(isAnalyticsHost(window.location.hostname));
   }, []);
 
   if (process.env.NODE_ENV !== "production" || !isProductionHost || !measurementId || !/^G-[A-Z0-9]+$/.test(measurementId)) {

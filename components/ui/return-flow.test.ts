@@ -29,9 +29,13 @@ describe("authentication return route", () => {
     expect(safeAuthReturnTo("/ko/pricing")).toBe("/ko/pricing");
   });
   it("rejects external and recursive destinations", () => {
-    for (const value of ["https://evil.example", "//evil.example", "/%2Fevil.example", "/sign-in", "/sign-up?x=1", "/%5Cevil.example"]) {
+    for (const value of ["https://evil.example", "https://migosai.design/app/my-videos", "https://ozilgoal-aivideo.com.evil.example/app", "//evil.example", "/%2Fevil.example", "/sign-in", "/sign-up?x=1", "https://ozilgoal-aivideo.com/sign-in", "/%5Cevil.example"]) {
       expect(safeAuthReturnTo(value)).toBe("/app/video-generator");
     }
+  });
+  it("accepts an absolute return URL only from the new production domain", () => {
+    expect(safeAuthReturnTo("https://ozilgoal-aivideo.com/app/my-videos?page=2#clip"))
+      .toBe("/app/my-videos?page=2#clip");
   });
 });
 
