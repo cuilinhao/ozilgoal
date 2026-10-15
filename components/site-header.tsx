@@ -3,7 +3,7 @@
 import Link from "@/components/i18n/localized-link";
 import { useTranslations } from "@/components/i18n/locale-provider";
 import { LanguageSwitcher } from "@/components/i18n/language-switcher";
-import { stripLocale } from "@/lib/i18n/routing";
+import { isEnglishOnlyOzilPath, stripLocale } from "@/lib/i18n/routing";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { CircleHelp, Clapperboard, ListChecks, Menu, Newspaper, X, Zap } from "lucide-react";
@@ -52,7 +52,7 @@ export function SiteHeader() {
           {navigationLinks()}
         </nav>
         <div className="header-actions">
-          {!isOzilBlog && <LanguageSwitcher compact />}
+          {!isOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
           {user ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><Link className="sign-in-button account-header-link" href="/app/video-generator">{t("User Center")}</Link><button className="header-signout" onClick={() => void logout()}>{t("Sign Out")}</button></div> : <button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button>}
           <button ref={mobileTrigger} className="mobile-menu-button" aria-label={t(menuOpen ? "Close menu" : "Open menu")} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={21}/> : <Menu size={21}/>}</button>
         </div>

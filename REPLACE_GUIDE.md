@@ -54,7 +54,7 @@
 1. 在目标提交上运行 `npm ci`、`npm test`、`npm run typecheck`、`npm run cf:build`。
 2. 核实 Wrangler 所指的是**新站 D1**，检查迁移和备份策略后执行 `npm run db:remote`。本地数据库可用 `npm run db:local` 初始化。
 3. 配置上述 Secrets、bindings、域名及四档 test Price，先在预览或测试环境完成端到端验收，再从同一确认过的源码运行 `npm run deploy`。
-4. 核查 `/`、`/ozil-goal-generator`、六语言页面、登录、生成任务、私有媒体、历史记录、定价和政策页面。根域名 canonical、`/robots.txt` 与 `/sitemap.xml` 应指向新域名；旧站主题的页面不应公开可访问。
+4. 核查英语首页和六个指南、`/ozil-goal-generator` 兼容入口、原生语种博客，以及六语言定价、政策和联系页；再核查登录、生成任务、私有媒体及历史记录。根域名 canonical、`/robots.txt` 与 `/sitemap.xml` 应指向新域名；旧站主题页面和非英语 Ozil 首页/指南镜像不应公开可访问。
 5. 使用 Stripe test 模式完成一笔付款和一次取消，检查订单、积分账本和重复 Webhook。随后切到新账户 live 配置，逐项核对四档 Checkout 的币种、金额和商品。生产真实收款与到账只有在授权的真实交易完成并核验后才能标记为已验收。
 
 发布后记录 Git 提交、Worker 版本、迁移结果及验收证据。若需修改套餐或站点地址，应同步更新服务端配置、Stripe 商品、Google 授权、canonical、sitemap 和相关测试。客服地址为 `cuilinhao2021@gmail.com`。

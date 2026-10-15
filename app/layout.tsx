@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LocaleProvider } from "@/components/i18n/locale-provider";
 import { getMessages } from "@/lib/i18n";
-import { getLocale, localizeMetadata } from "@/lib/i18n/server";
+import { getDocumentLanguage, getLocale, localizeMetadata } from "@/lib/i18n/server";
 import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/600.css";
@@ -22,8 +22,9 @@ export async function generateMetadata(): Promise<Metadata> { return localizeMet
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const locale = await getLocale();
+  const documentLanguage = await getDocumentLanguage();
   return (
-    <html lang={locale}>
+    <html lang={documentLanguage}>
       <body>
         <LocaleProvider locale={locale} messages={getMessages(locale)}>
         <AuthProvider>

@@ -2,17 +2,9 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import AccountLayout from "@/app/app/layout";
 
-// Reuse the existing pages while giving translated URLs real App Router routes.
+// Only pages with translated content receive localized App Router routes.
 const routes = {
-  "/": () => import("@/app/page"),
   "/pricing": () => import("@/app/pricing/page"),
-  "/ozil-goal-generator": () => import("@/app/ozil-goal-generator/page"),
-  "/ozil-goal-generator/ozil-goal-ai-prompt": () => import("@/app/ozil-goal-generator/ozil-goal-ai-prompt/page"),
-  "/ozil-goal-generator/ozil-goal-ai-template": () => import("@/app/ozil-goal-generator/ozil-goal-ai-template/page"),
-  "/ozil-goal-generator/ozil-goal-trend": () => import("@/app/ozil-goal-generator/ozil-goal-trend/page"),
-  "/ozil-goal-generator/ozil-goal-meme": () => import("@/app/ozil-goal-generator/ozil-goal-meme/page"),
-  "/ozil-goal-generator/ozil-goal-capcut-template": () => import("@/app/ozil-goal-generator/ozil-goal-capcut-template/page"),
-  "/ozil-goal-generator/ai-football-video-from-photo": () => import("@/app/ozil-goal-generator/ai-football-video-from-photo/page"),
   "/privacy-policy": () => import("@/app/privacy-policy/page"),
   "/terms-of-service": () => import("@/app/terms-of-service/page"),
   "/refund-policy": () => import("@/app/refund-policy/page"),

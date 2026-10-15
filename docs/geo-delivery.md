@@ -1,31 +1,39 @@
-# GEO 页面维护说明
+# Ozil 内容与搜索抓取维护
 
-当前站内实现包含六个 Hotel Lobby 内容页，覆盖英文、韩文、日文、法文、西班牙文和繁体中文。本文替代早期发布流水；历史测试截图与报告仅保存在本地归档。
+本独立站以 `https://ozilgoal-aivideo.com` 为规范域名。公开内容的路径以 [`content/public-pages.ts`](../content/public-pages.ts)、[`content/ozil-blog/`](../content/ozil-blog/) 和 [`app/sitemap.ts`](../app/sitemap.ts) 为准；不要沿用旧站页面数量或索引报告。
 
-## 页面与来源
+## 内容范围
 
-- `/hotel-lobby-ai-video-generator`
-- `/hotel-lobby-ai-video-generator-free`
-- `/hotel-lobby-ai-template`
-- `/hotel-lobby-ai-filter`
-- `/hotel-lobby-ai-generator`
-- `/blog/best-hotel-lobby-ai-video-generators-2026`
+- `/` 是英语 Ozil 首页；`/ozil-goal-generator` 是兼容入口，两者以 `/` 为 canonical。该兼容入口不单独列入 sitemap。
+- 六个英语指南：`/ozil-goal-generator/ozil-goal-ai-prompt`、`/ozil-goal-generator/ozil-goal-ai-template`、`/ozil-goal-generator/ozil-goal-trend`、`/ozil-goal-generator/ozil-goal-meme`、`/ozil-goal-generator/ozil-goal-capcut-template`、`/ozil-goal-generator/ai-football-video-from-photo`。
+- `/ozil-goal-generator/blog` 与其文章按内容原生语种发布：英语、巴西葡语、西语。仅为实际存在的对应文章设置语言 alternates，不制造翻译版 URL。
+- 定价、政策和联系页保留六语言路径。首页及六个指南没有非英语正文；`/fr` 等本地化 Ozil 镜像应返回 404，也不应出现在 sitemap 或 `llms.txt`。
 
-各页保持独立主题、服务端正文、内部链接、canonical、hreflang 与 FAQ 结构化数据，并纳入 sitemap 和 `public/llms.txt`。竞品陈述的来源与核验边界见 [来源记录](geo-sources.md)；更新陈述时需重新核对对应来源。
+旧 Hotel Lobby、AI Rap Song、旧博客和 showcases 不属于本独立站的公开内容。更新页面时同时检查站内导航、内链、canonical、语言 alternates、结构化数据、`robots.txt`、sitemap 和 [`public/llms.txt`](../public/llms.txt)。
 
-## 当前产品事实
+## 产品事实与来源
 
-免费说明使用一次性 50 欢迎积分，不宣称每日免费重置、无需登录或所有设置均免费。默认 Wan 10 秒 480p 模板需要 60 积分，5 秒 480p 模板需要 30 积分；费用以服务端报价为准。页面介绍的声音、动作和舞台能力需与生成器保持一致。
+首页与指南应和生成器保持一致：一张获授权的成年人照片，JPG/PNG/WebP、最大 10 MB；15 秒、9:16、带声音的视频；每次 300 积分。新账户不赠送积分，付款使用一次性积分包。生成结果和处理时间可能变化，不把示例描述为效果保证。
 
-比较文章明确属于本站内容，不编造用户评分、成功率或竞品实测结果。旧任务书中的 10/100 欢迎积分、仅五种语言及旧视频报价不再作为当前依据。
+外部事实、素材许可和比较性陈述应保留可核查来源；修改公开内容时复核链接、日期和产品价格。六个指南正文见 [`content/ozil-goal-pages.json`](../content/ozil-goal-pages.json)，博客文章及原生语言关系见 [`content/ozil-blog/`](../content/ozil-blog/)，素材记录见 [`docs/media-sources.json`](media-sources.json)。
 
 ## 复现检查
 
-启动本地页面服务后执行：
+先运行自动测试、类型检查和构建：
 
 ```bash
-python3 scripts/check-geo.py http://127.0.0.1:3000
-node scripts/check-i18n.mjs http://127.0.0.1:3000
+npm test
+npm run typecheck
+npm run cf:build
 ```
 
-脚本检查页面抓取契约、多语言路由与 sitemap；浏览器仍需检查窄屏布局、链接和语言切换。完整验证入口见 [QA 说明](../QA/README.md)。这些检查不证明搜索引擎已收录、已获得排名或会被 AI 引用；收录和曝光需要使用实际站点数据另行观察。
+本地运行 `npm run build` 与 `npm run start` 后，在另一终端执行只读检查；也可把基址换成独立 Workers 预览地址：
+
+```bash
+node scripts/check-i18n.mjs http://127.0.0.1:3000
+python3 scripts/check-geo.py http://127.0.0.1:3000
+```
+
+在本地或独立预览地址检查首页、六个指南、博客索引及文章、定价和政策页的状态码与页面正文；检查根域 canonical、实际存在的语言 alternates、FAQ/HowTo/BlogPosting 等结构化数据、`/robots.txt` 与 `/sitemap.xml`。确认旧公开路径及非英语 Ozil 镜像不返回内容，站点地图只包含现有页面。浏览器还需检查窄屏布局、语言切换、内链和图片加载。
+
+这些检查只证明页面和抓取契约在被测环境中的行为；搜索收录、排名和 AI 引用需要使用新站的实际数据另行观察。操作清单见 [QA 说明](../QA/README.md)。

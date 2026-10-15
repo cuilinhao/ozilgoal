@@ -4,6 +4,7 @@ import { middleware } from "../middleware";
 import { createTranslator } from "../lib/i18n/translator";
 import sitemap from "../app/sitemap";
 import { publicPages } from "../content/public-pages";
+import { isEnglishOnlyOzilPath } from "../lib/i18n/routing";
 
 describe("localized requests", () => {
   it.each(["ja", "zh-TW"])("passes %s to the real localized page route", (locale) => {
@@ -39,12 +40,21 @@ describe("translation formatting", () => {
 });
 
 describe("multilingual sitemap", () => {
-  it("lists every public page in each language with reciprocal hreflang URLs", () => {
+  it("indexes English-only Ozil pages once and translated support pages per locale", () => {
     const entries = sitemap();
     for (const page of publicPages) {
-      for (const prefix of ["", "/ko", "/ja", "/fr", "/es", "/zh-TW"]) {
+      const prefixes = isEnglishOnlyOzilPath(page.path) ? [""] : ["", "/ko", "/ja", "/fr", "/es", "/zh-TW"];
+      for (const prefix of prefixes) {
         const path = prefix && page.path === "/" ? prefix : `${prefix}${page.path}`;
         expect(entries.some(entry => entry.url === `https://ozilgoal-aivideo.com${path}`), path).toBe(true);
+      }
+      if (isEnglishOnlyOzilPath(page.path)) {
+        const english = entries.find(entry => entry.url === `https://ozilgoal-aivideo.com${page.path}`);
+        expect(english?.alternates?.languages).toEqual({ en: new URL(page.path, "https://ozilgoal-aivideo.com").href, "x-default": new URL(page.path, "https://ozilgoal-aivideo.com").href });
+        for (const prefix of ["/ko", "/ja", "/fr", "/es", "/zh-TW"]) {
+          const path = page.path === "/" ? prefix : `${prefix}${page.path}`;
+          expect(entries.some(entry => new URL(entry.url).pathname === path), path).toBe(false);
+        }
       }
     }
     expect(new Set(entries.map(entry => entry.url)).size).toBe(entries.length);

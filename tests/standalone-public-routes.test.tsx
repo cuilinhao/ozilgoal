@@ -9,7 +9,7 @@ import robots from "../app/robots";
 import * as generationHistoryRoute from "../app/api/generations/route";
 import { AuthProvider } from "../components/auth-provider";
 import { OzilGoalPage } from "../components/ozil-goal/page-content";
-import { localizeMetadata } from "../lib/i18n/server";
+import { getDocumentLanguage, localizeMetadata } from "../lib/i18n/server";
 import { publicPages } from "../content/public-pages";
 
 const request = vi.hoisted(() => ({ locale: "en", path: "/" }));
@@ -37,29 +37,28 @@ describe("standalone Ozil public scope", () => {
   });
 
   it.each([
+    "/",
+    "/ozil-goal-generator",
+    "/ozil-goal-generator/ozil-goal-ai-prompt",
+    "/ozil-goal-generator/ozil-goal-ai-template",
     "/hotel-lobby-ai-video-generator",
     "/hotel-lobby-ai-template",
     "/ai-rap-song-generator",
     "/showcases",
     "/blog",
     "/blog/what-is-hotel-lobby-ai-video",
-  ])("returns 404 for the legacy localized path %s", async path => {
-    await expect(localizedMetadata({ params: Promise.resolve({ locale: "fr", path: path.slice(1).split("/") }) }))
+  ])("returns 404 for an English-only or legacy localized path %s", async path => {
+    await expect(localizedMetadata({ params: Promise.resolve({ locale: "fr", path: path === "/" ? [] : path.slice(1).split("/") }) }))
       .rejects.toMatchObject({ digest: "NEXT_HTTP_ERROR_FALLBACK;404" });
   });
 
-  it("uses the root URL as canonical for both home paths in each locale", async () => {
-    for (const [locale, canonical] of [
-      ["en", "https://ozilgoal-aivideo.com/"],
-      ["fr", "https://ozilgoal-aivideo.com/fr"],
-    ] as const) {
-      request.locale = locale;
-      for (const path of ["/", "/ozil-goal-generator"]) {
-        request.path = path;
-        const metadata = await localizeMetadata({ title: "Ozil Goal Generator" });
-        expect(metadata.alternates?.canonical).toBe(canonical);
-        expect(metadata.alternates?.languages?.en).toBe("https://ozilgoal-aivideo.com/");
-      }
+  it("uses the English root as canonical for both home URLs without fabricated alternates", async () => {
+    request.locale = "en";
+    for (const path of ["/", "/ozil-goal-generator"]) {
+      request.path = path;
+      const metadata = await localizeMetadata({ title: "Ozil Goal Generator" });
+      expect(metadata.alternates?.canonical).toBe("https://ozilgoal-aivideo.com/");
+      expect(metadata.alternates?.languages).toEqual({ en: "https://ozilgoal-aivideo.com/", "x-default": "https://ozilgoal-aivideo.com/" });
     }
     request.locale = "en";
     request.path = "/";
@@ -78,6 +77,8 @@ describe("standalone Ozil public scope", () => {
     expect(entries.every(entry => entry.url.startsWith("https://ozilgoal-aivideo.com/"))).toBe(true);
     expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/")).toBe(true);
     expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/ozil-goal-generator")).toBe(false);
+    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr")).toBe(false);
+    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr/ozil-goal-generator/ozil-goal-ai-prompt")).toBe(false);
   });
 
   it("keeps the shared history endpoint read-only", () => {
@@ -87,5 +88,20 @@ describe("standalone Ozil public scope", () => {
 
   it("advertises the new sitemap to crawlers", () => {
     expect(robots().sitemap).toBe("https://ozilgoal-aivideo.com/sitemap.xml");
+  });
+
+  it("sets the document language from exact native Ozil blog slugs", async () => {
+    request.locale = "en";
+    request.path = "/ozil-goal-generator/blog/como-colocar-minha-foto-no-gol-do-ozil";
+    expect(await getDocumentLanguage()).toBe("pt-BR");
+    request.path = "/ozil-goal-generator/blog/gol-de-ozil-con-mi-foto";
+    expect(await getDocumentLanguage()).toBe("es");
+    request.path = "/ozil-goal-generator/blog/not-a-real-article";
+    expect(await getDocumentLanguage()).toBe("en");
+    request.locale = "fr";
+    request.path = "/pricing";
+    expect(await getDocumentLanguage()).toBe("fr");
+    request.locale = "en";
+    request.path = "/";
   });
 });
