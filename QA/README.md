@@ -32,7 +32,9 @@ python3 scripts/check-geo.py http://127.0.0.1:3000
 
 脚本分别检查现有公开/私有路由、语言与 canonical，以及 Ozil 页面、FAQ/HowTo、sitemap、robots 和 `llms.txt`；报告中的页面数由实际 sitemap 得出。`check-geo.py` 会解析 XML，检查全部 `loc` 和 hreflang 目标的直接 HTTP 状态、逐页 canonical，以及首页 Title/OG/Twitter 一致性；重定向不能代替 200。生产或预览检查应替换为该环境自己的基址。检查时记录 Git 提交、环境、时间、URL 与结果。
 
-2026-10-16 的 SEO 第一批仅包含 T1–T3。保留首页兼容入口 canonical 到 `/`、现有语种内容与路径；meta description 不变。专用爬虫组保留通配组的私有路径排除。T6/T7、T4/T5 按任务约定在第一批上线后执行。上述检查不证明 Google 已收录或 AI 已引用，GSC 提交与线上复验需单独记录。
+2026-10-16 的 SEO 修改包含 T1–T7；按用户最新要求统一完成、测试后发布。保留首页兼容入口 canonical 到 `/`、现有语种内容与路径；meta description 不变。专用爬虫组保留通配组的私有路径排除。新增 Ludogorets 英文文章使用固定发布日期、来源链接与原创比分插图；原生博客文章只声明自身语言，不把同主题独立文章当作互译。样例保留十条来源与非关联声明，没有证据的素材不标为本站生成。
+
+首页 SoftwareApplication 的价格与可见 Starter 套餐共用配置（USD 9.90 / 300 credits），不使用任务示例中的免费价格，也不编造评价。Google 软件富结果要求真实 rating 或 review，因此缺少评价时不能承诺 Rich Results Test 零错误或富结果资格；须将结构化数据一致性与 Google 资格检查分开记录。上述检查不证明 Google 已收录或 AI 已引用，GSC 提交与线上复验需单独记录。
 
 ## 功能与支付验收
 

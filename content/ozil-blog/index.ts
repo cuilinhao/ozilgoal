@@ -16,11 +16,7 @@ export function getOzilBlogPost(slug: string): OzilBlogPost | undefined {
   return ozilBlogPosts.find(post => post.slug === slug);
 }
 
-/** Only link corresponding articles that actually exist, never synthetic translations. */
+/** Native articles share topics, not translations; only declare each article's own language. */
 export function ozilBlogAlternates(post: OzilBlogPost): Record<string, string> {
-  const related = ozilBlogPosts.filter(candidate => candidate.topic === post.topic);
-  return Object.fromEntries([
-    ...related.map(candidate => [candidate.language, candidate.path]),
-    ["x-default", (related.find(candidate => candidate.language === "en") ?? related[0]).path],
-  ]);
+  return { [post.language]: post.path, "x-default": post.path };
 }

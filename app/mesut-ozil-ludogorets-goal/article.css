@@ -1,0 +1,5 @@
+.ludogorets-cover{max-width:960px;margin:32px 0 0}
+.ludogorets-cover img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:18px}
+.ludogorets-cover figcaption{margin-top:12px;max-width:780px;color:var(--muted);font-size:12px;line-height:1.6}
+.ludogorets-article .ludogorets-cta-copy{max-width:780px;margin:16px auto;line-height:1.75}
+.ludogorets-article .geo-cta .geo-note{margin-top:18px}

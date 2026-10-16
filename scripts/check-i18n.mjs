@@ -5,6 +5,7 @@ const site = 'https://ozilgoal-aivideo.com';
 const locales = ['en', 'ko', 'ja', 'fr', 'es', 'zh-TW'];
 const englishOnly = [
   '/',
+  '/mesut-ozil-ludogorets-goal',
   '/ozil-goal-generator/ozil-goal-ai-prompt',
   '/ozil-goal-generator/ozil-goal-ai-template',
   '/ozil-goal-generator/ozil-goal-trend',
@@ -83,7 +84,7 @@ await Promise.all(Array.from({length: 6}, async () => {
     if (kind === 'translated' && locale !== 'en') {
       for (const [, href] of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
         if (!href.startsWith('/') || href.startsWith('//') || href.startsWith('/api/') || /\.[^/]+(?:[?#]|$)/.test(href)) continue;
-        if (href.startsWith('/ozil-goal-generator/') || /^\/(?:[?#]|$)/.test(href)) continue; // English-only Ozil pages and native blog.
+        if (englishOnly.includes(href.split(/[?#]/)[0]) || href.startsWith('/ozil-goal-generator/') || /^\/(?:[?#]|$)/.test(href)) continue; // English-only Ozil pages and native blog.
         if (!new RegExp(`^/${locale}(?:/|#|\\?|$)`).test(href)) fail(route, `link lost language: ${href}`);
       }
     }

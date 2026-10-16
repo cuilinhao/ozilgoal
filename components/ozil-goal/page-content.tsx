@@ -1,6 +1,7 @@
 import { createElement, Fragment, type ReactNode, type CSSProperties } from 'react';
 import pages from '@/content/ozil-goal-pages.json';
 import { SITE_URL } from '@/content/public-pages';
+import { creditPacks } from '@/content/pricing';
 import { getLocale } from '@/lib/i18n/server';
 import { localizeHref, type Locale } from '@/lib/i18n/routing';
 import { OZIL_GOAL_COST } from '@/lib/ozil-goal';
@@ -39,6 +40,17 @@ function homeSchema(content: SourceNode, locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'SoftwareApplication', '@id': `${url}#software`, url, inLanguage: 'en', publisher,
+        name: 'Ozil Goal AI Video Generator', applicationCategory: 'MultimediaApplication', operatingSystem: 'Web',
+        description: `Create a 15-second, 9:16 video with sound from one authorized photo. Each generation costs ${OZIL_GOAL_COST} credits; failed generations return credits.`,
+        isAccessibleForFree: false, image: `${SITE_URL}/ozil-goal/logo.png`,
+        // The offer is a real credit pack, not free access. No ratings are claimed.
+        offers: {
+          '@type': 'Offer', name: `${creditPacks[0].name} — ${creditPacks[0].credits} credits`,
+          price: (creditPacks[0].amountCents / 100).toFixed(2), priceCurrency: 'USD', url: `${SITE_URL}/pricing`,
+        },
+      },
       {
         '@type': 'FAQPage', '@id': `${url}#faq`, url, inLanguage: 'en', publisher,
         mainEntity: elements(content, 'details').map(detail => ({

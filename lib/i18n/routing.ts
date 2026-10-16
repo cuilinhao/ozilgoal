@@ -19,7 +19,7 @@ export function isPagePath(path: string): boolean {
 }
 export function isEnglishOnlyOzilPath(path: string): boolean {
   const pathname = stripLocale(path).split(/[?#]/)[0] || "/";
-  if (pathname === "/") return true;
+  if (pathname === "/" || /^\/mesut-ozil-ludogorets-goal\/?$/.test(pathname)) return true;
   if (/^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname)) return false;
   return pathname === "/ozil-goal-generator" || pathname.startsWith("/ozil-goal-generator/");
 }

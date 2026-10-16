@@ -27,6 +27,21 @@ function schemaFrom(html: string) {
 }
 
 describe('Ozil landing page structured data', () => {
+  it('describes the paid app using the visible Starter offer without inventing reviews', async () => {
+    const html = await render();
+    const data = schemaFrom(html);
+    const software = data['@graph'].find((entry: { '@type': string }) => entry['@type'] === 'SoftwareApplication');
+    expect(software).toMatchObject({
+      name: 'Ozil Goal AI Video Generator',
+      applicationCategory: 'MultimediaApplication', operatingSystem: 'Web', isAccessibleForFree: false,
+      offers: { '@type': 'Offer', name: 'Starter — 300 credits', price: '9.90', priceCurrency: 'USD', url: 'https://ozilgoal-aivideo.com/pricing' },
+    });
+    const pricing = html.match(/<section id="pricing"[\s\S]*?<\/section>/)![0];
+    expect(visibleText(pricing)).toContain(`Starter pack: USD ${software.offers.price} for 300 credits.`);
+    expect(software).not.toHaveProperty('aggregateRating');
+    expect(software).not.toHaveProperty('review');
+  });
+
   it('publishes the same twelve FAQ answers and three instructions that visitors can read', async () => {
     const html = await render();
     const data = schemaFrom(html);

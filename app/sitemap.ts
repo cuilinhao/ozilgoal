@@ -13,7 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })));
   // Blog copy is authored in three languages. Do not fabricate six UI-locale copies.
   return [...translatedPages,
-    { url: `${SITE_URL}${OZIL_BLOG_PATH}`, priority: 0.7, changeFrequency: "weekly", lastModified: OZIL_BLOG_UPDATED },
+    { url: `${SITE_URL}${OZIL_BLOG_PATH}`, priority: 0.7, changeFrequency: "weekly", lastModified: OZIL_BLOG_UPDATED,
+      alternates: { languages: { en: `${SITE_URL}${OZIL_BLOG_PATH}`, "x-default": `${SITE_URL}${OZIL_BLOG_PATH}` } },
+    },
     ...ozilBlogPosts.map(post => ({
       url: `${SITE_URL}${post.path}`, priority: 0.7, changeFrequency: "monthly" as const, lastModified: post.dateModified,
       alternates: { languages: Object.fromEntries(Object.entries(ozilBlogAlternates(post)).map(([language, path]) => [language, `${SITE_URL}${path}`])) },
