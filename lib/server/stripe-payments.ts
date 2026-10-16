@@ -4,6 +4,7 @@ import type { User } from '../contracts';
 import { isLocale, localizeHref } from '../i18n/routing';
 import { appOrigin, database, type Env } from './env';
 import { ApiError } from './errors';
+import { forwardMergedGuestPayment } from './guest-accounts';
 import { stripeClient, stripeMode, stripeWebhookSecret } from './stripe';
 
 function priceForPack(env: Env, packId: string): string {
@@ -58,7 +59,8 @@ export async function createStripeCheckout(env: Env, user: User, packId: unknown
     session = await client.checkout.sessions.create({
       mode: 'payment', currency: 'usd', adaptive_pricing: { enabled: false },
       line_items: [{ price: priceId, quantity: 1 }],
-      client_reference_id: orderId, customer_email: user.email, metadata,
+      // Guests have a placeholder email, so Stripe collects the buyer's email.
+      client_reference_id: orderId, customer_email: user.guest ? undefined : user.email, metadata,
       payment_intent_data: { metadata }, locale,
       success_url: `${returnPath}?checkout=completed&orderId=${encodeURIComponent(orderId)}`,
       cancel_url: `${returnPath}?checkout=cancelled&orderId=${encodeURIComponent(orderId)}`,
@@ -216,7 +218,7 @@ export async function applyStripeEvent(env: Env, event: Stripe.Event): Promise<v
     AND product_id=? AND amount=? AND currency=? AND credits=? AND checkout_id=?`;
   const bindings = [order.id, order.provider_mode, order.user_id, order.pack_id,
     order.product_id, order.amount, order.currency, order.credits, order.checkout_id];
-  const results = await db.batch([
+  const [updated] = await db.batch([
     db.prepare(`UPDATE orders SET status='paid',provider_order_id=? WHERE ${snapshot}
       AND ((status='pending' AND provider_order_id IS NULL) OR (status='paid' AND provider_order_id=?))`)
       .bind(paymentIntentId, ...bindings, paymentIntentId),
@@ -229,6 +231,7 @@ export async function applyStripeEvent(env: Env, event: Stripe.Event): Promise<v
       SELECT ?,?,id FROM orders WHERE ${snapshot} AND provider_order_id=? AND status='paid'
       ON CONFLICT(id) DO NOTHING`)
       .bind(`stripe:${mode}:${event.id}`, event.type, ...bindings, paymentIntentId),
+    ...forwardMergedGuestPayment(db, order.id),
   ]);
-  if (results[0].meta.changes !== 1) throw new ApiError(409, 'Payment order changed before it could be credited.');
+  if (updated.meta.changes !== 1) throw new ApiError(409, 'Payment order changed before it could be credited.');
 }

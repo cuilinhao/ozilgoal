@@ -62,6 +62,8 @@ function validatedCheckoutUrl(value: unknown, sessionId: unknown): string {
 export async function createCheckout(env: Env, user: User, packId: unknown, requestedLocale: unknown = "en") {
   if (env.PAYMENT_PROVIDER === 'stripe') return createStripeCheckout(env, user, packId, requestedLocale);
   if (env.PAYMENT_PROVIDER && env.PAYMENT_PROVIDER !== 'waffo') throw new ApiError(503, 'Payment provider is not configured.');
+  // Waffo checkout needs the buyer's real email, which a guest does not have.
+  if (user.guest) throw new ApiError(401, 'Please sign in to continue.');
   const locale = typeof requestedLocale === "string" && isLocale(requestedLocale) ? requestedLocale : "en";
   const pack = creditPacks.find(item => item.id === packId);
   if (!pack) throw new ApiError(400, 'Unknown credit pack.');

@@ -53,11 +53,11 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           {!isOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
-          {user ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><Link className="sign-in-button account-header-link" href="/app/video-generator">{t("User Center")}</Link><button className="header-signout" onClick={() => void logout()}>{t("Sign Out")}</button></div> : <button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button>}
+          {user && !user.guest ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><Link className="sign-in-button account-header-link" href="/app/video-generator">{t("User Center")}</Link><button className="header-signout" onClick={() => void logout()}>{t("Sign Out")}</button></div> : user && credits > 0 ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button></div> : <button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button>}
           <button ref={mobileTrigger} className="mobile-menu-button" aria-label={t(menuOpen ? "Close menu" : "Open menu")} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={21}/> : <Menu size={21}/>}</button>
         </div>
       </div>
-      {menuOpen && <nav id="mobile-primary-navigation" className="mobile-nav" aria-label={t("Mobile navigation")}>{navigationLinks(true)}{user ? <Link href="/app/video-generator" onClick={close}>{t("User Center")}</Link> : <button onClick={() => { close(); openSignIn(); }}>{t("Sign In")}</button>}</nav>}
+      {menuOpen && <nav id="mobile-primary-navigation" className="mobile-nav" aria-label={t("Mobile navigation")}>{navigationLinks(true)}{user && !user.guest ? <Link href="/app/video-generator" onClick={close}>{t("User Center")}</Link> : <button onClick={() => { close(); openSignIn(); }}>{t("Sign In")}</button>}</nav>}
     </header>
   );
 }

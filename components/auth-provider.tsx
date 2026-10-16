@@ -86,7 +86,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return <AuthContext.Provider value={{ user, credits, loading, authConfigured, emailAuthConfigured, openSignIn, refresh, logout }}>
     {children}
-    <GoogleOneTap enabled={!loading && !user && !open && !!googleClientId} onSuccess={authenticated} onError={message => { setOneTapError(message); setOpen(true); }} />
+    <GoogleOneTap enabled={!loading && (!user || !!user.guest) && !open && !!googleClientId} onSuccess={authenticated} onError={message => { setOneTapError(message); setOpen(true); }} />
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Portal>
         <Dialog.Overlay className="mi-dialog-overlay mi-auth-overlay" />

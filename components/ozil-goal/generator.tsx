@@ -79,7 +79,8 @@ export function OzilGoalGenerator() {
   };
   const submit = async () => {
     if (controllerRef.current || activeJob || authLoading) return;
-    if (!user) { openSignIn(); return; }
+    // A guest without credits is treated like a visitor; a pending retry still goes through.
+    if (!user || (user.guest && credits < OZIL_GOAL_COST && !idempotency.current)) { openSignIn(); return; }
     if (!photo) { setError('Add one clear photo first.'); inputRef.current?.focus(); return; }
     if (!consent) { setError('Please confirm photo consent before generating.'); return; }
     const fingerprint = `${user.id}:${photo.id}`;
