@@ -75,12 +75,12 @@ function renderNode(node: SourceNode, locale: Locale, key: string, formatText = 
   const children = node.children.map((child, index) => renderNode(child, locale, `${key}.${index}`, formatText));
   return children.length ? createElement(node.tag, props, children) : createElement(node.tag, props);
 }
-export async function OzilGoalPage({ slug = 'home' }: { slug?: OzilPageSlug }) {
+export async function OzilGoalPage({ slug = 'home', previewLocale = 'en' }: { slug?: OzilPageSlug; previewLocale?: Locale }) {
   const locale = await getLocale();
   const content = pages[slug].content as SourceNode;
   return <>
     {slug === 'home' && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema(content, locale)).replace(/</g, '\\u003c') }} />}
-    <OzilShell>{renderNode(content, locale, slug)}{slug === 'home' && <OzilBlogPreview />}{renderNode(pages.footer as SourceNode, locale, 'footer')}</OzilShell>
+    <OzilShell>{renderNode(content, locale, slug)}{slug === 'home' && <OzilBlogPreview locale={previewLocale} />}{renderNode(pages.footer as SourceNode, locale, 'footer')}</OzilShell>
   </>;
 }
 export function ozilMetadata(slug: OzilPageSlug) {

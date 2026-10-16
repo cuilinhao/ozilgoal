@@ -27,7 +27,7 @@
 .ozil-page .ozil-blog-preview .blog-card .blog-card-meta{color:var(--primary-strong);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4}
 .ozil-page .ozil-blog-preview .blog-card>p{font-size:14px;line-height:1.65}
 .ozil-page .ozil-blog-preview .blog-card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:8px;font-size:13px}
-.ozil-blog-preview .blog-card h3{font-size:20px}
+.ozil-blog-preview .blog-card h3{font-size:20px;font-weight:600}
 .ozil-blog-preview .blog-card p{color:var(--muted)}
 .ozil-blog-preview .blog-card a{color:var(--foreground);text-decoration:none}
 .ozil-blog-preview .blog-card a:hover{text-decoration:underline;text-underline-offset:4px}

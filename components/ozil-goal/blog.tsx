@@ -3,6 +3,8 @@ import { BlogBlocks, plainText, renderInline } from "@/components/blog/blog-shar
 import { SITE_URL } from "@/content/public-pages";
 import { OZIL_BLOG_PATH, OZIL_BLOG_UPDATED, ozilBlogLanguages, ozilBlogPosts } from "@/content/ozil-blog";
 import type { OzilBlogPost } from "@/content/ozil-blog/types";
+import { localeTags, type Locale } from "@/lib/i18n/routing";
+import { blogPreviewCopy, type BlogPreviewTopic } from "./blog-preview-copy";
 import { ozilBlogText, ozilBlogUi } from "./blog-ui";
 import "./blog.css";
 
@@ -20,14 +22,25 @@ function ArticleCard({ post }: { post: OzilBlogPost }) {
   </article>;
 }
 
-export function OzilBlogPreview() {
-  return <section className="ozil-blog-preview" id="blog" aria-labelledby="ozil-blog-title">
+const previewTopics: BlogPreviewTopic[] = ["trend", "photo", "free"];
+
+export function OzilBlogPreview({ locale = "en" }: { locale?: Locale }) {
+  const copy = blogPreviewCopy[locale];
+  const articleLanguage = locale === "es" ? "es" : "en";
+  return <section className="ozil-blog-preview" id="blog" aria-labelledby="ozil-blog-title" lang={locale}>
     <div className="section-container">
-      <div className="ozil-blog-preview-heading"><div><p className="eyebrow">OZIL GOAL BLOG</p><h2 id="ozil-blog-title">The trend. Your photo. Your next video.</h2></div><Link href={OZIL_BLOG_PATH}>Explore all {ozilBlogPosts.length} articles <span aria-hidden="true">↗</span></Link></div>
-      <p className="ozil-blog-preview-intro">Understand the meme, find the right tool and learn how to make your own. Guides in English, Português and Español.</p>
-      <div className="ozil-blog-preview-grid">{ozilBlogLanguages.map(group => {
-        const post = ozilBlogPosts.find(item => item.language === group.language && item.topic === "trend")!;
-        return <div key={group.language} lang={group.language}><p className="ozil-blog-language-label">{group.label}</p><ArticleCard post={post} /></div>;
+      <div className="ozil-blog-preview-heading"><div><p className="eyebrow">{copy.kicker}</p><h2 id="ozil-blog-title">{copy.title}</h2></div><Link href={OZIL_BLOG_PATH}>{copy.viewAll.replace("{count}", String(ozilBlogPosts.length))} <span aria-hidden="true">↗</span></Link></div>
+      <p className="ozil-blog-preview-intro">{copy.intro}{copy.articleLanguageNote && <> {copy.articleLanguageNote}</>}</p>
+      <div className="ozil-blog-preview-grid">{previewTopics.map(topic => {
+        const post = ozilBlogPosts.find(item => item.language === articleLanguage && item.topic === topic)!;
+        const card = copy.cards[topic];
+        const published = new Intl.DateTimeFormat(localeTags[locale], { dateStyle: "medium", timeZone: "UTC" }).format(new Date(`${post.datePublished}T00:00:00Z`));
+        return <div key={topic}><p className="ozil-blog-language-label">{card.label}</p><article className="blog-card">
+          <p className="blog-card-meta">{card.eyebrow}</p>
+          <h3><Link href={post.path} hrefLang={post.language}>{card.title}</Link></h3>
+          <p>{card.excerpt}</p>
+          <p className="blog-card-footer"><time dateTime={post.datePublished}>{published}</time><Link href={post.path} hrefLang={post.language} aria-label={`${copy.read}: ${card.title}${copy.articleLanguageNote ? ` (${copy.articleLanguageNote})` : ""}`}>{copy.read} →</Link></p>
+        </article></div>;
       })}</div>
     </div>
   </section>;
