@@ -52,15 +52,24 @@ describe("Ludogorets article output", () => {
     const imageUrl = "https://ozilgoal-aivideo.com/ozil-goal/ludogorets-match-card.png";
     expect(metadata.title).toEqual({ absolute: "Mesut Özil's Ludogorets Goal: Why It Became Iconic" });
     expect(metadata.alternates).toEqual({ canonical: url, languages: { en: url, "x-default": url } });
-    expect(metadata.openGraph).toMatchObject({ type: "article", url, title: data.headline, images: [{ url: imageUrl, width: 1200, height: 630 }] });
+    expect(metadata.openGraph).toMatchObject({ type: "article", url, title: data.headline, publishedTime: data.datePublished, modifiedTime: data.dateModified, images: [{ url: imageUrl, width: 1200, height: 630 }] });
     expect(metadata.twitter).toMatchObject({ card: "summary_large_image", title: data.headline, images: [imageUrl] });
     expect(data).toMatchObject({
       "@type": "Article", headline: "Mesut Özil's Ludogorets Goal: Why It Became Iconic",
-      datePublished: "2026-10-16", dateModified: "2026-10-16", url, image: imageUrl,
+      datePublished: "2026-10-16T02:35:17.959Z", dateModified: "2026-10-16T02:35:17.959Z", url, image: imageUrl,
       inLanguage: "en", author: { "@type": "Organization", name: "Ozil Goal Generator editorial team", url: "https://ozilgoal-aivideo.com" },
     });
     expect(html).toContain(data.author.name);
-    expect(html).toMatch(new RegExp(`<time datetime="${data.datePublished}">`, "i"));
+    for (const timestamp of [data.datePublished, data.dateModified]) {
+      expect(timestamp).toMatch(/T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/);
+      expect(Number.isNaN(Date.parse(timestamp))).toBe(false);
+    }
+    const published = new Date(data.datePublished);
+    const visibleDate = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(published);
+    const times = [...html.matchAll(/<time datetime="([^"]+)">([^<]+)<\/time>/gi)];
+    expect(times.some(([, timestamp, text]) => timestamp === data.datePublished && text === visibleDate)).toBe(true);
+    const lastModified = sitemap().find(entry => entry.url === url)!.lastModified!;
+    expect(new Date(lastModified).toISOString().slice(0, 10)).toBe(published.toISOString().slice(0, 10));
     expect(data).not.toHaveProperty("aggregateRating");
     expect(data).not.toHaveProperty("review");
     expect(metadata).not.toHaveProperty("keywords");

@@ -12,7 +12,7 @@ import subprocess
 import sys
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit
@@ -61,6 +61,13 @@ VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link",
 
 def normalize(value):
     return re.sub(r"\s+", " ", value).strip()
+
+
+def aware_datetime(value, field):
+    assert isinstance(value, str), (field, "Expected an ISO 8601 datetime")
+    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    assert parsed.tzinfo is not None and parsed.utcoffset() is not None, (field, "Datetime must include a timezone")
+    return parsed
 
 
 def canonical_url(path):
@@ -288,11 +295,13 @@ assert xml.tag == "{" + ns["s"] + "}urlset", "Expected sitemap urlset"
 locations = [element.text for element in xml.findall("s:url/s:loc", ns)]
 alternates = [{"language": element.get("hreflang"), "url": element.get("href")} for element in xml.findall(".//x:link", ns)]
 sitemap_languages = {}
+sitemap_lastmod = {}
 for entry in xml.findall("s:url", ns):
     links = entry.findall("x:link", ns)
     languages = {link.get("hreflang"): normalize_root(link.get("href")) for link in links}
     assert len(languages) == len(links), (entry.findtext("s:loc", namespaces=ns), "Duplicate sitemap hreflang")
     sitemap_languages[entry.findtext("s:loc", namespaces=ns)] = languages
+    sitemap_lastmod[entry.findtext("s:loc", namespaces=ns)] = entry.findtext("s:lastmod", namespaces=ns)
 assert locations, "Empty sitemap"
 assert len(locations) == len(set(locations)), "Duplicate sitemap URLs"
 # Validate every target before making any page request; never visit external origins.
@@ -386,9 +395,17 @@ assert article_schema.get("headline") == article.headings["h1"][0], "Article hea
 assert article_schema.get("url") == canonical_url(ARTICLE_PATH) and article_schema.get("inLanguage") == "en", "Article schema URL/language mismatch"
 author = article_schema.get("author", {}).get("name")
 assert author and author in normalize(" ".join(article.visible)), "Article author is missing from visible copy"
-published = date.fromisoformat(article_schema["datePublished"])
-visible_dates = {published.isoformat(), f"{published.day} {published:%B %Y}", f"{published:%B} {published.day}, {published.year}"}
-assert any(time["datetime"] == published.isoformat() and time["text"] in visible_dates for time in article.times), "Article publication date differs from visible date"
+published = aware_datetime(article_schema["datePublished"], "Article datePublished")
+modified = aware_datetime(article_schema["dateModified"], "Article dateModified")
+assert modified >= published, "Article modification precedes publication"
+published_day = published.astimezone(timezone.utc).date()
+visible_dates = {published_day.isoformat(), f"{published_day.day} {published_day:%B %Y}", f"{published_day:%B} {published_day.day}, {published_day.year}"}
+assert any(
+    time["text"] in visible_dates
+    and aware_datetime(time["datetime"], "Visible publication time").astimezone(timezone.utc).date() == published_day
+    for time in article.times
+), "Article publication date differs from visible date"
+assert date.fromisoformat(sitemap_lastmod[canonical_url(ARTICLE_PATH)]) == published_day, "Article sitemap date differs from publication day"
 image_url = article_schema.get("image")
 assert isinstance(image_url, str) and image_url in {urljoin(SITE, src) for src in article.images}, "Article schema image differs from visible image"
 article_image_path = request_path(image_url)
@@ -487,7 +504,7 @@ report = {
     "faq_exact_matches": faq_matches,
     "software_offer": offer,
     "sample_source_links_checked": sum(SAMPLE_SOURCES.values()),
-    "article": {"path": ARTICLE_PATH, "headline": article_schema["headline"], "datePublished": published.isoformat(), "author": author, "image": image_url, "h2_count": len(article.headings["h2"])},
+    "article": {"path": ARTICLE_PATH, "headline": article_schema["headline"], "datePublished": published.isoformat(), "dateModified": modified.isoformat(), "author": author, "image": image_url, "h2_count": len(article.headings["h2"])},
     "checked_resources": len(cache),
     "robots_crawlers": list(BOTS),
     "robots_public_paths_checked": len(public_paths),

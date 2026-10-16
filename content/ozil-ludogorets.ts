@@ -4,7 +4,8 @@ export const ludogoretsArticle = {
   path: "/mesut-ozil-ludogorets-goal",
   title: "Mesut Özil's Ludogorets Goal: Why It Became Iconic",
   description: "The story of Özil's solo winner in Arsenal's 3–2 comeback at Ludogorets on 1 November 2016: the chip, the composure and the finish.",
-  datePublished: "2026-10-16",
+  // First successful production deployment: c8b9f2ff-e2be-402e-918e-d0e238e1187a.
+  datePublished: "2026-10-16T02:35:17.959Z",
   author: "Ozil Goal Generator editorial team",
   image: "/ozil-goal/ludogorets-match-card.png",
   imageAlt: "Original match graphic: Ludogorets 2–3 Arsenal, 1 November 2016, with Arsenal recovering from 0–2 down",

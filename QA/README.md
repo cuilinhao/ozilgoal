@@ -34,7 +34,7 @@ python3 scripts/check-geo.py http://127.0.0.1:3000
 
 2026-10-16 的 SEO 修改包含 T1–T7；按用户最新要求统一完成、测试后发布。保留首页兼容入口 canonical 到 `/`、现有语种内容与路径；meta description 不变。专用爬虫组保留通配组的私有路径排除。新增 Ludogorets 英文文章使用固定发布日期、来源链接与原创比分插图；原生博客文章只声明自身语言，不把同主题独立文章当作互译。样例保留十条来源与非关联声明，没有证据的素材不标为本站生成。
 
-首页 SoftwareApplication 的价格与可见 Starter 套餐共用配置（USD 9.90 / 300 credits），不使用任务示例中的免费价格，也不编造评价。Google 软件富结果要求真实 rating 或 review，因此缺少评价时不能承诺 Rich Results Test 零错误或富结果资格；须将结构化数据一致性与 Google 资格检查分开记录。上述检查不证明 Google 已收录或 AI 已引用，GSC 提交与线上复验需单独记录。
+首页 SoftwareApplication 的价格与可见 Starter 套餐共用配置（USD 9.90 / 300 credits），不使用任务示例中的免费价格，也不编造评价。Google 富结果资格以实际测试为准：2026-10-16 的线上 Rich Results Test 将首页识别为有效软件应用，零严重错误，缺少 aggregateRating 仅为非严重问题；不能为消除提示编造评分。结构化数据检查不证明页面已收录或 AI 已引用，GSC 提交与线上复验需单独记录。
 
 ## 功能与支付验收
 
