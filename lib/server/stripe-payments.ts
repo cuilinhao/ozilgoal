@@ -24,8 +24,9 @@ function checkoutUrl(value: unknown, sessionId: string, mode: 'test' | 'live'): 
   catch { throw new ApiError(502, 'The payment service returned an invalid checkout address.'); }
   if (url.protocol !== 'https:' || url.hostname !== 'checkout.stripe.com' ||
     url.username || url.password || url.port ||
-    // Stripe hosts Checkout under /c/pay/ and, since 2026-10, /f/pay/.
-    !['/c/pay/', '/f/pay/'].some(prefix => url.pathname === prefix + sessionId)) {
+    // Stripe varies the single-letter path prefix (/c/, /f/, /g/ seen so far);
+    // the host is fixed and the rest of the path must be exactly this session.
+    !new RegExp(`^/[a-z]/pay/${sessionId}$`).test(url.pathname)) {
     throw new ApiError(502, 'The payment service returned an invalid checkout address.');
   }
   return url.href;
