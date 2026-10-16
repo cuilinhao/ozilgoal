@@ -133,44 +133,44 @@ export function OzilGoalGenerator() {
 
   return <div className="og-generator">
     <fieldset disabled={locked}>
-      <legend><span className="og-generator-step og-mono">1</span>Your photo</legend>
+      <legend><span className="og-generator-step og-mono">1</span>{t("Your photo")}</legend>
       <div className={`og-generator-upload ${photo ? 'has-photo' : ''} ${dragging ? 'is-over' : ''}`}
         onDragOver={event => { event.preventDefault(); if (!locked) setDragging(true); }}
         onDragLeave={() => setDragging(false)}
         onDrop={event => { event.preventDefault(); setDragging(false); changePhoto(event.dataTransfer.files[0]); }}>
         <label className="og-generator-photo-label">
-          {photo ? <img src={photo.url} alt="Your selected player photo" /> : <span className="og-generator-plus"><Plus size={24} /></span>}
-          <span><strong>{photo ? photo.file.name : 'Add one clear photo'}</strong><small>{photo ? 'Tap to choose another photo.' : 'One adult, face visible, head to toe if you can. Tap, or drop it here.'}</small></span>
-          <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" aria-label="Player photo" onChange={event => { changePhoto(event.target.files?.[0]); event.target.value = ''; }} />
+          {photo ? <img src={photo.url} alt={t("Your selected player photo")} /> : <span className="og-generator-plus"><Plus size={24} /></span>}
+          <span><strong>{photo ? photo.file.name : t('Add one clear photo')}</strong><small>{t(photo ? 'Tap to choose another photo.' : 'One adult, face visible, head to toe if you can. Tap, or drop it here.')}</small></span>
+          <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" aria-label={t("Player photo")} onChange={event => { changePhoto(event.target.files?.[0]); event.target.value = ''; }} />
         </label>
-        {photo && <button className="og-generator-remove" type="button" onClick={removePhoto} aria-label="Remove photo"><X size={16} /></button>}
+        {photo && <button className="og-generator-remove" type="button" onClick={removePhoto} aria-label={t("Remove photo")}><X size={16} /></button>}
       </div>
-      <p className="og-generator-hint">JPG, PNG or WebP · Up to 10 MB. <Link href="/privacy-policy">How we handle photos</Link></p>
+      <p className="og-generator-hint">{t("JPG, PNG or WebP · Up to 10 MB. ")}<Link href="/privacy-policy">{t("How we handle photos")}</Link></p>
     </fieldset>
     <div className="og-generator-actions">
-      <div className="og-generator-format"><span>15s · 9:16 · with sound</span><span>{OZIL_GOAL_COST} credits</span></div>
-      <label className="og-generator-consent"><input type="checkbox" checked={consent} disabled={locked} onChange={event => setConsent(event.target.checked)} /><span>I only use photos of myself or people who agreed to appear, and I accept the <Link href="/terms-of-service">Terms</Link>. The video is AI-generated, not real footage.</span></label>
+      <div className="og-generator-format"><span>{t("15s · 9:16 · with sound")}</span><span>{t('{credits} credits', { credits: OZIL_GOAL_COST })}</span></div>
+      <label className="og-generator-consent"><input type="checkbox" checked={consent} disabled={locked} onChange={event => setConsent(event.target.checked)} /><span>{t("I only use photos of myself or people who agreed to appear, and I accept the ")}<Link href="/terms-of-service">{t("Terms")}</Link>{t(". The video is AI-generated, not real footage.")}</span></label>
       <button className="og-cta og-display og-generator-submit" type="button" onClick={() => void submit()} disabled={locked || authLoading}>
         {(busy || activeJob) && <LoaderCircle size={20} className="og-generator-spinner" />}
-        {busy ? t(stage) : activeJob ? `Making your video · ${progress}%` : authLoading ? 'Checking account…' : 'Make my video'}
+        {busy ? t(stage) : activeJob ? t('Making your video · {progress}%', { progress }) : t(authLoading ? 'Checking account…' : 'Make my video')}
       </button>
       <div className="og-generator-footnote">
-        <p>{user ? <>{credits.toLocaleString()} credits available · <Link href="/pricing">Buy credits</Link></> : <>{OZIL_GOAL_COST} credits per video · <Link href="/pricing">View credit packs</Link></>}</p>
-        <p>{user ? <>Saved to your <Link href="/app/my-videos">My Videos</Link> · Failed generations are refunded</> : 'Sign in first; your photo stays in place'}</p>
+        <p>{user ? <>{t('{credits} credits available', { credits: credits.toLocaleString() })} · <Link href="/pricing">{t("Buy credits")}</Link></> : <>{t('{credits} credits per video', { credits: OZIL_GOAL_COST })} · <Link href="/pricing">{t("View credit packs")}</Link></>}</p>
+        <p>{user ? <>{t("Saved to your ")}<Link href="/app/my-videos">{t("My Videos")}</Link>{t(" · Failed generations are refunded")}</> : t('Sign in first; your photo stays in place')}</p>
       </div>
     </div>
     {(busy || activeJob) && <div className="og-generator-progress" role="status" aria-live="polite">
       <p>{t(statusText)}{(activeJob || uploadProgress) && <span>{progress}%</span>}</p>
-      {(activeJob || uploadProgress) && <div role="progressbar" aria-label={busy ? 'Photo upload progress' : 'Video generation progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}><span style={{ width: `${progress}%` }} /></div>}
-      {activeJob && <small>You can leave this page. Find your video in <Link href="/app/my-videos">My Videos</Link>.</small>}
+      {(activeJob || uploadProgress) && <div role="progressbar" aria-label={t(busy ? 'Photo upload progress' : 'Video generation progress')} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}><span style={{ width: `${progress}%` }} /></div>}
+      {activeJob && <small>{t("You can leave this page. Find your video in ")}<Link href="/app/my-videos">{t("My Videos")}</Link>.</small>}
     </div>}
-    {error && <p className="og-generator-error" role="alert">{t(error)} {user && credits < OZIL_GOAL_COST && <Link href="/pricing">Buy credits</Link>}</p>}
-    {generation && pollError && <p className="og-generator-error" role="alert">{t(pollError)} Status will retry automatically.</p>}
+    {error && <p className="og-generator-error" role="alert">{t(error)} {user && credits < OZIL_GOAL_COST && <Link href="/pricing">{t("Buy credits")}</Link>}</p>}
+    {generation && pollError && <p className="og-generator-error" role="alert">{t(pollError)}{t(" Status will retry automatically.")}</p>}
     {generation?.status === 'completed' && generation.videoUrl && <div className="og-generator-result">
-      <p role="status">Your Ozil goal video is ready.</p>
-      <video src={generation.videoUrl} controls playsInline preload="metadata" aria-label="Your generated Ozil goal video" />
-      <a href={generation.videoUrl} download><Download size={16} />Download video</a>
+      <p role="status">{t("Your Ozil goal video is ready.")}</p>
+      <video src={generation.videoUrl} controls playsInline preload="metadata" aria-label={t("Your generated Ozil goal video")} />
+      <a href={generation.videoUrl} download><Download size={16} />{t("Download video")}</a>
     </div>}
-    {generation && ['failed', 'cancelled'].includes(generation.status) && <p className="og-generator-error" role="alert">{t(generation.error ?? generation.statusMessage ?? 'Generation could not be completed.')} <Link href="/app/my-videos">View generation record</Link></p>}
+    {generation && ['failed', 'cancelled'].includes(generation.status) && <p className="og-generator-error" role="alert">{t(generation.error ?? generation.statusMessage ?? 'Generation could not be completed.')} <Link href="/app/my-videos">{t("View generation record")}</Link></p>}
   </div>;
 }

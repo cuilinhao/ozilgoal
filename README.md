@@ -5,7 +5,7 @@ Ozil Goal Generator 是面向 `https://ozilgoal-aivideo.com` 的独立单图足�
 ## 公开页面
 
 - `/` 是 Ozil Goal Generator 首页及生成入口；`/ozil-goal-generator` 保留兼容访问，canonical 指向 `/`。
-- 六个英语指南位于 `/ozil-goal-generator/` 下：`ozil-goal-ai-prompt`、`ozil-goal-ai-template`、`ozil-goal-trend`、`ozil-goal-meme`、`ozil-goal-capcut-template` 和 `ai-football-video-from-photo`。首页与这些指南的正文仅提供英语；`/fr` 等非英语 Ozil 镜像应返回 404，且不进入 sitemap。
+- 六篇指南位于 `/ozil-goal-generator/` 下：`ozil-goal-ai-prompt`、`ozil-goal-ai-template`、`ozil-goal-trend`、`ozil-goal-meme`、`ozil-goal-capcut-template` 和 `ai-football-video-from-photo`。首页、生成器及这些指南支持英语、韩语、日语、法语、西班牙语和繁体中文。英语不加前缀，其他语言使用 `/ko`、`/ja`、`/fr`、`/es`、`/zh-TW`；切换语言保留页面、查询参数和锚点。每种语言都有翻译正文、canonical、hreflang 和 sitemap 项；兼容首页别名归一到相应语言首页。翻译位于 `lib/i18n/messages/ozil-*.json`，博客继续使用原生语言文章链接。公开提示词工具的界面翻译，生成的技术提示词仍为英语。
 - `/ozil-goal-generator/blog` 收录英语、巴西葡语和西语原生文章。文章使用各自的固定路径，不自动生成六语言镜像。
 - `/pricing`、登录、账户、政策和 `/contact` 保留；定价、政策与联系页使用现有六语言界面。
 - 旧 Hotel Lobby、AI Rap Song、旧博客和 showcases 页面不属于本独立站的公开路由、导航或 sitemap。

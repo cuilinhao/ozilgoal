@@ -22,7 +22,6 @@ const isActive = (pathname: string, href: string) => pathname === href || (href.
 export function SiteHeader() {
   const pathname = stripLocale(usePathname());
   const isOzilBlog = /^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname);
-  const isOzilHome = pathname === "/" || pathname === "/ozil-goal-generator";
   const t = useTranslations();
   const { user, credits, openSignIn, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,7 +52,7 @@ export function SiteHeader() {
           {navigationLinks()}
         </nav>
         <div className="header-actions">
-          {isOzilHome ? <LanguageSwitcher previewOnly compact /> : !isOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
+          {!isOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
           {user ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><Link className="sign-in-button account-header-link" href="/app/video-generator">{t("User Center")}</Link><button className="header-signout" onClick={() => void logout()}>{t("Sign Out")}</button></div> : <button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button>}
           <button ref={mobileTrigger} className="mobile-menu-button" aria-label={t(menuOpen ? "Close menu" : "Open menu")} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={21}/> : <Menu size={21}/>}</button>
         </div>

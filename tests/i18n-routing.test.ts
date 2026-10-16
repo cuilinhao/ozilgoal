@@ -7,15 +7,15 @@ describe("localized navigation", () => {
       expect(localizeHref("/ozil-goal-generator/blog", locale)).toBe("/ozil-goal-generator/blog");
       expect(localizeHref("/es/ozil-goal-generator/blog/gol-de-ozil-con-mi-foto?from=nav#faq", locale)).toBe("/ozil-goal-generator/blog/gol-de-ozil-con-mi-foto?from=nav#faq");
     }
-    expect(localizeHref("/ozil-goal-generator/ozil-goal-ai-prompt", "es")).toBe("/ozil-goal-generator/ozil-goal-ai-prompt");
-    expect(localizeHref("/fr/ozil-goal-generator/ozil-goal-ai-prompt?from=nav#faq", "es")).toBe("/ozil-goal-generator/ozil-goal-ai-prompt?from=nav#faq");
+    expect(localizeHref("/ozil-goal-generator/ozil-goal-ai-prompt", "es")).toBe("/es/ozil-goal-generator/ozil-goal-ai-prompt");
+    expect(localizeHref("/fr/ozil-goal-generator/ozil-goal-ai-prompt?from=nav#faq", "es")).toBe("/es/ozil-goal-generator/ozil-goal-ai-prompt?from=nav#faq");
   });
   it("keeps English URLs and creates each requested language URL", () => {
     expect(localizeHref("/pricing", "en")).toBe("/pricing");
     for (const locale of ["ko", "ja", "fr", "es", "zh-TW"] as const) {
       expect(localizeHref("/pricing", locale)).toBe(`/${locale}/pricing`);
-      expect(localizeHref("/", locale)).toBe("/");
-      expect(localizeHref("/ozil-goal-generator", locale)).toBe("/ozil-goal-generator");
+      expect(localizeHref("/", locale)).toBe(`/${locale}`);
+      expect(localizeHref("/ozil-goal-generator", locale)).toBe(`/${locale}/ozil-goal-generator`);
     }
   });
   it("switches language without losing a query or fragment or duplicating prefixes", () => {

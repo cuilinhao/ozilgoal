@@ -14,6 +14,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, build_opener
@@ -47,6 +48,14 @@ GUIDES = (
     "/ozil-goal-generator/ozil-goal-capcut-template",
     "/ozil-goal-generator/ai-football-video-from-photo",
 )
+TRANSLATED_OZIL = ("/", *GUIDES)
+CATALOG_DIRECTORY = Path(__file__).resolve().parents[1] / "lib/i18n/messages"
+CATALOGS = {prefix[1:]: json.loads((CATALOG_DIRECTORY / f"ozil-{prefix[1:]}.json").read_text(encoding="utf-8")) for prefix in LOCALES[1:]}
+STARTER_NAMES = {"en": "Starter", "ko": "스타터", "ja": "スターター", "fr": "Débutant", "es": "Inicial", "zh-TW": "入門方案"}
+SOFTWARE_DESCRIPTION = "Create a 15-second, 9:16 video with sound from one authorized photo. Each generation costs {{OZIL_GOAL_COST}} credits; failed generations return credits."
+STARTER_DESCRIPTION = "{name} pack: USD {price} for {credits} credits. One-time purchase."
+SAMPLE_DESCRIPTION = "One photo in, a 15-second 9:16 clip out — no app, no prompt. Explore these trend references from other creators, with links to their original sources. Reference clips vary in length and style. Copyright stays with the original creators; contact us to have a clip removed."
+AFFILIATION_DISCLOSURE = "An independent tool. Not affiliated with any footballer, club, league, federation or broadcaster. Videos are AI-generated and may use a consenting adult’s photo."
 HTTP_CLIENT = os.environ.get("GEO_HTTP_CLIENT", "urllib")
 assert HTTP_CLIENT in ("urllib", "curl"), "Unsupported GEO_HTTP_CLIENT"
 base_parts = urlsplit(BASE)
@@ -72,6 +81,24 @@ def aware_datetime(value, field):
 
 def canonical_url(path):
     return SITE + path
+
+
+def localized_path(path, prefix):
+    return (prefix or "/") if path == "/" else prefix + path
+
+
+def translated_languages(path):
+    return {**{prefix[1:] or "en": canonical_url(localized_path(path, prefix)) for prefix in LOCALES}, "x-default": canonical_url(path)}
+
+
+def translated_copy(locale, source, **values):
+    if locale == "en":
+        result = source
+    else:
+        assert source in CATALOGS[locale], (locale, "Missing SEO translation", source)
+        result = CATALOGS[locale][source]
+    result = result.replace("{{OZIL_GOAL_COST}}", "300")
+    return re.sub(r"\{(\w+)\}", lambda match: str(values.get(match[1], match[0])), result)
 
 
 def normalize_root(url):
@@ -312,9 +339,12 @@ with ThreadPoolExecutor(max_workers=4) as pool:
 require_http_success(stats)
 assert not any(urlsplit(url).query for url in locations), "Sitemap loc has query parameters"
 paths = {urlsplit(url).path or "/" for url in locations}
-expected = {"/", ARTICLE_PATH, *GUIDES}
+translated_ozil_paths = {localized_path(path, prefix) for prefix in LOCALES for path in TRANSLATED_OZIL}
+expected = translated_ozil_paths | {ARTICLE_PATH}
+assert len(translated_ozil_paths) == 42, "Expected seven Ozil pages in six languages"
 assert expected <= paths, ("Missing Ozil sitemap routes", sorted(expected - paths))
-assert not any(prefix + path in paths for prefix in LOCALES[1:] for path in ("", ARTICLE_PATH, *GUIDES)), "English-only Ozil mirror in sitemap"
+assert not any(prefix + ARTICLE_PATH in paths for prefix in LOCALES[1:]), "Native English article mirror in sitemap"
+assert not any(re.match(r"^/(?:ko|ja|fr|es|zh-TW)/ozil-goal-generator/blog(?:/|$)", path) for path in paths), "Native blog mirror in sitemap"
 assert "/ozil-goal-generator/blog" in paths, "Missing Ozil blog index"
 assert set(BLOG_LANGUAGES) == {path for path in paths if path.startswith("/ozil-goal-generator/blog/")}, "Native blog paths changed"
 assert all(prefix + path in paths for prefix in LOCALES for path in TRANSLATED), "Missing real translated pricing/policy/contact page"
@@ -324,6 +354,8 @@ assert not any(re.search(r"/(?:api|app|sign-in|sign-up)(?:/|$)", path) for path 
 
 rows = []
 faq_matches = 0
+visible_guide_faqs = 0
+software_offers = {}
 pages = {}
 # Exact canonical checks cover every loc, including translated pages and native blogs.
 for location in locations:
@@ -332,16 +364,23 @@ for location in locations:
     assert [normalize_root(url) for url in page.canonical] == [location], (location, "Canonical mismatch", page.canonical)
     assert all(not urlsplit(url).query and not urlsplit(url).fragment for url in page.canonical), (location, "Canonical contains query/fragment")
     assert {key: normalize_root(value) for key, value in page.alternates.items()} == sitemap_languages[location], (location, "Sitemap and page hreflang groups differ", sitemap_languages[location], page.alternates)
-for path in TRANSLATED:
-    languages = {prefix.lstrip("/") or "en": canonical_url(prefix + path) for prefix in LOCALES}
-    languages["x-default"] = canonical_url(path)
+for source_path in (*TRANSLATED_OZIL, *TRANSLATED):
+    languages = translated_languages(source_path)
     for prefix in LOCALES:
-        assert pages[prefix + path].alternates == languages, (prefix + path, "Real six-language hreflang group changed")
-for path, language in BLOG_LANGUAGES.items():
+        path = localized_path(source_path, prefix)
+        page = pages[path]
+        assert {key: normalize_root(value) for key, value in page.alternates.items()} == languages, (path, "Real six-language hreflang group changed")
+        assert page.document_languages == [prefix[1:] or "en"], (path, "Translated HTML language mismatch", page.document_languages)
+for path, language in {"/ozil-goal-generator/blog": "en", **BLOG_LANGUAGES}.items():
     page = pages[path]
-    assert page.document_languages == [language] and page.article_languages[:1] == [language], (path, "Native HTML/article language mismatch", page.document_languages, page.article_languages)
+    assert page.document_languages == [language], (path, "Native HTML language mismatch", page.document_languages)
+    if path in BLOG_LANGUAGES:
+        assert page.article_languages[:1] == [language], (path, "Native article language mismatch", page.article_languages)
     assert page.alternates == {language: canonical_url(path), "x-default": canonical_url(path)}, (path, "Native article wrongly grouped as a translation", page.alternates)
 for path in sorted(expected):
+    prefix = next((value for value in LOCALES[1:] if path == value or path.startswith(value + "/")), "")
+    source_path = path[len(prefix):] or "/"
+    locale = prefix[1:] or "en"
     page = pages[path]
     assert page.h1_count == 1 and len(page.headings["h1"]) == 1, (path, "Expected one visible server-rendered H1")
     assert len(page.headings["h2"]) >= 2, (path, "Missing server-rendered sections")
@@ -349,42 +388,73 @@ for path in sorted(expected):
     assert len(page.description) == 1 and page.description[0], (path, "Missing description")
     assert [normalize_root(url) for url in page.canonical] == [canonical_url(path)], (path, "Canonical mismatch", page.canonical)
     assert not any("noindex" in value for value in page.robots), (path, "Public page is noindex")
-    assert len(normalize(" ".join(page.visible))) > 500, (path, "Missing visible copy")
-    assert page.document_languages == ["en"], (path, "English-only HTML language mismatch")
-    assert "LobbyDuo" not in " ".join(page.visible), (path, "Old brand is visible")
-    assert {key: normalize_root(value) for key, value in page.alternates.items()} == {
-        "en": canonical_url(path), "x-default": canonical_url(path),
-    }, (path, "English-only hreflang mismatch")
-    rows.append({"path": path, "h1": page.headings["h1"][0], "canonical": page.canonical[0]})
+    visible_text = normalize(" ".join(page.visible))
+    assert len(visible_text) > 500, (path, "Missing visible copy")
+    assert page.document_languages == [locale], (path, "HTML language mismatch", page.document_languages)
+    assert "LobbyDuo" not in visible_text, (path, "Old brand is visible")
+    languages = {"en": canonical_url(ARTICLE_PATH), "x-default": canonical_url(ARTICLE_PATH)} if path == ARTICLE_PATH else translated_languages(source_path)
+    assert {key: normalize_root(value) for key, value in page.alternates.items()} == languages, (path, "Hreflang mismatch")
+    for href in page.links:
+        destination = urlsplit(urljoin(SITE, href))
+        if destination.netloc == urlsplit(SITE).netloc and destination.path.endswith(ARTICLE_PATH):
+            assert destination.path == ARTICLE_PATH, (path, "English article link incorrectly localized", href)
+    if source_path in TRANSLATED_OZIL:
+        english = pages[source_path]
+        assert page.faqs and all(question and answer for question, answer in page.faqs), (path, "Missing visible FAQ questions or answers")
+        assert len(page.faqs) == len(english.faqs), (path, "Localized FAQ count differs from English")
+        if locale != "en":
+            assert page.title != english.title and page.description != english.description and page.headings["h1"] != english.headings["h1"], (path, "English title, description or H1 remains")
+            assert all(question != original_question and answer != original_answer for (question, answer), (original_question, original_answer) in zip(page.faqs, english.faqs)), (path, "English FAQ copy remains")
+        if source_path != "/":
+            visible_guide_faqs += len(page.faqs)
+    rows.append({"path": path, "language": locale, "h1": page.headings["h1"][0], "canonical": page.canonical[0], "visible_faqs": len(page.faqs)})
     if path == "/":
         assert page.title == page.og_title == page.twitter_title == [HOME_TITLE], ("Home title/OG/Twitter mismatch", page.title, page.og_title, page.twitter_title)
         assert page.headings["h1"] == [HOME_NAME], ("Home H1 mismatch", page.headings["h1"])
         assert page.paragraphs_after_h1 and page.paragraphs_after_h1[0].count(HOME_NAME) == 1, ("First paragraph after H1 must contain the full product name once", page.paragraphs_after_h1[:1])
         assert page.description == [HOME_DESCRIPTION], ("Home description changed", page.description)
+    if source_path == "/":
+        assert page.title == page.og_title == page.twitter_title == [translated_copy(locale, HOME_TITLE)], (path, "Localized title/OG/Twitter mismatch")
+        assert page.description == [translated_copy(locale, HOME_DESCRIPTION)], (path, "Localized description mismatch")
         graph = next((item.get("@graph") for item in page.jsonld if isinstance(item, dict) and item.get("@graph")), None)
         assert graph, (path, "Missing root JSON-LD graph")
         faq = next((item for item in graph if item.get("@type") == "FAQPage"), None)
         howto = next((item for item in graph if item.get("@type") == "HowTo"), None)
-        assert faq and howto and howto.get("step"), (path, "Missing FAQ/HowTo schema")
+        assert faq and howto and len(howto.get("step", [])) == 3, (path, "Missing FAQ/three-step HowTo schema")
         schema_faqs = [(normalize(item["name"]), normalize(item["acceptedAnswer"]["text"])) for item in faq["mainEntity"]]
         assert len(schema_faqs) == 12 and schema_faqs == page.faqs, (path, "Visible FAQ and schema differ")
         faq_matches += len(schema_faqs)
+        assert howto.get("name") in page.headings["h2"], (path, "HowTo title differs from visible heading")
+        for index, step in enumerate(howto["step"], 1):
+            assert step.get("position") == index and normalize(step.get("name", "")) and normalize(step.get("text", "")), (path, "Invalid HowTo step", index)
+            assert normalize(step["name"]) in visible_text and normalize(step["text"]) in visible_text, (path, "HowTo step is not visible", index)
         software = [item for item in graph if item.get("@type") == "SoftwareApplication"]
         assert len(software) == 1, (path, "Expected one SoftwareApplication")
         software = software[0]
+        for schema, fragment in ((faq, "faq"), (howto, "how-to"), (software, "software")):
+            assert schema.get("inLanguage") == locale and normalize_root(schema.get("url")) == canonical_url(path) and schema.get("@id") == canonical_url(path) + "#" + fragment, (path, "Localized schema URL/language mismatch", fragment)
         assert software.get("name") == HOME_NAME and software.get("applicationCategory") == "MultimediaApplication" and software.get("operatingSystem") == "Web" and software.get("isAccessibleForFree") is False, (path, "Incorrect software facts")
-        assert normalize_root(software.get("url")) == canonical_url("/"), (path, "Software URL mismatch")
+        assert software.get("description") == translated_copy(locale, SOFTWARE_DESCRIPTION), (path, "Incorrect localized software description")
         offer = software.get("offers", {})
-        assert offer == {"@type": "Offer", "name": "Starter — 300 credits", "price": "9.90", "priceCurrency": "USD", "url": canonical_url("/pricing")}, (path, "Software offer does not describe the actual Starter pack", offer)
+        expected_offer = {"@type": "Offer", "name": translated_copy(locale, "{name} — {credits} credits", name=STARTER_NAMES[locale], credits=300), "price": "9.90", "priceCurrency": "USD", "url": canonical_url(localized_path("/pricing", prefix))}
+        assert offer == expected_offer, (path, "Software offer does not describe the actual Starter pack", offer)
+        software_offers[locale] = offer
         assert not any(key in software for key in ("aggregateRating", "review", "reviews", "rating")), (path, "Unsubstantiated software ratings/reviews")
-        assert "Starter pack: USD 9.90 for 300 credits." in page.sections.get("pricing", {}).get("text", ""), (path, "Software offer differs from visible home pricing")
-        pricing_text = normalize(" ".join(pages["/pricing"].visible))
-        assert re.search(r"Starter.*?\$\s*9\.90.*?300\s+credits", pricing_text), (path, "Starter offer differs from the pricing page")
+        starter_copy = translated_copy(locale, STARTER_DESCRIPTION, name=STARTER_NAMES[locale], price="9.90", credits=300)
+        assert normalize(starter_copy) in page.sections.get("pricing", {}).get("text", ""), (path, "Software offer differs from visible home pricing")
+        pricing_text = normalize(" ".join(pages[localized_path("/pricing", prefix)].visible))
+        assert re.search(re.escape(STARTER_NAMES[locale]) + r".*?\$\s*9\.90.*?300", pricing_text), (path, "Starter offer differs from the pricing page")
+        if locale == "en":
+            assert "Starter pack: USD 9.90 for 300 credits." in page.sections.get("pricing", {}).get("text", ""), (path, "English Starter offer changed")
+            assert re.search(r"Starter.*?\$\s*9\.90.*?300\s+credits", pricing_text), (path, "English pricing facts changed")
         samples = page.sections.get("video-examples", {})
         assert Counter(samples.get("links", [])) == SAMPLE_SOURCES, (path, "Original ten sample source links changed")
-        assert "One photo in, a 15-second 9:16 clip out — no app, no prompt." in samples.get("text", ""), (path, "Missing factual sample summary")
-        assert "Third-party clip, not made with" not in fetch(path).decode(), (path, "Old sample disclaimer remains")
-        assert "not affiliated" in normalize(" ".join(page.visible)).lower(), (path, "Missing affiliation disclosure")
+        assert normalize(translated_copy(locale, SAMPLE_DESCRIPTION)) in samples.get("text", ""), (path, "Missing factual localized sample summary")
+        # RSC payloads include every catalog source key, including retired copy.
+        # Detect the old disclaimer in visible DOM text, not serialized messages.
+        old_disclaimer = translated_copy(locale, "Third-party clip, not made with Ozil Goal Generator · Source:")
+        assert "Third-party clip, not made with" not in visible_text and normalize(old_disclaimer) not in visible_text, (path, "Old visible sample disclaimer remains")
+        assert normalize(translated_copy(locale, AFFILIATION_DISCLOSURE)) in visible_text, (path, "Missing affiliation disclosure")
 
 article = pages[ARTICLE_PATH]
 assert article.article_languages[:1] == ["en"] and len(article.headings["h2"]) >= 4, "New article must have English SSR content and at least four sections"
@@ -415,10 +485,13 @@ assert (responses[article_image_path].get("content_type") or "").startswith("ima
 assert {"/ozil-goal-generator", "/ozil-goal-generator/ozil-goal-trend"} <= {urlsplit(href).path for href in article.links}, "Article is missing generator/trend internal links"
 assert any(ARTICLE_PATH in page.links for page in (pages["/"], pages["/ozil-goal-generator/ozil-goal-trend"])), "New article is not discoverable from home or trend"
 
-for alias in ("/ozil-goal-generator",):
+for prefix in LOCALES:
+    alias = prefix + "/ozil-goal-generator"
     page = Page(fetch(alias).decode())
     require_http_success(stats)
-    assert [normalize_root(url) for url in page.canonical] == [canonical_url("/")], (alias, "Alias canonical mismatch")
+    assert [normalize_root(url) for url in page.canonical] == [canonical_url(prefix or "/")], (alias, "Alias canonical mismatch")
+    assert page.document_languages == [prefix[1:] or "en"], (alias, "Alias document language mismatch")
+    assert {key: normalize_root(value) for key, value in page.alternates.items()} == translated_languages("/"), (alias, "Alias hreflang mismatch")
 
 llms = fetch("/llms.txt").decode()
 require_http_success(stats)
@@ -481,13 +554,19 @@ def can_fetch(groups, bot, path):
 crawler_rules = parse_robots(robots)
 declared_agents = {agent for agents, _ in crawler_rules for agent in agents}
 assert all(bot.lower() in declared_agents for bot in BOTS if bot != "Googlebot"), "Missing explicit crawler groups"
-public_paths = set(target_paths) | {article_image_path, "/ozil-goal-generator", "/_next/static/chunks/seo-check.js", "/assets/seo-check.css", "/ozil-goal/samples/ai-shot1.jpg", "/ozil-goal/samples/ozil-ai-goal-hero.mp4"}
+public_paths = set(target_paths) | {*(prefix + "/ozil-goal-generator" for prefix in LOCALES), article_image_path, "/_next/static/chunks/seo-check.js", "/assets/seo-check.css", "/ozil-goal/samples/ai-shot1.jpg", "/ozil-goal/samples/ozil-ai-goal-hero.mp4"}
 private_paths = {"/api/", "/api/generations", *(prefix + path for prefix in LOCALES for path in ("/app/", "/app/my-videos", "/sign-in", "/sign-up"))}
 for bot in (*BOTS, "*"):
     blocked = sorted(path for path in public_paths if not can_fetch(crawler_rules, bot, path))
     exposed = sorted(path for path in private_paths if can_fetch(crawler_rules, bot, path))
     assert not blocked, (bot, "Public routes/assets blocked", blocked)
     assert not exposed, (bot, "Private restrictions lost", exposed)
+
+# These deliberately missing routes must not redirect or render an English mirror.
+expected_404_paths = {prefix + ARTICLE_PATH for prefix in LOCALES[1:]}
+for path in sorted(expected_404_paths):
+    fetch(path)
+    assert responses[path]["status"] == 404 and not responses[path].get("error"), (path, "Localized English-only article must return 404", responses[path])
 
 report = {
     "base": BASE,
@@ -498,12 +577,16 @@ report = {
     "canonical_pages_checked": len(locations),
     "sitemap_page_hreflang_groups_checked": len(locations),
     "native_blog_language_groups_checked": len(BLOG_LANGUAGES),
-    "translated_language_groups_checked": len(TRANSLATED),
+    "translated_language_groups_checked": len(TRANSLATED) + len(TRANSLATED_OZIL),
+    "translated_ozil_pages_checked": len(translated_ozil_paths),
+    "english_only_404_routes_checked": len(expected_404_paths),
     "canonical_exception": "Only the production origin with an empty root path is equivalent to the same origin plus /. Every non-root path must match exactly.",
     "geo_pages": len(rows),
     "faq_exact_matches": faq_matches,
-    "software_offer": offer,
-    "sample_source_links_checked": sum(SAMPLE_SOURCES.values()),
+    "visible_guide_faqs_checked": visible_guide_faqs,
+    "software_offer": software_offers["en"],
+    "localized_software_offers": software_offers,
+    "sample_source_links_checked": sum(SAMPLE_SOURCES.values()) * len(LOCALES),
     "article": {"path": ARTICLE_PATH, "headline": article_schema["headline"], "datePublished": published.isoformat(), "dateModified": modified.isoformat(), "author": author, "image": image_url, "h2_count": len(article.headings["h2"])},
     "checked_resources": len(cache),
     "robots_crawlers": list(BOTS),
@@ -514,6 +597,6 @@ report = {
     "non_200": [],
     "responses": [value for _, value in sorted(responses.items())],
     "pages": rows,
-    "scope": "Anonymous SSR pages; every sitemap loc/alternate target, canonical and sitemap/page hreflang group; native blog languages and real six-language pages; home titles, description, FAQ/HowTo, paid SoftwareApplication offer and sample provenance; new Article schema, visible facts, internal links and one image download; robots rules and llms.txt. No JavaScript, paid generation, external requests, indexing or Rich Results Test.",
+    "scope": "Anonymous SSR pages; every sitemap loc/alternate target, canonical and sitemap/page hreflang group; native blog languages, six-language support pages and all 42 translated Ozil pages; six home titles, descriptions, visible FAQ/HowTo, paid SoftwareApplication offers and sample provenance; native English Article schema, visible facts, unprefixed internal links, localized 404 routes and one image download; robots rules and llms.txt. No JavaScript, paid generation, external requests, indexing or Rich Results Test.",
 }
 write_report(report)

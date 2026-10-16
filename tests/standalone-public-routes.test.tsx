@@ -37,28 +37,24 @@ describe("standalone Ozil public scope", () => {
   });
 
   it.each([
-    "/",
-    "/ozil-goal-generator",
-    "/ozil-goal-generator/ozil-goal-ai-prompt",
-    "/ozil-goal-generator/ozil-goal-ai-template",
     "/hotel-lobby-ai-video-generator",
     "/hotel-lobby-ai-template",
     "/ai-rap-song-generator",
     "/showcases",
     "/blog",
     "/blog/what-is-hotel-lobby-ai-video",
-  ])("returns 404 for an English-only or legacy localized path %s", async path => {
+  ])("returns 404 for a legacy localized path %s", async path => {
     await expect(localizedMetadata({ params: Promise.resolve({ locale: "fr", path: path === "/" ? [] : path.slice(1).split("/") }) }))
       .rejects.toMatchObject({ digest: "NEXT_HTTP_ERROR_FALLBACK;404" });
   });
 
-  it("uses the English root as canonical for both home URLs without fabricated alternates", async () => {
+  it("uses the English root as canonical for both home URLs with translated alternatives", async () => {
     request.locale = "en";
     for (const path of ["/", "/ozil-goal-generator"]) {
       request.path = path;
       const metadata = await localizeMetadata({ title: "Ozil Goal Generator" });
       expect(metadata.alternates?.canonical).toBe("https://ozilgoal-aivideo.com/");
-      expect(metadata.alternates?.languages).toEqual({ en: "https://ozilgoal-aivideo.com/", "x-default": "https://ozilgoal-aivideo.com/" });
+      expect(metadata.alternates?.languages).toEqual({ en: "https://ozilgoal-aivideo.com/", ko: "https://ozilgoal-aivideo.com/ko", ja: "https://ozilgoal-aivideo.com/ja", fr: "https://ozilgoal-aivideo.com/fr", es: "https://ozilgoal-aivideo.com/es", "zh-TW": "https://ozilgoal-aivideo.com/zh-TW", "x-default": "https://ozilgoal-aivideo.com/" });
     }
     request.locale = "en";
     request.path = "/";
@@ -77,8 +73,8 @@ describe("standalone Ozil public scope", () => {
     expect(entries.every(entry => entry.url.startsWith("https://ozilgoal-aivideo.com/"))).toBe(true);
     expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/")).toBe(true);
     expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/ozil-goal-generator")).toBe(false);
-    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr")).toBe(false);
-    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr/ozil-goal-generator/ozil-goal-ai-prompt")).toBe(false);
+    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr")).toBe(true);
+    expect(entries.some(entry => entry.url === "https://ozilgoal-aivideo.com/fr/ozil-goal-generator/ozil-goal-ai-prompt")).toBe(true);
   });
 
   it("keeps the shared history endpoint read-only", () => {

@@ -72,14 +72,14 @@ describe('Ozil landing page structured data', () => {
     expect(JSON.stringify(faq)).toContain('300 credits');
   });
 
-  it('keeps English schema URLs when a non-English UI locale is requested', async () => {
+  it('uses the selected language for schema URLs and language tags', async () => {
     request.locale = 'es';
     try {
       const data = schemaFrom(await render());
       for (const entry of data['@graph']) {
-        expect(entry.url).toBe('https://ozilgoal-aivideo.com/');
-        expect(entry['@id']).toMatch(/^https:\/\/ozilgoal-aivideo\.com\/#/);
-        expect(entry.inLanguage).toBe('en');
+        expect(entry.url).toBe('https://ozilgoal-aivideo.com/es');
+        expect(entry['@id']).toMatch(/^https:\/\/ozilgoal-aivideo\.com\/es#/);
+        expect(entry.inLanguage).toBe('es');
       }
     } finally { request.locale = 'en'; }
   });

@@ -4,6 +4,14 @@ import AccountLayout from "@/app/app/layout";
 
 // Only pages with translated content receive localized App Router routes.
 const routes = {
+  "/": () => import("@/app/page"),
+  "/ozil-goal-generator": () => import("@/app/ozil-goal-generator/page"),
+  "/ozil-goal-generator/ozil-goal-ai-prompt": () => import("@/app/ozil-goal-generator/ozil-goal-ai-prompt/page"),
+  "/ozil-goal-generator/ozil-goal-ai-template": () => import("@/app/ozil-goal-generator/ozil-goal-ai-template/page"),
+  "/ozil-goal-generator/ozil-goal-trend": () => import("@/app/ozil-goal-generator/ozil-goal-trend/page"),
+  "/ozil-goal-generator/ozil-goal-meme": () => import("@/app/ozil-goal-generator/ozil-goal-meme/page"),
+  "/ozil-goal-generator/ozil-goal-capcut-template": () => import("@/app/ozil-goal-generator/ozil-goal-capcut-template/page"),
+  "/ozil-goal-generator/ai-football-video-from-photo": () => import("@/app/ozil-goal-generator/ai-football-video-from-photo/page"),
   "/pricing": () => import("@/app/pricing/page"),
   "/privacy-policy": () => import("@/app/privacy-policy/page"),
   "/terms-of-service": () => import("@/app/terms-of-service/page"),

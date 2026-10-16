@@ -17,11 +17,9 @@ export function stripLocale(path: string): string {
 export function isPagePath(path: string): boolean {
   return path.startsWith("/") && !path.startsWith("//") && !/^\/(api|_next)(?:\/|$)/.test(path) && !/\.[^/]+$/.test(path.split(/[?#]/)[0]);
 }
+// This editorial article is authored in English and has no translated mirrors.
 export function isEnglishOnlyOzilPath(path: string): boolean {
-  const pathname = stripLocale(path).split(/[?#]/)[0] || "/";
-  if (pathname === "/" || /^\/mesut-ozil-ludogorets-goal\/?$/.test(pathname)) return true;
-  if (/^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname)) return false;
-  return pathname === "/ozil-goal-generator" || pathname.startsWith("/ozil-goal-generator/");
+  return /^\/mesut-ozil-ludogorets-goal\/?$/.test(stripLocale(path).split(/[?#]/)[0]);
 }
 export function localizeHref(href: string, locale: Locale): string {
   if (!isPagePath(href)) return href;
@@ -29,7 +27,6 @@ export function localizeHref(href: string, locale: Locale): string {
   if (!isPagePath(base)) return href;
   // Ozil articles have native-language slugs; they are not translated UI routes.
   if (/^\/ozil-goal-generator\/blog(?:[/?#]|$)/.test(base)) return base;
-  if (isEnglishOnlyOzilPath(base)) return base;
-  if (locale === "en") return base;
+  if (isEnglishOnlyOzilPath(base) || locale === "en") return base;
   return `/${locale}${base === "/" ? "" : base.startsWith("/?") || base.startsWith("/#") ? base.slice(1) : base}`;
 }

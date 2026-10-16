@@ -1,4 +1,4 @@
-import { localizeMetadata } from "@/lib/i18n/server";
+import { getLocale, localizeMetadata } from "@/lib/i18n/server";
 import { isLocale } from "@/lib/i18n/routing";
 import { OzilGoalPage, ozilMetadata } from "@/components/ozil-goal/page-content";
 import type { ReactElement } from "react";
@@ -13,7 +13,7 @@ export async function generateMetadata() {
 
 const HomePage: HomePageComponent = async ({ searchParams }: HomeProps = {}) => {
   const blogLang = (await searchParams)?.blogLang;
-  const previewLocale = typeof blogLang === "string" && isLocale(blogLang) ? blogLang : "en";
+  const previewLocale = typeof blogLang === "string" && isLocale(blogLang) ? blogLang : await getLocale();
   return <OzilGoalPage slug="home" previewLocale={previewLocale} />;
 };
 
