@@ -12,6 +12,7 @@
     "cf:build": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && wrangler dev",
     "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "indexnow": "node scripts/indexnow.mjs",
     "db:local": "wrangler d1 migrations apply ozilgoal-aivideo-db --local",
     "db:remote": "wrangler d1 migrations apply ozilgoal-aivideo-db --remote"
   },

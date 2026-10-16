@@ -37,3 +37,9 @@ python3 scripts/check-geo.py http://127.0.0.1:3000
 在本地或独立预览地址检查首页、六个指南、博客索引及文章、定价和政策页的状态码与页面正文；检查根域 canonical、实际存在的语言 alternates、FAQ/HowTo/BlogPosting 等结构化数据、`/robots.txt` 与 `/sitemap.xml`。确认旧公开路径及非英语 Ozil 镜像不返回内容，站点地图只包含现有页面。浏览器还需检查窄屏布局、语言切换、内链和图片加载。
 
 这些检查只证明页面和抓取契约在被测环境中的行为；搜索收录、排名和 AI 引用需要使用新站的实际数据另行观察。操作清单见 [QA 说明](../QA/README.md)。
+
+## 搜索引擎与 AI 抓取通知
+
+ChatGPT 和 Copilot 的联网搜索依赖 Bing 索引；新域名在 Bing 抓取前，AI 搜索查不到本站。生产部署新增或修改公开页面后运行 `npm run indexnow`，把线上 sitemap 的全部 URL 提交给 IndexNow（Bing、Yandex、Naver、Seznam 共享）。密钥文件为 `public/bdfaff693d2aef8f6eb62e06aeca7f9e.txt`，内容必须与脚本中的 key 一致；脚本会先确认线上密钥文件可读。`--dry-run` 只列出将提交的 URL。
+
+IndexNow 只是抓取通知，不保证收录。Bing 收录、抓取错误和关键词需在 Bing Webmaster Tools 查看（可从 Google Search Console 导入站点）。Cloudflare 安全事件中不应出现 GPTBot、OAI-SearchBot、ChatGPT-User 或 Bingbot 被拦截；上线期间 robots.txt 返回 5xx 或超时会让爬虫在缓存期内视为禁止抓取。
