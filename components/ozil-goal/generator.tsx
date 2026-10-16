@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Download, LoaderCircle, Plus, X } from 'lucide-react';
 import Link from '@/components/i18n/localized-link';
 import { useAuth } from '@/components/auth-provider';
+import { useLocale } from '@/components/i18n/locale-provider';
+import { requestCheckout } from '@/components/ui/checkout-request';
+import { creditPacks, type PackId } from '@/content/pricing';
 import { getResumableVideo } from '@/components/generator/generation-history';
 import { captureOzilSubmission, executeOzilSubmission, type UploadedOzilPhoto } from '@/components/generator/ozil-submission';
 import { preparePhoto } from '@/components/generator/prepare-photo';
@@ -20,7 +23,13 @@ const supported = new Set(['image/jpeg', 'image/png', 'image/webp']);
 export function OzilGoalGenerator() {
   const t = useGenerationTranslations();
   const { user, credits, loading: authLoading, openSignIn, refresh } = useAuth();
+  const locale = useLocale();
   const [photo, setPhoto] = useState<Photo | null>(null);
+  // Buying happens here without sign-in; a visitor becomes a guest of this browser.
+  const [needCredits, setNeedCredits] = useState(false);
+  const [buying, setBuying] = useState<PackId | null>(null);
+  const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
+  const [buyError, setBuyError] = useState('');
   const [consent, setConsent] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -42,6 +51,14 @@ export function OzilGoalGenerator() {
   const locked = busy || activeJob;
 
   useEffect(() => () => { if (photo) URL.revokeObjectURL(photo.url); }, [photo]);
+  useEffect(() => {
+    if (!checkoutUrl || credits >= OZIL_GOAL_COST) return;
+    // Pick up credits after payment in the Stripe tab; the webhook can land a few seconds later.
+    const check = () => { if (document.visibilityState === 'visible') void refresh(); };
+    const timer = setInterval(check, 4000);
+    window.addEventListener('focus', check);
+    return () => { clearInterval(timer); window.removeEventListener('focus', check); };
+  }, [checkoutUrl, credits, refresh]);
   useEffect(() => () => { controllerRef.current?.abort(); controllerRef.current = null; }, []);
   useEffect(() => {
     let active = true;
@@ -77,17 +94,30 @@ export function OzilGoalGenerator() {
     if (controllerRef.current || activeJob) return;
     setPhoto(null); uploaded.current = null; idempotency.current = null; setError('');
   };
+  const buy = async (packId: PackId) => {
+    setBuying(packId); setCheckoutUrl(null); setBuyError('');
+    try {
+      const url = await requestCheckout(packId, locale);
+      setCheckoutUrl(url);
+      // Stripe opens in a new tab so the selected photo stays here; the link below is the fallback.
+      try { window.open(url, '_blank', 'noopener,noreferrer'); } catch { /* The direct link remains available. */ }
+    } catch (cause) {
+      setBuyError(cause instanceof Error ? cause.message : 'Checkout is unavailable right now. Please try again later.');
+    } finally {
+      setBuying(null);
+      if (!user) void refresh();
+    }
+  };
   const submit = async () => {
     if (controllerRef.current || activeJob || authLoading) return;
-    // A guest without credits is treated like a visitor; a pending retry still goes through.
-    if (!user || (user.guest && credits < OZIL_GOAL_COST && !idempotency.current)) { openSignIn(); return; }
     if (!photo) { setError('Add one clear photo first.'); inputRef.current?.focus(); return; }
     if (!consent) { setError('Please confirm photo consent before generating.'); return; }
-    const fingerprint = `${user.id}:${photo.id}`;
+    const fingerprint = user ? `${user.id}:${photo.id}` : '';
     // A lost response may already have reserved credits. Retrying must still reach the idempotent endpoint.
-    if (credits < OZIL_GOAL_COST && idempotency.current?.fingerprint !== fingerprint) {
-      setError(`You need ${OZIL_GOAL_COST} credits to create this video.`); return;
+    if (!user || (credits < OZIL_GOAL_COST && idempotency.current?.fingerprint !== fingerprint)) {
+      setError(''); setNeedCredits(true); return;
     }
+    setNeedCredits(false); setCheckoutUrl(null);
     if (idempotency.current?.fingerprint !== fingerprint) idempotency.current = { fingerprint, key: crypto.randomUUID() };
     const requestKey = idempotency.current.key;
     const submission = captureOzilSubmission(requestKey, fingerprint, photo.file, consent);
@@ -157,9 +187,19 @@ export function OzilGoalGenerator() {
       </button>
       <div className="og-generator-footnote">
         <p>{user ? <>{t('{credits} credits available', { credits: credits.toLocaleString() })} · <Link href="/pricing">{t("Buy credits")}</Link></> : <>{t('{credits} credits per video', { credits: OZIL_GOAL_COST })} · <Link href="/pricing">{t("View credit packs")}</Link></>}</p>
-        <p>{user ? <>{t("Saved to your ")}<Link href="/app/my-videos">{t("My Videos")}</Link>{t(" · Failed generations are refunded")}</> : t('Sign in first; your photo stays in place')}</p>
+        <p>{user ? <>{t("Saved to your ")}<Link href="/app/my-videos">{t("My Videos")}</Link>{t(" · Failed generations are refunded")}</> : t('No account needed. Pay when you make your video; your photo stays in place.')}</p>
       </div>
     </div>
+    {needCredits && credits < OZIL_GOAL_COST && <div className="og-generator-buy" role="region" aria-label={t("Buy credits")}>
+      <p><strong>{t('You need {credits} credits to create this video.', { credits: OZIL_GOAL_COST })}</strong> {t('Pay without signing up. Your photo stays here while you check out.')}</p>
+      <div className="og-generator-packs">{creditPacks.map(pack => <button key={pack.id} type="button" className={pack.id === 'starter' ? 'og-cta' : ''} disabled={buying !== null} onClick={() => void buy(pack.id)}>
+        {buying === pack.id ? t('Opening checkout…') : <><strong>{t(pack.name)}</strong><span>{t('{credits} credits', { credits: pack.credits.toLocaleString(locale) })} · ${pack.price.toFixed(2)}</span></>}
+      </button>)}</div>
+      {checkoutUrl && <p>{t('Finish paying in the Stripe tab, then come back here. Your credits appear automatically.')} <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">{t('Continue to Stripe checkout (opens in a new tab)')}</a></p>}
+      {buyError && <p className="og-generator-buy-error" role="alert">{t(buyError)}</p>}
+      {(!user || user.guest) && <p className="og-generator-buy-signin">{t('Already have credits?')} <button type="button" onClick={openSignIn}>{t('Sign In')}</button></p>}
+    </div>}
+    {checkoutUrl && needCredits && credits >= OZIL_GOAL_COST && <p className="og-generator-buy-done" role="status">{t('Credits added. Tap Make my video to start.')}</p>}
     {(busy || activeJob) && <div className="og-generator-progress" role="status" aria-live="polite">
       <p>{t(statusText)}{(activeJob || uploadProgress) && <span>{progress}%</span>}</p>
       {(activeJob || uploadProgress) && <div role="progressbar" aria-label={t(busy ? 'Photo upload progress' : 'Video generation progress')} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}><span style={{ width: `${progress}%` }} /></div>}

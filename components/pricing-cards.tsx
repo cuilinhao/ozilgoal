@@ -4,7 +4,7 @@ import { useState } from "react";
 import { creditPacks, type PackId } from "@/content/pricing";
 import { useAuth } from "./auth-provider";
 import { useLocale, useTranslations } from "@/components/i18n/locale-provider";
-import { trustedCheckoutUrl } from "./ui/checkout-url";
+import { requestCheckout } from "./ui/checkout-request";
 import { OZIL_GOAL_CONFIG, OZIL_GOAL_COST } from "@/lib/ozil-goal";
 
 const starterCredits = creditPacks.find((pack) => pack.id === "starter")!.credits;
@@ -24,13 +24,7 @@ export function PricingCards() {
     setCheckoutUrl(null);
     setBusy(packId);
     try {
-      const response = await fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ packId, locale }) });
-      const data: { checkoutUrl?: string; error?: string } = await response.json();
-      if (!response.ok || !data.checkoutUrl) throw new Error(data.error || "Checkout is unavailable right now. Please try again later.");
-      const url = trustedCheckoutUrl(data.checkoutUrl);
-      if (!url) {
-        throw new Error("The payment service returned an invalid checkout address. Please try again later.");
-      }
+      const url = await requestCheckout(packId, locale);
       setCheckoutUrl(url);
       // Some browsers block async popups; noopener can also return null after
       // opening successfully. Always keep a direct link to the same checkout.

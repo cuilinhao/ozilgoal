@@ -26,6 +26,16 @@
 .ozil-page .og-generator-footnote{display:grid;gap:4px;text-align:center;font-size:12.5px;line-height:1.35;color:var(--og-muted)}
 .ozil-page .og-generator-footnote p{margin:0}
 .ozil-page .og-generator-error{padding:12px;border:1px solid color-mix(in srgb,var(--destructive) 40%,var(--border));border-radius:10px;background:color-mix(in srgb,var(--destructive) 8%,var(--card));color:var(--destructive);font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.ozil-page .og-generator-buy{display:grid;gap:10px;padding:14px;border:1px solid var(--og-line-strong);border-radius:16px;background:var(--og-panel);font-size:13.5px;line-height:1.5}
+.ozil-page .og-generator-buy p{margin:0}
+.ozil-page .og-generator-packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ozil-page .og-generator-packs button{display:grid;gap:2px;justify-items:center;min-height:56px;padding:8px;border:1px solid var(--og-line-strong);border-radius:12px;background:var(--og-bg);color:var(--og-text);font-size:13px;cursor:pointer}
+.ozil-page .og-generator-packs button.og-cta{border-color:transparent}
+.ozil-page .og-generator-packs button span{font-size:12px;opacity:.85}
+.ozil-page .og-generator-buy-error{color:var(--destructive)}
+.ozil-page .og-generator-buy-signin{color:var(--og-muted)}
+.ozil-page .og-generator-buy-signin button{border:0;background:none;padding:0;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.ozil-page .og-generator-buy-done{margin:0;padding:12px;border-radius:10px;background:var(--og-flash-soft);color:var(--og-text);font-size:13px}
 .ozil-page .og-generator-progress{display:grid;gap:10px;font-size:13px}
 .ozil-page .og-generator-progress p{display:flex;justify-content:space-between;gap:10px;margin:0}
 .ozil-page .og-generator-progress [role=progressbar]{height:6px;border-radius:999px;overflow:hidden;background:var(--og-line-strong)}
