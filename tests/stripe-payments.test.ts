@@ -54,7 +54,16 @@ describe('Stripe Checkout creation', () => {
     expect(sqlite.prepare('SELECT count(*) AS n FROM orders').get()).toEqual({ n: 0 });
   });
 
-  it.each(['https://checkout.stripe.com.evil.test/c/pay/cs_test_checkout123', 'http://checkout.stripe.com/c/pay/cs_test_checkout123', 'https://user@checkout.stripe.com/c/pay/cs_test_checkout123', 'https://checkout.stripe.com:8443/c/pay/cs_test_checkout123', 'https://checkout.stripe.com/c/pay/cs_test_other'])('rejects untrusted checkout redirects: %s', async url => {
+  it('accepts the Stripe /f/pay/ hosted checkout address for the same session', async () => {
+    const { db, sqlite } = database();
+    const url = `https://checkout.stripe.com/f/pay/${sessionId}#fid=safe`;
+    checkoutApi({}, { url });
+    const result = await createCheckout(env(db), user, 'starter');
+    expect(result.checkoutUrl).toBe(url);
+    expect(sqlite.prepare('SELECT checkout_id FROM orders').get()).toEqual({ checkout_id: sessionId });
+  });
+
+  it.each(['https://checkout.stripe.com.evil.test/c/pay/cs_test_checkout123', 'http://checkout.stripe.com/c/pay/cs_test_checkout123', 'https://user@checkout.stripe.com/c/pay/cs_test_checkout123', 'https://checkout.stripe.com:8443/c/pay/cs_test_checkout123', 'https://checkout.stripe.com/c/pay/cs_test_other', 'https://checkout.stripe.com/f/pay/cs_test_other', 'https://checkout.stripe.com/x/pay/cs_test_checkout123', 'https://checkout.stripe.com/f/pay/cs_test_checkout123/extra'])('rejects untrusted checkout redirects: %s', async url => {
     const { db, sqlite } = database(); checkoutApi({}, { url });
     await expect(createCheckout(env(db), user, 'starter')).rejects.toMatchObject({ status: 502 });
     expect(sqlite.prepare('SELECT checkout_id FROM orders').get()).toEqual({ checkout_id: null });

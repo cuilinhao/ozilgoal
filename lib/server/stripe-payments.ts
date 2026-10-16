@@ -22,7 +22,9 @@ function checkoutUrl(value: unknown, sessionId: string, mode: 'test' | 'live'): 
   try { url = new URL(value); }
   catch { throw new ApiError(502, 'The payment service returned an invalid checkout address.'); }
   if (url.protocol !== 'https:' || url.hostname !== 'checkout.stripe.com' ||
-    url.username || url.password || url.port || url.pathname !== `/c/pay/${sessionId}`) {
+    url.username || url.password || url.port ||
+    // Stripe hosts Checkout under /c/pay/ and, since 2026-10, /f/pay/.
+    !['/c/pay/', '/f/pay/'].some(prefix => url.pathname === prefix + sessionId)) {
     throw new ApiError(502, 'The payment service returned an invalid checkout address.');
   }
   return url.href;
