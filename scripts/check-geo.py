@@ -52,7 +52,59 @@ TRANSLATED_OZIL = ("/", *GUIDES)
 CATALOG_DIRECTORY = Path(__file__).resolve().parents[1] / "lib/i18n/messages"
 CATALOGS = {prefix[1:]: json.loads((CATALOG_DIRECTORY / f"ozil-{prefix[1:]}.json").read_text(encoding="utf-8")) for prefix in LOCALES[1:]}
 STARTER_NAMES = {"en": "Starter", "ko": "스타터", "ja": "スターター", "fr": "Débutant", "es": "Inicial", "zh-TW": "入門方案"}
-SOFTWARE_DESCRIPTION = "Create a 15-second, 9:16 video with sound from one authorized photo. Each generation costs {{OZIL_GOAL_COST}} credits; failed generations return credits."
+# Approved rendered product copy, deliberately independent of the app's product
+# module/catalog. A source edit must not silently change its acceptance criteria.
+SOFTWARE_FIXTURES = {
+    "en": {
+        "description": "Create a 15-second, 9:16 video with sound from one authorized photo. Each generation costs 300 credits; confirmed failed generations return credits.",
+        "visible": (
+            "15-second MP4 · 9:16 · 768p · with sound",
+            "300 credits per video · Full videos in the Starter pack: 1",
+            "Confirmed failed generations return credits, not a cash refund. A successful result you dislike is generally not refundable.",
+        ),
+    },
+    "ko": {
+        "description": "사용 권한이 있는 사진 한 장으로 사운드가 포함된 15초, 9:16 영상을 만드세요. 생성 한 번당 300크레딧이 사용되며, 생성 실패가 확인되면 크레딧이 반환됩니다.",
+        "visible": (
+            "15초 MP4 · 9:16 · 768p · 사운드 포함",
+            "영상 한 편당 300크레딧 · 스타터 팩으로 만들 수 있는 완성 영상: 1편",
+            "생성 실패가 확인되면 현금 환불이 아닌 크레딧 반환으로 처리됩니다. 생성에 성공했지만 결과가 마음에 들지 않는 경우에는 일반적으로 환불되지 않습니다.",
+        ),
+    },
+    "ja": {
+        "description": "使用する権利のある写真1枚から、音声付きの15秒・9:16の動画を作成します。生成1回につき300クレジットを使用し、生成の失敗が確認された場合はクレジットが返還されます。",
+        "visible": (
+            "15秒のMP4 · 9:16 · 768p · 音声付き",
+            "動画1本あたり300クレジット · スターターパックで作成できる完成動画：1本",
+            "生成の失敗が確認された場合は、現金での返金ではなくクレジットが返還されます。生成に成功したものの仕上がりが好みに合わない場合は、通常、返金の対象になりません。",
+        ),
+    },
+    "fr": {
+        "description": "Créez une vidéo de 15 secondes au format 9:16, avec son, à partir d’une photo que vous êtes autorisé à utiliser. Chaque génération coûte 300 crédits ; les échecs de génération confirmés donnent lieu à une restitution des crédits.",
+        "visible": (
+            "MP4 de 15 secondes · 9:16 · 768p · avec son",
+            "300 crédits par vidéo · Vidéos complètes avec le pack Débutant : 1",
+            "Les échecs de génération confirmés donnent lieu à une restitution des crédits, pas à un remboursement en argent. Un résultat généré avec succès qui ne vous plaît pas n’est généralement pas remboursable.",
+        ),
+    },
+    "es": {
+        "description": "Crea un vídeo de 15 segundos en formato 9:16, con sonido, a partir de una foto que tengas derecho a usar. Cada generación cuesta 300 créditos; si se confirma un fallo de generación, se devuelven los créditos.",
+        "visible": (
+            "MP4 de 15 segundos · 9:16 · 768p · con sonido",
+            "300 créditos por vídeo · Vídeos completos con el paquete Inicial: 1",
+            "Si se confirma un fallo de generación, se devuelven los créditos, no el dinero. Un resultado generado correctamente que no te guste generalmente no es reembolsable.",
+        ),
+    },
+    "zh-TW": {
+        "description": "使用一張你有權使用的照片，製作 15 秒、9:16 且含音效的影片。每次生成使用 300 點；經確認生成失敗時會退還點數。",
+        "visible": (
+            "15 秒 MP4 · 9:16 · 768p · 含音效",
+            "每支影片 300 點 · Starter 入門方案可製作的完整影片：1 支",
+            "經確認生成失敗時會退還點數，不會退還現金。若生成成功但你不滿意成品，通常無法退款。",
+        ),
+    },
+}
+assert set(SOFTWARE_FIXTURES) == {prefix[1:] or "en" for prefix in LOCALES}, "Missing independent product fixtures"
 STARTER_DESCRIPTION = "{name} pack: USD {price} for {credits} credits. One-time purchase."
 SAMPLE_DESCRIPTION = "One photo in, a 15-second 9:16 clip out — no app, no prompt. Explore these trend references from other creators, with links to their original sources. Reference clips vary in length and style. Copyright stays with the original creators; contact us to have a clip removed."
 AFFILIATION_DISCLOSURE = "An independent tool. Not affiliated with any footballer, club, league, federation or broadcaster. Videos are AI-generated and may use a consenting adult’s photo."
@@ -434,7 +486,9 @@ for path in sorted(expected):
         for schema, fragment in ((faq, "faq"), (howto, "how-to"), (software, "software")):
             assert schema.get("inLanguage") == locale and normalize_root(schema.get("url")) == canonical_url(path) and schema.get("@id") == canonical_url(path) + "#" + fragment, (path, "Localized schema URL/language mismatch", fragment)
         assert software.get("name") == HOME_NAME and software.get("applicationCategory") == "MultimediaApplication" and software.get("operatingSystem") == "Web" and software.get("isAccessibleForFree") is False, (path, "Incorrect software facts")
-        assert software.get("description") == translated_copy(locale, SOFTWARE_DESCRIPTION), (path, "Incorrect localized software description")
+        assert software.get("description") == SOFTWARE_FIXTURES[locale]["description"], (path, "Incorrect localized software description", software.get("description"))
+        for product_fact in SOFTWARE_FIXTURES[locale]["visible"]:
+            assert normalize(product_fact) in visible_text, (path, "Software facts differ from visible product copy", product_fact)
         offer = software.get("offers", {})
         expected_offer = {"@type": "Offer", "name": translated_copy(locale, "{name} — {credits} credits", name=STARTER_NAMES[locale], credits=300), "price": "9.90", "priceCurrency": "USD", "url": canonical_url(localized_path("/pricing", prefix))}
         assert offer == expected_offer, (path, "Software offer does not describe the actual Starter pack", offer)
@@ -586,6 +640,8 @@ report = {
     "visible_guide_faqs_checked": visible_guide_faqs,
     "software_offer": software_offers["en"],
     "localized_software_offers": software_offers,
+    "localized_software_descriptions_checked": len(SOFTWARE_FIXTURES),
+    "visible_product_facts_checked": sum(len(fixture["visible"]) for fixture in SOFTWARE_FIXTURES.values()),
     "sample_source_links_checked": sum(SAMPLE_SOURCES.values()) * len(LOCALES),
     "article": {"path": ARTICLE_PATH, "headline": article_schema["headline"], "datePublished": published.isoformat(), "dateModified": modified.isoformat(), "author": author, "image": image_url, "h2_count": len(article.headings["h2"])},
     "checked_resources": len(cache),

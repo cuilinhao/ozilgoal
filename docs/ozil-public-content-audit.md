@@ -144,4 +144,12 @@ app/layout.tsx:35 已接入 G-SKCH8EV8M2。components/google-analytics.tsx:6–3
 - 独立代码审查未发现新引入的功能阻断；审查指出的照片指南“返还视频”旧文案已改为确认失败返积分，并同步五语。
 - `git diff --check` 通过。页面截图位于本地忽略目录 `QA/public-content-2026-10-16/`，不作为用户公开案例。
 
+上线前追加依赖复查（2026-10-17，针对内容提交 9362952）：
+
+- `npm audit --json` 确认 3 个 high 是同一条依赖链：wrangler 4.146.0 → miniflare 5.20261001.0-alpha → sharp 0.35.4；`npm ls` 同时确认 Next 使用已修补的 sharp 0.35.5。
+- 9362952 前后 package.json 与 package-lock.json 的 Git blob 分别完全相同（00f44495…、44abe3b8…），该工具链风险不是本次内容提交引入。
+- [sharp 官方 advisory GHSA-wq5f-xc86-pv6w](https://github.com/lovell/sharp/security/advisories/GHSA-wq5f-xc86-pv6w)说明旧 librsvg 在特定运行条件下可于 glibc Linux 导致 RCE，修补版为 sharp ≥0.35.5；Miniflare 包代码的 imagesLocalFetcher/cfImageLocalFetcher 动态加载旧 sharp，用于本地图片处理，不能向其提供不可信 SVG。
+- 当前已有 .open-next 构建文件未发现 Miniflare/旧 sharp 包或 .node 原生模块；Worker 图片路由使用 Cloudflare adapter，当前 SVG 分支返回 400，wrangler 配置未绑定 IMAGES。OpenNext 的开发回退代码仍有外部 Wrangler 动态导入，不能仅凭依赖被列为 dev 或 `npm audit --omit=dev` 推断生产打包安全。
+- 在维持当前 Worker 部署方式、且本地/CI 不处理不可信 SVG 的边界内，本次内容发布无需由该问题单独阻断；运行方式变化时需复验。后续独立升级兼容的工具链，不运行 `npm audit fix --force`（npm audit 给出的 Miniflare 修复目标为降级到 4.20250508.2）。本次未升级依赖，不代表漏洞已修复；未运行利用样本或新增全量测试，未改变业务代码。
+
 可按顺序继续：由素材负责人准备一套满足第 3 节的真实输入/完整输出证据；由分析负责人用第 5 节读取现有聚合来源；按第 6 节手动建立首周基线。等有真实数据后再决定是否增加案例内容或独立设计业务漏斗，避免为“SEO 完整度”改动已正常的生成与支付流程。
