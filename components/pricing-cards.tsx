@@ -8,11 +8,13 @@ import { trustedCheckoutUrl } from "./ui/checkout-url";
 import { OZIL_GOAL_CONFIG, OZIL_GOAL_COST } from "@/lib/ozil-goal";
 
 const starterCredits = creditPacks.find((pack) => pack.id === "starter")!.credits;
+const defaultPackId: PackId = creditPacks.find((pack) => pack.recommended)?.id ?? creditPacks[0].id;
 
 export function PricingCards() {
   const t = useTranslations();
   const locale = useLocale();
   const { user, openSignIn } = useAuth();
+  const [selected, setSelected] = useState<PackId>(defaultPackId);
   const [busy, setBusy] = useState<PackId | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
@@ -42,7 +44,7 @@ export function PricingCards() {
   }
 
   return <div>
-    <div className="pricing-grid">{creditPacks.map((pack) => <article className={`pricing-card ${pack.recommended ? "recommended" : ""}`} key={pack.id}>
+    <div className="pricing-grid">{creditPacks.map((pack) => <article className={`pricing-card ${selected === pack.id ? "selected" : ""}`} key={pack.id} onClick={() => setSelected(pack.id)} onFocus={() => setSelected(pack.id)}>
       <div className="pricing-card-top"><h3>{t(pack.name)}</h3>{pack.recommended && <span className="recommended-badge">{t("Recommended")}</span>}</div>
       <div className="price">${pack.price.toFixed(2)}</div><p className="unit-price">{t("${price} / credit", { price: pack.unitPrice })}</p>
       <div className="credit-summary"><strong>{t("{credits} credits", { credits: pack.credits.toLocaleString(locale) })}</strong><span>{t("Ozil goal videos: {videos}", { videos: Math.floor(pack.credits / OZIL_GOAL_COST) })}</span></div>
