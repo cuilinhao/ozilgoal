@@ -16,7 +16,12 @@ describe('Ozil public content migration', () => {
     expect(details).toHaveLength(manifest[slug].sourceFaqCount);
     const headings = nodes.filter(node => typeof node !== 'string' && 'tag' in node && /^h[1-3]$/.test(node.tag)).map(text);
     const slotHeadings = ['One video, three, or seven', '1 Video', '3 Videos', '7 Videos', 'Start ticking', 'The flying keeper'];
-    for (const heading of manifest[slug].sourceHeadings) if (!slotHeadings.includes(heading)) expect(headings).toContain(heading);
+    for (const heading of manifest[slug].sourceHeadings) {
+      if (slotHeadings.includes(heading)) continue;
+      // The homepage sample was replaced with an eight-second clip; guide references retain their original timing.
+      const expectedHeading = slug === 'home' && heading === 'Fifteen seconds, three beats' ? 'Eight seconds, three beats' : heading;
+      expect(headings).toContain(expectedHeading);
+    }
     const path = slug === 'home' ? 'app/ozil-goal-generator/page.tsx' : `app/ozil-goal-generator/${slug}/page.tsx`;
     expect(readFileSync(resolve(path), 'utf8')).toContain('generateMetadata');
   });
