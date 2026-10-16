@@ -5,6 +5,7 @@ import { getMessages } from "./index";
 import { createTranslator } from "./translator";
 import { isEnglishOnlyOzilPath, isLocale, locales, localeTags, localizeHref, type Locale } from "./routing";
 import { SITE_URL } from "@/content/public-pages";
+import { expandOzilProductText } from '@/lib/ozil-product';
 import { getOzilBlogPost, OZIL_BLOG_PATH } from "@/content/ozil-blog";
 export const getLocale = cache(async (): Promise<Locale> => {
   const value = (await headers()).get("x-migos-locale") || "en";
@@ -21,7 +22,8 @@ export async function getDocumentLanguage(): Promise<string> {
 }
 export async function localizeMetadata(metadata: Metadata): Promise<Metadata> {
   const locale = await getLocale();
-  const t = await getTranslations();
+  const translate = await getTranslations();
+  const t = (source: string) => expandOzilProductText(translate(source));
   const pathname = (await headers()).get("x-migos-pathname") || "/";
   const canonicalPath = pathname === "/ozil-goal-generator" ? "/" : pathname;
   const englishOnly = isEnglishOnlyOzilPath(canonicalPath);

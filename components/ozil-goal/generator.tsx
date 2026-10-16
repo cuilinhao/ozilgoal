@@ -187,7 +187,7 @@ export function OzilGoalGenerator() {
       </button>
       <div className="og-generator-footnote">
         <p>{user ? <>{t('{credits} credits available', { credits: credits.toLocaleString() })} · <Link href="/pricing">{t("Buy credits")}</Link></> : <>{t('{credits} credits per video', { credits: OZIL_GOAL_COST })} · <Link href="/pricing">{t("View credit packs")}</Link></>}</p>
-        <p>{user ? <>{t("Saved to your ")}<Link href="/app/my-videos">{t("My Videos")}</Link>{t(" · Failed generations are refunded")}</> : t('No account needed. Pay when you make your video; your photo stays in place.')}</p>
+        <p>{user ? <>{t("Saved to your ")}<Link href="/app/my-videos">{t("My Videos")}</Link>{" · "}{t("Failed render: credits returned")}</> : t('No account needed. Pay when you make your video; your photo stays in place.')}</p>
       </div>
     </div>
     {needCredits && credits < OZIL_GOAL_COST && <div className="og-generator-buy" role="region" aria-label={t("Buy credits")}>

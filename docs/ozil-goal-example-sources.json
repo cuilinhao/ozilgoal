@@ -1,7 +1,7 @@
 {
   "retrievedOn": "2026-10-15",
   "notes": [
-    "Third-party trend references, not outputs made with LobbyDuo.",
+    "Third-party trend references, not outputs made with Ozil Goal Generator.",
     "Titles describe the visible clips; publisher names are retained rather than inventing individual creators.",
     "The TikTok source URL was linked by https://genjutsu-ai.app/ozil-goal-ai-video; the media file was exposed by https://tryh3.com/generator/ozil-goal-ai.",
     "Public MP4s were re-encoded with H.264 CRF 24 and faststart, retaining the complete duration, original aspect ratio and available audio. Posters are extracted video frames.",

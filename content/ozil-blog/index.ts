@@ -4,7 +4,7 @@ import { spanishPosts } from "./es";
 import type { OzilBlogPost } from "./types";
 
 export const OZIL_BLOG_PATH = "/ozil-goal-generator/blog";
-export const OZIL_BLOG_UPDATED = "2026-10-15";
+export const OZIL_BLOG_UPDATED = "2026-10-16";
 export const ozilBlogPosts: OzilBlogPost[] = [...englishPosts, ...portuguesePosts, ...spanishPosts];
 export const ozilBlogLanguages = [
   { language: "en", label: "English", description: "The trend, the tools, photo tutorials and what free really means." },

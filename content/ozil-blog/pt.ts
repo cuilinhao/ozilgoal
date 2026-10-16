@@ -13,7 +13,7 @@ export const portuguesePosts: OzilBlogPost[] = [
     excerpt: "Uma foto vira uma jogada de futebol com goleiro, domínio de peito e drible. Entenda o formato antes de fazer sua versão.",
     eyebrow: "GOL DO ÖZIL · ENTENDA A TREND",
     datePublished: "2026-10-15",
-    dateModified: "2026-10-15",
+    dateModified: "2026-10-16",
     intro: "A **trend do gol do Özil** é um formato de vídeo com IA que coloca uma pessoa em uma jogada de futebol associada ao jogador. Você fornece uma foto, e o resultado mostra essa pessoa conduzindo a bola, escapando do goleiro e passando por um defensor. A graça está em reconhecer alguém comum dentro de uma cena de craque.",
     sections: [
       {
@@ -49,7 +49,7 @@ export const portuguesePosts: OzilBlogPost[] = [
         id: "fazer-a-sua",
         title: "Como participar com uma foto",
         blocks: [
-          { type: "p", text: "Toque em **Add one clear photo**, que significa adicionar uma foto nítida. Confirme a autorização de uso da imagem, entre na conta e pressione **Make my video**, ou “fazer meu vídeo”. Ao terminar, **Download video** permite baixar o arquivo." },
+          { type: "p", text: "Toque em **Add one clear photo**, que significa adicionar uma foto nítida. Confirme a autorização e pressione **Make my video**, ou “fazer meu vídeo”. Se precisar de créditos, compre um pacote sem cadastro e volte para iniciar. Ao terminar, **Download video** permite baixar o arquivo. Como visitante, mantenha a mesma sessão do navegador para acessar o resultado." },
           { type: "p", text: "Cada nova geração custa **{ozilCredits} créditos** da sua conta Ozil Goal Generator. Consulte os [pacotes de créditos](/pricing) antes de começar. Criar uma conta não torna a geração gratuita. O [passo a passo em português](/ozil-goal-generator/blog/como-fazer-gol-do-ozil-com-ia) explica o envio e o acompanhamento." },
         ],
       },
@@ -84,8 +84,8 @@ export const portuguesePosts: OzilBlogPost[] = [
     excerpt: "Da escolha da foto ao download: um tutorial em português com os nomes reais dos botões e o custo em créditos.",
     eyebrow: "GOL DO ÖZIL · PASSO A PASSO",
     datePublished: "2026-10-15",
-    dateModified: "2026-10-15",
-    intro: "Para fazer o **vídeo do gol do Özil com IA**, abra o gerador, envie uma foto de um adulto, confirme a autorização e clique em **Make my video**. O site usa um template pronto: você não precisa escrever um prompt nem enviar um vídeo de referência. A geração exige uma conta e saldo suficiente de créditos.",
+    dateModified: "2026-10-16",
+    intro: "Para fazer o **vídeo do gol do Özil com IA**, abra o gerador, escolha uma foto de um adulto, confirme a autorização e clique em **Make my video**. O site usa um template pronto: você não precisa escrever um prompt nem enviar um vídeo de referência. É preciso ter créditos suficientes, mas você pode comprar e gerar sem cadastro.",
     sections: [
       {
         id: "antes-de-comecar",
@@ -105,16 +105,16 @@ export const portuguesePosts: OzilBlogPost[] = [
             "Confira a prévia. Se escolheu a imagem errada, toque nela para selecionar outra antes de iniciar.",
             "Marque a confirmação de que você tem autorização para usar a imagem e aceita os termos. Ela também informa que o resultado será gerado por IA.",
           ] },
-          { type: "p", text: "A seleção permanece no formulário durante o acesso à conta. Não use uma montagem com várias pessoas esperando que o gerador escolha automaticamente quem deve conduzir a bola." },
+          { type: "p", text: "O pagamento abre em outra aba para manter a foto selecionada neste formulário. Não use uma montagem com várias pessoas esperando que o gerador escolha automaticamente quem deve conduzir a bola." },
         ],
       },
       {
         id: "gerar",
-        title: "3. Entre na conta e inicie a geração",
+        title: "3. Confira os créditos e inicie a geração",
         blocks: [
-          { type: "p", text: "Clique em **Make my video**. Caso ainda não esteja conectado, faça login com Google ou e-mail e retome o envio. Com foto, consentimento e saldo suficientes, o pedido segue para processamento." },
+          { type: "p", text: "Clique em **Make my video**. Se o saldo for insuficiente, escolha um pacote e pague sem cadastro. Volte da aba do Stripe, aguarde os créditos aparecerem e clique novamente em **Make my video**. Se já tiver créditos em uma conta, entre para usar esse saldo. Com foto, consentimento e saldo suficientes, o pedido segue para processamento." },
           { type: "p", text: "A configuração atual usa **MiniMax H3**, com 15 segundos, proporção vertical 9:16, resolução 768p e som. Esses parâmetros são fixos no formulário. Não há escolha de duração, campo para prompt ou opção para trocar a jogada antes de gerar." },
-          { type: "p", text: "Acompanhe o indicador de progresso sem interpretar sua porcentagem como uma previsão exata de tempo restante. Aguarde na página até o upload da foto e o envio do pedido terminarem. Quando o pedido aparecer em estado de geração, você pode sair e acompanhá-lo em **My Videos**, a área de vídeos da conta; sair antes disso pode interromper o envio." },
+          { type: "p", text: "Acompanhe o indicador de progresso sem interpretar sua porcentagem como uma previsão exata de tempo restante. Aguarde até o upload e o envio do pedido terminarem. Quando o pedido aparecer em estado de geração, você pode sair e voltar a **My Videos** na mesma sessão do navegador. O acesso de visitante depende dessa sessão; baixe os resultados que quiser guardar. Sair antes do envio pode interrompê-lo." },
         ],
       },
       {
@@ -157,7 +157,7 @@ export const portuguesePosts: OzilBlogPost[] = [
     excerpt: "O rosto, o enquadramento e a roupa da referência fazem diferença. Veja como preparar uma foto adequada para a jogada.",
     eyebrow: "GOL DO ÖZIL · GUIA DE FOTOS",
     datePublished: "2026-10-15",
-    dateModified: "2026-10-15",
+    dateModified: "2026-10-16",
     intro: "Para colocar sua foto no **gol do Özil**, envie uma imagem no campo **Add one clear photo** do gerador. Use uma foto só sua, com rosto visível e, de preferência, corpo inteiro. A IA usa essa referência para representar você na jogada; ela não apenas cola um recorte estático sobre o vídeo.",
     sections: [
       {
@@ -196,7 +196,7 @@ export const portuguesePosts: OzilBlogPost[] = [
           { type: "ol", items: [
             "Entre no [gerador do gol do Özil](/#generator) e localize **Your photo** (“sua foto”).",
             "Toque em **Add one clear photo** (“adicionar uma foto nítida”) e escolha o arquivo preparado.",
-            "Confira a prévia, marque o consentimento e entre na sua conta.",
+            "Confira a prévia e marque o consentimento. Você pode comprar créditos sem cadastro; se já tiver saldo em uma conta, entre para usá-lo.",
             "Confira o custo de **{ozilCredits} créditos** e clique em **Make my video** (“fazer meu vídeo”).",
           ] },
           { type: "p", text: "O template solicita 15 segundos em 9:16, 768p, com som, usando MiniMax H3. Seu saldo pertence a este site e não é transferido de outros serviços. O formulário não aceita uma segunda foto para corrigir o rosto nem um prompt para ajustar a roupa." },

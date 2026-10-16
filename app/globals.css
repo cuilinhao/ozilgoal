@@ -211,3 +211,6 @@ img,video{max-width:100%}
 .hero .geo-inline-link:hover{color:var(--accent-foreground)}
 .home-cta .section-description{color:var(--foreground)}
 .home-cta .pill-gradient-button{background:var(--foreground);color:var(--primary-foreground)}
+.pricing-access-note{max-width:920px;margin:18px auto;color:var(--muted);font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.pricing-access-note p{margin:8px 0}
+.pricing-access-note a{color:var(--foreground);text-decoration:underline;text-underline-offset:3px}

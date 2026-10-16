@@ -78,3 +78,16 @@
 .ozil-page .og-examples-grid figcaption{padding:12px 2px 0}
 .ozil-page .og-examples-grid h3{margin:0 0 5px;font-size:16px;font-weight:700}
 @media(max-width:639px){.ozil-page .og-examples-section{padding:48px 0}.ozil-page .og-examples-section .reference-examples-intro{margin-bottom:26px}.ozil-page .og-examples-section .reference-examples-description{margin-top:16px}.ozil-page .og-examples-grid .mi-video-card{border-radius:20px}}
+/* Shared product facts sit below the generator without changing its controls. */
+.ozil-page .og-product-summary{padding:32px 0;border-block:1px solid var(--og-line);background:var(--og-bg-deep)}
+.ozil-page .og-product-summary h2{margin:0 0 20px;font-size:24px;line-height:1.2;font-weight:700;color:var(--og-text)}
+.ozil-page .og-product-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.ozil-page .og-product-facts h3{margin:0 0 10px;color:var(--og-flash);font-size:13px;font-weight:700}
+.ozil-page .og-product-facts p{margin:0 0 10px;color:var(--og-muted);font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+.ozil-page .og-product-facts .og-product-value{color:var(--og-text);font-size:15px;font-weight:600}
+.ozil-page .og-product-summary a{color:var(--og-flash);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.ozil-page .og-product-access,.ozil-page .og-product-privacy{margin:18px 0 0;color:var(--og-muted);font-size:12.5px;line-height:1.7}
+.ozil-page .og-product-access{padding-top:16px;border-top:1px solid var(--og-line)}
+.ozil-page .og-product-privacy{margin-top:10px}
+@media(max-width:1000px){.ozil-page .og-product-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ozil-page .og-product-facts{grid-template-columns:1fr;gap:16px}.ozil-page .og-product-summary{padding:24px 0}.ozil-page .og-product-summary h2{font-size:21px}}

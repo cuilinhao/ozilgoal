@@ -13,7 +13,7 @@ export const spanishPosts: OzilBlogPost[] = [
     excerpt: 'De un gol del Arsenal en 2016 a una recreación con tu propia foto: las claves para reconocer el formato y entender sus límites.',
     eyebrow: 'OZIL GOAL · EL TREND EXPLICADO',
     datePublished: '2026-10-15',
-    dateModified: '2026-10-15',
+    dateModified: '2026-10-16',
     intro: 'El **trend del gol de Özil** reúne videos que recuerdan una jugada del futbolista y recreaciones con inteligencia artificial donde otra persona ocupa el papel del atacante. En la versión hecha desde una foto, la gracia consiste en ver a alguien reconocible, a menudo con ropa cotidiana, superar una escena de fútbol que nunca protagonizó realmente.',
     sections: [
       {
@@ -52,7 +52,7 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'crear-tu-version',
         title: 'Cómo empezar con tu versión',
         blocks: [
-          { type: 'p', text: 'En Ozil Goal Generator puedes subir una foto de una persona adulta, confirmar su consentimiento e iniciar sesión. La generación usa un formato fijo de 15 segundos con sonido y cuesta {ozilCredits} créditos. No requiere escribir un prompt. Consulta el [tutorial paso a paso](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) y presenta el resultado como una recreación con IA.' },
+          { type: 'p', text: 'En Ozil Goal Generator puedes usar una foto de una persona adulta, confirmar su consentimiento y comprar créditos sin registrarte. La generación usa un formato fijo de 15 segundos con sonido y cuesta {ozilCredits} créditos. No requiere escribir un prompt. Consulta el [tutorial paso a paso](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) y presenta el resultado como una recreación con IA.' },
         ],
       },
     ],
@@ -74,13 +74,13 @@ export const spanishPosts: OzilBlogPost[] = [
     topic: 'tutorial',
     title: '¿Cómo hacer el video del gol de Özil con IA?',
     metaTitle: 'Cómo hacer el video del gol de Özil con IA: pasos y costo (2026)',
-    description: 'Crea una recreación del gol de Özil desde una foto: requisitos, inicio de sesión, créditos, generación, revisión y descarga del resultado.',
+    description: 'Crea una recreación del gol de Özil desde una foto: requisitos, compra sin registro, créditos, generación, revisión y descarga del resultado.',
     label: 'Crear el video del gol de Özil con IA',
     excerpt: 'El recorrido completo desde la foto hasta la descarga, con los controles que realmente ofrece el generador y el costo antes de empezar.',
     eyebrow: 'OZIL GOAL · TUTORIAL',
     datePublished: '2026-10-15',
-    dateModified: '2026-10-15',
-    intro: 'Para hacer el **video del gol de Özil con IA** en Ozil Goal Generator, sube una foto, confirma que puedes usarla, inicia sesión y pulsa «Make my video» con saldo suficiente. La plantilla ya incluye las instrucciones y la referencia de movimiento. Cada generación cuesta {ozilCredits} créditos; no necesitas grabarte jugando ni escribir un prompt.',
+    dateModified: '2026-10-16',
+    intro: 'Para hacer el **video del gol de Özil con IA** en Ozil Goal Generator, elige una foto, confirma que puedes usarla y pulsa «Make my video» con saldo suficiente. Puedes comprar créditos y generar sin registrarte. La plantilla ya incluye las instrucciones y la referencia de movimiento. Cada generación cuesta {ozilCredits} créditos; no necesitas grabarte jugando ni escribir un prompt.',
     sections: [
       {
         id: 'antes-de-empezar',
@@ -99,14 +99,14 @@ export const spanishPosts: OzilBlogPost[] = [
             'Comprueba la miniatura. Si elegiste otra imagen por error, toca la foto para sustituirla antes de iniciar la generación.',
             'Marca la confirmación de que usas una foto tuya o de alguien que aceptó aparecer, y acepta los términos indicados. El formulario también aclara que el video será generado con IA.',
           ] },
-          { type: 'p', text: 'La foto puede seleccionarse antes de iniciar sesión. Al abrir el acceso a la cuenta, esa selección se conserva para que puedas continuar el proceso.' },
+          { type: 'p', text: 'Puedes seleccionar la foto antes de comprar créditos. El pago se abre en otra pestaña para que la foto permanezca en este formulario mientras pagas.' },
         ],
       },
       {
         id: 'cuenta-y-creditos',
-        title: '3. Inicia sesión y comprueba el saldo',
+        title: '3. Comprueba el saldo y compra créditos si hace falta',
         blocks: [
-          { type: 'p', text: 'Puedes acceder con Google o correo electrónico. El registro no incluye créditos gratuitos: necesitas {ozilCredits} créditos para un video nuevo. Si falta saldo, abre [Precios](/pricing) y revisa el paquete antes de comprar. Son paquetes de pago único, sin suscripción.' },
+          { type: 'p', text: 'Necesitas {ozilCredits} créditos para un video nuevo. Si falta saldo, elige un paquete y paga sin registrarte. Regresa de la pestaña de Stripe, espera a que aparezcan los créditos y vuelve a pulsar «Make my video». Si ya tienes saldo en una cuenta, inicia sesión para usarlo. Consulta [Precios](/pricing): son paquetes de pago único, sin suscripción.' },
           { type: 'p', text: 'Cada vídeo Ozil usa {ozilCredits} créditos de tu cuenta de Ozil Goal Generator. La página de precios muestra cuántos vídeos permite cada paquete.' },
         ],
       },
@@ -114,7 +114,7 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'generar-y-esperar',
         title: '4. Genera y sigue el progreso',
         blocks: [
-          { type: 'p', text: 'Pulsa «Make my video». Espera en la página mientras se prepara y sube la foto y se envía la solicitud. Cuando el trabajo ya aparezca en estado de generación, puedes salir y consultarlo en «My Videos» desde tu cuenta. El tiempo de espera puede variar.' },
+          { type: 'p', text: 'Pulsa «Make my video». Espera en la página mientras se prepara y sube la foto y se envía la solicitud. Cuando el trabajo ya aparezca en estado de generación, puedes salir y volver a «My Videos» en la misma sesión del navegador. El acceso como invitado depende de esa sesión; descarga los resultados que quieras conservar. El tiempo de espera puede variar.' },
           { type: 'p', text: 'Si tarda, consulta primero el estado del trabajo. No interpretes una espera larga como una invitación a crear varias solicitudes nuevas. Los trabajos fallidos devuelven créditos mediante el flujo del servicio; una diferencia estética respecto a lo imaginado no equivale automáticamente a un fallo técnico.' },
         ],
       },
@@ -151,7 +151,7 @@ export const spanishPosts: OzilBlogPost[] = [
     excerpt: 'Cómo elegir una imagen que muestre bien tu cara y tu ropa, preparar el archivo y revisar si el video mantiene tu apariencia.',
     eyebrow: 'OZIL GOAL · GUÍA DE FOTOS',
     datePublished: '2026-10-15',
-    dateModified: '2026-10-15',
+    dateModified: '2026-10-16',
     intro: 'Puedes hacer una recreación del **gol de Özil con tu propia foto** usando una imagen de referencia en el [generador Ozil Goal](/). No hace falta una foto tuya en un estadio: utiliza una imagen clara donde se reconozcan tu cara y tu ropa. La plantilla aporta el movimiento; cada generación cuesta {ozilCredits} créditos.',
     sections: [
       {
@@ -188,7 +188,7 @@ export const spanishPosts: OzilBlogPost[] = [
         id: 'subir-la-foto',
         title: 'Sube la foto que realmente quieres utilizar',
         blocks: [
-          { type: 'p', text: 'Abre el formulario, selecciona el archivo y revisa la miniatura antes de continuar. Confirma que la persona eres tú o que aceptó aparecer. Después inicia sesión, comprueba el saldo y pulsa «Make my video». El [tutorial completo](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) explica también el seguimiento y la descarga.' },
+          { type: 'p', text: 'Abre el formulario, selecciona el archivo y revisa la miniatura antes de continuar. Confirma que la persona eres tú o que aceptó aparecer. Comprueba el saldo y pulsa «Make my video»; puedes comprar créditos sin registrarte si hacen falta. El [tutorial completo](/ozil-goal-generator/blog/como-hacer-video-gol-de-ozil-con-ia) explica también el seguimiento y la descarga.' },
           { type: 'p', text: 'El resultado solicitado tiene 15 segundos, formato vertical 9:16, 768p y sonido. Las opciones del [constructor público de prompts](/ozil-goal-generator/ozil-goal-ai-prompt) pertenecen a otra herramienta: cambiar allí la ropa o la cámara no modifica esta solicitud.' },
         ],
       },

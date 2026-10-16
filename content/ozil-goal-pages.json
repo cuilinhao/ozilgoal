@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "Ozil Goal AI Video Generator – From One Photo (2026)",
-    "description": "Make the Ozil goal AI video from one photo: the keeper dives, the ball bounces off your chest, the defender slides in. 15 seconds, vertical, {{OZIL_GOAL_COST}} credits per video. No CapCut.",
+    "description": "Make the Ozil goal AI video from one photo: the keeper dives, the ball bounces off your chest, the defender slides in. {{OZIL_GOAL_DURATION}} seconds, vertical, {{OZIL_GOAL_COST}} credits per video. No CapCut.",
     "content": {
       "tag": "div",
       "attrs": {
@@ -211,7 +211,7 @@
                           "tag": "span",
                           "attrs": {},
                           "children": [
-                            "15s · 9:16 · with sound"
+                            "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · with sound"
                           ]
                         }
                       ]
@@ -367,7 +367,7 @@
                                 }
                               ]
                             },
-                            "Your account"
+                            "No sign-up required"
                           ]
                         },
                         {
@@ -422,6 +422,9 @@
               ]
             }
           ]
+        },
+        {
+          "slot": "product-summary"
         },
         {
           "tag": "div",
@@ -770,7 +773,7 @@
                                     "class": "py-3 text-right font-semibold"
                                   },
                                   "children": [
-                                    "15-second vertical MP4"
+                                    "{{OZIL_GOAL_DURATION}}-second vertical MP4"
                                   ]
                                 }
                               ]
@@ -797,7 +800,7 @@
                                     "class": "py-3 text-right font-semibold"
                                   },
                                   "children": [
-                                    "9:16, with sound"
+                                    "{{OZIL_GOAL_ASPECT}}, with sound"
                                   ]
                                 }
                               ]
@@ -1030,7 +1033,7 @@
                             "class": "mt-1.5 text-[15px] leading-relaxed text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Sign in to your account, check the credit cost and press Make my video. The stadium, players, camera and motion reference are already set, with nothing to write or tune."
+                            "Check the credit cost and press Make my video. If you need credits, buy a pack without signing up, then return here to start. The football scene is preset; no prompt or editing is needed."
                           ]
                         }
                       ]
@@ -1065,7 +1068,7 @@
                             "class": "mt-1.5 text-[15px] leading-relaxed text-[var(--og-muted)]"
                           },
                           "children": [
-                            "The 15-second vertical clip lands in My videos. Post it to TikTok, Reels or Shorts and switch on the AI-generated label where the app asks."
+                            "When the {{OZIL_GOAL_DURATION}}-second vertical video is ready, download it from My videos in the same browser session. Review it before posting to TikTok, Reels or Shorts, and use the platform’s AI-generated label where required."
                           ]
                         }
                       ]
@@ -1590,7 +1593,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "15 seconds"
+                                    "{{OZIL_GOAL_DURATION}} seconds"
                                   ]
                                 }
                               ]
@@ -1619,7 +1622,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Your account"
+                                    "No sign-up required"
                                   ]
                                 }
                               ]
@@ -1694,7 +1697,7 @@
                     "class": "mt-5 max-w-[68ch] text-[15.5px] leading-relaxed text-[var(--og-muted)]"
                   },
                   "children": [
-                    "Already have CapCut and the template opens for you? Check its current price before trying it. Ozil Goal Generator is for when you would rather not install another app, the template link will not open where you are, or you want the full 15-second clip from one photo.",
+                    "Already have CapCut and the template opens for you? Check its current price before trying it. Ozil Goal Generator is for when you would rather not install another app, the template link will not open where you are, or you want the full {{OZIL_GOAL_DURATION}}-second clip from one photo.",
                     " ",
                     {
                       "tag": "a",
@@ -2254,7 +2257,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Add one photo in the box at the top of this page, tick the permission box and press Make my video. There is no prompt to write and nothing to edit. When generation finishes, you download a 15-second vertical MP4 with you on the ball."
+                            "Add one authorized photo, confirm permission and press Make my video. Buy credits if needed; no sign-up, prompt or editing is required. The preset requests a {{OZIL_GOAL_DURATION}}-second vertical AI football video with you on the ball. Review the result before sharing."
                           ]
                         }
                       ]
@@ -2298,7 +2301,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Yes. The stadium, the keeper, the defender, the camera moves and the timing all come from the trend clip. Your photo only has to give the model your face, hair and outfit, so pick one where all three are easy to see."
+                            "One clear photo of one consenting adult is enough. The template requests the keeper’s dive, chest touch and defender’s slide, using your photo for the face, hair and outfit. It guides the scene; exact timing, movement, clothing and likeness can vary."
                           ]
                         }
                       ]
@@ -2342,7 +2345,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Each new video uses your Ozil Goal Generator account balance and costs {{OZIL_GOAL_COST}} credits. CapCut may offer a free route; availability and pricing depend on CapCut."
+                            "No. Each video costs {{OZIL_GOAL_COST}} credits. The smallest purchase is the Starter pack: USD {{OZIL_STARTER_PRICE}} for {{OZIL_STARTER_CREDITS}} credits, enough for {{OZIL_STARTER_VIDEOS}} complete video. It is a one-time payment, with no subscription. You can buy and generate without signing up."
                           ]
                         }
                       ]
@@ -2386,7 +2389,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Ozil Goal Generator runs in any browser on iPhone, Android or a computer. Sign in to your account so your videos have somewhere to live, then download the MP4 and post it wherever you like."
+                            "No. Use Ozil Goal Generator in your phone or computer browser. Add one photo and buy credits without signing up. When the video is ready, download the MP4 for TikTok, Reels or Shorts. Keep the same browser session to access guest purchases and videos."
                           ]
                         }
                       ]
@@ -2518,7 +2521,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Failed generations return credits to your balance. Review the error in My videos before trying again."
+                            "When a generation is confirmed as failed, its credits return to your balance. This is a credit restoration, not a cash refund. Review the error in My videos before trying again; contact support with the generation ID if it remains unresolved."
                           ]
                         }
                       ]
@@ -2694,7 +2697,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Finished videos appear in your account’s My videos history. Download the results you want to keep; there is no separate Ozil pack retention period."
+                            "Finished videos appear in My videos. Guest access depends on the same browser session, so download results you want to keep. File retention follows the Privacy Policy; keeping a file on the service does not guarantee access after a guest session is lost."
                           ]
                         }
                       ]
@@ -3090,7 +3093,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -3746,7 +3749,7 @@
                         "class": "mt-4 max-w-2xl text-[clamp(16.5px,2vw,19px)] leading-snug text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "Our generator needs no prompt: one photo in, a 15-second clip out. But if you want to try the Ozil goal scene in another image-to-video tool, the builder below writes a clean prompt for you. Pick a few options, copy, paste."
+                        "Our generator needs no prompt: one photo in, a {{OZIL_GOAL_DURATION}}-second clip out. But if you want to try the Ozil goal scene in another image-to-video tool, the builder below writes a clean prompt for you. Pick a few options, copy, paste."
                       ]
                     },
                     {
@@ -3771,7 +3774,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -4629,7 +4632,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                        "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     }
                   ]
@@ -4737,7 +4740,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Our generator already has the scene, the players, the camera and the timing built in. You add one photo and press Make my video. The builder on this page is for people who want to try the scene in a different image-to-video tool."
+                            "No. This generator uses a preset motion reference, so you add one photo without writing a prompt. The builder on this page prepares text for other image-to-video tools; its options do not change this generator. Generated movement and timing can vary."
                           ]
                         }
                       ]
@@ -5293,7 +5296,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -5305,7 +5308,7 @@
   },
   "ozil-goal-ai-template": {
     "title": "Ozil Goal AI Template: One Photo In, the Full Trend Out",
-    "description": "Use the Ozil goal AI template: the scene, players and timing are preset, you add one photo. See what is fixed, check your photo, and get a 15s vertical clip.",
+    "description": "Use the Ozil goal AI template: the scene, players and timing are preset, you add one photo. See what is fixed, check your photo, and get a {{OZIL_GOAL_DURATION}}s vertical clip.",
     "content": {
       "tag": "div",
       "attrs": {
@@ -5559,7 +5562,7 @@
                         "class": "mt-4 max-w-2xl text-[clamp(16.5px,2vw,19px)] leading-snug text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "A template means the hard part is done. The stadium, the players, the camera and the timing of the trend are already built in. You bring one photo; the template puts you on the ball for 15 seconds, in your own clothes."
+                        "This template uses one photo and a preset football scene. It requests the keeper’s dive, chest touch and defender’s slide in a {{OZIL_GOAL_DURATION}}-second vertical video. You do not choose another stadium or action; timing, clothing and likeness can vary."
                       ]
                     },
                     {
@@ -5584,7 +5587,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -5689,7 +5692,7 @@
                               "tag": "p",
                               "attrs": {},
                               "children": [
-                                "Our template recreates the beats of the Ozil goal trend with the person from your photo. You do not write a prompt, pick a style or edit anything afterwards. The output is a 15-second vertical MP4 with generated sound guided by the reference and no watermark from us, ready to post."
+                                "The template requests the Ozil goal sequence with the person from your photo. No prompt or editing skills are needed. It requests a {{OZIL_GOAL_DURATION}}-second vertical MP4 with generated sound and no watermark added by us. Identity, clothing and action can vary, so review the whole result before sharing."
                               ]
                             },
                             {
@@ -5771,7 +5774,7 @@
                                     "class": "py-3 text-right font-semibold"
                                   },
                                   "children": [
-                                    "15-second MP4, 9:16"
+                                    "{{OZIL_GOAL_DURATION}}-second MP4, {{OZIL_GOAL_ASPECT}}"
                                   ]
                                 }
                               ]
@@ -6366,7 +6369,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Preset"
+                                    "Reference-guided; timing can vary"
                                   ]
                                 },
                                 {
@@ -6445,7 +6448,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Free in CapCut"
+                                    "Check CapCut pricing"
                                   ]
                                 },
                                 {
@@ -6509,7 +6512,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "If you already use CapCut and a template opens for you, that is the free option; our",
+                        "If you already use CapCut and a template opens for you, check its price and export conditions; our",
                         " ",
                         {
                           "tag": "a",
@@ -6546,7 +6549,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                        "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     }
                   ]
@@ -6654,7 +6657,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "It is our ready-made version of the trend scene. The stadium, the keeper, the defender, the camera and the timing are already set. You add one photo of one adult and get back a 15-second vertical MP4 with generated sound guided by the reference."
+                            "One clear photo of one consenting adult is enough. The template requests the keeper’s dive, chest touch and defender’s slide, using your photo for the face, hair and outfit. It guides the scene; exact timing, movement, clothing and likeness can vary."
                           ]
                         }
                       ]
@@ -6698,7 +6701,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "A CapCut template runs in the CapCut app; availability and pricing depend on CapCut. Ours runs in a browser, takes one photo and requests a 15-second scene using {{OZIL_GOAL_COST}} credits per video."
+                            "A CapCut template runs in the CapCut app; availability and pricing depend on CapCut. Ours runs in a browser, takes one photo and requests a {{OZIL_GOAL_DURATION}}-second scene using {{OZIL_GOAL_COST}} credits per video."
                           ]
                         }
                       ]
@@ -6742,7 +6745,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No, and that is the point of a template: the beats are fixed so you do not have to write or tune anything. If you want to change the scene, the prompt builder on this site writes a prompt for other image-to-video tools."
+                            "No. This generator has one preset football scene and no controls for changing the stadium, action or length. The motion reference guides the result but does not guarantee exact timing or clothing. The prompt builder is for trying other image-to-video tools; it does not change this generator."
                           ]
                         }
                       ]
@@ -6830,7 +6833,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Generation time varies, and you can close the page while it runs; the video waits in My videos. If a render fails, the credits return through the generation workflow."
+                            "Once the generation has started, you can close the page and return to My videos in the same browser session. Processing time varies. Confirmed failures return the credits used; this is not a cash refund."
                           ]
                         }
                       ]
@@ -6874,7 +6877,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Finished videos appear in My videos in your Ozil Goal Generator account. Download the results you want to keep. Credits follow the Ozil Goal Generator pricing terms."
+                            "Finished videos appear in My videos. Guest access depends on the same browser session, so download results you want to keep. File retention follows the Privacy Policy; keeping a file on the service does not guarantee access after a guest session is lost."
                           ]
                         }
                       ]
@@ -7254,7 +7257,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -7551,7 +7554,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -8078,7 +8081,7 @@
                           "tag": "strong",
                           "attrs": {},
                           "children": [
-                            "It costs almost nothing to take part."
+                            "Check the cost before you start."
                           ]
                         },
                         " You need one photo, not footage, not a ball, not a pitch. Anyone with a camera roll already has the raw material."
@@ -8379,7 +8382,7 @@
                                 "A CapCut template."
                               ]
                             },
-                            " Free, and where many of the posts come from. Good if you already use CapCut and the template opens in your region. Our",
+                            " Availability, pricing and export conditions depend on CapCut. Check the template in your region before choosing it. Our",
                             " ",
                             {
                               "tag": "a",
@@ -8430,7 +8433,7 @@
                                 "This site."
                               ]
                             },
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                            "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         }
                       ]
@@ -8779,7 +8782,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Many posts come from a free CapCut template, and that is a fine route. You can also make the clip in a browser on this site from one photo, with no app to install."
+                            "No. CapCut is one option; check its current template availability and pricing. You can also use paid credits on this site to request the scene from one photo in a browser, without installing an app or signing up."
                           ]
                         }
                       ]
@@ -9159,7 +9162,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -9456,7 +9459,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -10362,7 +10365,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Add one photo of one adult, press Make my video, and close the tab if you like: the clip waits in My videos. Generation time varies and comes out as a 15-second, 9:16 MP4 with generated sound guided by the reference and no watermark from us. There is no prompt to write. If a render fails, the credits return through the generation workflow."
+                        "Add one authorized photo of one adult and press Make my video. Buy credits if needed, without signing up. After upload and submission finish, you can return to My videos in the same browser session. The preset requests {{OZIL_GOAL_DURATION}} seconds, {{OZIL_GOAL_ASPECT}}, {{OZIL_GOAL_RESOLUTION}} and sound. Results vary; confirmed failures return credits, not cash."
                       ]
                     },
                     {
@@ -10759,7 +10762,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                            "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         }
                       ]
@@ -11095,7 +11098,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -11362,7 +11365,7 @@
                         "class": "mt-4 max-w-2xl text-[clamp(16.5px,2vw,19px)] leading-snug text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "Most Ozil goal clips start life in a CapCut template, and that route is free. This page lays out, without spin, when the template is the better pick, when a one-photo AI generator like ours saves you time, and how to get the most out of either."
+                        "You can try a CapCut template or create the scene from one photo in this browser. Compare the setup, price and controls below. CapCut sets its own availability and pricing; Ozil Goal Generator uses paid credits with no subscription."
                       ]
                     },
                     {
@@ -11387,7 +11390,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -11614,7 +11617,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Free in the app"
+                                    "Check CapCut pricing"
                                   ]
                                 },
                                 {
@@ -11679,7 +11682,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "Sign in to your Ozil Goal Generator account"
+                                    "Buy credits without signing up"
                                   ]
                                 }
                               ]
@@ -11737,7 +11740,7 @@
                                   "tag": "td",
                                   "attrs": {},
                                   "children": [
-                                    "15 seconds, vertical 9:16"
+                                    "{{OZIL_GOAL_DURATION}} seconds, vertical {{OZIL_GOAL_ASPECT}}"
                                   ]
                                 }
                               ]
@@ -11881,7 +11884,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "If CapCut is already on your phone and the template opens, try it first. It costs nothing and you might be done in a few minutes. Ozil Goal earns its price when the template will not open, when you do not want another app, or when you want the full 15-second scene built from a single photo without touching an editor."
+                        "If CapCut is already on your phone and the template opens, check its current price and export requirements. Ozil Goal Generator is another option when you want a preset scene from one photo in a browser, without installing an editor. Each attempt uses paid credits; AI results vary."
                       ]
                     },
                     {
@@ -11921,7 +11924,7 @@
                         "class": "og-kicker mb-2"
                       },
                       "children": [
-                        "The free route"
+                        "The CapCut route"
                       ]
                     },
                     {
@@ -12073,7 +12076,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Our generator recreates the trend’s beats with the person from your photo: the keeper’s flying dive in the first three seconds, the ball bouncing off your chest until about 8.5 seconds, then the defender’s slide and the run on to the end. The model is asked to keep you in your own clothes, which is where most of the comedy comes from."
+                        "The preset requests an AI football (soccer) scene under floodlights: a keeper dives, the ball meets your chest, then a defender slides past as you run on. You supply one photo, without footage, a prompt or editing. These are requested beats, not guaranteed timestamps; movement and likeness can vary."
                       ]
                     },
                     {
@@ -12091,7 +12094,7 @@
                                 "One photo, no prompt."
                               ]
                             },
-                            " The scene, the players and the timing are already set."
+                            " The football actions are preset; generated timing and movement can vary."
                           ]
                         },
                         {
@@ -12119,7 +12122,7 @@
                                 "Your credits."
                               ]
                             },
-                            "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                            "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                           ]
                         },
                         {
@@ -12262,7 +12265,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Yes, creators share Ozil goal templates in CapCut, and they are free to use in the CapCut app. Which ones are available, how long they run and how many photos they take varies from template to template."
+                            "Creators share Ozil goal templates in CapCut. Availability, pricing, export conditions, clip length and the number of photos depend on the template and CapCut. Check those details before choosing a route."
                           ]
                         }
                       ]
@@ -12394,7 +12397,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "No. Ozil Goal runs in any browser on a phone or a computer. You sign in with your Ozil Goal Generator account, add one photo, and download a 15-second vertical MP4 when it is ready."
+                            "No. Use Ozil Goal Generator in your phone or computer browser. Add one photo and buy credits without signing up. When the video is ready, download the MP4 for TikTok, Reels or Shorts. Keep the same browser session to access guest purchases and videos."
                           ]
                         }
                       ]
@@ -12818,7 +12821,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
@@ -12830,7 +12833,7 @@
   },
   "ai-football-video-from-photo": {
     "title": "AI Football Video From a Photo: Which Photo and Outfit to Use",
-    "description": "Turn one photo into a 15-second AI football video in your own clothes. Check your photo, pick an outfit that reads on the pitch, and know what to avoid.",
+    "description": "Turn one photo into a {{OZIL_GOAL_DURATION}}-second AI football video in your own clothes. Check your photo, pick an outfit that reads on the pitch, and know what to avoid.",
     "content": {
       "tag": "div",
       "attrs": {
@@ -13088,7 +13091,7 @@
                           "tag": "p",
                           "attrs": {},
                           "children": [
-                            "One photo of one adult becomes a 15-second vertical clip of them beating a diving keeper, in the clothes they are wearing. Here is how to pick the photo and the outfit, with a checker that tells you if yours is ready."
+                            "Use one consenting adult’s photo to request a {{OZIL_GOAL_DURATION}}-second vertical AI football video. The template tries to keep their face and outfit while generating the action. This guide and photo checker help you choose a useful reference; they do not guarantee the result."
                           ]
                         }
                       ]
@@ -13115,7 +13118,7 @@
                             "class": "text-[13px] text-[var(--og-faint)]"
                           },
                           "children": [
-                            "One photo · 15s · {{OZIL_GOAL_COST}} credits per video"
+                            "One photo · {{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_COST}} credits per video"
                           ]
                         }
                       ]
@@ -13220,7 +13223,7 @@
                               "tag": "p",
                               "attrs": {},
                               "children": [
-                                "You do not need footage, a prompt or any editing. The scene is fixed: a floodlit night match, a keeper who dives at you from 0 to 3 seconds, a ball that bounces off your chest from 3 to 8.5 seconds, and a defender who slides in and misses from 8.5 seconds to the end, while you run on."
+                                "The preset requests an AI football (soccer) scene under floodlights: a keeper dives, the ball meets your chest, then a defender slides past as you run on. You supply one photo, without footage, a prompt or editing. These are requested beats, not guaranteed timestamps; movement and likeness can vary."
                               ]
                             },
                             {
@@ -13260,7 +13263,7 @@
                               "tag": "p",
                               "attrs": {},
                               "children": [
-                                "Rendering time varies. You can close the page; the finished video waits in My videos. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                                "Once generation starts, you can close the page and return to My videos in the same browser session. Processing time varies. Photo handling follows the Ozil Goal Generator Privacy Policy."
                               ]
                             }
                           ]
@@ -13419,7 +13422,7 @@
                                       "tag": "td",
                                       "attrs": {},
                                       "children": [
-                                        "15s vertical 9:16 MP4 with sound"
+                                        "{{OZIL_GOAL_DURATION}}s vertical {{OZIL_GOAL_ASPECT}} MP4 with sound"
                                       ]
                                     }
                                   ]
@@ -14084,7 +14087,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Each 15-second, 9:16 video with sound uses {{OZIL_GOAL_COST}} credits per video. Sign in to your Ozil Goal Generator account and use your credits. Failed generations return credits through the generation workflow. Finished videos appear in My videos; download the results you want to keep. Photo handling follows the Ozil Goal Generator Privacy Policy."
+                        "Each {{OZIL_GOAL_DURATION}}-second, {{OZIL_GOAL_ASPECT}} video at {{OZIL_GOAL_RESOLUTION}} with sound costs {{OZIL_GOAL_COST}} credits. Buy credits and generate without signing up. Guest access depends on the same browser session; download finished results from My videos. Confirmed failures return credits, not cash. Photo handling follows the Ozil Goal Generator Privacy Policy."
                       ]
                     },
                     {
@@ -14221,7 +14224,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "Yes. The stadium, players, camera moves and timing are already set. Your photo supplies the face, hair and outfit, and the result is a 15-second vertical MP4 of you beating a diving keeper and a sliding defender."
+                            "One clear photo of one consenting adult is enough. The template requests the keeper’s dive, chest touch and defender’s slide, using your photo for the face, hair and outfit. It guides the scene; exact timing, movement, clothing and likeness can vary."
                           ]
                         }
                       ]
@@ -14485,7 +14488,7 @@
                             "class": "max-w-[68ch] pb-6 text-[15.5px] leading-relaxed text-pretty text-[var(--og-muted)]"
                           },
                           "children": [
-                            "If the render fails, the video goes straight back to your balance. If it finishes but you are not happy, a clearer, better-lit photo is the most reliable fix."
+                            "When a generation is confirmed as failed, the credits used return to your balance. This is a credit restoration, not a cash refund. If a completed result is not what you hoped for, you can try a clearer, better-lit photo, but a new attempt does not guarantee a better result."
                           ]
                         }
                       ]
@@ -14821,7 +14824,7 @@
                     "class": "mt-4 text-[13px] text-[var(--og-faint)]"
                   },
                   "children": [
-                    "15s · 9:16 · {{OZIL_GOAL_COST}} credits per video · failed generations return credits"
+                    "{{OZIL_GOAL_DURATION}}s · {{OZIL_GOAL_ASPECT}} · {{OZIL_GOAL_COST}} credits per video · confirmed failures return credits"
                   ]
                 }
               ]
