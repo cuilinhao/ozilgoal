@@ -13,7 +13,7 @@ export type PublicPage = {
 
 // Add only live public routes. Set lastModified only for a recorded content revision.
 export const publicPages: PublicPage[] = [
-  { path: "/", label: "Home", priority: 1, changeFrequency: "monthly" },
+  { path: "/", label: "Home", priority: 1, changeFrequency: "monthly", lastModified: "2026-10-16" },
   { path: "/pricing", label: "Pricing", priority: 0.7, changeFrequency: "monthly" },
   { path: "/ozil-goal-generator/ozil-goal-ai-prompt", label: "Ozil Goal AI Prompt", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-15" },
   { path: "/ozil-goal-generator/ozil-goal-ai-template", label: "Ozil Goal AI Template", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-15" },

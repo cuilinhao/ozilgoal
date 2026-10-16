@@ -16,10 +16,14 @@ describe('Ozil public content migration', () => {
     expect(details).toHaveLength(manifest[slug].sourceFaqCount);
     const headings = nodes.filter(node => typeof node !== 'string' && 'tag' in node && /^h[1-3]$/.test(node.tag)).map(text);
     const slotHeadings = ['One video, three, or seven', '1 Video', '3 Videos', '7 Videos', 'Start ticking', 'The flying keeper'];
+    // Keep the imported manifest intact while preserving both intentional home revisions.
+    const revisedHomeHeadings: Record<string, string> = {
+      'Ozil AI Goal Video Maker': 'Ozil Goal AI Video Generator',
+      'Fifteen seconds, three beats': 'Eight seconds, three beats',
+    };
     for (const heading of manifest[slug].sourceHeadings) {
       if (slotHeadings.includes(heading)) continue;
-      // The homepage sample was replaced with an eight-second clip; guide references retain their original timing.
-      const expectedHeading = slug === 'home' && heading === 'Fifteen seconds, three beats' ? 'Eight seconds, three beats' : heading;
+      const expectedHeading = slug === 'home' ? revisedHomeHeadings[heading] ?? heading : heading;
       expect(headings).toContain(expectedHeading);
     }
     const path = slug === 'home' ? 'app/ozil-goal-generator/page.tsx' : `app/ozil-goal-generator/${slug}/page.tsx`;

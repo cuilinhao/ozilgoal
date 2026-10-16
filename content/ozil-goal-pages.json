@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Ozil AI Goal Video Maker: Star in the Trend From One Photo",
+    "title": "Ozil Goal AI Video Generator – From One Photo (2026)",
     "description": "Make the Ozil goal AI video from one photo: the keeper dives, the ball bounces off your chest, the defender slides in. 15 seconds, vertical, {{OZIL_GOAL_COST}} credits per video. No CapCut.",
     "content": {
       "tag": "div",
@@ -222,15 +222,15 @@
                         "class": "og-display mt-4 max-w-[13ch] text-[clamp(46px,8vw,92px)] leading-[0.9] text-balance"
                       },
                       "children": [
-                        "Ozil ",
+                        "Ozil Goal ",
                         {
                           "tag": "em",
                           "attrs": {},
                           "children": [
-                            "AI Goal"
+                            "AI Video"
                           ]
                         },
-                        " Video Maker"
+                        " Generator"
                       ]
                     },
                     {
@@ -239,7 +239,7 @@
                         "class": "mt-4 max-w-xl text-[clamp(16.5px,2vw,19px)] leading-snug text-pretty text-[var(--og-muted)]"
                       },
                       "children": [
-                        "Make an Ozil goal AI video from one photo with Ozil Goal Generator. Named after Mesut Özil, the trend puts you on the ball as the keeper dives past, the ball bounces off your chest and a defender slides in and misses. Keep your own clothes. No CapCut, no prompt, no editing."
+                        "Ozil Goal AI Video Generator turns one photo into a clip of the trend named after Mesut Özil. You are on the ball as the keeper dives past, the ball bounces off your chest and a defender slides in and misses. Keep your own clothes. No CapCut, no prompt, no editing."
                       ]
                     },
                     {

@@ -85,5 +85,11 @@ export async function OzilGoalPage({ slug = 'home', previewLocale = 'en' }: { sl
 }
 export function ozilMetadata(slug: OzilPageSlug) {
   const page = pages[slug];
-  return { title: page.title, description: text(page.description), openGraph: { title: page.title, description: text(page.description), images: ['/ozil-goal/samples/ai-shot1.jpg'] } };
+  return {
+    // The home title must match the social titles without the layout's brand suffix.
+    title: slug === 'home' ? { absolute: page.title } : page.title,
+    description: text(page.description),
+    openGraph: { title: page.title, description: text(page.description), images: ['/ozil-goal/samples/ai-shot1.jpg'] },
+    ...(slug === 'home' ? { twitter: { card: 'summary_large_image' as const, title: page.title, description: text(page.description), images: ['/ozil-goal/samples/ai-shot1.jpg'] } } : {}),
+  };
 }

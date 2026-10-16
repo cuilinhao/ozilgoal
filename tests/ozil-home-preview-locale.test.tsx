@@ -16,7 +16,7 @@ describe("home preview language selection", () => {
     const preview = html.match(/<section class="ozil-blog-preview"[\s\S]*?<\/section>/)?.[0];
     expect(preview).toContain("トレンドを知る");
     expect(preview).not.toContain("Português");
-    expect(html).toContain("Make an Ozil goal AI video from one photo");
+    expect(html).toContain("Ozil Goal AI Video Generator turns one photo");
   });
 
   it("uses English for an unsupported blogLang value", async () => {

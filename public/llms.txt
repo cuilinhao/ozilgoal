@@ -16,6 +16,14 @@
 - [CapCut Template vs AI Generator](https://ozilgoal-aivideo.com/ozil-goal-generator/ozil-goal-capcut-template): Compare ways to make the clip.
 - [AI Football Video From a Photo](https://ozilgoal-aivideo.com/ozil-goal-generator/ai-football-video-from-photo): Photo and outfit guidance.
 
+## Product facts
+- What it does: turns one authorized photo into a 15-second video of the Özil goal trend
+- Input: a single photo of a consenting adult; no prompt writing required
+- Output: 15s, 9:16 vertical, with sound
+- Cost: 300 credits per generation; reserved credits are returned if generation fails
+- No app install required; runs in a browser
+- Not affiliated with Mesut Özil or any football club
+
 ## Service facts
 - Upload one JPG, PNG, or WebP photo of one consenting adult. Maximum file size is 10 MB.
 - Each video costs 300 credits. New accounts start with 0 credits. Check your balance before submitting.
@@ -31,4 +39,4 @@
 - [Acceptable Use Policy](https://ozilgoal-aivideo.com/acceptable-use-policy)
 - [Contact](https://ozilgoal-aivideo.com/contact)
 
-Content reviewed: 2026-10-15. Check the linked pages for current terms and costs.
+Content reviewed: 2026-10-16. Check the linked pages for current terms and costs.
