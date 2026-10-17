@@ -19,5 +19,6 @@
 5. 生产浏览器验证：日文 `gol-de-ozil` 切换繁体中文后，正文、导航及价格内链语言正确；从繁体中文索引进入原生西语文章时加载独立文档；四篇新文章在索引中可见。
 6. `/fr/ozil-goal-generator/blog/gol-de-ozil-con-mi-foto` 返回 308 到原生文章；未支持的 `/id/ozil-goal-generator/blog/sepak-bola` 返回 404。
 7. `npm run indexnow`：从线上 sitemap 提交 123 个 URL，IndexNow 返回 200。此结果表示通知已被接受，不表示搜索引擎已收录。
+8. 2026-10-17 在 Google Search Console 的 `sc-domain:ozilgoal-aivideo.com` 资源中重新提交 `https://ozilgoal-aivideo.com/sitemap.xml`，界面确认“已成功提交站点地图”，提交日期更新为 2026-10-17。提交时上次读取仍为 2026-10-16、已发现网页 59，等待 Google 重新读取；不能将提交成功写成 123 个页面已被 Google 收录。重新核对线上 XML 共 123 个不重复 URL，24 篇新译文齐全，lastmod 均为 2026-10-17，每篇有六语言及 x-default 共 7 项 hreflang。成功截图保存在 `QA/keyword-blog-gsc-submitted.png`。
 
 本次没有执行生产付款、付费视频生成或数据库迁移。HTTP 检查报告与生产页面截图保存在本地受 Git 忽略的 `QA/keyword-blog-*` 文件中；不提交凭据、账户数据或生产日志。
