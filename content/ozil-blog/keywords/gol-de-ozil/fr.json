@@ -1,0 +1,72 @@
+{
+  "title": "Gol de Ozil : quel but ? Le moment de Ligue des champions 2016 et les vidéos IA",
+  "metaTitle": "Gol de Ozil : le but de 2016 et les vidéos IA | Ozil Goal",
+  "description": "Retrouvez le match, le score et le but décisif d'Özil à la 88e minute. Distinguez l'action originale, le bounce shot et les versions IA, puis créez une vidéo avec votre photo.",
+  "label": "L'histoire du Gol de Ozil",
+  "excerpt": "Revenez sur Ludogorets–Arsenal en Ligue des champions pour comprendre le but décisif d'Özil et découvrir la création de vidéos IA avec une photo personnelle.",
+  "eyebrow": "BUT MÉMORABLE · GOL DE OZIL",
+  "intro": "**gol de ozil** signifie simplement « le but d'Özil » en espagnol et ne désigne pas automatiquement un match précis. Si vous avez vu un joueur lober le gardien, éliminer les défenseurs et conclure calmement, cet article traite du but décisif de Mesut Özil contre Ludogorets en Ligue des champions en 2016. Comprendre le match d'origine aide aussi à situer les versions de football créées par IA avec une photo.",
+  "sections": [
+    {
+      "id": "which-goal",
+      "title": "Vérifier d'abord la date, l'adversaire et le score",
+      "blocks": [
+        {"type": "p", "text": "Le match a eu lieu le 1er novembre 2016, lors de la quatrième journée du groupe A de Ligue des champions. Arsenal affrontait Ludogorets à l'extérieur, au stade national Vasil Levski de Sofia, en Bulgarie. Le score final était de 2–3, avec un but décisif d'Özil à la 88e minute. Ces informations figurent dans les [statistiques officielles du match de l'UEFA](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)."},
+        {"type": "p", "text": "Ajouter « Ludogorets 2016 » à votre recherche permet de retrouver plus facilement cette action. Le nom du joueur accompagné seulement de « but » peut aussi faire apparaître des séquences de ses autres équipes ou d'autres rencontres."}
+      ]
+    },
+    {
+      "id": "match-context",
+      "title": "Pourquoi ce but a-t-il été décisif ?",
+      "blocks": [
+        {"type": "p", "text": "L'équipe locale a marqué aux 12e et 15e minutes : Arsenal était mené 0–2. Xhaka a réduit l'écart à la 20e minute et Giroud a égalisé à la 42e. Le but d'Özil a rompu l'égalité à 2–2 pour offrir une victoire à l'extérieur. Cette chronologie est consignée dans les mêmes [statistiques de l'UEFA](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)."},
+        {"type": "p", "text": "La victoire a également permis à Arsenal d'accéder aux huitièmes de finale de Ligue des champions pour la dix-septième saison consécutive. Le retour au score et la qualification donnent à la scène une portée qui dépasse la seule beauté du dribble. Consultez le [compte rendu de l'UEFA](https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/)."}
+      ]
+    },
+    {
+      "id": "the-sequence",
+      "title": "Décomposer l'action en trois moments",
+      "blocks": [
+        {"type": "p", "text": "Özil a conclu l'attaque après une passe d'Elneny. Le [récit rétrospectif de TyC Sports](https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html) décrit un lob au-dessus du gardien, deux défenseurs éliminés puis une finition pleine de calme."},
+        {"type": "ul", "items": ["D'abord, observer le duel avec le gardien : le lob change la hauteur du ballon et la trajectoire de la course pour le récupérer.", "Ensuite, regarder la temporisation devant le but : le joueur observe le déplacement des défenseurs avant de choisir son prochain contact.", "Enfin, regarder la finition : les gestes spectaculaires ont déjà eu lieu, et la conclusion est relativement simple."]},
+        {"type": "p", "text": "Cette décomposition sert à revoir l'action. Elle ne promet pas qu'un modèle IA fixe reproduira chaque image à l'identique. Pour approfondir le contexte, lisez [l'histoire du but d'Özil contre Ludogorets](/mesut-ozil-ludogorets-goal)."}
+      ]
+    },
+    {
+      "id": "avoid-confusion",
+      "title": "Deux confusions fréquentes sur le match et le geste",
+      "blocks": [
+        {"type": "p", "text": "Ce n'est pas le match aller du 19 octobre 2016. Arsenal avait alors gagné 6–0 à domicile avec un triplé d'Özil. Ici, il s'agit de la victoire 3–2 à l'extérieur, deux semaines plus tard. Les adversaires sont les mêmes, mais pas la date, le score ni les actions. Comparez avec le [compte rendu du match aller de l'UEFA](https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/)."},
+        {"type": "p", "text": "Le « Ozil bounce » ou « chop shot » désigne par ailleurs un autre sujet technique. Arsenal a publié une [vidéo officielle](https://www.youtube.com/watch?v=5aJcOd4sL38) où Özil explique ce geste. Ce nom ne doit pas être utilisé comme un synonyme du but inscrit après les dribbles contre Ludogorets."}
+      ]
+    },
+    {
+      "id": "make-an-ai-version",
+      "title": "Créer une vidéo de football par IA avec votre photo",
+      "blocks": [
+        {"type": "p", "text": "Pour vous mettre en scène sur un terrain, vous pouvez utiliser le [générateur Ozil Goal](/#generator). Le site emploie un modèle fixe, sans champ de prompt ni commande de mouvement personnalisée. Le résultat est une création, pas un enregistrement du match d'origine."},
+        {"type": "ol", "items": ["Préparez une photo autorisée d'un seul adulte, avec un visage net. Les formats JPG, PNG et WebP sont acceptés, jusqu'à 10 Mo.", "Importez la photo et vérifiez la personne ainsi que les informations de génération. Chaque génération coûte {ozilCredits} crédits.", "Générez une vidéo verticale 9:16 de 15 secondes avec du son. Les exigences d'entrée et de sortie sont détaillées dans la [présentation du modèle](/ozil-goal-generator/ozil-goal-ai-template).", "Regardez l'intégralité de l'aperçu en vérifiant le visage, la position du ballon et l'enchaînement des mouvements, puis choisissez le résultat que vous souhaitez partager."]}
+      ]
+    },
+    {
+      "id": "share-your-creation",
+      "title": "Distinguer le match de votre création lors du partage",
+      "blocks": [
+        {"type": "p", "text": "Mentionnez « vidéo de football générée par IA » et ajoutez le marquage prévu par la plateforme. Si vous discutez du but original, indiquez la source du match ; si vous montrez votre création, précisez qu'elle part d'une photo. Vous conservez ainsi le plaisir du jeu sans laisser penser que vous avez réellement participé à cette rencontre."},
+        {"type": "note", "text": "Cet article est rédigé par l'équipe d'Ozil Goal. Ozil Goal est un outil indépendant, sans partenariat, parrainage ni soutien de Mesut Özil, d'Arsenal, de Ludogorets ou de l'UEFA."}
+      ]
+    }
+  ],
+  "faqs": [
+    {"question": "Özil a-t-il marqué ce gol de ozil lorsqu'il jouait au Real Madrid ?", "answer": "Non. Le but présenté ici date du 1er novembre 2016, lorsqu'il jouait pour Arsenal contre Ludogorets."},
+    {"question": "Le but de la 88e minute a-t-il été marqué dans le temps additionnel ?", "answer": "C'est un but décisif inscrit en fin de match, mais la 88e minute se situe dans les 90 minutes réglementaires. Ce n'est donc pas un but du temps additionnel."},
+    {"question": "Faut-il rédiger un prompt ou importer la vidéo originale ?", "answer": "Non. Il suffit d'une photo autorisée d'un adulte respectant les conditions du site. La génération suit un modèle fixe, sans champ de prompt personnalisé."}
+  ],
+  "sources": [
+    {"label": "UEFA : statistiques officielles de Ludogorets 2–3 Arsenal, 1er novembre 2016", "url": "https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf"},
+    {"label": "UEFA : Özil conclut le retour d'Arsenal à Ludogorets", "url": "https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/"},
+    {"label": "TyC Sports : retour sur le but mémorable contre Ludogorets", "url": "https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html"},
+    {"label": "UEFA : compte rendu d'Arsenal 6–0 Ludogorets, 19 octobre 2016", "url": "https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/"},
+    {"label": "Chaîne officielle d'Arsenal : Mesut Ozil explique le bounce shot et le chop shot", "url": "https://www.youtube.com/watch?v=5aJcOd4sL38"}
+  ]
+}

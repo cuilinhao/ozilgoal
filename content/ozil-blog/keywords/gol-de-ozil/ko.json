@@ -1,0 +1,144 @@
+{
+  "title": "Gol de Ozil은 어떤 골일까? 2016년 챔피언스리그 명장면과 AI 영상 제작 가이드",
+  "metaTitle": "Gol de Ozil: 2016년 명장면과 AI 영상 가이드 | Ozil Goal",
+  "description": "gol de ozil의 경기, 스코어, 88분 결승 골을 확인해 보세요. 실제 골, bounce shot, AI 버전을 구분하고 자신의 단독 사진으로 축구 영상을 만드는 방법을 소개합니다.",
+  "label": "Gol de Ozil 골 이야기",
+  "excerpt": "Ludogorets와 Arsenal의 챔피언스리그 경기부터 시작해 외질의 결승 골이 나온 배경과 개인 사진으로 AI 영상을 만드는 방법을 알아봅니다.",
+  "eyebrow": "명장면 · GOL DE OZIL",
+  "intro": "**gol de ozil**은 스페인어로 “외질의 골”이라는 뜻이며, 본래 특정 경기를 가리키는 말은 아닙니다. 골키퍼 위로 공을 띄운 뒤 수비수를 제치고 여유 있게 마무리하는 장면을 보았다면, 이 글에서 다루는 골은 Mesut Özil이 2016년 Ludogorets와의 챔피언스리그 경기에서 넣은 결승 골입니다. 원래 경기를 이해하면 사진으로 만드는 AI 축구 버전도 더 쉽게 이해할 수 있습니다.",
+  "sections": [
+    {
+      "id": "which-goal",
+      "title": "먼저 날짜, 상대, 스코어 확인하기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "경기는 2016년 11월 1일에 열린 챔피언스리그 A조 4차전이었습니다. Arsenal이 Ludogorets 원정에 나섰으며, 장소는 불가리아 소피아의 바실 레프스키 국립경기장이었습니다. 최종 스코어는 2–3이었고 외질은 88분에 결승 골을 넣었습니다. 이 정보는 모두 [UEFA 공식 경기 통계](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)에서 확인할 수 있습니다."
+        },
+        {
+          "type": "p",
+          "text": "검색할 때 “Ludogorets 2016”을 덧붙이면 이 골을 더 쉽게 찾을 수 있습니다. 선수 이름과 “골”만 입력하면 다른 팀이나 다른 경기에서의 장면이 나올 수도 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "match-context",
+      "title": "왜 경기를 결정한 골이었을까?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "홈팀이 12분과 15분에 연달아 득점하면서 Arsenal은 한때 0–2로 뒤졌습니다. Xhaka가 20분에 한 골을 만회했고, Giroud가 42분에 동점을 만들었습니다. 외질의 골은 2–2로 팽팽하던 상황에서 나왔고, 결국 무승부로 끝날 수 있던 경기를 원정 승리로 바꿨습니다. 득점 시간대는 같은 [UEFA 경기 통계](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)에서 확인할 수 있습니다."
+        },
+        {
+          "type": "p",
+          "text": "이 승리는 Arsenal의 17시즌 연속 챔피언스리그 16강 진출에도 기여했습니다. 역전과 다음 단계 진출이라는 배경이 있었기에, 이 장면에는 단순히 화려한 돌파 이상의 감정이 담겨 있습니다. 자세한 내용은 [UEFA 당시 경기 보고서](https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/)를 참고하세요."
+        }
+      ]
+    },
+    {
+      "id": "the-sequence",
+      "title": "연속 동작을 세 부분으로 나누어 보기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Elneny의 패스를 받은 외질이 이 공격을 마무리했습니다. [TyC Sports의 장면 분석](https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html)은 그 과정을 골키퍼 위로 공을 띄우고, 수비수 두 명을 따돌린 뒤, 침착하게 슛을 마무리한 것으로 정리합니다."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "먼저 골키퍼를 상대하는 동작을 보세요. 공을 띄워 높이를 바꾸면서 공을 쫓아가는 경로도 바꿨습니다.",
+            "다음으로 골문 앞에서 잠시 멈추는 순간을 보세요. 수비수의 움직임을 관찰한 뒤 다음 터치를 선택합니다.",
+            "마지막으로 슛 마무리를 보세요. 멋진 부분은 이미 앞선 몇 차례의 볼 처리에서 나왔고, 마무리 동작은 오히려 간결합니다."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "이는 다시 볼 때 도움이 되는 관찰 순서이며, 고정 AI 템플릿이 모든 프레임에서 같은 동작을 구현한다는 약속은 아닙니다. 경기 배경을 더 알고 싶다면 [외질의 Ludogorets전 골 이야기](/mesut-ozil-ludogorets-goal)를 이어서 읽어 보세요."
+        }
+      ]
+    },
+    {
+      "id": "avoid-confusion",
+      "title": "혼동하기 쉬운 경기와 슛 이름",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "먼저, 이 경기는 2016년 10월 19일의 첫 맞대결이 아닙니다. 당시 Arsenal은 홈에서 6–0으로 승리했고 외질은 해트트릭을 기록했습니다. 이 글에서 다루는 경기는 2주 뒤 원정에서 거둔 3–2 승리입니다. 상대는 같지만 날짜, 스코어, 득점 과정이 다릅니다. [UEFA 첫 맞대결 경기 보고서](https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/)와 비교할 수 있습니다."
+        },
+        {
+          "type": "p",
+          "text": "또한 Ozil bounce나 chop shot은 별도의 슈팅 기술에 관한 이야기입니다. Arsenal은 외질이 해당 기술을 설명하는 [공식 영상](https://www.youtube.com/watch?v=5aJcOd4sL38)을 공개한 바 있습니다. 이 이름을 Ludogorets전에서 연속으로 상대를 제친 결승 골과 같은 뜻으로 사용하지 마세요."
+        }
+      ]
+    },
+    {
+      "id": "make-an-ai-version",
+      "title": "내 사진으로 AI 축구 영상 만들기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "자신이 주인공인 축구 장면을 경험하고 싶다면 [Ozil Goal 생성기](/#generator)를 사용할 수 있습니다. 본 사이트는 고정 템플릿을 사용하며 동작을 직접 지정하거나 프롬프트를 입력하는 칸은 없습니다. 생성 결과는 창작물이며 원래 경기의 기록 영상이 아닙니다."
+        },
+        {
+          "type": "ol",
+          "items": [
+            "사용 허락을 받은 성인 한 명의 사진을 준비하세요. 얼굴이 선명해야 합니다. JPG, PNG, WebP를 지원하며 파일 크기는 10 MB 이하여야 합니다.",
+            "사진을 업로드하고 인물과 생성 정보를 확인하세요. 생성 한 번에 {ozilCredits} 크레딧이 사용됩니다.",
+            "소리가 포함된 15초 길이의 9:16 세로 영상을 생성합니다. 구체적인 입력 및 출력 요구 사항은 [템플릿 설명](/ozil-goal-generator/ozil-goal-ai-template)을 참고하세요.",
+            "전체 미리보기에서 인물의 얼굴, 축구공의 위치, 동작 연결을 확인한 뒤 공유할 버전을 선택하세요."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "share-your-creation",
+      "title": "공유할 때 경기와 창작물의 차이를 분명히 하기",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "게시할 때 “AI로 생성한 축구 영상”이라고 밝히고, 플랫폼 기능에 따라 AI 표시를 추가하세요. 실제 골을 이야기할 때는 경기 출처를 첨부하고, 자신의 작품을 보여 줄 때는 사진을 바탕으로 만든 창작물임을 설명하세요. 이렇게 하면 축구를 소재로 한 재미를 살리면서도 시청자가 실제로 그 경기에 참가했다고 오해하지 않게 할 수 있습니다."
+        },
+        {
+          "type": "note",
+          "text": "이 글은 Ozil Goal 팀이 작성했습니다. Ozil Goal은 독립적인 도구이며 Mesut Özil, Arsenal, Ludogorets, UEFA와 제휴, 후원 또는 보증 관계가 없습니다."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "이 gol de ozil은 레알 마드리드 시절에 넣은 골인가요?",
+      "answer": "아닙니다. 이 글에서 다루는 골은 2016년 11월 1일에 나왔으며, 당시 그는 Arsenal 소속으로 Ludogorets와 맞붙었습니다."
+    },
+    {
+      "question": "88분의 골은 추가 시간 결승 골인가요?",
+      "answer": "경기 막판의 결승 골이지만 88분은 여전히 정규 90분 안에 해당하므로, 추가 시간에 나온 골이라고 쓰면 안 됩니다."
+    },
+    {
+      "question": "직접 프롬프트를 쓰거나 원래 영상을 업로드해야 하나요?",
+      "answer": "아니요. 본 사이트에서는 요구 사항을 충족하고 사용 허락을 받은 성인 사진 한 장만 있으면 됩니다. 고정 템플릿으로 생성하며 사용자 지정 프롬프트 입력란은 없습니다."
+    }
+  ],
+  "sources": [
+    {
+      "label": "UEFA: 2016년 11월 1일 Ludogorets 2–3 Arsenal 공식 경기 통계",
+      "url": "https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf"
+    },
+    {
+      "label": "UEFA: 외질이 완성한 Arsenal의 원정 역전승",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/"
+    },
+    {
+      "label": "TyC Sports: Ludogorets전 명장면의 득점 과정 분석",
+      "url": "https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html"
+    },
+    {
+      "label": "UEFA: 2016년 10월 19일 Arsenal 6–0 Ludogorets 경기 보고서",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/"
+    },
+    {
+      "label": "Arsenal 공식 채널: Mesut Ozil의 bounce shot 및 chop shot 설명",
+      "url": "https://www.youtube.com/watch?v=5aJcOd4sL38"
+    }
+  ]
+}

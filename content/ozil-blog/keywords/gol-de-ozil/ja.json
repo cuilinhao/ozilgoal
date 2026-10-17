@@ -1,0 +1,144 @@
+{
+  "title": "Gol de Ozil はどのゴール？2016年の欧州 CL 名場面と AI 動画制作ガイド",
+  "metaTitle": "Gol de Ozil：2016年の名ゴールと AI 動画ガイド | Ozil Goal",
+  "description": "gol de ozil の試合、スコア、88分の決勝ゴールを確認。実際のゴール、bounce shot、AI 版の違いを整理し、自分1人の写真からサッカー動画を作る方法を紹介します。",
+  "label": "Gol de Ozil ゴールの物語",
+  "excerpt": "Ludogorets 対 Arsenal の欧州 CL の試合を振り返り、エジルの決勝ゴールが生まれた背景と、自分の写真で AI 動画を作る方法を紹介します。",
+  "eyebrow": "名ゴール · GOL DE OZIL",
+  "intro": "**gol de ozil** はスペイン語で「エジルのゴール」という意味で、必ずしも特定の試合を指す言葉ではありません。ゴールキーパーの頭上にボールを浮かせ、ディフェンダーをかわして落ち着いて決める映像を見たなら、この記事で扱うのは、Mesut Özil が2016年の欧州 CL、Ludogorets 戦で決めた決勝ゴールです。元の試合を理解すると、写真を使って作る AI サッカー版についても分かりやすくなります。",
+  "sections": [
+    {
+      "id": "which-goal",
+      "title": "まず日付、対戦相手、スコアを確認する",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "試合が行われたのは2016年11月1日、欧州 CL グループ A の第4節です。Arsenal はアウェーで Ludogorets と対戦し、会場はブルガリアのソフィアにあるヴァシル・レフスキ国立競技場でした。最終スコアは 2–3 で、エジルは88分に決勝ゴールを決めました。これらの情報はすべて [UEFA の公式試合統計](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)で確認できます。"
+        },
+        {
+          "type": "p",
+          "text": "検索するときに「Ludogorets 2016」を加えると、このゴールを見つけやすくなります。選手名と「ゴール」だけでは、ほかのチームや別の試合での映像が表示されることもあります。"
+        }
+      ]
+    },
+    {
+      "id": "match-context",
+      "title": "なぜ試合を決めるゴールだったのか？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "ホームチームが12分と15分に続けて得点し、Arsenal は一時 0–2 とリードされました。Xhaka が20分に1点を返し、Giroud が42分に同点に追いつきます。エジルのゴールは 2–2 のまま進んだ終盤に生まれ、引き分けになりかけていた試合をアウェーでの勝利に変えました。得点の経過は、同じ [UEFA の試合統計](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)に掲載されています。"
+        },
+        {
+          "type": "p",
+          "text": "この勝利により、Arsenal は17シーズン連続となる欧州 CL ベスト16進出も決めました。逆転と決勝トーナメント進出という背景があるからこそ、この場面には華麗な突破だけではない感情が込められています。詳しくは [UEFA の当日の試合レポート](https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/)をご覧ください。"
+        }
+      ]
+    },
+    {
+      "id": "the-sequence",
+      "title": "一連の動きを三つに分けて見る",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Elneny からのパスを受けたエジルが、この攻撃を完結させました。[TyC Sports の振り返り記事](https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html)では、その流れを、ゴールキーパーの頭上を越し、2人のディフェンダーを空振りさせ、落ち着いてシュートを決めたと説明しています。"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "まずゴールキーパーへの対応を見る：ボールを浮かせることで高さを変え、ボールを追う経路も変えています。",
+            "次にゴール前での一瞬の間を見る：守備の選手の動きを観察してから、次のタッチを選んでいます。",
+            "最後にシュートの仕上げを見る：見事なプレーはそれまでの数回のボール処理にあり、最後のシュート自体はむしろシンプルです。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "これは見返すときに役立つ観察の順序であり、固定 AI テンプレートがすべてのフレームで同じ動きを再現するという約束ではありません。試合の背景をさらに知りたい方は、[エジルの Ludogorets 戦ゴールの物語](/mesut-ozil-ludogorets-goal)もご覧ください。"
+        }
+      ]
+    },
+    {
+      "id": "avoid-confusion",
+      "title": "混同しやすい二つの試合・シュート名",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "まず、これは2016年10月19日の最初の対戦ではありません。その試合では Arsenal がホームで 6–0 の勝利を収め、エジルはハットトリックを達成しました。この記事で扱っているのは、その2週間後のアウェーでの 3–2 の試合です。相手は同じでも、日付、スコア、ゴールまでの流れは異なります。[UEFA の最初の対戦のレポート](https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/)と比較できます。"
+        },
+        {
+          "type": "p",
+          "text": "次に、Ozil bounce や chop shot は、別のシュート技術の話題です。Arsenal は、エジルがそのテクニックを説明する[公式動画](https://www.youtube.com/watch?v=5aJcOd4sL38)を公開しています。この名称を、Ludogorets 戦で連続して相手をかわした決勝ゴールと、そのまま同じ意味で使わないようにしましょう。"
+        }
+      ]
+    },
+    {
+      "id": "make-an-ai-version",
+      "title": "自分の写真で AI サッカー動画を作る",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "自分が主役のサッカーの場面を楽しみたいなら、[Ozil Goal 生成ツール](/#generator)を利用できます。当サイトは固定テンプレートを採用し、動作のカスタマイズやプロンプトの入力欄はありません。生成結果は創作であり、元の試合の記録映像ではありません。"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "使用許可を得た成人1人の写真を用意します。顔が鮮明に写ったものを選んでください。JPG、PNG、WebP に対応し、ファイルサイズは 10 MB 以下です。",
+            "写真をアップロードし、人物と生成情報を確認します。1回の生成に {ozilCredits} クレジットを消費します。",
+            "15秒、9:16 の縦型で音声付きの動画を生成します。入力と出力の詳しい要件は[テンプレートの説明](/ozil-goal-generator/ozil-goal-ai-template)をご覧ください。",
+            "動画全体をプレビューし、人物の顔、ボールの位置、動作のつながりを確認してから、共有するバージョンを選びましょう。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "share-your-creation",
+      "title": "共有するときも、試合と創作の違いが伝わるように",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "投稿時には「AI で生成したサッカー動画」と明記し、プラットフォームの機能に応じて AI 表示を付けましょう。元のゴールを取り上げるときは試合の出典を添え、自分の作品を見せるときは写真をもとにした創作であることを説明します。そうすれば、サッカーを題材にした楽しさを保ちながら、自分が本当にその試合に出たと誤解されることを防げます。"
+        },
+        {
+          "type": "note",
+          "text": "この記事は Ozil Goal チームが執筆しました。Ozil Goal は独立したツールであり、Mesut Özil、Arsenal、Ludogorets、UEFA との提携、スポンサー契約、推奨関係はありません。"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "この gol de ozil はレアル・マドリード時代のゴールですか？",
+      "answer": "いいえ。この記事のゴールは2016年11月1日、Arsenal の選手として Ludogorets と対戦したときのものです。"
+    },
+    {
+      "question": "88分のゴールはアディショナルタイムの決勝点ですか？",
+      "answer": "試合終盤の決勝ゴールですが、88分はまだ通常の90分以内です。アディショナルタイムのゴールと表現するのは正確ではありません。"
+    },
+    {
+      "question": "自分でプロンプトを書いたり、元の映像をアップロードしたりする必要はありますか？",
+      "answer": "必要ありません。当サイトでは、要件を満たす使用許可済みの成人の写真1枚を使い、固定テンプレートで生成します。独自のプロンプトを入力する欄はありません。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UEFA：2016年11月1日 Ludogorets 2–3 Arsenal 公式試合統計",
+      "url": "https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf"
+    },
+    {
+      "label": "UEFA：エジルが Arsenal のアウェーでの逆転勝利を決める",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/"
+    },
+    {
+      "label": "TyC Sports：Ludogorets 戦の名ゴールの流れを振り返る",
+      "url": "https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html"
+    },
+    {
+      "label": "UEFA：2016年10月19日 Arsenal 6–0 Ludogorets 試合レポート",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/"
+    },
+    {
+      "label": "Arsenal 公式チャンネル：Mesut Ozil が bounce shot と chop shot を解説",
+      "url": "https://www.youtube.com/watch?v=5aJcOd4sL38"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "title": "Lamine Yamal : comprendre son but mémorable et créer votre vidéo de football par IA",
+  "metaTitle": "Lamine Yamal : but mémorable et vidéo de football IA | Ozil Goal",
+  "description": "Des débuts de Lamine Yamal au Barça à sa frappe enroulée contre la France à l'EURO, découvrez ses grands moments et comment créer une vidéo de football avec votre propre photo.",
+  "label": "Le but mémorable de Lamine Yamal",
+  "excerpt": "Revivez la frappe enroulée de Yamal à l'EURO et découvrez ce qui distingue les images d'un vrai match d'une vidéo personnelle créée par IA.",
+  "eyebrow": "JOUEURS ET BUTS · LAMINE YAMAL",
+  "intro": "En recherchant **Lamine Yamal**, vous souhaitez peut-être découvrir le joueur ou retrouver sa frappe enroulée contre la France. Pour comprendre cet instant, il faut regarder le tir, mais aussi le score et les choix qui le précèdent. Cet article part des archives officielles du match, puis explique comment transformer votre intérêt pour le football en une vidéo créée par IA dont vous êtes le personnage.",
+  "sections": [
+    {
+      "id": "who-is-lamine-yamal",
+      "title": "Du centre de formation du Barça à l'équipe première",
+      "blocks": [
+        {"type": "p", "text": "Lamine Yamal est né le 13 juillet 2007. Il a rejoint la formation du Barça à sept ans, en provenance du CF La Torreta. Son parcours est présenté dans sa [fiche officielle du FC Barcelona](https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal)."},
+        {"type": "p", "text": "Le 29 avril 2023, il a fait ses débuts en équipe première contre le Real Betis. À 15 ans, 9 mois et 16 jours, il est devenu le plus jeune joueur du Barça à disputer un match de Liga. Cette entrée en championnat a marqué une étape importante entre sa formation et le football professionnel senior. Consultez le [compte rendu de ses débuts publié par le Barça](https://www.fcbarcelona.com/en/news/3246834)."}
+      ]
+    },
+    {
+      "id": "france-goal",
+      "title": "Lors de quel match a-t-il inscrit cette frappe enroulée ?",
+      "blocks": [
+        {"type": "p", "text": "Le 9 juillet 2024, l'Espagne affrontait la France en demi-finale de l'EURO. La France avait ouvert le score lorsque Yamal, à la 21e minute, a frappé depuis l'extérieur de la surface. Son tir enroulé est entré après avoir touché le poteau, ramenant le score à 1–1. Olmo a ensuite marqué et l'Espagne s'est imposée 2–1. Le [compte rendu de l'UEFA](https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/) permet de vérifier ces événements et le résultat."},
+        {"type": "p", "text": "Âgé de 16 ans et 362 jours au moment du but, il est devenu le plus jeune buteur de l'histoire de l'EURO. Sa frappe a ensuite été désignée [but du tournoi par les observateurs techniques de l'UEFA](https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/). Il s'agissait d'une égalisation en demi-finale, pas d'un but inscrit en finale."}
+      ]
+    },
+    {
+      "id": "what-to-watch",
+      "title": "Au ralenti, ne regardez pas seulement le tir",
+      "blocks": [
+        {"type": "p", "text": "Observez trois éléments : comment il trouve l'espace après la réception, comment il ajuste son corps avant de frapper, puis comment le ballon se dirige vers le coin opposé. Le ralenti aide à voir le contact ; la vitesse normale conserve la pression défensive et la difficulté du choix du moment. Une seule image du ballon dans le but ne permet pas de juger toute l'attaque."},
+        {"type": "p", "text": "Un instant célèbre ne résume pas non plus un tournoi entier. En sept matchs à l'EURO 2024, Yamal a inscrit un but, délivré quatre passes décisives et reçu le prix du meilleur jeune joueur. Ce titre est distinct de celui de meilleur joueur du tournoi. Les statistiques figurent dans la [rétrospective de l'UEFA](https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/)."}
+      ]
+    },
+    {
+      "id": "highlights-and-ai",
+      "title": "Que montrent les images de match et les vidéos IA ?",
+      "blocks": [
+        {"type": "p", "text": "Pour vérifier les matchs disputés par Yamal et le déroulement d'un but, privilégiez les sources officielles du club et de la compétition. Une vidéo de football par IA est une création : la personne de la photo apparaît dans une scène générée. Ces images ne prouvent pas sa participation à une véritable rencontre."},
+        {"type": "p", "text": "Ozil Goal utilise un modèle de football fixe, sans champ de prompt ni commande de mouvement personnalisée. Il ne propose pas de reproduire la frappe enroulée de Yamal. Vous pouvez créer votre propre séquence de football ; pour découvrir le joueur et le but auxquels le nom du modèle fait référence, lisez [l'histoire du gol de ozil](/ozil-goal-generator/blog/gol-de-ozil)."}
+      ]
+    },
+    {
+      "id": "make-your-video",
+      "title": "Créer votre propre séquence de football avec une photo",
+      "blocks": [
+        {"type": "ol", "items": ["Préparez une photo autorisée d'un seul adulte, avec un visage net. Utilisez le format JPG, PNG ou WebP, avec un fichier de 10 Mo maximum.", "Ouvrez le [générateur Ozil Goal](/#generator) et importez la photo. Vérifiez d'abord la personne et l'image choisies, puis les informations de génération.", "Chaque génération coûte {ozilCredits} crédits et produit une vidéo verticale 9:16 de 15 secondes avec du son. Les paramètres sont détaillés dans la [présentation du modèle](/ozil-goal-generator/ozil-goal-ai-template).", "Une fois la vidéo terminée, regardez-la intégralement. Vérifiez le visage, le déplacement du ballon et l'enchaînement des mouvements avant de décider de la partager."]}
+      ]
+    },
+    {
+      "id": "share-with-context",
+      "title": "Indiquer clairement qu'il s'agit d'une création",
+      "blocks": [
+        {"type": "p", "text": "Vous pouvez écrire « J'ai créé une vidéo de football par IA avec ma photo » et utiliser la mention de contenu généré par IA proposée par la plateforme. Ne présentez pas la vidéo comme des images d'un match de Yamal ou comme une création à laquelle il aurait participé. Le plaisir d'une création de supporter vient de l'imagination ; expliquer son origine aide aussi vos amis à comprendre la vidéo."},
+        {"type": "note", "text": "Cet article est rédigé par l'équipe d'Ozil Goal. Ozil Goal est un outil indépendant, sans partenariat, parrainage ni soutien de Lamine Yamal, Mesut Özil, du Barça, d'Arsenal ou de l'UEFA."}
+      ]
+    }
+  ],
+  "faqs": [
+    {"question": "En quelle année Yamal a-t-il marqué ce but contre la France ?", "answer": "Le 9 juillet 2024, en demi-finale de l'EURO. Il a égalisé à la 21e minute et l'Espagne a finalement gagné 2–1."},
+    {"question": "Ozil Goal peut-il générer la même frappe enroulée que Yamal ?", "answer": "Non. Le site utilise un modèle fixe et ne permet pas de choisir le geste d'un joueur, de modifier le type de tir ou de saisir un prompt personnalisé."},
+    {"question": "Faut-il importer un enregistrement de match ?", "answer": "Non. Le site utilise une photo autorisée d'un seul adulte pour produire une vidéo de football générée par IA."}
+  ],
+  "sources": [
+    {"label": "FC Barcelona : fiche officielle de Lamine Yamal", "url": "https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal"},
+    {"label": "FC Barcelona : ses débuts le 29 avril 2023", "url": "https://www.fcbarcelona.com/en/news/3246834"},
+    {"label": "UEFA : compte rendu d'Espagne 2–1 France en 2024", "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/"},
+    {"label": "UEFA : but de l'EURO 2024 choisi par les observateurs techniques", "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/"},
+    {"label": "UEFA : records et performances de Lamine Yamal à l'EURO 2024", "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/"}
+  ]
+}

@@ -1,3 +1,4 @@
+import { isTranslatedOzilBlogPath } from "@/content/ozil-blog/routes";
 export const locales = ["en", "ko", "ja", "fr", "es", "zh-TW"] as const;
 export type Locale = (typeof locales)[number];
 export type TranslatedLocale = Exclude<Locale, "en">;
@@ -25,8 +26,8 @@ export function localizeHref(href: string, locale: Locale): string {
   if (!isPagePath(href)) return href;
   const base = stripLocale(href);
   if (!isPagePath(base)) return href;
-  // Ozil articles have native-language slugs; they are not translated UI routes.
-  if (/^\/ozil-goal-generator\/blog(?:[/?#]|$)/.test(base)) return base;
+  // Native articles retain their canonical slugs; only published translations get prefixes.
+  if (/^\/ozil-goal-generator\/blog(?:[/?#]|$)/.test(base) && !isTranslatedOzilBlogPath(base)) return base;
   if (isEnglishOnlyOzilPath(base) || locale === "en") return base;
   return `/${locale}${base === "/" ? "" : base.startsWith("/?") || base.startsWith("/#") ? base.slice(1) : base}`;
 }

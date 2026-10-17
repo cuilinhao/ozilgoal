@@ -1,0 +1,144 @@
+{
+  "title": "Gol de Ozil 是哪一球？2016 年欧冠名场面与 AI 视频制作指南",
+  "metaTitle": "Gol de Ozil：2016 年经典进球与 AI 视频指南 | Ozil Goal",
+  "description": "查清 gol de ozil 对应的比赛、比分与第 88 分钟绝杀，区分原始进球、bounce shot 和 AI 版本，并用自己的单人照片制作足球短片。",
+  "label": "Gol de Ozil 进球故事",
+  "excerpt": "从 Ludogorets 对 Arsenal 的欧冠比赛讲起，了解厄齐尔绝杀的来龙去脉，以及个人照片 AI 视频的制作方式。",
+  "eyebrow": "经典进球 · GOL DE OZIL",
+  "intro": "**gol de ozil** 在西班牙语里就是“厄齐尔的进球”，并不天然指某一场比赛。如果你看到的是挑过门将、晃开后卫再从容完成射门的片段，本文讨论的就是 Mesut Özil 在 2016 年对 Ludogorets 的欧冠绝杀。看懂原始比赛，也有助于理解用照片制作的 AI 足球版本。",
+  "sections": [
+    {
+      "id": "which-goal",
+      "title": "先确认日期、对手和比分",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "比赛发生在 2016 年 11 月 1 日，是欧冠 A 组第 4 轮。Arsenal 客场挑战 Ludogorets，地点是保加利亚索菲亚的 Vasil Levski 国家体育场。最终比分为 2–3，厄齐尔在第 88 分钟打入制胜球。这些信息均可在 [UEFA 官方比赛统计](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)中核对。"
+        },
+        {
+          "type": "p",
+          "text": "搜索时加上“Ludogorets 2016”，更容易找到这一球。只输入球员名和“进球”，也可能看到他在其他球队、其他比赛的片段。"
+        }
+      ]
+    },
+    {
+      "id": "match-context",
+      "title": "它为什么是一记绝杀？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "主队在第 12 和第 15 分钟连进两球，Arsenal 曾以 0–2 落后。Xhaka 第 20 分钟追回一球，Giroud 第 42 分钟扳平。厄齐尔的进球出现在 2–2 的僵局中，最终把平局变成客场胜利，进球时间线见同一份 [UEFA 比赛统计](https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf)。"
+        },
+        {
+          "type": "p",
+          "text": "这场胜利还帮助 Arsenal 连续第 17 个赛季晋级欧冠十六强。正因为有逆转与晋级的背景，这个画面承载的情绪不止是过人漂亮。详见 [UEFA 当场战报](https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/)。"
+        }
+      ]
+    },
+    {
+      "id": "the-sequence",
+      "title": "把连续动作分成三个部分看",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Elneny 送出传球后，厄齐尔完成了这次进攻。[TyC Sports 的复盘](https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html)把过程概括为挑过门将、让两名后卫扑空、再冷静完成射门。"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "先看处理门将：挑球改变了球的高度，也改变了追球路线。",
+            "再看门前停顿：观察防守者移动后，再选择下一次触球。",
+            "最后看完成射门：精彩之处已经发生在此前几次处理，终结动作反而简洁。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "这是一个方便回看的观察顺序，不是对固定 AI 模板每一帧动作的承诺。想了解更多比赛背景，可以继续读[厄齐尔对 Ludogorets 的进球故事](/mesut-ozil-ludogorets-goal)。"
+        }
+      ]
+    },
+    {
+      "id": "avoid-confusion",
+      "title": "两个容易混淆的名字与场次",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "首先，这不是 2016 年 10 月 19 日的首回合。那场 Arsenal 主场 6–0 获胜，厄齐尔上演帽子戏法；本文是两周后的客场 3–2。两场对手相同，但日期、比分与进球过程不同，可对照 [UEFA 首回合战报](https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/)。"
+        },
+        {
+          "type": "p",
+          "text": "其次，Ozil bounce 或 chop shot 是另一个射门话题。Arsenal 曾发布厄齐尔讲解该技巧的[官方视频](https://www.youtube.com/watch?v=5aJcOd4sL38)。不要把这个名称直接当作 Ludogorets 连续过人绝杀的同义词。"
+        }
+      ]
+    },
+    {
+      "id": "make-an-ai-version",
+      "title": "用自己的照片制作 AI 足球视频",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "如果你想体验以自己为主角的足球场景，可以使用 [Ozil Goal 生成器](/#generator)。本站采用固定模板，没有自定义动作或提示词输入框；生成结果是一段创作，不是原始比赛录像。"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "准备一张已获授权的成年人单人照片，脸部清晰。支持 JPG、PNG、WebP，文件不超过 10MB。",
+            "上传照片，核对人物与生成信息。每次生成消耗 {ozilCredits} 积分。",
+            "生成 15 秒、9:16 竖版有声视频。具体输入与输出要求见[模板说明](/ozil-goal-generator/ozil-goal-ai-template)。",
+            "完整预览人物面部、足球位置和动作衔接，再选择分享的版本。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "share-your-creation",
+      "title": "分享时保留比赛与创作的边界",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "发布时写明“AI 生成的足球短片”，并按平台功能添加 AI 标识。讨论原始进球时附上比赛来源，展示自己的作品时说明照片创作的性质。这样既能保留玩球的趣味，也不会让观众误以为你真的参加过那场比赛。"
+        },
+        {
+          "type": "note",
+          "text": "本文由 Ozil Goal 团队编写。Ozil Goal 是独立工具，与 Mesut Özil、Arsenal、Ludogorets 或 UEFA 没有合作、赞助或背书关系。"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "这粒 gol de ozil 是他在皇马时进的吗？",
+      "answer": "不是。本文这粒进球发生在 2016 年 11 月 1 日，他当时代表 Arsenal 对阵 Ludogorets。"
+    },
+    {
+      "question": "第 88 分钟的进球是补时绝杀吗？",
+      "answer": "它是比赛末段的制胜球，但第 88 分钟仍在常规 90 分钟内，不应写成补时进球。"
+    },
+    {
+      "question": "需要自己编写提示词或上传原始录像吗？",
+      "answer": "不需要。本站只需一张符合要求的授权成年人照片，使用固定模板生成，没有自定义提示词字段。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UEFA：2016 年 11 月 1 日 Ludogorets 2–3 Arsenal 官方比赛统计",
+      "url": "https://www.uefa.com/newsfiles/UCL/2017/2019330_TS.pdf"
+    },
+    {
+      "label": "UEFA：厄齐尔帮助 Arsenal 完成客场逆转",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0233-0e9591456f5d-b1a200c579f0-1000--ozil-completes-arsenal-comeback-at-ludogorets/"
+    },
+    {
+      "label": "TyC Sports：Ludogorets 经典进球的过程复盘",
+      "url": "https://www.tycsports.com/curiosidades/la-historia-detras-del-golazo-de-oezil-que-ahora-hacen-shrek-woody-y-otros-id766686.html"
+    },
+    {
+      "label": "UEFA：2016 年 10 月 19 日 Arsenal 6–0 Ludogorets 战报",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0232-0e9546f03574-b7f950806233-1000/"
+    },
+    {
+      "label": "Arsenal 官方频道：Mesut Ozil 讲解 bounce shot 与 chop shot",
+      "url": "https://www.youtube.com/watch?v=5aJcOd4sL38"
+    }
+  ]
+}

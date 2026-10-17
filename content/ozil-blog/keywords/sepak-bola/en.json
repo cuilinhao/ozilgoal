@@ -1,0 +1,168 @@
+{
+  "title": "What Does Sepak Bola Mean? From Football Basics to Personal AI Goal Videos",
+  "metaTitle": "Sepak Bola: Meaning, Basic Football Rules and AI Video Guide",
+  "description": "Learn what the Indonesian term sepak bola means, explore basic football rules and common terms, distinguish real highlights from AI videos, and make a goal clip from your own photo.",
+  "label": "Sepak Bola: Football Basics",
+  "excerpt": "Start with the meaning of sepak bola, understand goals, dribbling and match highlights, then explore the practical steps for turning a photo into a football clip.",
+  "eyebrow": "FOOTBALL BASICS · SEPAK BOLA",
+  "intro": "**Sepak bola** is a common Indonesian term for football. You may see it in match reports, goal compilations or short-video titles, but the phrase itself does not mean an AI effect. Understanding football actions and deciding whether a video records a match or shows generated footage will help you find the content you want.",
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "What does sepak bola refer to?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In everyday sports usage, sepak bola means football, also called soccer in English. It is a broad name for the sport and appears in national-team news, club competitions, training tutorials and fan discussions. The words alone do not tell you which match, player or type of goal a video covers."
+        },
+        {
+          "type": "p",
+          "text": "For more specific results, add a player, team or competition name. Try “gol” for goals, “highlight” for match summaries, and “AI” or “foto” for clips generated from photographs. These extra terms help distinguish material for watching football from tools for creating videos."
+        }
+      ]
+    },
+    {
+      "id": "basic-rules",
+      "title": "Three basics for understanding a football match",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A standard eleven-a-side match is played between two teams, each with a maximum of eleven players on the pitch, including one goalkeeper. Regulation play consists of two 45-minute halves. Additional time and extra time provided for by competition rules are different things. Youth and certain other competitions may use different arrangements. See IFAB’s [Law on players](https://www.theifab.com/laws/latest/the-players/) and [Law on the duration of the match](https://www.theifab.com/laws/latest/the-duration-of-the-match/)."
+        },
+        {
+          "type": "p",
+          "text": "A goal is more than the ball touching the net: the whole ball must cross the goal line between the posts and under the crossbar, with no offence committed by the scoring team. The decision depends on the ball’s position relative to the line, not a misleading camera angle. [IFAB Law 10](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/) explains goals and match results."
+        },
+        {
+          "type": "p",
+          "text": "When watching highlights, pay attention to the scoreboard, match clock and any explanation of a decision. A spectacular-looking shot may not count because of an earlier offence. Showing only the last few seconds often leaves out the full sequence."
+        }
+      ]
+    },
+    {
+      "id": "football-terms",
+      "title": "Football terms you often see in short videos",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Understanding Indonesian football video titles",
+          "headings": [
+            "Term",
+            "Common meaning",
+            "What to watch for"
+          ],
+          "rows": [
+            [
+              "Gol",
+              "Goal",
+              "Whether the whole ball crosses the line and the score changes"
+            ],
+            [
+              "Kiper",
+              "Goalkeeper",
+              "The position when coming off the line and the blocking angle"
+            ],
+            [
+              "Dribel",
+              "Dribbling",
+              "How the player on the ball changes direction and tempo"
+            ],
+            [
+              "Umpan",
+              "Pass",
+              "How a teammate sends the ball into attacking space"
+            ],
+            [
+              "Tendangan",
+              "A kick or shot",
+              "Use the context to identify a pass, shot or set piece"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "These terms describe different parts of a match. A good attack can include passing, dribbling and shooting, so its final goal cannot tell the whole story. When discussing [Lamine Yamal’s](/ozil-goal-generator/blog/lamine-yamal) long-range shooting, for example, his adjustments before striking are worth watching; with [Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil), focus on beating opponents and waiting for the right moment."
+        }
+      ]
+    },
+    {
+      "id": "real-or-generated",
+      "title": "How do match highlights differ from AI football videos?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Real highlights record a match that happened and can usually be checked against the competition, fixture, date and official report. An AI football video can turn an everyday photograph into fictional action on a pitch. A sports-broadcast-style camera angle does not prove that the person shown actually played in the match."
+        },
+        {
+          "type": "p",
+          "text": "Ozil Goal’s photo template belongs to the second category: it generates a preset football scene from an authorised photograph of one adult. The person’s appearance, clothing and the ball’s movement may still contain errors. It is suited to personal entertainment clips, not a substitute for real match footage or evidence of someone’s football ability."
+        }
+      ]
+    },
+    {
+      "id": "create-video",
+      "title": "How to make a football clip from your own photo",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Prepare a clear photo of one adult. Use your own photo or a photo of someone who has agreed to its use. JPG, PNG and WebP are supported, with a maximum file size of 10 MB.",
+            "Open the [Ozil Goal generator](/#generator), upload the image and confirm permission to use it. Check that the face is clear in the preview; avoid group photos or heavily obscured faces.",
+            "Check the current cost of {ozilCredits} credits per generation. If your balance is too low, buy credits first, then return to start generating. Registration itself does not include free generations.",
+            "Wait for the video to finish, play the preview and download it. The current template produces a 15-second vertical 9:16 video with sound. Before sharing, check the continuity of the face, footwork and ball."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You do not need to film yourself playing football, and there is no step for entering custom action prompts. The pitch and actions use a fixed template. For photo choices and common questions, read the [Gol Pakai photo-to-goal video guide](/ozil-goal-generator/blog/gol-pakai)."
+        }
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "Make the title accurately describe your content",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If you are discussing a real match, name the teams, fixture and date. If you are sharing a personal AI creation, say “AI football clip” directly. An accurate title tells people looking for sepak bola what they are about to see and helps prevent fictional action from being mistaken for player news."
+        },
+        {
+          "type": "note",
+          "text": "Written by the Ozil Goal Generator editorial team. This site provides an independent AI video tool and has no partnership with players, clubs or competition organisers."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are sepak bola and football the same sport?",
+      "answer": "In this context, yes. Sepak bola is Indonesian for football, also often called soccer in English. The specific form of the game still depends on the context."
+    },
+    {
+      "question": "Does a title containing sepak bola mean the video is AI-generated?",
+      "answer": "No. The term only identifies a football theme. Check the match details, publishing source and any AI label from the creator to better understand what the video is."
+    },
+    {
+      "question": "Can I make a personal goal video without knowing how to play football?",
+      "answer": "Yes. Ozil Goal generates preset actions from one authorised photo of an adult, so you do not need to film yourself playing. The result is an AI creation, and each generation costs {ozilCredits} credits."
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFAB Law 3: The Players",
+      "url": "https://www.theifab.com/laws/latest/the-players/"
+    },
+    {
+      "label": "IFAB Law 7: The Duration of the Match",
+      "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+      "label": "IFAB Law 10: Determining the Outcome of a Match",
+      "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"
+    },
+    {
+      "label": "Ozil Goal template guide",
+      "url": "/ozil-goal-generator/ozil-goal-ai-template"
+    }
+  ]
+}

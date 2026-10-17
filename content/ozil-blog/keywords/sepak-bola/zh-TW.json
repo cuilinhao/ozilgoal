@@ -1,0 +1,168 @@
+{
+  "title": "Sepak Bola 是什麼意思？從足球基礎到個人 AI 進球影片",
+  "metaTitle": "Sepak Bola：足球含義、基礎規則與 AI 影片指南",
+  "description": "瞭解印尼語 sepak bola 的含義、足球比賽的基本規則與常見術語，分清真實比賽集錦和 AI 足球影片，並學習用自己的照片製作進球短片。",
+  "label": "Sepak Bola 足球入門",
+  "excerpt": "從“sepak bola 就是足球”開始，讀懂進球、盤帶和比賽集錦，再瞭解照片生成足球短片的實際流程。",
+  "eyebrow": "足球入門 · SEPAK BOLA",
+  "intro": "**Sepak bola** 是印尼語中“足球”的常見說法。你可能在比賽報道、進球集錦或短影片標題裡看到它，但這個詞本身並不表示 AI 特效。理解足球動作，再判斷影片是比賽記錄還是生成畫面，能讓你更快找到自己想看的內容。",
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "Sepak bola 指什麼？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "在一般體育語境中，sepak bola 指足球，也就是英語中的 football 或 soccer。它是一個寬泛的運動名稱，可以出現在國家隊新聞、俱樂部賽事、訓練教程和球迷討論裡。只看到這個詞，還不能判斷一段影片講的是哪場比賽、哪位球員或哪種進球。"
+        },
+        {
+          "type": "p",
+          "text": "尋找具體內容時，可以補上球員、球隊或賽事名稱。想看進球可找“gol”，想看比賽摘要可找“highlight”，想了解照片生成的短片則補上“AI”或“foto”。這些限定詞能幫助區分觀賽資料和創作工具。"
+        }
+      ]
+    },
+    {
+      "id": "basic-rules",
+      "title": "看懂一場足球比賽的三個基礎",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "標準十一人制比賽由兩隊進行，每隊場上最多十一人，其中一人是守門員。常規比賽分為上下兩個半場，每半場四十五分鐘；補時以及賽事規定的加時並不是一回事。青少年或其他特定比賽的安排可以不同。參見 IFAB 的[球員規則](https://www.theifab.com/laws/latest/the-players/)與[比賽時間規則](https://www.theifab.com/laws/latest/the-duration-of-the-match/)。"
+        },
+        {
+          "type": "p",
+          "text": "進球也不是“球碰到了球網”這麼簡單：球必須整體越過球門線，處於兩根門柱之間和橫樑下方，且進球一方沒有犯規。判斷依據是球與球門線的位置，不是鏡頭中的視覺錯覺。[IFAB 第十章](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/)解釋了進球與比賽結果。"
+        },
+        {
+          "type": "p",
+          "text": "觀看集錦時，要留意計分牌、比賽時間以及是否出現判罰說明。一個看起來精彩的射門，可能因此前的犯規而沒有計入比分；單獨截出最後幾秒，往往無法交代完整過程。"
+        }
+      ]
+    },
+    {
+      "id": "football-terms",
+      "title": "短影片裡常見的足球詞彙",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "讀懂印尼語足球影片標題",
+          "headings": [
+            "詞語",
+            "常見含義",
+            "看畫面時注意什麼"
+          ],
+          "rows": [
+            [
+              "Gol",
+              "進球",
+              "球是否完整越線，比分是否更新"
+            ],
+            [
+              "Kiper",
+              "守門員",
+              "出擊位置與封堵路線"
+            ],
+            [
+              "Dribel",
+              "盤帶",
+              "持球者如何調整方向和節奏"
+            ],
+            [
+              "Umpan",
+              "傳球",
+              "球如何從隊友腳下送到進攻空間"
+            ],
+            [
+              "Tendangan",
+              "踢球或射門動作",
+              "結合上下文判斷是傳球、射門還是定位球"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "這些詞描述不同的比賽元素。一次漂亮進攻可能包含傳球、盤帶和射門，不能只用最後的進球概括全部過程。比如討論 [Lamine Yamal](/ozil-goal-generator/blog/lamine-yamal) 的遠射時，出腳前的調整也值得看；討論 [Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil) 時，則要注意過人和等待時機。"
+        }
+      ]
+    },
+    {
+      "id": "real-or-generated",
+      "title": "比賽集錦與 AI 足球影片有什麼區別？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "真實集錦記錄已經發生的比賽，通常可以透過賽事、對陣、日期及官方戰報核對。AI 足球影片則可以把一張日常照片變成虛構的球場動作。畫面出現體育轉播風格的鏡頭，並不能證明其中的人真的參加過那場比賽。"
+        },
+        {
+          "type": "p",
+          "text": "Ozil Goal 的照片模板屬於後者：它根據一名成年人的授權照片生成預設足球場景。人物相貌、衣服以及球的運動仍可能出現偏差。它適合製作個人娛樂短片，不能替代真實比賽錄影，也不能證明某人擁有影片中的球技。"
+        }
+      ]
+    },
+    {
+      "id": "create-video",
+      "title": "怎樣用自己的照片製作足球短片？",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "準備一張清晰的成年單人照片，使用自己的照片或獲得本人同意的照片。支援 JPG、PNG、WebP，檔案不超過 10 MB。",
+            "開啟 [Ozil Goal 生成器](/#generator)，上傳圖片並確認使用授權。檢查預覽中的臉部是否清楚，避免多人合照或嚴重遮擋。",
+            "確認當前每次生成所需的 {ozilCredits} 點數。點數不足時先購買，再返回頁面啟動生成；註冊本身不包含免費生成次數。",
+            "等待生成完成，播放預覽並下載。當前模板輸出十五秒、9:16 直式且帶聲音的影片；分享前檢查面部、腳步和球的連貫性。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "這個流程不需要自己拍攝足球動作，也沒有填寫自訂動作提示詞的步驟。球場和動作使用固定模板。想了解適合的照片與常見問題，可繼續閱讀 [Gol Pakai 照片進球影片指南](/ozil-goal-generator/blog/gol-pakai)。"
+        }
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "讓標題準確表達你的內容",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "如果發的是真實比賽討論，註明球隊、比賽和日期；如果發的是個人 AI 創作，就直接說明“AI 足球短片”。一個準確的標題，能讓想看 sepak bola 的觀眾知道自己即將看到什麼，也避免把虛構動作誤認成球員新聞。"
+        },
+        {
+          "type": "note",
+          "text": "本文由 Ozil Goal Generator 編輯團隊撰寫。本站提供獨立的 AI 影片工具，與球員、俱樂部或賽事主辦方沒有合作關係。"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Sepak bola 和 football 是同一種運動嗎？",
+      "answer": "在這裡是。Sepak bola 是印尼語的足球，英語通常稱 football，也常稱 soccer。具體比賽形式仍要看上下文。"
+    },
+    {
+      "question": "標題寫著 sepak bola 就代表影片是 AI 做的嗎？",
+      "answer": "不是。這個詞只說明足球主題。核對比賽資訊、釋出來源以及作者是否標註 AI，才能更好地理解影片性質。"
+    },
+    {
+      "question": "不會踢足球也可以製作個人進球影片嗎？",
+      "answer": "可以。Ozil Goal 透過一張授權成年人照片生成預設動作，不要求你拍攝踢球過程。結果屬於 AI 創作，每次需要 {ozilCredits} 點數。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFAB 第三章：球員",
+      "url": "https://www.theifab.com/laws/latest/the-players/"
+    },
+    {
+      "label": "IFAB 第七章：比賽時間",
+      "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+      "label": "IFAB 第十章：決定比賽結果",
+      "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"
+    },
+    {
+      "label": "Ozil Goal 模板說明",
+      "url": "/ozil-goal-generator/ozil-goal-ai-template"
+    }
+  ]
+}

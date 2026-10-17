@@ -5,6 +5,10 @@ const site = 'https://ozilgoal-aivideo.com';
 const locales = ['en', 'ko', 'ja', 'fr', 'es', 'zh-TW'];
 const englishOnly = ['/mesut-ozil-ludogorets-goal'];
 const blogIndex = '/ozil-goal-generator/blog';
+const keywordSlugs = ['lamine-yamal', 'sepak-bola', 'gol-pakai', 'gol-de-ozil'];
+const keywordPaths = keywordSlugs.map(slug => `${blogIndex}/${slug}`);
+const stripLocale = path => path.replace(/^\/(?:en|ko|ja|fr|es|zh-TW)(?=\/|$)/, '') || '/';
+const isTranslatedBlog = path => path === blogIndex || keywordPaths.includes(path);
 const ozilPages = [
   '/',
   '/ozil-goal-generator/ozil-goal-ai-prompt',
@@ -16,6 +20,7 @@ const ozilPages = [
 ];
 const translated = [
   ...ozilPages,
+  blogIndex, ...keywordPaths,
   '/pricing', '/privacy-policy', '/terms-of-service',
   '/refund-policy', '/acceptable-use-policy', '/contact',
 ];
@@ -71,15 +76,15 @@ if (locations.length !== new Set(locations).size) fail('/sitemap.xml', 'duplicat
 if (locations.some(url => new URL(url).origin !== site || new URL(url).search || new URL(url).hash)) fail('/sitemap.xml', 'unexpected origin, query or fragment');
 const publicPaths = [...englishOnly, ...locales.flatMap(locale => translated.map(path => localized(path, locale)))];
 for (const path of publicPaths) if (!paths.has(path)) fail('/sitemap.xml', `missing ${path}`);
-if (!paths.has(blogIndex)) fail('/sitemap.xml', 'missing Ozil blog index');
-const blogPosts = [...paths].filter(path => path.startsWith(`${blogIndex}/`));
-if (!blogPosts.length) fail('/sitemap.xml', 'missing native-language Ozil blog posts');
+const nativeBlogPosts = [...paths].filter(path => path.startsWith(`${blogIndex}/`) && !keywordPaths.includes(path));
+const translatedBlogPosts = [...paths].filter(path => keywordPaths.includes(stripLocale(path)));
+if (nativeBlogPosts.length !== 14) fail('/sitemap.xml', `expected 14 native-language Ozil blog posts, got ${nativeBlogPosts.length}`);
 for (const path of paths) {
   if (/^\/(?:ko\/|ja\/|fr\/|es\/|zh-TW\/)?(?:hotel-lobby-|ai-rap-song-generator|showcases|blog(?:\/|$))/.test(path)) fail('/sitemap.xml', `legacy route ${path}`);
   if (/^\/(?:ko\/|ja\/|fr\/|es\/|zh-TW\/)?(?:app|api|sign-in|sign-up)(?:\/|$)/.test(path)) fail('/sitemap.xml', `private route ${path}`);
   if (locales.some(locale => path === localized('/ozil-goal-generator', locale))) fail('/sitemap.xml', `home alias in sitemap ${path}`);
   if (locales.slice(1).some(locale => englishOnly.some(article => path === localized(article, locale)))) fail('/sitemap.xml', `English-only article mirror ${path}`);
-  if (/^\/(?:ko|ja|fr|es|zh-TW)\/ozil-goal-generator\/blog(?:\/|$)/.test(path)) fail('/sitemap.xml', `native blog mirror ${path}`);
+  if (/^\/(?:ko|ja|fr|es|zh-TW)\/ozil-goal-generator\/blog(?:\/|$)/.test(path) && !isTranslatedBlog(stripLocale(path))) fail('/sitemap.xml', `native blog mirror ${path}`);
 }
 
 const queue = [
@@ -87,7 +92,7 @@ const queue = [
   ...locales.flatMap(locale => translated.map(path => ({route: localized(path, locale), locale, canonicalPath: localized(path, locale), sourcePath: path, kind: 'translated'}))),
   ...locales.flatMap(locale => privatePaths.map(path => ({route: localized(path, locale), locale, canonicalPath: localized(path, locale), sourcePath: path, kind: 'private'}))),
   ...locales.map(locale => ({route: localized('/ozil-goal-generator', locale), locale, canonicalPath: localized('/', locale), sourcePath: '/', kind: 'alias'})),
-  ...[blogIndex, ...blogPosts].map(route => ({route, locale: 'en', canonicalPath: route, sourcePath: route, kind: 'blog'})),
+  ...nativeBlogPosts.map(route => ({route, locale: 'en', canonicalPath: route, sourcePath: route, kind: 'blog-native'})),
 ];
 let checked = 0;
 await Promise.all(Array.from({length: 6}, async () => {
@@ -97,19 +102,21 @@ await Promise.all(Array.from({length: 6}, async () => {
     if (status !== 200) { fail(route, `HTTP ${status}`); continue; }
     checked++;
     const documentLanguage = /<html\b[^>]*\blang="([^"]+)"/.exec(html)?.[1];
-    const articleLanguage = kind === 'blog' && route !== blogIndex
+    const isKeywordArticle = keywordPaths.includes(sourcePath);
+    const articleLanguage = kind === 'blog-native' || isKeywordArticle
       ? /<article\b[^>]*\blang="([^"]+)"/.exec(html)?.[1] : undefined;
-    if (kind === 'blog' && route !== blogIndex && !['en', 'pt-BR', 'es'].includes(articleLanguage)) fail(route, `invalid native article language ${articleLanguage}`);
+    if (kind === 'blog-native' && !['en', 'pt-BR', 'es'].includes(articleLanguage)) fail(route, `invalid native article language ${articleLanguage}`);
+    if (isKeywordArticle && articleLanguage !== locale) fail(route, `wrong translated article language ${articleLanguage}`);
     if (documentLanguage !== (articleLanguage || locale)) fail(route, `wrong document language ${documentLanguage}`);
     if (!/<title>[^<]+<\/title>/.test(html)) fail(route, 'missing title');
     const canonicalLinks = [...html.matchAll(/<link\b[^>]*>/g)].map(([tag]) => attributes(tag)).filter(link => link.rel === 'canonical');
     if (canonicalLinks.length !== 1 || normalizeCanonical(canonicalLinks[0]?.href) !== canonical(canonicalPath)) fail(route, `wrong canonical ${canonicalLinks.map(link => link.href).join(', ')}`);
     const alternates = hreflangs(html, route);
-    const expectedLanguages = kind === 'native' || kind === 'blog'
+    const expectedLanguages = kind === 'native' || kind === 'blog-native'
       ? {[articleLanguage || 'en']: canonical(canonicalPath), 'x-default': canonical(canonicalPath)}
       : languageGroup(sourcePath);
     if (!sameGroup(alternates, expectedLanguages)) fail(route, `wrong hreflang ${JSON.stringify(alternates)}`);
-    if (['translated', 'native', 'blog'].includes(kind) && !sameGroup(alternates, sitemapGroups.get(canonical(canonicalPath)) || {})) fail(route, 'page and sitemap hreflang differ');
+    if (['translated', 'native', 'blog-native'].includes(kind) && !sameGroup(alternates, sitemapGroups.get(canonical(canonicalPath)) || {})) fail(route, 'page and sitemap hreflang differ');
     const noindex = /<meta name="robots" content="[^"]*noindex/.test(html);
     if (kind === 'private' && !noindex) fail(route, 'private page missing noindex');
     if (kind !== 'private' && noindex) fail(route, 'public page is noindex');
@@ -117,9 +124,9 @@ await Promise.all(Array.from({length: 6}, async () => {
       if (!href.startsWith('/') || href.startsWith('//') || href.startsWith('/api/') || /\.[^/]+(?:[?#]|$)/.test(href)) continue;
       const pathname = href.split(/[?#]/)[0];
       if (locales.slice(1).some(language => englishOnly.some(article => pathname === localized(article, language)))) fail(route, `English-only article link has language prefix: ${href}`);
-      if (/^\/(?:ko|ja|fr|es|zh-TW)\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname)) fail(route, `native blog link has language prefix: ${href}`);
+      if (/^\/(?:ko|ja|fr|es|zh-TW)\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname) && !isTranslatedBlog(stripLocale(pathname))) fail(route, `native blog link has language prefix: ${href}`);
       if (kind !== 'translated' || locale === 'en') continue;
-      if (englishOnly.includes(pathname) || /^\/ozil-goal-generator\/blog(?:[/?#]|$)/.test(href)) continue;
+      if (englishOnly.includes(pathname) || stripLocale(pathname).startsWith(`${blogIndex}/`) || isTranslatedBlog(stripLocale(pathname))) continue;
       if (!new RegExp(`^/${locale}(?:/|#|\\?|$)`).test(href)) fail(route, `link lost language: ${href}`);
     }
   }
@@ -135,5 +142,5 @@ for (const path of missingPaths) {
   if (status !== 404) fail(path, `expected 404, got ${status}`);
 }
 
-console.log(JSON.stringify({checked, sitemapCount: locations.length, translatedOzilPages: ozilPages.length * locales.length, nativeEnglishPages: englishOnly.length, missingPathsChecked: missingPaths.length, blogPosts: blogPosts.length, failures}, null, 2));
+console.log(JSON.stringify({checked, sitemapCount: locations.length, translatedOzilPages: ozilPages.length * locales.length, nativeEnglishPages: englishOnly.length, missingPathsChecked: missingPaths.length, blogPosts: nativeBlogPosts.length + translatedBlogPosts.length, nativeBlogPosts: nativeBlogPosts.length, translatedBlogPosts: translatedBlogPosts.length, failures}, null, 2));
 if (failures.length) process.exitCode = 1;

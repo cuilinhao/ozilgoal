@@ -18,7 +18,7 @@ npm run cf:build
 在本地生产构建或独立 Workers 预览地址检查：
 
 1. `/` 显示 Ozil 上传和生成入口；首页及六个指南支持英语、韩语、日语、法语、西语、繁体中文，各语言版本直接返回 200，并有对应 canonical 与互相声明的 hreflang。`/ozil-goal-generator` 及其五个非英语兼容入口可访问，canonical 指向对应语言首页，例如 `/fr/ozil-goal-generator` 指向 `/fr`。
-2. `/pricing`、政策和 `/contact` 的六语言版本可访问。`/mesut-ozil-ludogorets-goal` 仅提供英语；Ozil 博客索引及英语、巴西葡语、西语原生文章保留各自路径，alternates 仅声明自身语言及 `x-default`，不创建语言前缀镜像。
+2. `/pricing`、政策和 `/contact` 的六语言版本可访问。博客索引与 `lamine-yamal`、`sepak-bola`、`gol-pakai`、`gol-de-ozil` 四篇关键词文章支持相同六种语言，并互相声明 hreflang；简体中文源稿仅保存在项目内。`/mesut-ozil-ludogorets-goal` 仅提供英语；既有英语、巴西葡语、西语原生博客文章保留各自路径，alternates 仅声明自身语言及 `x-default`，不创建语言前缀镜像。
 3. `/sitemap.xml` 和 `/robots.txt` 指向 `https://ozilgoal-aivideo.com`；sitemap 收录六语言首页、指南及其他实际公开页面，不收录兼容入口和旧工具页面，也不收录英文独有文章与原生博客的语言前缀镜像。
 4. 旧公开路径 `/hotel-lobby-ai-video-generator`、`/ai-rap-song-generator`、`/blog`、`/showcases` 及其本地化版本返回 404。导航、页脚和 `llms.txt` 不链接这些页面。
 5. 首页、指南和博客的标题、描述、内链、图片、FAQ/HowTo/BlogPosting 结构化数据与可见内容一致。检查桌面和手机布局、表单状态及语言切换。HTTP 200 本身不能证明交互可用。

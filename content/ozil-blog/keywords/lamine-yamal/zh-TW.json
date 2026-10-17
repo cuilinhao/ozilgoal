@@ -1,0 +1,132 @@
+{
+  "title": "Lamine Yamal：看懂亞馬爾的經典進球，製作自己的 AI 足球短片",
+  "metaTitle": "Lamine Yamal 經典進球解析與 AI 足球短片指南 | Ozil Goal",
+  "description": "從亞馬爾的巴塞隆納首秀到歐洲盃對法國的弧線球，瞭解 Lamine Yamal 的代表時刻，以及如何用自己的單人照片製作 AI 足球短片。",
+  "label": "Lamine Yamal 經典進球",
+  "excerpt": "回看亞馬爾在歐洲盃的經典弧線球，認識真實比賽集錦與個人 AI 足球短片各自的看點。",
+  "eyebrow": "球員與進球 · LAMINE YAMAL",
+  "intro": "搜尋 **Lamine Yamal**，你可能想了解亞馬爾是誰，也可能在找那腳對法國的弧線球。理解這個瞬間，既要看射門，也要看比分與出腳前的選擇。這篇文章從有出處的比賽記錄講起，再介紹怎樣把看球的興趣變成一段以自己為主角的 AI 足球短片。",
+  "sections": [
+    {
+      "id": "who-is-lamine-yamal",
+      "title": "從巴塞隆納青訓走進一線隊",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lamine Yamal 出生於 2007 年 7 月 13 日，7 歲時從 CF La Torreta 加入巴塞隆納青訓。巴塞隆納的[官方球員資料](https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal)介紹了他的成長經歷。"
+        },
+        {
+          "type": "p",
+          "text": "2023 年 4 月 29 日，他在對皇家貝蒂斯的比賽中完成一線隊首秀。當時他只有 15 歲 9 個月 16 天，成為巴塞隆納最年輕的西甲出場球員。這次在聯賽中的登場，是他從青訓走向成年職業賽場的重要一步。詳見[巴塞隆納首秀報道](https://www.fcbarcelona.com/en/news/3246834)。"
+        }
+      ]
+    },
+    {
+      "id": "france-goal",
+      "title": "那腳弧線球發生在什麼比賽？",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "2024 年 7 月 9 日，西班牙在歐洲盃半決賽迎戰法國。法國先取得領先，亞馬爾在第 21 分鐘從禁區外起腳，弧線球擊中門柱後入網，把比分扳成 1–1。奧爾莫隨後進球，西班牙最終以 2–1 獲勝。這些時間與賽果可以在 [UEFA 比賽報道](https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/)中核對。"
+        },
+        {
+          "type": "p",
+          "text": "他進球時為 16 歲 362 天，創造歐洲盃最年輕進球者紀錄。這腳射門後來獲選 UEFA 技術觀察員評定的[賽事最佳進球](https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/)。它是扳平球，不是決賽進球。"
+        }
+      ]
+    },
+    {
+      "id": "what-to-watch",
+      "title": "回看時，別只盯著最後一腳",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "可以把注意力分成三個部分：接球後怎樣獲得起腳空間、射門前如何調整身體、球離腳後怎樣繞向遠角。慢放幫助看觸球，正常速度則保留防守壓力和選擇時機的難度。不要只用一張入網截圖判斷整次進攻。"
+        },
+        {
+          "type": "p",
+          "text": "也別讓一個名場面代替整個賽事。亞馬爾在 EURO 2024 的 7 場比賽中貢獻 1 球和 4 次助攻，並獲最佳年輕球員。這個稱號與賽事最佳球員不同，相關統計見 [UEFA 賽事回顧](https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/)。"
+        }
+      ]
+    },
+    {
+      "id": "highlights-and-ai",
+      "title": "比賽集錦與 AI 短片分別看什麼",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "想確認亞馬爾踢了什麼比賽、進球怎樣發生，優先檢視俱樂部和賽事官方資料。AI 足球短片則是一種創作：照片裡的人出現在生成的球場場景中，畫面不能證明他參加過真實比賽。"
+        },
+        {
+          "type": "p",
+          "text": "Ozil Goal 使用固定足球模板，沒有自訂動作或提示詞輸入框，也不提供亞馬爾的弧線球復現功能。你可以製作自己的足球片段；若想了解模板名稱背後的球員與進球，可閱讀 [gol de ozil 的故事](/ozil-goal-generator/blog/gol-de-ozil)。"
+        }
+      ]
+    },
+    {
+      "id": "make-your-video",
+      "title": "用一張照片製作自己的足球片段",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "準備一張已獲授權的成年人單人照片，臉部清晰，格式為 JPG、PNG 或 WebP，檔案不超過 10MB。",
+            "開啟 [Ozil Goal 生成器](/#generator)並上傳照片。先確認選對人物與圖片，再檢視生成資訊。",
+            "每次生成消耗 {ozilCredits} 點數，輸出為 15 秒、9:16 直式有聲影片。模板參數見[模板說明](/ozil-goal-generator/ozil-goal-ai-template)。",
+            "完成後完整播放，檢查人物面部、球的移動與動作銜接，再決定是否分享。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "share-with-context",
+      "title": "讓觀看者知道這是一段創作",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "配文可以寫“用自己的照片做了一段 AI 足球短片”，並使用發布平台提供的 AI 內容標識。不要將生成畫面稱為亞馬爾的比賽錄影，或寫成他本人參與製作。球迷創作的趣味來自個人想像，說明來源也能讓朋友更快理解影片。"
+        },
+        {
+          "type": "note",
+          "text": "本文由 Ozil Goal 團隊編寫。Ozil Goal 是獨立工具，與 Lamine Yamal、Mesut Özil、巴塞隆納、Arsenal 或 UEFA 沒有合作、贊助或背書關係。"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "亞馬爾對法國的經典進球是哪一年？",
+      "answer": "是 2024 年 7 月 9 日歐洲盃半決賽。他在第 21 分鐘扳平比分，西班牙最終 2–1 獲勝。"
+    },
+    {
+      "question": "Ozil Goal 能生成亞馬爾同款弧線球嗎？",
+      "answer": "不能。本站使用固定模板，沒有指定球員動作、修改射門方式或輸入自訂提示詞的功能。"
+    },
+    {
+      "question": "製作短片需要上傳比賽錄影嗎？",
+      "answer": "不需要。本站的輸入是一張已獲授權的成年人單人照片，輸出是 AI 生成的足球短片。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "FC Barcelona：Lamine Yamal 官方球員資料",
+      "url": "https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal"
+    },
+    {
+      "label": "FC Barcelona：2023 年 4 月 29 日首秀報道",
+      "url": "https://www.fcbarcelona.com/en/news/3246834"
+    },
+    {
+      "label": "UEFA：2024 年西班牙 2–1 法國比賽報道",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/"
+    },
+    {
+      "label": "UEFA：EURO 2024 最佳進球技術觀察員評選",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/"
+    },
+    {
+      "label": "UEFA：Lamine Yamal 的 EURO 2024 紀錄與表現",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/"
+    }
+  ]
+}

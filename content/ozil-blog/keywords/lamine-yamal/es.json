@@ -1,0 +1,132 @@
+{
+  "title": "Lamine Yamal: entiende su gol más recordado y crea tu propio video de fútbol con IA",
+  "metaTitle": "El gol de Lamine Yamal y los videos de fútbol con IA | Ozil Goal",
+  "description": "Desde su debut con el Barça hasta su disparo con efecto contra Francia en la Eurocopa, descubre los momentos de Lamine Yamal y cómo crear un video de fútbol con IA a partir de tu foto.",
+  "label": "El gol más recordado de Lamine Yamal",
+  "excerpt": "Revive el disparo con efecto de Yamal en la Eurocopa y descubre qué ofrecen los resúmenes de partidos reales y los videos personales de fútbol con IA.",
+  "eyebrow": "JUGADORES Y GOLES · LAMINE YAMAL",
+  "intro": "Al buscar **Lamine Yamal**, quizá quieras saber quién es o encontrar aquel disparo con efecto contra Francia. Para entender ese momento hay que fijarse en el marcador y en sus decisiones antes del remate, además de en el gol. Este artículo parte de registros de partidos documentados y después explica cómo convertir tu afición al fútbol en un video de IA protagonizado por ti.",
+  "sections": [
+    {
+      "id": "who-is-lamine-yamal",
+      "title": "De la cantera del Barça al primer equipo",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Lamine Yamal nació el 13 de julio de 2007 y llegó a la cantera del Barça desde el CF La Torreta con siete años. La [ficha oficial del jugador](https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal) repasa su formación."
+        },
+        {
+          "type": "p",
+          "text": "Debutó con el primer equipo ante el Real Betis el 29 de abril de 2023. Tenía 15 años, nueve meses y 16 días, y se convirtió en el jugador más joven del Barça en disputar un partido de LaLiga. Aquella aparición fue un paso importante de la cantera al fútbol profesional de adultos. Consulta la [crónica de su debut del Barça](https://www.fcbarcelona.com/en/news/3246834)."
+        }
+      ]
+    },
+    {
+      "id": "france-goal",
+      "title": "¿En qué partido marcó aquel gol con efecto?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "El 9 de julio de 2024, España se enfrentó a Francia en la semifinal de la Eurocopa. Francia se adelantó, pero en el minuto 21 Yamal disparó desde fuera del área. El balón describió una curva, golpeó el poste y entró para poner el 1–1. Dani Olmo marcó después y España ganó 2–1. Puedes comprobar los minutos y el resultado en la [crónica de UEFA](https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/)."
+        },
+        {
+          "type": "p",
+          "text": "Yamal tenía 16 años y 362 días cuando marcó y estableció el récord del goleador más joven de la historia de la Eurocopa. Los observadores técnicos de UEFA eligieron después ese disparo como [Gol del Torneo](https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/). Fue el empate en la semifinal, no un gol en la final."
+        }
+      ]
+    },
+    {
+      "id": "what-to-watch",
+      "title": "Al volver a verlo, fíjate en algo más que el remate",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Puedes observar tres aspectos: cómo encuentra espacio para disparar tras recibir el balón, cómo ajusta el cuerpo antes del golpeo y cómo la pelota se curva hacia la esquina más alejada. La cámara lenta ayuda a ver el contacto; la velocidad normal conserva la presión defensiva y la dificultad de elegir el momento. Una sola captura del balón entrando no explica toda la jugada."
+        },
+        {
+          "type": "p",
+          "text": "Un momento memorable tampoco debe sustituir a todo un torneo. Yamal sumó un gol y cuatro asistencias en siete partidos de la EURO 2024 y fue elegido Mejor Jugador Joven del Torneo. Es un premio diferente al de Jugador del Torneo. Las cifras aparecen en el [repaso de UEFA](https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/)."
+        }
+      ]
+    },
+    {
+      "id": "highlights-and-ai",
+      "title": "Qué muestran los resúmenes y qué muestran los videos con IA",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Para confirmar qué partido jugó Yamal y cómo se produjo un gol, consulta primero las fuentes oficiales del club y de la competición. Un video de fútbol con IA es una creación: la persona de una fotografía aparece en un estadio generado. Las imágenes no demuestran que participara en un partido real."
+        },
+        {
+          "type": "p",
+          "text": "Ozil Goal utiliza una plantilla de fútbol fija. No tiene un campo de acciones o instrucciones personalizadas ni puede recrear el gol con efecto de Yamal. Puedes crear un video protagonizado por ti; para conocer al jugador y el gol que dan nombre a la plantilla, lee [la historia de gol de ozil](/ozil-goal-generator/blog/gol-de-ozil)."
+        }
+      ]
+    },
+    {
+      "id": "make-your-video",
+      "title": "Crea tu video de fútbol con una foto",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Prepara una foto de una sola persona adulta cuya imagen tengas permiso para usar, con el rostro claro. Se admiten JPG, PNG y WebP, con un tamaño máximo de 10MB.",
+            "Abre el [generador de Ozil Goal](/#generator) y sube la foto. Comprueba que has elegido a la persona y la imagen correctas y revisa los datos de generación.",
+            "Cada generación cuesta {ozilCredits} créditos y produce un video vertical de 15 segundos, en formato 9:16 y con sonido. Consulta los ajustes en la [guía de la plantilla](/ozil-goal-generator/ozil-goal-ai-template).",
+            "Cuando termine, reproduce el video completo. Revisa el rostro, el movimiento del balón y la continuidad de las acciones antes de decidir si lo compartes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "share-with-context",
+      "title": "Explica al público que se trata de una creación",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Puedes escribir “He creado un video de fútbol con IA a partir de mi foto” y utilizar la etiqueta de contenido generado con IA que ofrezca la plataforma. No presentes las imágenes generadas como una grabación de un partido de Yamal ni sugieras que participó en la producción. La gracia de una creación de aficionados está en la imaginación personal, y explicar su origen ayuda a tus amigos a entenderla."
+        },
+        {
+          "type": "note",
+          "text": "Artículo escrito por el equipo de Ozil Goal. Ozil Goal es una herramienta independiente, sin colaboración, patrocinio ni respaldo de Lamine Yamal, Mesut Özil, el Barça, el Arsenal o UEFA."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿De qué año es el famoso gol de Yamal contra Francia?",
+      "answer": "Del 9 de julio de 2024, en la semifinal de la Eurocopa. Empató en el minuto 21 y España terminó ganando 2–1."
+    },
+    {
+      "question": "¿Ozil Goal puede generar un disparo con efecto como el de Yamal?",
+      "answer": "No. El sitio utiliza una plantilla fija. No permite indicar movimientos de un jugador, cambiar el tipo de remate ni introducir instrucciones personalizadas."
+    },
+    {
+      "question": "¿Tengo que subir una grabación de un partido?",
+      "answer": "No. Solo se necesita una foto de una persona adulta cuya imagen tengas permiso para usar. El resultado es un video de fútbol generado con IA."
+    }
+  ],
+  "sources": [
+    {
+      "label": "FC Barcelona: ficha oficial de Lamine Yamal",
+      "url": "https://www.fcbarcelona.com/en/futbol/primer-equip/jugadors/129404/lamine-yamal"
+    },
+    {
+      "label": "FC Barcelona: crónica del debut del 29 de abril de 2023",
+      "url": "https://www.fcbarcelona.com/en/news/3246834"
+    },
+    {
+      "label": "UEFA: crónica del España 2–1 Francia de la EURO 2024",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b544afc4a71-e17794a15449-1000--spain-2-1-france-la-roja-fight-back-to-reach-final/"
+    },
+    {
+      "label": "UEFA: elección técnica del Gol del Torneo de la EURO 2024",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b61b696019f-f9f4c91eea25-1000--uefa-euro-2024-goal-of-the-tournament-lamine-yamal-tops-tec/"
+    },
+    {
+      "label": "UEFA: récords y actuaciones de Lamine Yamal en la EURO 2024",
+      "url": "https://www.uefa.com/uefaeuro/history/news/028f-1b593529fcc2-02d376d78144-1000--lamine-yamal-s-record-breaking-euro-spain-prodigy-wins-f/"
+    }
+  ]
+}

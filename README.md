@@ -5,8 +5,8 @@ Ozil Goal Generator 是面向 `https://ozilgoal-aivideo.com` 的独立单图足�
 ## 公开页面
 
 - `/` 是 Ozil Goal Generator 首页及生成入口；`/ozil-goal-generator` 保留兼容访问，canonical 指向 `/`。
-- 六篇指南位于 `/ozil-goal-generator/` 下：`ozil-goal-ai-prompt`、`ozil-goal-ai-template`、`ozil-goal-trend`、`ozil-goal-meme`、`ozil-goal-capcut-template` 和 `ai-football-video-from-photo`。首页、生成器及这些指南支持英语、韩语、日语、法语、西班牙语和繁体中文。英语不加前缀，其他语言使用 `/ko`、`/ja`、`/fr`、`/es`、`/zh-TW`；切换语言保留页面、查询参数和锚点。每种语言都有翻译正文、canonical、hreflang 和 sitemap 项；兼容首页别名归一到相应语言首页。翻译位于 `lib/i18n/messages/ozil-*.json`，博客继续使用原生语言文章链接。公开提示词工具的界面翻译，生成的技术提示词仍为英语。
-- `/ozil-goal-generator/blog` 收录英语、巴西葡语和西语原生文章。文章使用各自的固定路径，不自动生成六语言镜像。
+- 六篇指南位于 `/ozil-goal-generator/` 下：`ozil-goal-ai-prompt`、`ozil-goal-ai-template`、`ozil-goal-trend`、`ozil-goal-meme`、`ozil-goal-capcut-template` 和 `ai-football-video-from-photo`。首页、生成器及这些指南支持英语、韩语、日语、法语、西班牙语和繁体中文。英语不加前缀，其他语言使用 `/ko`、`/ja`、`/fr`、`/es`、`/zh-TW`；切换语言保留页面、查询参数和锚点。每种语言都有翻译正文、canonical、hreflang 和 sitemap 项；兼容首页别名归一到相应语言首页。翻译位于 `lib/i18n/messages/ozil-*.json`，博客兼容原生语言文章并提供四篇关键词文章的六语言翻译。公开提示词工具的界面翻译，生成的技术提示词仍为英语。
+- `/ozil-goal-generator/blog` 及五个语言前缀下的博客首页，展示当前语言的四篇关键词文章和既有 14 篇英语、巴西葡语、西语原生文章。新文章 `lamine-yamal`、`sepak-bola`、`gol-pakai`、`gol-de-ozil` 保持同一 slug，正文位于 `content/ozil-blog/keywords/`，提供六种完整语言版本、语言切换及互相对应的 canonical / hreflang / sitemap。原生文章继续使用原来的无前缀路径，带语言前缀访问时永久跳转回原路径，不声明不存在的翻译。
 - `/pricing`、登录、账户、政策和 `/contact` 保留；定价、政策与联系页使用现有六语言界面。
 - 旧 Hotel Lobby、AI Rap Song、旧博客和 showcases 页面不属于本独立站的公开路由、导航或 sitemap。
 
@@ -48,7 +48,7 @@ npm run cf:build
 | 路径 | 用途 |
 | --- | --- |
 | `app/`、`components/ozil-goal/` | 页面、生成器、账户页与 API 路由 |
-| `content/ozil-goal-pages.json`、`content/ozil-blog/` | Ozil 指南和原生语种博客内容 |
+| `content/ozil-goal-pages.json`、`content/ozil-blog/` | Ozil 指南、原生博客与关键词文章翻译 |
 | `content/public-pages.ts`、`app/sitemap.ts`、`app/robots.ts` | 公开索引范围与规范域名 |
 | `lib/server/`、`migrations/` | 认证、积分、生成、支付、审核、媒体和 D1 迁移 |
 | `tests/` | 自动化回归测试 |

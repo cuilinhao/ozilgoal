@@ -1,5 +1,9 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import { isLocale } from "@/lib/i18n/routing";
+import { OZIL_BLOG_PATH, getOzilBlogPost } from "@/content/ozil-blog";
+import { isTranslatedOzilBlogPath } from "@/content/ozil-blog/routes";
+import { OzilBlogArticle, OzilBlogIndex } from "@/components/ozil-goal/blog";
+import { ozilBlogMetadata } from "@/components/ozil-goal/blog-metadata";
 import AccountLayout from "@/app/app/layout";
 
 // Only pages with translated content receive localized App Router routes.
@@ -29,16 +33,27 @@ type Props = { params: Promise<{ locale: string; path?: string[] }> };
 async function resolvePage(params: Props["params"]) {
   const { locale, path = [] } = await params;
   const pathname = `/${path.join("/")}`;
-  if (isLocale(locale) && /^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname)) permanentRedirect(pathname);
-  if (!isLocale(locale) || !Object.hasOwn(routes, pathname)) notFound();
-  return { page: await routes[pathname as keyof typeof routes](), pathname };
+  if (!isLocale(locale)) notFound();
+  if (/^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname)) {
+    if (!isTranslatedOzilBlogPath(pathname)) permanentRedirect(pathname);
+    if (pathname === OZIL_BLOG_PATH) return { kind: "blog-index" as const, locale, pathname };
+    const post = getOzilBlogPost(pathname.slice(OZIL_BLOG_PATH.length + 1), locale);
+    if (!post?.translationKey) notFound();
+    return { kind: "blog-article" as const, post, pathname };
+  }
+  if (!Object.hasOwn(routes, pathname)) notFound();
+  return { kind: "page" as const, page: await routes[pathname as keyof typeof routes](), pathname };
 }
 export async function generateMetadata({ params }: Props) {
-  const { page } = await resolvePage(params);
-  return page.generateMetadata();
+  const resolved = await resolvePage(params);
+  if (resolved.kind === "blog-index") return ozilBlogMetadata(undefined, resolved.locale);
+  if (resolved.kind === "blog-article") return ozilBlogMetadata(resolved.post);
+  return resolved.page.generateMetadata();
 }
 export default async function LocalizedPage({ params }: Props) {
-  const { page, pathname } = await resolvePage(params);
-  const Page = page.default;
-  return pathname.startsWith("/app/") ? <AccountLayout><Page/></AccountLayout> : <Page/>;
+  const resolved = await resolvePage(params);
+  if (resolved.kind === "blog-index") return <OzilBlogIndex locale={resolved.locale} />;
+  if (resolved.kind === "blog-article") return <OzilBlogArticle post={resolved.post} />;
+  const Page = resolved.page.default;
+  return resolved.pathname.startsWith("/app/") ? <AccountLayout><Page/></AccountLayout> : <Page/>;
 }

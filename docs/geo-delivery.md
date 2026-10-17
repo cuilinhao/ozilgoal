@@ -5,9 +5,10 @@
 ## 内容范围
 
 - `/` 是英语 Ozil 首页；`/ozil-goal-generator` 是兼容入口，两者以 `/` 为 canonical。该兼容入口不单独列入 sitemap。
-- 六个英语指南：`/ozil-goal-generator/ozil-goal-ai-prompt`、`/ozil-goal-generator/ozil-goal-ai-template`、`/ozil-goal-generator/ozil-goal-trend`、`/ozil-goal-generator/ozil-goal-meme`、`/ozil-goal-generator/ozil-goal-capcut-template`、`/ozil-goal-generator/ai-football-video-from-photo`。
-- `/ozil-goal-generator/blog` 与其文章按内容原生语种发布：英语、巴西葡语、西语。仅为实际存在的对应文章设置语言 alternates，不制造翻译版 URL。
-- 定价、政策和联系页保留六语言路径。首页及六个指南没有非英语正文；`/fr` 等本地化 Ozil 镜像应返回 404，也不应出现在 sitemap 或 `llms.txt`。
+- 六个指南：`/ozil-goal-generator/ozil-goal-ai-prompt`、`/ozil-goal-generator/ozil-goal-ai-template`、`/ozil-goal-generator/ozil-goal-trend`、`/ozil-goal-generator/ozil-goal-meme`、`/ozil-goal-generator/ozil-goal-capcut-template`、`/ozil-goal-generator/ai-football-video-from-photo`。
+- 首页、六个指南、定价、政策和联系页支持英语、韩语、日语、法语、西语、繁体中文；非英语使用对应语言前缀，canonical 和 hreflang 指向实际存在的页面。
+- `/ozil-goal-generator/blog` 索引及 `lamine-yamal`、`sepak-bola`、`gol-pakai`、`gol-de-ozil` 四篇关键词文章支持上述六种语言。英文不带前缀，其余版本使用语言前缀，并互相声明 hreflang。四份简体中文源稿只保存在 `content/ozil-blog/keywords/`，不作为额外站点语言发布。
+- 既有 14 篇英语、巴西葡语、西语原生博客保留原路径，各自只声明自身语言与 `x-default`；不把独立文章当作互译，也不创建语言前缀镜像。
 
 旧 Hotel Lobby、AI Rap Song、旧博客和 showcases 不属于本独立站的公开内容。更新页面时同时检查站内导航、内链、canonical、语言 alternates、结构化数据、`robots.txt`、sitemap 和 [`public/llms.txt`](../public/llms.txt)。
 
@@ -34,7 +35,7 @@ node scripts/check-i18n.mjs http://127.0.0.1:3000
 python3 scripts/check-geo.py http://127.0.0.1:3000
 ```
 
-在本地或独立预览地址检查首页、六个指南、博客索引及文章、定价和政策页的状态码与页面正文；检查根域 canonical、实际存在的语言 alternates、FAQ/HowTo/BlogPosting 等结构化数据、`/robots.txt` 与 `/sitemap.xml`。确认旧公开路径及非英语 Ozil 镜像不返回内容，站点地图只包含现有页面。浏览器还需检查窄屏布局、语言切换、内链和图片加载。
+在本地或独立预览地址检查首页、六个指南、博客索引及文章、定价和政策页的状态码与页面正文；检查根域 canonical、实际存在的语言 alternates、FAQ/HowTo/BlogPosting 等结构化数据、`/robots.txt` 与 `/sitemap.xml`。确认旧公开路径和未支持语言不返回内容，站点地图只包含现有页面。浏览器还需检查窄屏布局、语言切换、跨原生文章导航时的页面语言、内链和图片加载。
 
 这些检查只证明页面和抓取契约在被测环境中的行为；搜索收录、排名和 AI 引用需要使用新站的实际数据另行观察。操作清单见 [QA 说明](../QA/README.md)。
 

@@ -1,0 +1,72 @@
+{
+  "title": "Gol Pakai Foto : comment créer une vidéo de but par IA avec votre photo ?",
+  "metaTitle": "Gol Pakai Foto : créer une vidéo de but IA avec votre photo",
+  "description": "Le sens de gol pakai dépend des mots qui suivent. Distinguez les buts réels des vidéos IA, préparez votre photo, vérifiez les crédits, puis générez et téléchargez votre vidéo de football.",
+  "label": "Gol Pakai : le guide photo et vidéo",
+  "excerpt": "Comprenez d'abord l'expression gol pakai, puis choisissez une photo pour devenir le personnage de votre propre vidéo de football générée par IA.",
+  "eyebrow": "GUIDE PHOTO ET VIDÉO · GOL PAKAI",
+  "intro": "**Gol pakai** est une expression indonésienne dont le sens dépend de la suite, approximativement « un but avec… ». « Gol pakai kepala » parle d'un but de la tête ; « gol pakai foto » peut correspondre à une recherche de vidéos de buts créées avec une photo. Ce guide traite de cette dernière idée : devenir le personnage d'une vidéo de football générée par IA.",
+  "sections": [
+    {
+      "id": "understand-query",
+      "title": "Regarder d'abord ce qui suit pakai",
+      "blocks": [
+        {"type": "table", "caption": "Une même expression, plusieurs types de contenu", "headings": ["Expression", "Interprétation possible"], "rows": [["Gol pakai kaki", "Un but marqué du pied"], ["Gol pakai kepala", "Un but de la tête"], ["Gol pakai dada", "Un but marqué avec la poitrine"], ["Gol pakai foto / AI", "La création d'une vidéo de but à partir d'une photo ou avec l'IA"]]},
+        {"type": "p", "text": "Les trois premières expressions concernent des gestes de football réels ; la dernière décrit une méthode de création vidéo. Cette formulation n'est pas, en elle-même, le nom officiel d'une application et ne permet pas d'identifier un joueur recherché. Ajouter « foto sendiri » (sa propre photo) ou « AI » précise l'intention de créer une vidéo personnelle."},
+        {"type": "p", "text": "Dans un match réel, un but doit aussi respecter les conditions d'arbitrage. Selon la [règle de l'IFAB sur les buts](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/), le ballon doit franchir entièrement la ligne et l'équipe qui marque ne doit pas avoir commis d'infraction. Toucher le ballon avec la poitrine n'est pas une main. Et voir le ballon entrer dans le filet d'une vidéo IA n'en fait pas une démonstration des règles."}
+      ]
+    },
+    {
+      "id": "what-you-make",
+      "title": "Qu'est-ce qu'une vidéo de but créée à partir d'une photo ?",
+      "blocks": [
+        {"type": "p", "text": "La photo fournit l'apparence de la personne, tandis que le modèle vidéo fournit la scène et les mouvements. Ozil Goal place une personne du quotidien dans une séquence de football prédéfinie, avec une sortie du gardien, du contrôle de balle et des actions défensives. Ce n'est pas un simple nom ajouté à un résumé de match, et vous n'avez pas besoin de vous filmer en train de jouer."},
+        {"type": "p", "text": "Le modèle est fixe. L'interface actuelle ne permet pas de demander une tête, un coup franc ou la reproduction exacte du tir d'un joueur célèbre. Le résultat est une vidéo imaginaire destinée au divertissement personnel. Le visage, le corps et les mouvements du ballon peuvent sembler peu naturels, et le rendu varie selon la photo."}
+      ]
+    },
+    {
+      "id": "choose-photo",
+      "title": "Étape 1 : choisir une photo adaptée",
+      "blocks": [
+        {"type": "ul", "items": ["Choisissez une photo d'un seul adulte : vous-même ou une personne ayant accepté d'apparaître. Évitez les photos de groupe.", "Le visage doit être net et éclairé de manière régulière. Évitez les lunettes qui le masquent, les filtres marqués et le flou de mouvement.", "Si vous avez une photo nette en pied, elle peut apporter davantage d'informations sur les vêtements et la silhouette. N'étirez pas une image pour inventer un cadrage en pied.", "Utilisez un fichier JPG, PNG ou WebP de 10 Mo maximum."]},
+        {"type": "p", "text": "Des vêtements ordinaires conviennent. L'intérêt du format vient souvent d'une personne familière qui apparaît soudain sur un terrain : inutile de transformer d'abord sa photo en affiche de vedette. Avant l'importation, vérifiez que vous pouvez utiliser l'image et que la personne accepte d'apparaître dans la vidéo finale."}
+      ]
+    },
+    {
+      "id": "generate",
+      "title": "Étape 2 : importer, vérifier les crédits et générer",
+      "blocks": [
+        {"type": "ol", "items": ["Ouvrez le [générateur Ozil Goal](/#generator), importez la photo préparée et vérifiez son aperçu.", "Confirmez l'autorisation d'utilisation. Ce modèle ne demande ni prompt ni enregistrement d'un match de football.", "Vérifiez le coût de {ozilCredits} crédits pour cette génération. Si votre solde est insuffisant, achetez un pack, revenez sur la page, attendez la mise à jour du solde puis lancez la génération.", "Attendez le traitement. La sortie actuelle est une vidéo verticale 9:16 de quinze secondes avec du son. Le délai varie : évitez de lancer plusieurs nouvelles demandes simplement parce que vous attendez."]},
+        {"type": "p", "text": "Vous pouvez acheter des crédits sans vous inscrire, mais cela ne rend pas la génération gratuite. L'accès en tant qu'invité dépend de la session du navigateur. Une fois la génération lancée, retrouvez le résultat dans [Mes vidéos](/app/my-videos), depuis le même navigateur. Téléchargez les vidéos que vous souhaitez conserver. Les offres sont présentées sur la [page des crédits](/pricing)."}
+      ]
+    },
+    {
+      "id": "review-result",
+      "title": "Étape 3 : regarder toute la vidéo avant de la partager",
+      "blocks": [
+        {"type": "p", "text": "Ne vous arrêtez pas à la première image. Regardez d'abord à vitesse normale, puis examinez les rotations rapides et les contacts avec le ballon : le visage change-t-il, les pieds touchent-ils le sol de façon cohérente, le ballon disparaît-il ou saute-t-il soudain ? Une génération réussie signifie que la vidéo a été produite, pas que chaque geste respecte les lois du football réel."},
+        {"type": "p", "text": "Si la personne est difficile à reconnaître, essayez lors d'une prochaine génération une photo mieux éclairée et un visage plus net. En revanche, si vous souhaitez un autre type de but, changer la photo n'ajoutera pas de nouveau mouvement au modèle. Consultez d'abord la [présentation du modèle](/ozil-goal-generator/ozil-goal-ai-template) pour savoir s'il correspond à votre idée."},
+        {"type": "p", "text": "Au moment du partage, décrivez clairement le résultat, par exemple : « Une vidéo de football générée par IA avec ma photo. » Ne présentez pas les images comme un véritable résumé de match. Pour comprendre le rapport entre le nom du modèle et le football réel, lisez [l'histoire du Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil)."}
+      ]
+    },
+    {
+      "id": "simple-caption",
+      "title": "Une légende précise vaut mieux qu'une accumulation de mots-clés",
+      "blocks": [
+        {"type": "p", "text": "Si vous envoyez la vidéo à des amis, utilisez une situation qu'ils connaissent, par exemple : « Moi après avoir terminé ma dernière tâche de la journée. » Gardez la mention de création par IA et laissez le contraste de la scène porter la plaisanterie. Aucune combinaison de mots-clés ne garantit le succès : un résultat personnel, lisible et compréhensible constitue un objectif plus concret."},
+        {"type": "note", "text": "Cet article est rédigé par l'équipe d'Ozil Goal Generator, qui exploite le générateur présenté. L'outil est indépendant et n'est partenaire ni de Mesut Özil, ni de ses clubs, ni des organisateurs de compétitions."}
+      ]
+    }
+  ],
+  "faqs": [
+    {"question": "Gol pakai signifie-t-il Ozil Goal AI ?", "answer": "Non. L'expression signifie approximativement « un but avec… » et dépend des mots suivants et du contexte. Cet article se concentre sur la création d'une vidéo de but à partir d'une photo."},
+    {"question": "Puis-je demander de conclure avec la tête ou la poitrine ?", "answer": "Le générateur photo Ozil Goal utilise actuellement une séquence fixe, sans option de mouvement personnalisé. Une autre photo change la référence du personnage, pas les contrôles disponibles pour le tir."},
+    {"question": "De quoi ai-je besoin pour créer une vidéo ?", "answer": "D'une photo autorisée d'un seul adulte, d'un navigateur et de {ozilCredits} crédits. La photo doit être en JPG, PNG ou WebP, jusqu'à 10 Mo. Il n'est pas nécessaire de filmer une action de football."}
+  ],
+  "sources": [
+    {"label": "IFAB, Loi 10 : validation d'un but", "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"},
+    {"label": "IFAB, Loi 12 : fautes et mains", "url": "https://www.theifab.com/laws/latest/fouls-and-misconduct/"},
+    {"label": "Modèle Ozil Goal et exigences concernant les photos", "url": "/ozil-goal-generator/ozil-goal-ai-template"},
+    {"label": "Acheter des crédits Ozil Goal", "url": "/pricing"}
+  ]
+}

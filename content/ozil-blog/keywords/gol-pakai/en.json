@@ -1,0 +1,167 @@
+{
+  "title": "Gol Pakai Foto: How to Make an AI Goal Video from Your Own Photo",
+  "metaTitle": "Gol Pakai Foto: A Personal Photo-to-AI Goal Video Tutorial",
+  "description": "The meaning of gol pakai depends on the words that follow. Learn how real goals differ from AI photo-based goal videos, then prepare a photo, check credits, generate and download your football clip.",
+  "label": "Gol Pakai Photo-to-Goal Tutorial",
+  "excerpt": "Understand the context of gol pakai, then start with photo selection to make an AI football goal video starring you.",
+  "eyebrow": "PHOTO VIDEO TUTORIAL · GOL PAKAI",
+  "intro": "**Gol pakai** is an Indonesian expression that needs the words after it for context. It roughly means “a goal using…”. “Gol pakai kepala” refers to a headed goal, while “gol pakai foto” may be a search for making a goal video from a photo. This article focuses on that second need: making your own photograph the main character in an AI football clip.",
+  "sections": [
+    {
+      "id": "understand-query",
+      "title": "Look at what comes after pakai",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "One phrase, different kinds of content",
+          "headings": [
+            "Expression",
+            "Possible meaning"
+          ],
+          "rows": [
+            [
+              "Gol pakai kaki",
+              "A goal scored with the foot"
+            ],
+            [
+              "Gol pakai kepala",
+              "A headed goal"
+            ],
+            [
+              "Gol pakai dada",
+              "A goal scored with a touch of the chest"
+            ],
+            [
+              "Gol pakai foto / AI",
+              "A creative request to make a goal-themed video with a photo or AI"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The first three expressions discuss real football actions; the last describes a way of making a video. The phrase is not itself the official name of an app, nor does it identify which player someone is searching for. Adding “foto sendiri” (your own photo) or “AI” makes a request for a personal video clearer."
+        },
+        {
+          "type": "p",
+          "text": "A goal in a real match must also meet the rules. Under [IFAB’s goal-scoring rule](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/), the whole ball must cross the goal line and the scoring team must not have committed an offence. Touching the ball with the chest is different from handball. A ball going into the net in an AI clip does not make the footage a reliable demonstration of the rules."
+        }
+      ]
+    },
+    {
+      "id": "what-you-make",
+      "title": "What is a goal video generated from a photo?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The photo provides the person’s appearance, while the template supplies the scene and actions. Ozil Goal places an everyday person in a preset football sequence that includes a goalkeeper coming out, ball control and defending movements. This differs from adding your name to real match highlights, and you do not need to record yourself playing football first."
+        },
+        {
+          "type": "p",
+          "text": "The template is fixed. The current generator does not let you request a header, a free kick or an exact recreation of a particular star’s finish. The output is a fictional personal entertainment video. Faces, bodies and ball movement can look unnatural, and the results vary with the photograph."
+        }
+      ]
+    },
+    {
+      "id": "choose-photo",
+      "title": "Step 1: Choose a suitable photo",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Choose a photo of one adult: yourself or someone who has agreed to appear. Do not use a group photograph.",
+            "Use a clear face and even lighting. Avoid sunglasses that obscure the face, strong filters and obvious motion blur.",
+            "If you have a clear full-body photo, consider it first because it gives more reference information about clothing and body shape. Do not stretch an image just to make it full-length.",
+            "Use JPG, PNG or WebP and keep the file size within 10 MB."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Everyday clothing is fine. Much of the appeal comes from seeing someone familiar suddenly appear on a football pitch; you do not need to edit the photograph into a football-star promotional image first. Before uploading, confirm that you can use the picture and that the person in it agrees to appear in the final video."
+        }
+      ]
+    },
+    {
+      "id": "generate",
+      "title": "Step 2: Upload, check credits and generate",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Open the [Ozil Goal generator](/#generator), upload the prepared single-person photo and check the preview.",
+            "Tick the permission confirmation. The current template requires neither a prompt nor a separate upload of football match footage.",
+            "Check the {ozilCredits} credits required for this generation. If your balance is too low, choose a credit pack and complete the purchase. Return to the generator, wait for the balance to update and then start generating.",
+            "Wait while the job is processed. The current output is a 15-second vertical 9:16 video with sound. Completion times vary, so avoid repeatedly submitting new jobs simply because you are waiting."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You can buy credits without registering, but that does not mean generation is free. Guest records depend on the current browser session. After starting a generation, you can check the result in [My Videos](/app/my-videos) in the same browser. Download videos you want to keep promptly. See the [credits page](/pricing) for purchase options."
+        }
+      ]
+    },
+    {
+      "id": "review-result",
+      "title": "Step 3: Check the whole video before downloading and sharing",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Do not judge it by the first frame. Play it at normal speed, then inspect quick turns and moments of ball contact: does the face change noticeably, do the feet make plausible contact with the ground, and does the ball disappear or jump position? A successfully completed job means a video has been produced, not that every action follows real football mechanics."
+        },
+        {
+          "type": "p",
+          "text": "If the person is difficult to recognise, try a photo with more even lighting and a clearer face next time. If the problem is that you want a different kind of goal, changing the photo will not give the fixed template new actions. Read the [template guide](/ozil-goal-generator/ozil-goal-ai-template) first, then decide whether it suits your idea."
+        },
+        {
+          "type": "p",
+          "text": "Use a clear explanation when sharing, such as “An AI football clip generated from my photo”. Do not label generated footage as real match highlights. To understand the connection between the template’s name and a real match, read [the historical background of Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil)."
+        }
+      ]
+    },
+    {
+      "id": "simple-caption",
+      "title": "A specific caption is more useful than a pile of keywords",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If the video is for friends, base the caption on an everyday situation they recognise, such as “Me after finally finishing the last task of the day”. Keep the AI disclosure and let the contrast in the scene carry the joke. No keyword combination can guarantee a viral video; making a personal creation that is clear to see and easy to understand is a more practical aim."
+        },
+        {
+          "type": "note",
+          "text": "Written by the Ozil Goal Generator team, which operates the linked generator. The site is an independent tool with no partnership with Mesut Özil, the player’s clubs or competition organisations."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does gol pakai mean Ozil Goal AI?",
+      "answer": "No. It roughly means “a goal using…” and needs the words that follow and the wider context. This article covers the specific request to make a goal video from a photo."
+    },
+    {
+      "question": "Can I choose to finish with a header or a chest touch?",
+      "answer": "The current Ozil Goal photo generator uses a fixed action template with no custom action options. A different photo changes the reference person, not the available shooting controls."
+    },
+    {
+      "question": "What do I need to make one video?",
+      "answer": "One photo of a single adult whose image you have permission to use, a working browser and {ozilCredits} credits. Use JPG, PNG or WebP, up to 10 MB. You do not need to record football actions yourself."
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFAB Law 10: When a goal is scored",
+      "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"
+    },
+    {
+      "label": "IFAB Law 12: Fouls and handball",
+      "url": "https://www.theifab.com/laws/latest/fouls-and-misconduct/"
+    },
+    {
+      "label": "Ozil Goal template and photo requirements",
+      "url": "/ozil-goal-generator/ozil-goal-ai-template"
+    },
+    {
+      "label": "Ozil Goal credit purchases",
+      "url": "/pricing"
+    }
+  ]
+}

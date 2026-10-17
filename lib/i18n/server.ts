@@ -16,7 +16,7 @@ export async function getDocumentLanguage(): Promise<string> {
   const pathname = (await headers()).get("x-migos-pathname") || "/";
   if (pathname.startsWith(`${OZIL_BLOG_PATH}/`)) {
     const slug = pathname.slice(OZIL_BLOG_PATH.length + 1);
-    if (slug && !slug.includes("/")) return getOzilBlogPost(slug)?.language ?? getLocale();
+    if (slug && !slug.includes("/")) return getOzilBlogPost(slug, await getLocale())?.language ?? getLocale();
   }
   return getLocale();
 }

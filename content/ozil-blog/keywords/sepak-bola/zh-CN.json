@@ -1,0 +1,71 @@
+{
+  "title": "Sepak Bola 是什么意思？从足球基础到个人 AI 进球视频",
+  "metaTitle": "Sepak Bola：足球含义、基础规则与 AI 视频指南",
+  "description": "了解印尼语 sepak bola 的含义、足球比赛的基本规则与常见术语，分清真实比赛集锦和 AI 足球视频，并学习用自己的照片制作进球短片。",
+  "label": "Sepak Bola 足球入门",
+  "excerpt": "从“sepak bola 就是足球”开始，读懂进球、盘带和比赛集锦，再了解照片生成足球短片的实际流程。",
+  "eyebrow": "足球入门 · SEPAK BOLA",
+  "intro": "**Sepak bola** 是印尼语中“足球”的常见说法。你可能在比赛报道、进球集锦或短视频标题里看到它，但这个词本身并不表示 AI 特效。理解足球动作，再判断视频是比赛记录还是生成画面，能让你更快找到自己想看的内容。",
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "Sepak bola 指什么？",
+      "blocks": [
+        {"type": "p", "text": "在一般体育语境中，sepak bola 指足球，也就是英语中的 football 或 soccer。它是一个宽泛的运动名称，可以出现在国家队新闻、俱乐部赛事、训练教程和球迷讨论里。只看到这个词，还不能判断一段视频讲的是哪场比赛、哪位球员或哪种进球。"},
+        {"type": "p", "text": "寻找具体内容时，可以补上球员、球队或赛事名称。想看进球可找“gol”，想看比赛摘要可找“highlight”，想了解照片生成的短片则补上“AI”或“foto”。这些限定词能帮助区分观赛资料和创作工具。"}
+      ]
+    },
+    {
+      "id": "basic-rules",
+      "title": "看懂一场足球比赛的三个基础",
+      "blocks": [
+        {"type": "p", "text": "标准十一人制比赛由两队进行，每队场上最多十一人，其中一人是守门员。常规比赛分为上下两个半场，每半场四十五分钟；补时以及赛事规定的加时并不是一回事。青少年或其他特定比赛的安排可以不同。参见 IFAB 的[球员规则](https://www.theifab.com/laws/latest/the-players/)与[比赛时间规则](https://www.theifab.com/laws/latest/the-duration-of-the-match/)。"},
+        {"type": "p", "text": "进球也不是“球碰到了球网”这么简单：球必须整体越过球门线，处于两根门柱之间和横梁下方，且进球一方没有犯规。判断依据是球与球门线的位置，不是镜头中的视觉错觉。[IFAB 第十章](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/)解释了进球与比赛结果。"},
+        {"type": "p", "text": "观看集锦时，要留意计分牌、比赛时间以及是否出现判罚说明。一个看起来精彩的射门，可能因此前的犯规而没有计入比分；单独截出最后几秒，往往无法交代完整过程。"}
+      ]
+    },
+    {
+      "id": "football-terms",
+      "title": "短视频里常见的足球词汇",
+      "blocks": [
+        {"type": "table", "caption": "读懂印尼语足球视频标题", "headings": ["词语", "常见含义", "看画面时注意什么"], "rows": [["Gol", "进球", "球是否完整越线，比分是否更新"], ["Kiper", "守门员", "出击位置与封堵路线"], ["Dribel", "盘带", "持球者如何调整方向和节奏"], ["Umpan", "传球", "球如何从队友脚下送到进攻空间"], ["Tendangan", "踢球或射门动作", "结合上下文判断是传球、射门还是定位球"]]},
+        {"type": "p", "text": "这些词描述不同的比赛元素。一次漂亮进攻可能包含传球、盘带和射门，不能只用最后的进球概括全部过程。比如讨论 [Lamine Yamal](/ozil-goal-generator/blog/lamine-yamal) 的远射时，出脚前的调整也值得看；讨论 [Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil) 时，则要注意过人和等待时机。"}
+      ]
+    },
+    {
+      "id": "real-or-generated",
+      "title": "比赛集锦与 AI 足球视频有什么区别？",
+      "blocks": [
+        {"type": "p", "text": "真实集锦记录已经发生的比赛，通常可以通过赛事、对阵、日期及官方战报核对。AI 足球视频则可以把一张日常照片变成虚构的球场动作。画面出现体育转播风格的镜头，并不能证明其中的人真的参加过那场比赛。"},
+        {"type": "p", "text": "Ozil Goal 的照片模板属于后者：它根据一名成年人的授权照片生成预设足球场景。人物相貌、衣服以及球的运动仍可能出现偏差。它适合制作个人娱乐短片，不能替代真实比赛录像，也不能证明某人拥有视频中的球技。"}
+      ]
+    },
+    {
+      "id": "create-video",
+      "title": "怎样用自己的照片制作足球短片？",
+      "blocks": [
+        {"type": "ol", "items": ["准备一张清晰的成年单人照片，使用自己的照片或获得本人同意的照片。支持 JPG、PNG、WebP，文件不超过 10 MB。", "打开 [Ozil Goal 生成器](/#generator)，上传图片并确认使用授权。检查预览中的脸部是否清楚，避免多人合照或严重遮挡。", "确认当前每次生成所需的 {ozilCredits} 积分。积分不足时先购买，再返回页面启动生成；注册本身不包含免费生成次数。", "等待生成完成，播放预览并下载。当前模板输出十五秒、9:16 竖版且带声音的视频；分享前检查面部、脚步和球的连贯性。"]},
+        {"type": "p", "text": "这个流程不需要自己拍摄足球动作，也没有填写自定义动作提示词的步骤。球场和动作使用固定模板。想了解适合的照片与常见问题，可继续阅读 [Gol Pakai 照片进球视频指南](/ozil-goal-generator/blog/gol-pakai)。"}
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "让标题准确表达你的内容",
+      "blocks": [
+        {"type": "p", "text": "如果发的是真实比赛讨论，注明球队、比赛和日期；如果发的是个人 AI 创作，就直接说明“AI 足球短片”。一个准确的标题，能让想看 sepak bola 的观众知道自己即将看到什么，也避免把虚构动作误认成球员新闻。"},
+        {"type": "note", "text": "本文由 Ozil Goal Generator 编辑团队撰写。本站提供独立的 AI 视频工具，与球员、俱乐部或赛事主办方没有合作关系。"}
+      ]
+    }
+  ],
+  "faqs": [
+    {"question": "Sepak bola 和 football 是同一种运动吗？", "answer": "在这里是。Sepak bola 是印尼语的足球，英语通常称 football，也常称 soccer。具体比赛形式仍要看上下文。"},
+    {"question": "标题写着 sepak bola 就代表视频是 AI 做的吗？", "answer": "不是。这个词只说明足球主题。核对比赛信息、发布来源以及作者是否标注 AI，才能更好地理解视频性质。"},
+    {"question": "不会踢足球也可以制作个人进球视频吗？", "answer": "可以。Ozil Goal 通过一张授权成年人照片生成预设动作，不要求你拍摄踢球过程。结果属于 AI 创作，每次需要 {ozilCredits} 积分。"}
+  ],
+  "sources": [
+    {"label": "IFAB 第三章：球员", "url": "https://www.theifab.com/laws/latest/the-players/"},
+    {"label": "IFAB 第七章：比赛时间", "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"},
+    {"label": "IFAB 第十章：决定比赛结果", "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"},
+    {"label": "Ozil Goal 模板说明", "url": "/ozil-goal-generator/ozil-goal-ai-template"}
+  ]
+}

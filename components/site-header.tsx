@@ -2,6 +2,7 @@
 
 import Link from "@/components/i18n/localized-link";
 import { useTranslations } from "@/components/i18n/locale-provider";
+import { isTranslatedOzilBlogPath } from "@/content/ozil-blog/routes";
 import { LanguageSwitcher } from "@/components/i18n/language-switcher";
 import { isEnglishOnlyOzilPath, stripLocale } from "@/lib/i18n/routing";
 import { usePathname } from "next/navigation";
@@ -21,7 +22,7 @@ const isActive = (pathname: string, href: string) => pathname === href || (href.
 
 export function SiteHeader() {
   const pathname = stripLocale(usePathname());
-  const isOzilBlog = /^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname);
+  const isNativeOzilBlog = /^\/ozil-goal-generator\/blog(?:\/|$)/.test(pathname) && !isTranslatedOzilBlogPath(pathname);
   const t = useTranslations();
   const { user, credits, openSignIn, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ export function SiteHeader() {
           {navigationLinks()}
         </nav>
         <div className="header-actions">
-          {!isOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
+          {!isNativeOzilBlog && !isEnglishOnlyOzilPath(pathname) && <LanguageSwitcher compact />}
           {user && !user.guest ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><Link className="sign-in-button account-header-link" href="/app/video-generator">{t("User Center")}</Link><button className="header-signout" onClick={() => void logout()}>{t("Sign Out")}</button></div> : user && credits > 0 ? <div className="signed-in-actions"><Link className="credit-badge" href="/app/my-credits">{t("{credits} credits", { credits })}</Link><button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button></div> : <button className="sign-in-button" onClick={openSignIn}>{t("Sign In")}</button>}
           <button ref={mobileTrigger} className="mobile-menu-button" aria-label={t(menuOpen ? "Close menu" : "Open menu")} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={21}/> : <Menu size={21}/>}</button>
         </div>

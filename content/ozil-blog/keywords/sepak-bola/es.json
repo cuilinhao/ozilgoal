@@ -1,0 +1,168 @@
+{
+  "title": "¿Qué significa sepak bola? Del fútbol básico a los videos personales de goles con IA",
+  "metaTitle": "Sepak Bola: significado, reglas básicas y videos con IA",
+  "description": "Aprende qué significa sepak bola en indonesio, conoce reglas y términos del fútbol, distingue los resúmenes reales de los videos con IA y crea un video de gol con tu foto.",
+  "label": "Sepak Bola: introducción al fútbol",
+  "excerpt": "Empieza por el significado de sepak bola, entiende los goles, los regates y los resúmenes de partidos, y descubre cómo convertir una foto en un video de fútbol.",
+  "eyebrow": "FÚTBOL BÁSICO · SEPAK BOLA",
+  "intro": "**Sepak bola** es una forma habitual de decir “fútbol” en indonesio. Puedes encontrarla en crónicas, recopilaciones de goles o títulos de videos cortos, pero la expresión por sí sola no significa un efecto de IA. Entender las acciones del juego y distinguir una grabación de partido de unas imágenes generadas te ayudará a encontrar el contenido que buscas.",
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "¿A qué se refiere sepak bola?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "En el contexto deportivo habitual, sepak bola significa fútbol, llamado football o soccer en inglés. Es un nombre general del deporte que aparece en noticias de selecciones, competiciones de clubes, tutoriales de entrenamiento y conversaciones de aficionados. La expresión sola no permite saber qué partido, jugador o tipo de gol aparece en un video."
+        },
+        {
+          "type": "p",
+          "text": "Para encontrar contenido concreto, añade el nombre del jugador, del equipo o de la competición. Busca “gol” para goles, “highlight” para resúmenes y “AI” o “foto” para videos creados a partir de fotografías. Estas palabras ayudan a distinguir la información para ver fútbol de las herramientas para crear videos."
+        }
+      ]
+    },
+    {
+      "id": "basic-rules",
+      "title": "Tres nociones básicas para entender un partido",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un partido estándar de fútbol once enfrenta a dos equipos, con un máximo de once jugadores por equipo en el campo, incluido un guardameta. El tiempo reglamentario se divide en dos partes de 45 minutos. El tiempo añadido y la prórroga prevista por la competición son cosas diferentes. En categorías juveniles u otras competiciones concretas puede haber variantes. Consulta las reglas de IFAB sobre [los jugadores](https://www.theifab.com/laws/latest/the-players/) y [la duración del partido](https://www.theifab.com/laws/latest/the-duration-of-the-match/)."
+        },
+        {
+          "type": "p",
+          "text": "Un gol no consiste simplemente en que el balón toque la red: debe cruzar por completo la línea de meta entre los postes y por debajo del travesaño, sin que el equipo que marca haya cometido una infracción. Lo que cuenta es la posición del balón respecto a la línea, no una ilusión del ángulo de cámara. La [Regla 10 de IFAB](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/) explica los goles y el resultado de un partido."
+        },
+        {
+          "type": "p",
+          "text": "Al ver un resumen, fíjate en el marcador, el tiempo de juego y las explicaciones de las decisiones arbitrales. Un disparo que parece espectacular puede no contar por una infracción anterior. Un recorte de los últimos segundos a menudo no muestra toda la acción."
+        }
+      ]
+    },
+    {
+      "id": "football-terms",
+      "title": "Términos de fútbol habituales en videos cortos",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Cómo entender los títulos indonesios de videos de fútbol",
+          "headings": [
+            "Término",
+            "Significado habitual",
+            "En qué fijarse"
+          ],
+          "rows": [
+            [
+              "Gol",
+              "Gol",
+              "Si el balón cruza completamente la línea y se actualiza el marcador"
+            ],
+            [
+              "Kiper",
+              "Portero",
+              "Su posición al salir y el ángulo que cubre"
+            ],
+            [
+              "Dribel",
+              "Regate o conducción",
+              "Cómo cambia de dirección y ritmo quien lleva el balón"
+            ],
+            [
+              "Umpan",
+              "Pase",
+              "Cómo llega el balón de un compañero al espacio de ataque"
+            ],
+            [
+              "Tendangan",
+              "Patada o remate",
+              "El contexto indica si es un pase, un disparo o una acción a balón parado"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Estas palabras describen elementos distintos del partido. Una buena jugada puede combinar pase, regate y remate, de modo que el gol final no explica todo el proceso. Por ejemplo, al hablar del disparo lejano de [Lamine Yamal](/ozil-goal-generator/blog/lamine-yamal), también merece atención su ajuste antes de golpear; en el [Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil), conviene observar cómo supera a los rivales y espera el momento."
+        }
+      ]
+    },
+    {
+      "id": "real-or-generated",
+      "title": "¿En qué se diferencian los resúmenes reales y los videos de fútbol con IA?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un resumen real registra un partido que ocurrió y normalmente se puede contrastar con la competición, el encuentro, la fecha y la crónica oficial. Un video de fútbol con IA puede convertir una foto cotidiana en acciones ficticias sobre el césped. Que la cámara imite una retransmisión deportiva no demuestra que esa persona jugara realmente aquel partido."
+        },
+        {
+          "type": "p",
+          "text": "La plantilla de fotos de Ozil Goal pertenece a esta segunda categoría: genera una escena de fútbol predeterminada a partir de la foto autorizada de una persona adulta. Puede haber errores en el aspecto de la persona, la ropa o el movimiento del balón. Sirve para crear videos personales de entretenimiento; no sustituye una grabación real ni demuestra la habilidad futbolística de alguien."
+        }
+      ]
+    },
+    {
+      "id": "create-video",
+      "title": "Cómo crear un video de fútbol a partir de tu foto",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Prepara una foto clara de una sola persona adulta. Usa tu propia foto o la de alguien que haya dado su consentimiento. Se admiten JPG, PNG y WebP, con un máximo de 10 MB.",
+            "Abre el [generador de Ozil Goal](/#generator), sube la imagen y confirma que tienes permiso para usarla. Revisa que el rostro se vea bien en la vista previa; evita fotos de grupo o caras muy tapadas.",
+            "Comprueba el coste actual de {ozilCredits} créditos por generación. Si no tienes saldo suficiente, compra créditos y vuelve a la página para generar el video. Registrarse no incluye generaciones gratuitas.",
+            "Espera a que termine, reproduce la vista previa y descarga el video. La plantilla actual produce un video vertical de 15 segundos, en formato 9:16 y con sonido. Antes de compartirlo, comprueba la continuidad del rostro, los pasos y el balón."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "No necesitas grabarte jugando al fútbol y tampoco hay un paso para introducir instrucciones de acciones personalizadas. El campo y los movimientos vienen de una plantilla fija. Para elegir la foto y resolver dudas frecuentes, consulta la [guía de Gol Pakai para crear videos de goles con fotos](/ozil-goal-generator/blog/gol-pakai)."
+        }
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "Haz que el título describa bien tu contenido",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Si hablas de un partido real, indica los equipos, el encuentro y la fecha. Si compartes una creación personal con IA, di directamente “video de fútbol con IA”. Un título preciso permite que quienes buscan sepak bola sepan qué van a ver y evita confundir una acción ficticia con una noticia sobre un jugador."
+        },
+        {
+          "type": "note",
+          "text": "Artículo escrito por el equipo editorial de Ozil Goal Generator. El sitio ofrece una herramienta independiente de video con IA y no tiene relación de colaboración con jugadores, clubes u organizadores de competiciones."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Sepak bola y football son el mismo deporte?",
+      "answer": "En este contexto, sí. Sepak bola es fútbol en indonesio; en inglés suele llamarse football y también soccer. La modalidad concreta depende del contexto."
+    },
+    {
+      "question": "¿Un título con sepak bola significa que el video está hecho con IA?",
+      "answer": "No. La expresión solo indica que el tema es el fútbol. Comprueba los datos del partido, la fuente de publicación y si el autor lo identifica como IA para entender mejor qué tipo de video es."
+    },
+    {
+      "question": "¿Puedo crear un video personal de un gol sin saber jugar al fútbol?",
+      "answer": "Sí. Ozil Goal genera acciones predeterminadas a partir de una foto autorizada de una persona adulta, sin que tengas que grabarte jugando. El resultado es una creación con IA y cada generación cuesta {ozilCredits} créditos."
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFAB, Regla 3: los jugadores",
+      "url": "https://www.theifab.com/laws/latest/the-players/"
+    },
+    {
+      "label": "IFAB, Regla 7: la duración del partido",
+      "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"
+    },
+    {
+      "label": "IFAB, Regla 10: el resultado de un partido",
+      "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"
+    },
+    {
+      "label": "Guía de la plantilla de Ozil Goal",
+      "url": "/ozil-goal-generator/ozil-goal-ai-template"
+    }
+  ]
+}

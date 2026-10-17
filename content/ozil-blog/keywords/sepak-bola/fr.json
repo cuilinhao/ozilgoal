@@ -1,0 +1,71 @@
+{
+  "title": "Que signifie Sepak Bola ? Du football aux vidéos de buts créées par IA",
+  "metaTitle": "Sepak Bola : sens, règles du football et vidéos IA",
+  "description": "Découvrez le sens de sepak bola en indonésien, les règles et les termes du football, puis apprenez à distinguer les résumés de matchs des vidéos créées par IA avec votre photo.",
+  "label": "Sepak Bola : comprendre le football",
+  "excerpt": "Sepak bola signifie football. Comprenez les buts, les dribbles et les résumés de matchs, puis découvrez comment créer une vidéo de football à partir d'une photo.",
+  "eyebrow": "COMPRENDRE LE FOOTBALL · SEPAK BOLA",
+  "intro": "**Sepak bola** est le terme courant pour « football » en indonésien. Il apparaît dans des articles sportifs, des compilations de buts et des titres de vidéos, mais ne désigne pas en lui-même un effet d'IA. Comprendre les actions et savoir si une vidéo montre un match ou des images générées vous aide à trouver le contenu recherché.",
+  "sections": [
+    {
+      "id": "meaning",
+      "title": "Que désigne sepak bola ?",
+      "blocks": [
+        {"type": "p", "text": "Dans le contexte sportif habituel, sepak bola désigne le football, appelé football ou soccer en anglais. Ce nom général peut figurer dans les actualités des sélections, les compétitions de clubs, les tutoriels d'entraînement et les discussions entre supporters. À lui seul, il ne permet pas d'identifier un match, un joueur ou un type de but."},
+        {"type": "p", "text": "Pour préciser votre recherche, ajoutez le nom d'un joueur, d'une équipe ou d'une compétition. Cherchez « gol » pour les buts, « highlight » pour les résumés, et « AI » ou « foto » pour les vidéos produites à partir de photos. Ces précisions aident à distinguer les ressources pour regarder le football des outils de création."}
+      ]
+    },
+    {
+      "id": "basic-rules",
+      "title": "Trois repères pour comprendre un match",
+      "blocks": [
+        {"type": "p", "text": "Dans le football à onze, deux équipes s'affrontent avec au maximum onze joueurs chacune sur le terrain, dont un gardien. Le temps réglementaire comprend deux périodes de quarante-cinq minutes. Le temps additionnel est différent des prolongations prévues par certaines compétitions. Des adaptations existent notamment pour les jeunes. Consultez les règles de l'IFAB sur [les joueurs](https://www.theifab.com/laws/latest/the-players/) et [la durée du match](https://www.theifab.com/laws/latest/the-duration-of-the-match/)."},
+        {"type": "p", "text": "Un but ne se résume pas à un ballon qui touche le filet : le ballon doit franchir entièrement la ligne de but, entre les poteaux et sous la barre, sans infraction de l'équipe qui marque. C'est sa position par rapport à la ligne qui compte, pas l'impression donnée par l'angle de caméra. La [Loi 10 de l'IFAB](https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/) explique la validation des buts et le résultat du match."},
+        {"type": "p", "text": "Dans un résumé, observez le score, le chronomètre et les éventuelles indications d'une décision arbitrale. Une frappe spectaculaire peut ne pas compter à cause d'une faute antérieure. Un extrait limité aux dernières secondes ne raconte pas toujours toute l'action."}
+      ]
+    },
+    {
+      "id": "football-terms",
+      "title": "Les mots du football fréquents dans les vidéos",
+      "blocks": [
+        {"type": "table", "caption": "Comprendre les titres de vidéos de football en indonésien", "headings": ["Terme", "Sens courant", "Ce qu'il faut observer"], "rows": [["Gol", "But", "Le ballon franchit-il entièrement la ligne et le score change-t-il ?"], ["Kiper", "Gardien de but", "Sa position à la sortie et la trajectoire qu'il ferme"], ["Dribel", "Dribble", "Les changements de direction et de rythme du porteur du ballon"], ["Umpan", "Passe", "La manière dont un partenaire envoie le ballon dans l'espace"], ["Tendangan", "Coup de pied ou frappe", "Le contexte : passe, tir ou coup de pied arrêté"]]},
+        {"type": "p", "text": "Ces mots désignent différents éléments du jeu. Une belle attaque peut réunir une passe, un dribble et un tir : le but final ne résume pas tout. Pour une frappe lointaine de [Lamine Yamal](/ozil-goal-generator/blog/lamine-yamal), observez aussi sa préparation. Pour le [Gol de Ozil](/ozil-goal-generator/blog/gol-de-ozil), intéressez-vous aux dribbles et au choix du moment."}
+      ]
+    },
+    {
+      "id": "real-or-generated",
+      "title": "Résumés de matchs et vidéos de football par IA : quelle différence ?",
+      "blocks": [
+        {"type": "p", "text": "Un véritable résumé montre un match qui a eu lieu. La compétition, les équipes, la date et les comptes rendus officiels permettent généralement de le vérifier. Une vidéo de football générée par IA peut transformer une photo du quotidien en action imaginaire. Un cadrage qui imite une retransmission sportive ne prouve pas que la personne a participé à ce match."},
+        {"type": "p", "text": "Le modèle photo d'Ozil Goal relève de cette seconde catégorie : il crée une scène de football prédéfinie à partir de la photo autorisée d'un adulte. L'apparence, les vêtements et le mouvement du ballon peuvent présenter des écarts. Il sert à créer des vidéos personnelles pour le plaisir ; il ne remplace pas un enregistrement de match et ne démontre pas les compétences sportives de la personne."}
+      ]
+    },
+    {
+      "id": "create-video",
+      "title": "Comment créer une vidéo de football avec votre photo ?",
+      "blocks": [
+        {"type": "ol", "items": ["Préparez une photo nette d'un seul adulte : vous-même ou une personne qui a donné son accord. Les formats acceptés sont JPG, PNG et WebP, jusqu'à 10 Mo.", "Ouvrez le [générateur Ozil Goal](/#generator), importez l'image et confirmez l'autorisation. Vérifiez que le visage est visible et évitez les photos de groupe ou les visages masqués.", "Vérifiez le coût actuel de {ozilCredits} crédits par génération. Si nécessaire, achetez des crédits puis revenez lancer la création ; l'inscription n'inclut pas de génération gratuite.", "Attendez la fin de la génération, regardez l'aperçu et téléchargez la vidéo. Le modèle produit actuellement quinze secondes en format vertical 9:16 avec du son. Avant de partager, vérifiez le visage, les appuis et la continuité du ballon."]},
+        {"type": "p", "text": "Vous n'avez pas à filmer une action de football ni à saisir des instructions de mouvement personnalisées. Le terrain et les actions suivent un modèle fixe. Pour choisir une photo et résoudre les problèmes courants, poursuivez avec le [guide Gol Pakai pour créer une vidéo de but avec une photo](/ozil-goal-generator/blog/gol-pakai)."}
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "Choisir un titre qui décrit vraiment la vidéo",
+      "blocks": [
+        {"type": "p", "text": "Pour discuter d'un véritable match, indiquez les équipes, la rencontre et la date. Pour une création personnelle, annoncez simplement une « vidéo de football générée par IA ». Un titre précis permet au public qui cherche sepak bola de savoir ce qu'il va regarder et évite de présenter une action imaginaire comme une actualité sportive."},
+        {"type": "note", "text": "Cet article est rédigé par l'équipe éditoriale d'Ozil Goal Generator. Notre outil vidéo est indépendant et n'est partenaire d'aucun joueur, club ou organisateur de compétition."}
+      ]
+    }
+  ],
+  "faqs": [
+    {"question": "Sepak bola désigne-t-il le même sport que football ?", "answer": "Oui, dans ce contexte. Sepak bola signifie football en indonésien, un sport également appelé soccer en anglais. Le format précis de la rencontre dépend du contexte."},
+    {"question": "Un titre contenant sepak bola indique-t-il une vidéo créée par IA ?", "answer": "Non. Le terme indique seulement le thème du football. Vérifiez les informations du match, la source de publication et une éventuelle mention de l'IA pour comprendre la nature de la vidéo."},
+    {"question": "Puis-je créer une vidéo de but sans savoir jouer au football ?", "answer": "Oui. Ozil Goal génère une action prédéfinie à partir de la photo autorisée d'un adulte, sans vous demander de filmer un geste. Le résultat est une création par IA et chaque génération coûte {ozilCredits} crédits."}
+  ],
+  "sources": [
+    {"label": "IFAB, Loi 3 : les joueurs", "url": "https://www.theifab.com/laws/latest/the-players/"},
+    {"label": "IFAB, Loi 7 : la durée du match", "url": "https://www.theifab.com/laws/latest/the-duration-of-the-match/"},
+    {"label": "IFAB, Loi 10 : déterminer le résultat d'un match", "url": "https://www.theifab.com/laws/latest/determining-the-outcome-of-a-match/"},
+    {"label": "Présentation du modèle Ozil Goal", "url": "/ozil-goal-generator/ozil-goal-ai-template"}
+  ]
+}

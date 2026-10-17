@@ -4,7 +4,7 @@ import { ozilBlogMetadata } from "@/components/ozil-goal/blog-metadata";
 import { getOzilBlogPost, ozilBlogPosts } from "@/content/ozil-blog";
 
 type Props = { params: Promise<{ slug: string }> };
-export function generateStaticParams() { return ozilBlogPosts.map(post => ({ slug: post.slug })); }
+export function generateStaticParams() { return ozilBlogPosts.filter(post => !post.translationKey || post.language === "en").map(post => ({ slug: post.slug })); }
 async function resolvePost(params: Props["params"]) {
   const { slug } = await params;
   const post = getOzilBlogPost(slug);

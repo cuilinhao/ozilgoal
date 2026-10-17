@@ -23,14 +23,13 @@ describe("Ozil blog discovery", () => {
   it("indexes the blog and native articles without inventing translated copies", () => {
     const entries = sitemap();
     const paths = [
-      "/ozil-goal-generator/blog",
       ...nativeArticles.map(([slug]) => `/ozil-goal-generator/blog/${slug}`),
     ];
     for (const path of paths) {
       const matches = entries.filter(entry => new URL(entry.url).pathname.endsWith(path));
       expect(matches.map(entry => entry.url)).toEqual([`https://ozilgoal-aivideo.com${path}`]);
     }
-    expect(generateStaticParams()).toEqual(nativeArticles.map(([slug]) => ({ slug })));
+    expect(generateStaticParams()).toEqual([...nativeArticles.map(([slug]) => ({ slug })), ...["lamine-yamal", "sepak-bola", "gol-pakai", "gol-de-ozil"].map(slug => ({ slug }))]);
   });
 
   it.each(nativeArticles)("keeps %s in its own native-language group in sitemap and page metadata", async (slug, language) => {
