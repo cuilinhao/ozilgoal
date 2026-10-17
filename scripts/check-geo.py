@@ -25,6 +25,9 @@ SITE = "https://ozilgoal-aivideo.com"
 LOCALES = ("", "/ko", "/ja", "/fr", "/es", "/zh-TW")
 ARTICLE_PATH = "/mesut-ozil-ludogorets-goal"
 TRANSLATED = ("/pricing", "/privacy-policy", "/terms-of-service", "/refund-policy", "/acceptable-use-policy", "/contact")
+BLOG_PATH = "/ozil-goal-generator/blog"
+KEYWORD_BLOG_PATHS = tuple(BLOG_PATH + "/" + slug for slug in ("lamine-yamal", "sepak-bola", "gol-pakai", "gol-de-ozil"))
+TRANSLATED_BLOG = (BLOG_PATH, *KEYWORD_BLOG_PATHS)
 BLOG_LANGUAGES = {
     "/ozil-goal-generator/blog/" + slug: language
     for language, slugs in {
@@ -396,9 +399,10 @@ expected = translated_ozil_paths | {ARTICLE_PATH}
 assert len(translated_ozil_paths) == 42, "Expected seven Ozil pages in six languages"
 assert expected <= paths, ("Missing Ozil sitemap routes", sorted(expected - paths))
 assert not any(prefix + ARTICLE_PATH in paths for prefix in LOCALES[1:]), "Native English article mirror in sitemap"
-assert not any(re.match(r"^/(?:ko|ja|fr|es|zh-TW)/ozil-goal-generator/blog(?:/|$)", path) for path in paths), "Native blog mirror in sitemap"
-assert "/ozil-goal-generator/blog" in paths, "Missing Ozil blog index"
-assert set(BLOG_LANGUAGES) == {path for path in paths if path.startswith("/ozil-goal-generator/blog/")}, "Native blog paths changed"
+translated_blog_paths = {localized_path(path, prefix) for prefix in LOCALES for path in TRANSLATED_BLOG}
+assert translated_blog_paths <= paths, ("Missing translated blog sitemap routes", sorted(translated_blog_paths - paths))
+assert not any(re.match(r"^/(?:ko|ja|fr|es|zh-TW)/ozil-goal-generator/blog(?:/|$)", path) and path not in translated_blog_paths for path in paths), "Native blog mirror in sitemap"
+assert set(BLOG_LANGUAGES) == {path for path in paths if path.startswith(BLOG_PATH + "/") and path not in KEYWORD_BLOG_PATHS}, "Native blog paths changed"
 assert all(prefix + path in paths for prefix in LOCALES for path in TRANSLATED), "Missing real translated pricing/policy/contact page"
 assert not any(is_old_route(path) for path in paths), "Legacy routes in sitemap"
 assert not any(prefix + "/ozil-goal-generator" in paths for prefix in LOCALES), "Alias duplicated in sitemap"
@@ -416,18 +420,19 @@ for location in locations:
     assert [normalize_root(url) for url in page.canonical] == [location], (location, "Canonical mismatch", page.canonical)
     assert all(not urlsplit(url).query and not urlsplit(url).fragment for url in page.canonical), (location, "Canonical contains query/fragment")
     assert {key: normalize_root(value) for key, value in page.alternates.items()} == sitemap_languages[location], (location, "Sitemap and page hreflang groups differ", sitemap_languages[location], page.alternates)
-for source_path in (*TRANSLATED_OZIL, *TRANSLATED):
+for source_path in (*TRANSLATED_OZIL, *TRANSLATED, *TRANSLATED_BLOG):
     languages = translated_languages(source_path)
     for prefix in LOCALES:
         path = localized_path(source_path, prefix)
         page = pages[path]
         assert {key: normalize_root(value) for key, value in page.alternates.items()} == languages, (path, "Real six-language hreflang group changed")
         assert page.document_languages == [prefix[1:] or "en"], (path, "Translated HTML language mismatch", page.document_languages)
-for path, language in {"/ozil-goal-generator/blog": "en", **BLOG_LANGUAGES}.items():
+        if source_path in KEYWORD_BLOG_PATHS:
+            assert page.article_languages[:1] == [prefix[1:] or "en"], (path, "Translated article language mismatch", page.article_languages)
+for path, language in BLOG_LANGUAGES.items():
     page = pages[path]
     assert page.document_languages == [language], (path, "Native HTML language mismatch", page.document_languages)
-    if path in BLOG_LANGUAGES:
-        assert page.article_languages[:1] == [language], (path, "Native article language mismatch", page.article_languages)
+    assert page.article_languages[:1] == [language], (path, "Native article language mismatch", page.article_languages)
     assert page.alternates == {language: canonical_url(path), "x-default": canonical_url(path)}, (path, "Native article wrongly grouped as a translation", page.alternates)
 for path in sorted(expected):
     prefix = next((value for value in LOCALES[1:] if path == value or path.startswith(value + "/")), "")
@@ -631,7 +636,9 @@ report = {
     "canonical_pages_checked": len(locations),
     "sitemap_page_hreflang_groups_checked": len(locations),
     "native_blog_language_groups_checked": len(BLOG_LANGUAGES),
-    "translated_language_groups_checked": len(TRANSLATED) + len(TRANSLATED_OZIL),
+    "translated_language_groups_checked": len(TRANSLATED) + len(TRANSLATED_OZIL) + len(TRANSLATED_BLOG),
+    "translated_blog_indexes_checked": len(LOCALES),
+    "translated_blog_articles_checked": len(KEYWORD_BLOG_PATHS) * len(LOCALES),
     "translated_ozil_pages_checked": len(translated_ozil_paths),
     "english_only_404_routes_checked": len(expected_404_paths),
     "canonical_exception": "Only the production origin with an empty root path is equivalent to the same origin plus /. Every non-root path must match exactly.",
@@ -653,6 +660,6 @@ report = {
     "non_200": [],
     "responses": [value for _, value in sorted(responses.items())],
     "pages": rows,
-    "scope": "Anonymous SSR pages; every sitemap loc/alternate target, canonical and sitemap/page hreflang group; native blog languages, six-language support pages and all 42 translated Ozil pages; six home titles, descriptions, visible FAQ/HowTo, paid SoftwareApplication offers and sample provenance; native English Article schema, visible facts, unprefixed internal links, localized 404 routes and one image download; robots rules and llms.txt. No JavaScript, paid generation, external requests, indexing or Rich Results Test.",
+    "scope": "Anonymous SSR pages; every sitemap loc/alternate target, canonical and sitemap/page hreflang group; 14 native blog languages, six translated blog indexes, 24 keyword articles, six-language support pages and all 42 translated Ozil pages; six home titles, descriptions, visible FAQ/HowTo, paid SoftwareApplication offers and sample provenance; native English Article schema, visible facts, unprefixed internal links, localized 404 routes and one image download; robots rules and llms.txt. No JavaScript, paid generation, external requests, indexing or Rich Results Test.",
 }
 write_report(report)
